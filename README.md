@@ -8,6 +8,18 @@ whether orthogonal lattice objects can be guarded with at most perimeter over
 six guards. It also records source-confirmed open problems and separates proven
 results from conditional or conjectural statements.
 
+## What This Review Adds
+
+- A one-page status matrix separating 2D orthogonal polygons, polyominoes,
+  ortho-unit polygons, integral orthogonal polygons, and 3D orthogonal
+  polyhedra.
+- A proof-technique map explaining where coloring, quadrilateralization,
+  rectangle packing, area arguments, and 3D edge-guard methods apply.
+- Clear open-status labels: proven tight, source-stated conjecture,
+  conditional theorem gap, or derived research direction.
+- A source-quality and search-method section so the open-problem claims are
+  auditable.
+
 ## Files
 
 - `orthogonal_art_gallery_lit_review.tex`: LaTeX source.
@@ -20,3 +32,9 @@ results from conditional or conjectural statements.
 - The integral orthogonal polygon `floor(N/6)` statement is conjectural.
 - In 3D, the standard terminology is orthogonal polyhedron or orthogonal
   polytope, and point guards do not give a direct planar analogue.
+
+The strongest project directions suggested by the review are to prove or
+refute the polyomino-with-holes perimeter bound, resolve Massberg's
+maximal-rectangle packing conjecture, test the broader integral orthogonal
+polygon `floor(N/6)` conjecture, or make progress on the Urrutia-type
+edge-guard conjectures for orthogonal polyhedra.

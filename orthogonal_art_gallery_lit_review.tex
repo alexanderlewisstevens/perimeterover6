@@ -5,6 +5,9 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -20,6 +23,7 @@
 \setlist[enumerate]{leftmargin=*, itemsep=0.45em}
 \setlist[description]{style=nextline, leftmargin=1.5em, labelsep=0.5em, itemsep=0.45em, font=\normalfont\bfseries}
 
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 \newcommand{\loversix}{\floor{\ell/6}}
@@ -110,6 +114,132 @@ polyomino perimeter, integral perimeter, or a fixed unit-edge model.
   \cite{PatersonYao1992,VigliettaThesis}.  Edge-guard and reflex-edge-guard
   conjectures become the main 3D analogue \cite{BenbernouEtAl2011,Viglietta2020,CanoTothUrrutiaViglietta2022}.
 \end{enumerate}
+
+\section{One-Page Status Matrix}
+
+Table~\ref{tab:status-matrix} is the fastest way to read the review.  The
+labels ``proven tight,'' ``conditional,'' ``conjectural,'' and ``open'' refer
+to the exact model in the first three columns; changing the guard type,
+allowing holes, or changing the parameter can change the answer.
+
+\begin{table}[htbp]
+\small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.18\textwidth}
+  >{\raggedright\arraybackslash}p{0.11\textwidth}
+  >{\raggedright\arraybackslash}p{0.13\textwidth}
+  Y
+  >{\raggedright\arraybackslash}p{0.17\textwidth}}
+\toprule
+Model & Guards & Parameter & Status & Main source \\
+\midrule
+Simple orthogonal polygon & point & vertices $n$ &
+Proven tight: $\floor{n/4}$ & Kahn--Klawe--Kleitman; Gyori
+\cite{KahnKlaweKleitman1983,Gyori1986} \\
+
+Orthogonal polygon with holes & vertex & vertices $n$, holes $h$ &
+Open at the strongest conjectured bounds; partial results for restricted
+cases & Urrutia; Hoffmann--Kriegel; Zylinski
+\cite{UrrutiaOpenProblems,HoffmannKriegel1996,Zylinski2006} \\
+
+Hole-free polyomino & point & lattice perimeter $\ell$ &
+Proven tight for $\ell\geq 6$: $\loversix$ & Ma{\ss}berg
+\cite{Massberg2014} \\
+
+Polyomino with holes & point & lattice perimeter $\ell$ &
+Conditional/open: Ma{\ss}berg's extension depends on a rectangle-packing
+conjecture & Ma{\ss}berg habilitation \cite{MassbergHabilitation} \\
+
+Polyomino with holes & point & cells $m$ &
+Proven tight: $\floor{(m+1)/3}$; does not imply perimeter-over-six & Biedl et
+al. \cite{BiedlEtAl2012} \\
+
+Ortho-unit polygon & point & perimeter $P=n$ &
+Proven tight for $n\geq 12$: $\floor{(n-4)/8}$, stronger than $P/6$ in this
+model & Diaz-Banez et al. \cite{DiazBanezEtAl2025} \\
+
+Integral orthogonal polygon & point & lattice perimeter $N$ &
+Conjectural: $\floor{N/6}$; no proof found in this search & Diaz-Banez et al.
+\cite{DiazBanezEtAl2025} \\
+
+Orthogonal polyhedron & point & vertices $n$ &
+No linear planar analogue: worst case is $\Theta(n^{3/2})$ & Paterson--Yao;
+Viglietta \cite{PatersonYao1992,VigliettaThesis} \\
+
+Orthogonal polyhedron & edge or reflex edge & edges $m$, reflex edges $r$ &
+Main 3D analogue; Urrutia-type conjectures remain open beyond partial classes
+& Benbernou et al.; Viglietta; Cano et al.
+\cite{BenbernouEtAl2011,Viglietta2020,CanoTothUrrutiaViglietta2022} \\
+\bottomrule
+\end{tabularx}
+\caption{Status map for orthogonal art-gallery problems closest to
+perimeter-over-six.}
+\label{tab:status-matrix}
+\end{table}
+
+\clearpage
+
+\section{Proof Techniques and Where They Break}
+
+\begin{description}
+  \item[Triangulation and coloring.]
+  Chvatal and Fisk establish the classical template for simple polygons
+  \cite{Chvatal1975,Fisk1978}.  Kahn--Klawe--Kleitman and Gyori adapt
+  coloring ideas to simple orthogonal polygons
+  \cite{KahnKlaweKleitman1983,Gyori1986}.  The method is powerful for
+  vertex-count bounds but does not directly produce a lattice-perimeter
+  theorem.
+
+  \item[Quadrilateralization and cactus duals.]
+  Orthogonal holes are often attacked by decomposing the domain into
+  rectangles or quadrilaterals and coloring a dual structure.  Zylinski's
+  cactus-dual condition explains why the $\floor{(n+h)/4}$ conjecture is
+  approachable in some cases but not yet resolved in full
+  \cite{Zylinski2006}.
+
+  \item[Rectangle packing and perfect-graph methods.]
+  Motwani--Raghunathan--Saran, Worman--Keil, and Ma{\ss}berg connect
+  orthogonal guarding with star polygons, rectangle systems, and perfect
+  graphs \cite{MotwaniRaghunathanSaran1990,WormanKeil2007,Massberg2014}.
+  This is the proof technology behind the hole-free polyomino perimeter
+  theorem.  Its failure point is explicit: the hole case depends on
+  Ma{\ss}berg's maximal-rectangle packing conjecture
+  \cite{MassbergHabilitation}.
+
+  \item[Area and grid-cell arguments.]
+  Biedl et al. prove the tight $\floor{(m+1)/3}$ theorem for polyominoes with
+  holes by using the cell structure rather than perimeter
+  \cite{BiedlEtAl2012}.  This is strong evidence that holes are tractable in a
+  discrete model, but it leaves open whether perimeter alone controls the
+  guard number.
+
+  \item[Hardness and approximation reductions.]
+  Schuchardt--Hecker, Katz--Roisman, and later work on sliding cameras and
+  transmitters show that optimization versions remain hard even in restricted
+  orthogonal settings
+  \cite{SchuchardtHecker1995,KatzRoisman2008,DurocherEtAl2017,BiedlEtAl2019}.
+  These results do not contradict extremal upper bounds; they warn that
+  finding a minimum guard set is a different problem from proving a universal
+  bound.
+
+  \item[3D decomposition and binary-space partitions.]
+  Paterson--Yao's binary-space-partition theorem, as used in Viglietta's
+  survey, shows that point guards in orthogonal polyhedra have
+  $\Theta(n^{3/2})$ worst-case behavior
+  \cite{PatersonYao1992,VigliettaThesis}.  This is the main reason a 3D
+  project should not simply ask for a point-guard analogue of the planar
+  perimeter theorem.
+
+  \item[Edge-guard and reflex-edge induction.]
+  Benbernou et al., Viglietta, and Cano--Toth--Urrutia--Viglietta show that
+  the most promising 3D analogue is based on edges, reflex edges, and genus
+  rather than point guards
+  \cite{BenbernouEtAl2011,Viglietta2020,CanoTothUrrutiaViglietta2022}.  The
+  remaining gap is structural: the known upper bounds do not meet the
+  Urrutia-type lower-bound constructions.
+\end{description}
 
 \section{Status by Model}
 
@@ -317,6 +447,30 @@ discrete polyform line of results \cite{Pinciu2015}.  This is the natural
 place to look if the intended 3D project is voxel/discrete rather than
 continuous orthogonal-polyhedron visibility.
 
+\section{How Open Status Is Classified}
+
+This review uses the following labels for open-problem evidence.
+
+\begin{description}
+  \item[Proven tight.]
+  A peer-reviewed theorem gives an upper bound and a matching lower-bound
+  construction in the same model.
+
+  \item[Source-stated conjecture.]
+  A paper, thesis, or curated open-problem page explicitly states the question
+  as a conjecture or open problem.
+
+  \item[Conditional theorem gap.]
+  A source claims that a desired result follows if another named conjecture or
+  structural lemma is true.  The downstream result should be cited as
+  conditional, not as proven.
+
+  \item[Derived research direction.]
+  The review identifies a natural next question by comparing known theorems
+  and failures.  These are useful project directions, but they should not be
+  cited as named conjectures unless a primary source is later found.
+\end{description}
+
 \section{Quoted Open-Problem Evidence}
 
 The following short quotations are included only to document open status.  Each
@@ -407,8 +561,16 @@ discrete visibility model, not in standard continuous point-guard visibility.
 
 \section{Relevant Open Problems}
 
+Problems 1--3 are closest to the perimeter-over-six question.  Problems 4--5
+are the main 2D orthogonal-with-holes vertex-guard conjectures.  Problems 7--10
+are the 3D orthogonal-polyhedron directions.  Each item records whether its
+open status is source-stated, conditional, or derived from the literature.
+
 \begin{enumerate}
   \item \textbf{Perimeter-over-six for polyominoes with holes.}
+
+  \emph{Kind: conditional theorem gap; priority: high.}
+
   Let $P$ be a polyomino with holes and total lattice perimeter $\ell$,
   including all hole boundaries.  Is $P$ always guardable by
   $\max\{1,\loversix\}$ point guards?
@@ -417,6 +579,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   the habilitation text; \NoProofFound
 
   \item \textbf{Ma{\ss}berg's maximal-rectangle packing conjecture for holes.}
+
+  \emph{Kind: source-stated conjecture; priority: high.}
+
   In a rectilinear gallery with holes, does the maximum packing size of maximal
   rectangles upper-bound the number of point guards?
 
@@ -425,6 +590,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   polyominoes with holes.
 
   \item \textbf{Integral orthogonal polygon perimeter conjecture.}
+
+  \emph{Kind: source-stated conjecture; priority: high.}
+
   Is every integral orthogonal polygon of perimeter $N$ guardable by
   $\floor{N/6}$ point guards?
 
@@ -432,6 +600,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   2025 ortho-unit paper; \NoProofFound
 
   \item \textbf{Shermer's vertex-guard conjecture for orthogonal polygons with holes.}
+
+  \emph{Kind: source-stated conjecture; priority: medium-high.}
+
   Is every $n$-vertex orthogonal polygon with $h$ holes guardable by
   $\floor{(n+h)/4}$ vertex guards?
 
@@ -440,6 +611,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   theorem.
 
   \item \textbf{Hoffmann's vertex-guard conjecture for orthogonal polygons with holes.}
+
+  \emph{Kind: source-stated conjecture; priority: medium.}
+
   Does $\floor{2n/7}$ always suffice for vertex guarding any orthogonal polygon
   with holes?
 
@@ -447,6 +621,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   conjecture.  It is vertex-count based and does not imply perimeter-over-six.
 
   \item \textbf{If perimeter-over-six with holes is false, find the correction term.}
+
+  \emph{Kind: derived research direction; priority: high if counterexamples emerge.}
+
   Possible parameters include total perimeter, outer perimeter, number of
   holes, hole perimeter, reflex vertices, or rectangle-packing obstructions.
 
@@ -454,6 +631,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   source conjecture.  It follows from the current gap in the hole case.
 
   \item \textbf{3D Urrutia edge-guard conjecture for orthogonal polyhedra.}
+
+  \emph{Kind: source-stated conjecture; priority: high for 3D.}
+
   Is every genus-zero orthogonal polyhedron with $m$ edges guardable by
   $m/12+O(1)$ edge guards?
 
@@ -462,6 +642,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   conjecture is not settled.
 
   \item \textbf{3D reflex-edge conjecture for orthogonal polyhedra.}
+
+  \emph{Kind: source-stated conjecture with proven restricted cases; priority: high for 3D.}
+
   Is every orthogonal polyhedron with $r>0$ reflex edges and genus $g$
   guardable by $\floor{(r-g)/2}+1$ reflex-edge guards?
 
@@ -469,6 +652,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   polyhedra and states the general version as a conjecture.
 
   \item \textbf{Close the general 3D edge-guard gap.}
+
+  \emph{Kind: source-stated open problem; priority: medium-high.}
+
   For arbitrary polyhedra with $m$ edges, improve the current gap between
   lower-bound examples and the $(5/6)m$ upper bound.
 
@@ -476,6 +662,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   state that reducing this gap remains open.
 
   \item \textbf{Choose the correct 3D analogue of perimeter.}
+
+  \emph{Kind: derived research direction; priority: high before theorem work.}
+
   For orthogonal polyhedra or polycubes, decide whether the right parameter is
   total edges, reflex edges, surface area, voxel count, genus, or a combination.
 
@@ -484,6 +673,9 @@ discrete visibility model, not in standard continuous point-guard visibility.
   edge and polycube models have different behavior.
 
   \item \textbf{Algorithmic complexity and approximation for restricted orthogonal models.}
+
+  \emph{Kind: mixed source-stated and derived direction; priority: medium.}
+
   Minimum guarding is NP-hard in many orthogonal settings
   \cite{SchuchardtHecker1995,KatzRoisman2008,BiedlEtAl2012,DurocherEtAl2017,BiedlEtAl2019}.
   Identify exact polynomial subclasses and approximation guarantees for
@@ -494,6 +686,36 @@ discrete visibility model, not in standard continuous point-guard visibility.
   work on $k$-hop polyomino visibility still asks for a constant-factor
   approximation for polyominoes with holes \cite{FiltserEtAl2025}.
 \end{enumerate}
+
+\section{Search Method and Source-Quality Notes}
+
+This review was checked on May 22, 2026.  The source search prioritized
+peer-reviewed theorem statements, author-posted PDFs, theses when they contain
+explicit conjectures or model summaries, and curated open-problem pages by
+researchers in the area.  Searches used combinations of:
+\begin{itemize}
+  \item \texttt{orthogonal art gallery holes};
+  \item \texttt{polyomino perimeter guards};
+  \item \texttt{ortho-unit polygons guarded perimeter};
+  \item \texttt{integral orthogonal polygon perimeter guards};
+  \item \texttt{orthogonal polyhedra edge guards};
+  \item \texttt{reflex edge guards 2-reflex orthogonal polyhedra};
+  \item \texttt{k-hop visibility polyominoes holes}.
+\end{itemize}
+
+The review treats sources in the following order of strength:
+\begin{enumerate}
+  \item Peer-reviewed theorem sources with exact guard model and parameter.
+  \item Theses or author PDFs when they state a conjecture, collect a known
+  theorem, or give a precise proof dependency.
+  \item Curated open-problem pages when they record named conjectures and no
+  later proof was found.
+  \item Derived questions created by comparing the known theorems and gaps.
+\end{enumerate}
+
+The phrase ``no later proof was found'' is not itself a mathematical proof of
+openness.  It records the outcome of this search and is included to prevent
+conditional statements from being accidentally cited as established theorems.
 
 \section{Journals and Venues to Monitor}
 
