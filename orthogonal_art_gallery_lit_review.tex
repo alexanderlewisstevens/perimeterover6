@@ -37,32 +37,34 @@
 \maketitle
 
 \begin{abstract}
-This review organizes the art-gallery literature most relevant to perimeter-type
-guard bounds for orthogonal objects.  In two dimensions, the perimeter-over-six
-question is meaningful only after fixing a lattice scale: it is proven for
-hole-free polyominoes, conditional/open for polyominoes with holes, and open
-for general integral orthogonal polygons.  In three dimensions, the standard
-term is \emph{orthogonal polyhedron} or \emph{orthogonal polytope}, not
-``orthonormal.''  A direct point-guard analogue of the planar theorem fails:
-orthogonal polyhedra may require $\Theta(n^{3/2})$ point guards.  The natural
-3D analogue therefore shifts to edge guards, reflex-edge guards, face guards,
-or discrete polycube visibility models, where several Urrutia-type conjectures
-remain open.
+% Intent: Give expert readers the main status result before terminology and details.
+This review organizes the art-gallery literature closest to perimeter-type
+guard bounds for orthogonal objects.  In two dimensions, the
+perimeter-over-six question only has invariant content after fixing a lattice
+scale: it is proven for hole-free polyominoes, conditional/open for
+polyominoes with holes, and open for general integral orthogonal polygons.
+In three dimensions, a direct point-guard analogue of the planar theorem
+fails: orthogonal polyhedra may require $\Theta(n^{3/2})$ point guards.  The
+natural 3D analogues therefore shift to edge guards, reflex-edge guards, face
+guards, or discrete polycube visibility models, where several Urrutia-type
+conjectures remain open.
 \end{abstract}
 
-\section{Reading Guide and Terminology}
+\section{Conventions and Terminology}
 
 \paragraph{2D objects.}
+% Intent: Fix all planar object terminology once so later sections can use it without redefinition.
 An \emph{orthogonal polygon} is a polygon whose edges are horizontal or
-vertical.  A \emph{polyomino} is a finite edge-connected union of unit
-axis-parallel squares; its perimeter is naturally the number of unit boundary
-edges, including hole boundaries when holes are present.  An \emph{integral
-orthogonal polygon} has integer coordinates, so its perimeter is a lattice
-length.  An \emph{ortho-unit polygon} is an orthogonal polygon all of whose
-edges have length one; in that model, the number of vertices equals the
-perimeter.
+vertical; the literature also uses \emph{rectilinear} for the same class.  A
+\emph{polyomino} is a finite edge-connected union of unit axis-parallel
+squares; its perimeter is the number of unit boundary edges, including hole
+boundaries when holes are present.  An \emph{integral orthogonal polygon} has
+integer coordinates, so its perimeter is measured as a lattice length.  An
+\emph{ortho-unit polygon} is an orthogonal polygon all of whose edges have
+length one; in that model, the number of vertices equals the perimeter.
 
 \paragraph{3D objects.}
+% Intent: Resolve the user's 3D terminology question without repeating it elsewhere.
 The standard 3D term is \emph{orthogonal polyhedron}: a polyhedron whose faces
 are axis-aligned, equivalently whose face normals are coordinate directions.
 In higher dimensions, the corresponding term is \emph{orthogonal polytope}.
@@ -71,6 +73,7 @@ Polycubes are the voxel analogue of polyominoes and form a discrete subclass
 of orthogonal polyhedra.
 
 \paragraph{Guard models.}
+% Intent: Make guard-type changes explicit because several cited bounds use different guard models.
 Unless a section says otherwise, a 2D guard is a standard point guard with
 straight-line visibility inside the polygon.  In 3D the model must be stated:
 the literature distinguishes point guards, vertex guards, edge guards,
@@ -78,6 +81,7 @@ reflex-edge guards, face guards, open edge guards, and discrete polycube
 visibility graph models.  These models are not interchangeable.
 
 \paragraph{Why perimeter needs a lattice scale.}
+% Intent: Explain why perimeter-over-six is a lattice question, not a Euclidean-scaling statement.
 No theorem of the form ``at most $P/6$ guards'' can hold for arbitrary
 real-coordinate orthogonal polygons if $P$ is Euclidean perimeter: scaling a
 polygon down preserves the guard number while making $P$ arbitrarily small.
@@ -87,28 +91,34 @@ polyomino perimeter, integral perimeter, or a fixed unit-edge model.
 \section{Flow of the Literature}
 
 \begin{enumerate}
+  % Intent: Anchor the review in the classical polygon theorem and survey sources.
   \item Classical art-gallery theorems start with arbitrary simple polygons:
   Chvatal proves $\floor{n/3}$ and Fisk gives the standard triangulation proof
   \cite{Chvatal1975,Fisk1978}.  Shermer, O'Rourke, and Urrutia provide the
   main survey/book context \cite{Shermer1992,ORourke1987,Urrutia2000}.
 
+  % Intent: Identify the first orthogonal strengthening before moving to holes and perimeter.
   \item Orthogonal polygons admit stronger vertex-count theorems:
   Kahn--Klawe--Kleitman prove the tight $\floor{n/4}$ bound for simple
   orthogonal polygons \cite{KahnKlaweKleitman1983}.
 
+  % Intent: Separate vertex-guard hole conjectures from the perimeter-over-six question.
   \item Holes complicate the 2D theory.  Vertex-guard conjectures for
   orthogonal polygons with holes, especially Shermer's and Hoffmann's
   formulations, remain separate from the perimeter-over-six point-guard
   question \cite{UrrutiaOpenProblems,HoffmannKriegel1996,Zylinski2006}.
 
+  % Intent: Introduce the lattice models where perimeter and area become separate parameters.
   \item Polyominoes introduce area and lattice-perimeter parameters.  The
   tight area theorem allows holes \cite{BiedlEtAl2012}, while Ma{\ss}berg's
   perimeter-over-six theorem is proven for hole-free polyominoes and becomes
   conditional in the presence of holes \cite{Massberg2014,MassbergHabilitation}.
 
+  % Intent: Place the recent ortho-unit theorem as a narrow solved case of the perimeter program.
   \item Recent ortho-unit work proves a strong unit-edge theorem and states
   the broader integral-perimeter conjecture \cite{DiazBanezEtAl2025}.
 
+  % Intent: Explain why the 3D branch shifts from point guards to edge-like guards.
   \item In 3D, point guards are too weak for a planar-style theorem:
   orthogonal polyhedra need $\Theta(n^{3/2})$ point guards in the worst case
   \cite{PatersonYao1992,VigliettaThesis}.  Edge-guard and reflex-edge-guard
@@ -117,6 +127,7 @@ polyomino perimeter, integral perimeter, or a fixed unit-edge model.
 
 \section{One-Page Status Matrix}
 
+% Intent: Tell readers how to use the matrix and why model distinctions matter.
 Table~\ref{tab:status-matrix} is the fastest way to read the review.  The
 labels ``proven tight,'' ``conditional,'' ``conjectural,'' and ``open'' refer
 to the exact model in the first three columns; changing the guard type,
@@ -184,6 +195,7 @@ perimeter-over-six.}
 \section{Proof Techniques and Where They Break}
 
 \begin{description}
+  % Intent: Present coloring as the classical baseline and mark its perimeter limitation.
   \item[Triangulation and coloring.]
   Chvatal and Fisk establish the classical template for simple polygons
   \cite{Chvatal1975,Fisk1978}.  Kahn--Klawe--Kleitman and Gyori adapt
@@ -192,6 +204,7 @@ perimeter-over-six.}
   vertex-count bounds but does not directly produce a lattice-perimeter
   theorem.
 
+  % Intent: Explain the main decomposition route for orthogonal polygons with holes.
   \item[Quadrilateralization and cactus duals.]
   Orthogonal holes are often attacked by decomposing the domain into
   rectangles or quadrilaterals and coloring a dual structure.  Zylinski's
@@ -199,6 +212,7 @@ perimeter-over-six.}
   approachable in some cases but not yet resolved in full
   \cite{Zylinski2006}.
 
+  % Intent: Identify the method behind Massberg's theorem and the precise hole-case obstruction.
   \item[Rectangle packing and perfect-graph methods.]
   Motwani--Raghunathan--Saran, Worman--Keil, and Ma{\ss}berg connect
   orthogonal guarding with star polygons, rectangle systems, and perfect
@@ -208,6 +222,7 @@ perimeter-over-six.}
   Ma{\ss}berg's maximal-rectangle packing conjecture
   \cite{MassbergHabilitation}.
 
+  % Intent: Separate area-based polyomino theorems from perimeter-based ones.
   \item[Area and grid-cell arguments.]
   Biedl et al. prove the tight $\floor{(m+1)/3}$ theorem for polyominoes with
   holes by using the cell structure rather than perimeter
@@ -215,6 +230,7 @@ perimeter-over-six.}
   discrete model, but it leaves open whether perimeter alone controls the
   guard number.
 
+  % Intent: Clarify that computational hardness does not negate extremal guard bounds.
   \item[Hardness and approximation reductions.]
   Schuchardt--Hecker, Katz--Roisman, and later work on sliding cameras and
   transmitters show that optimization versions remain hard even in restricted
@@ -224,6 +240,7 @@ perimeter-over-six.}
   finding a minimum guard set is a different problem from proving a universal
   bound.
 
+  % Intent: Record the reason point guards are the wrong direct 3D analogue.
   \item[3D decomposition and binary-space partitions.]
   Paterson--Yao's binary-space-partition theorem, as used in Viglietta's
   survey, shows that point guards in orthogonal polyhedra have
@@ -232,6 +249,7 @@ perimeter-over-six.}
   project should not simply ask for a point-guard analogue of the planar
   perimeter theorem.
 
+  % Intent: Point to the 3D proof tradition that remains viable.
   \item[Edge-guard and reflex-edge induction.]
   Benbernou et al., Viglietta, and Cano--Toth--Urrutia--Viglietta show that
   the most promising 3D analogue is based on edges, reflex edges, and genus
@@ -244,10 +262,12 @@ perimeter-over-six.}
 \section{Status by Model}
 
 \begin{description}
+  % Intent: State the solved simple-orthogonal benchmark.
   \item[Simple orthogonal polygons, point guards.]
   Proven tight: every $n$-vertex simple orthogonal polygon is guardable by
   $\floor{n/4}$ point guards \cite{KahnKlaweKleitman1983,Gyori1986}.
 
+  % Intent: Summarize the hole results that are relevant but not perimeter results.
   \item[Orthogonal polygons with holes, vertex guards.]
   Several upper bounds and partial sharp results are known.  O'Rourke gives
   the classical $\floor{(n+2h)/4}$ style bound for $h$ holes
@@ -256,41 +276,49 @@ perimeter-over-six.}
   $h \leq 2$ and cactus-dual quadrilateralizations
   \cite{UrrutiaOpenProblems,Zylinski2006}.
 
+  % Intent: State the proven perimeter-over-six theorem in its exact model.
   \item[Hole-free polyominoes, point guards, lattice perimeter $\ell$.]
   Proven tight: for $\ell \geq 6$, Ma{\ss}berg proves that $\loversix$ point
   guards suffice \cite{Massberg2014}.  Use $\max\{1,\loversix\}$ if the
   one-square case is included.
 
+  % Intent: Mark the polyomino-with-holes perimeter statement as conditional rather than proven.
   \item[Polyominoes with holes, point guards, lattice perimeter $\ell$.]
   Open/conditional.  Ma{\ss}berg's text explicitly states that the extension
   to holes would follow from a maximal-rectangle packing conjecture
   \cite{MassbergHabilitation}.  \NoProofFound
 
+  % Intent: Record the strongest clean theorem for holes while distinguishing area from perimeter.
   \item[Polyominoes with holes, point guards, area $m$.]
   Proven tight: every $m$-cell polyomino, holes allowed, is guardable by
   $\floor{(m+1)/3}$ point guards \cite{BiedlEtAl2012}.  This does not settle
   perimeter-over-six.
 
+  % Intent: Explain the narrow unit-edge result and why it is stronger than P/6 there.
   \item[Ortho-unit polygons, point guards.]
   Proven tight: every ortho-unit polygon with $n \geq 12$ vertices is guardable
   by $\floor{(n-4)/8}$ guards \cite{DiazBanezEtAl2025}.  Since $n=P$ in the
   ortho-unit model, this is stronger than $P/6$ for that narrow class.
 
+  % Intent: Identify the broad 2D perimeter conjecture that remains open.
   \item[Integral orthogonal polygons, point guards, perimeter $N$.]
   Open.  Diaz-Banez et al. state the natural conjecture that
   $\floor{N/6}$ guards suffice \cite{DiazBanezEtAl2025}.  \NoProofFound
 
+  % Intent: Locate polycubes as a related discrete branch rather than the same continuous problem.
   \item[Polycubes and polyhypercubes.]
   Pinciu studies discrete polyform variants, including polycubes and
   polyhypercubes \cite{Pinciu2015}.  These are relevant for 3D lattice
   analogues, but they use a discrete polyform/visibility-graph framework rather
   than the continuous point-guard model for orthogonal polyhedra.
 
+  % Intent: State the 3D point-guard obstruction in terms of vertices.
   \item[Orthogonal polyhedra, point guards.]
   No planar-style linear theorem exists in terms of vertices.  The Paterson--Yao
   bound gives $\Theta(n^{3/2})$ point guards as sufficient and sometimes
   necessary for $n$-vertex orthogonal polyhedra \cite{PatersonYao1992,VigliettaThesis}.
 
+  % Intent: Summarize the edge/reflex-edge status as the main open 3D path.
   \item[Orthogonal polyhedra, edge and reflex-edge guards.]
   The central open direction is an Urrutia-type edge-guard theorem:
   lower-bound examples require roughly $m/12$ edge guards, while known upper
@@ -307,6 +335,7 @@ perimeter-over-six.}
 
 \subsection{Classical Background}
 
+% Intent: Establish the classical art-gallery baseline and cite the standard surveys.
 The original art-gallery theorem is due to Chvatal: $\floor{n/3}$ guards
 always suffice for a simple $n$-vertex polygon, and this is tight
 \cite{Chvatal1975}.  Fisk's short proof via triangulation and three-coloring
@@ -321,6 +350,7 @@ restricted orthogonal and lattice models are usually treated separately
 
 \subsection{Simple Orthogonal Polygons}
 
+% Intent: State the standard orthogonal vertex theorem and separate it from perimeter questions.
 Kahn, Klawe, and Kleitman prove the tight orthogonal theorem:
 $\floor{n/4}$ point guards suffice for every simple orthogonal polygon with
 $n$ vertices \cite{KahnKlaweKleitman1983}.  Gyori gives a short proof
@@ -329,6 +359,7 @@ theorem.  In a lattice setting the vertex count and the perimeter may be very
 different, which is why the polyomino and integral-perimeter questions are
 separate.
 
+% Intent: Connect the simple-polygon theorem to later decomposition and edge-guard methods.
 The proof tradition connects to decomposition, coloring, and perfect-graph
 methods.  Motwani, Raghunathan, and Saran study covering orthogonal polygons
 with star polygons \cite{MotwaniRaghunathanSaran1990}; Worman and Keil develop
@@ -339,6 +370,7 @@ point for later edge-guard models \cite{BjorlingSachs1998}.
 
 \subsection{Holes}
 
+% Intent: Summarize the main orthogonal-with-holes conjectures without conflating them with P/6.
 Holes are one of the main fault lines in the literature.  For orthogonal
 polygons with $h$ holes, classical vertex-guard bounds exist, but the strongest
 natural conjectures are not settled in general.  Urrutia's open-problem list
@@ -352,6 +384,7 @@ Kriegel prove graph-coloring consequences for rectilinear polygons with holes,
 including upper bounds for rectilinear prison-yard variants
 \cite{HoffmannKriegel1996}.
 
+% Intent: Give the reader the precise reason these hole results do not answer the target question.
 These hole results are relevant context, but they do not prove the
 perimeter-over-six statement.  They usually concern vertex guards and vertex
 counts; the perimeter-over-six problem concerns point guards and lattice
@@ -361,6 +394,7 @@ perimeter.
 
 \subsection{Hole-Free Polyominoes}
 
+% Intent: State Massberg's theorem and its proof mechanism in the exact hole-free setting.
 Ma{\ss}berg proves the direct perimeter theorem for hole-free polyominoes
 \cite{Massberg2014}.  In the notation of that paper, if a hole-free polyomino
 has perimeter $\ell \geq 6$, then it can be guarded by at most $\loversix$
@@ -370,6 +404,7 @@ bounds the packing by the perimeter.  Comb-like examples show tightness.
 
 \subsection{Polyominoes with Holes}
 
+% Intent: Present the area theorem as the main proven holes result and distinguish its parameter.
 The area theorem does allow holes: Biedl, Irfan, Iwerks, Kim, and Mitchell
 prove that every $m$-cell polyomino can be guarded by
 $\floor{(m+1)/3}$ point guards, and the bound is tight
@@ -377,6 +412,7 @@ $\floor{(m+1)/3}$ point guards, and the bound is tight
 polyominoes with holes in the standard point-guard model, but it is an area
 bound rather than a perimeter bound.
 
+% Intent: Identify the exact dependency that keeps the perimeter hole case open.
 For perimeter, the hole case remains conditional.  Ma{\ss}berg observes that
 the perimeter theorem would extend to holes if a maximal-rectangle packing
 conjecture were true \cite{MassbergHabilitation}.  The important point for a
@@ -385,12 +421,14 @@ It identifies the missing structural statement.
 
 \subsection{Ortho-Unit and Integral Orthogonal Polygons}
 
+% Intent: Position the ortho-unit theorem as a solved unit-edge special case.
 Diaz-Banez et al. prove that every ortho-unit polygon with $n \geq 12$ vertices
 can be guarded by $\floor{(n-4)/8}$ guards, and that the bound is tight
 \cite{DiazBanezEtAl2025}.  Since every edge has unit length in an ortho-unit
 polygon, $n$ is the perimeter.  This solves a narrow unit-edge class more
 strongly than $P/6$.
 
+% Intent: State the broader integral conjecture as the closest published perimeter-over-six problem.
 The same paper frames the broader integral-perimeter conjecture: every
 integral orthogonal polygon of perimeter $N$ should be guardable by
 $\floor{N/6}$ point guards.  This remains the closest published statement of
@@ -400,6 +438,7 @@ the general perimeter-over-six problem beyond hole-free polyominoes.
 
 \subsection{Point Guards}
 
+% Intent: Explain why continuous 3D point guarding is not the right analogue.
 The direct 3D point-guard analogue of planar art-gallery theorems fails.  In
 orthogonal polyhedra with $n$ vertices, Paterson and Yao's binary-space
 partition result implies a tight $\Theta(n^{3/2})$ point-guard bound
@@ -411,6 +450,7 @@ with orthogonal polyhedra and keeping point guards.
 
 \subsection{Edge and Reflex-Edge Guards}
 
+% Intent: Introduce the Urrutia-style edge and reflex-edge conjectures as the main 3D replacement.
 The 3D literature often treats edge guards as the analogue of planar vertex
 guards.  Urrutia conjectured that an orthogonal polyhedron with $m$ edges
 should be guardable by $m/12+O(1)$ closed edge guards, matching known lower
@@ -418,6 +458,7 @@ bound examples up to an additive constant \cite{VigliettaThesis}.  A related
 reflex-edge conjecture asks whether roughly $(r-g)/2+1$ reflex edge guards
 suffice, where $r$ is the number of reflex edges and $g$ is the genus.
 
+% Intent: Summarize the strongest orthogonal-polyhedron partial upper bounds.
 Benbernou, Demaine, Demaine, Kurdia, O'Rourke, Toussaint, Urrutia, and
 Viglietta improve the known asymptotic upper bounds for orthogonal polyhedra:
 $(11/72)m$ edge guards suffice in terms of total edges, and $(7/12)r$ suffice
@@ -427,6 +468,7 @@ polyhedra whose reflex edges occur in only two directions
 \cite{Viglietta2020}.  These are major partial results, but they do not settle
 the general 3-reflex orthogonal-polyhedron conjectures.
 
+% Intent: Record the broader 3D edge-guard bound and the remaining gap.
 Cano, Toth, Urrutia, and Viglietta give a broad theorem for arbitrary
 polyhedra in three-space: every polyhedron with $m$ edges can be guarded by at
 most $(5/6)m$ edge guards \cite{CanoTothUrrutiaViglietta2022}.  This improves
@@ -436,12 +478,14 @@ $m/12+O(1)$ orthogonal-polyhedron conjecture.
 
 \subsection{Face Guards and Polycube Variants}
 
+% Intent: Mention face guards as part of the 3D model space without making them the target model.
 Face guards are another 3D model.  Viglietta studies face-guarding for several
 classes of polyhedra, including orthogonal polyhedra, 4-oriented polyhedra, and
 2-reflex orthostacks \cite{VigliettaFace2014}.  Face guards are useful for
 mapping the 3D model space, but they are not a direct continuation of the
 point-guard perimeter-over-six question.
 
+% Intent: Point discrete 3D work toward polycube and polyhypercube models.
 For lattice 3D objects, Pinciu's work on polycubes and polyhypercubes gives a
 discrete polyform line of results \cite{Pinciu2015}.  This is the natural
 place to look if the intended 3D project is voxel/discrete rather than
@@ -449,22 +493,27 @@ continuous orthogonal-polyhedron visibility.
 
 \section{How Open Status Is Classified}
 
+% Intent: Define the evidence labels that will be used in the quote and problem sections.
 This review uses the following labels for open-problem evidence.
 
 \begin{description}
+  % Intent: Reserve the strongest label for matching upper and lower bounds in the same model.
   \item[Proven tight.]
   A peer-reviewed theorem gives an upper bound and a matching lower-bound
   construction in the same model.
 
+  % Intent: Distinguish named conjectures from the review's own derived directions.
   \item[Source-stated conjecture.]
   A paper, thesis, or curated open-problem page explicitly states the question
   as a conjecture or open problem.
 
+  % Intent: Flag results that depend on an unproved intermediate statement.
   \item[Conditional theorem gap.]
   A source claims that a desired result follows if another named conjecture or
   structural lemma is true.  The downstream result should be cited as
   conditional, not as proven.
 
+  % Intent: Keep speculative research directions useful but clearly marked.
   \item[Derived research direction.]
   The review identifies a natural next question by comparing known theorems
   and failures.  These are useful project directions, but they should not be
@@ -473,9 +522,11 @@ This review uses the following labels for open-problem evidence.
 
 \section{Quoted Open-Problem Evidence}
 
+% Intent: Explain why short quotes appear here and how they should be read.
 The following short quotations are included only to document open status.  Each
 quote is followed by the conclusion that should be drawn from it.
 
+% Intent: Show the conditional phrase that blocks the hole extension.
 \begin{quote}
 ``If this conjecture is true''
 
@@ -484,11 +535,13 @@ quote is followed by the conclusion that should be drawn from it.
 \end{quote}
 
 \noindent
+% Intent: Interpret the Massberg quote as a dependency, not a theorem.
 \textbf{Status confirmed.}  Ma{\ss}berg's hole extension is conditional on
 Conjecture 6.10, not proven.  The conjecture concerns whether a packing of
 maximal rectangles bounds the guard number in rectilinear galleries with holes.
 \NoProofFound
 
+% Intent: Include the tempting hole-extension phrase while preserving the missing hypothesis.
 \begin{quote}
 ``also true for polyominoes with holes''
 
@@ -497,10 +550,12 @@ maximal rectangles bounds the guard number in rectilinear galleries with holes.
 \end{quote}
 
 \noindent
+% Intent: Warn against citing the conditional conclusion by itself.
 \textbf{Status confirmed.}  This quote must not be used without the preceding
 condition.  The published theorem is hole-free; the hole case is a stated
 conditional extension.
 
+% Intent: Quote the current integral-perimeter conjecture in its published form.
 \begin{quote}
 ``guarded with at most $\floor{N/6}$ guards''
 
@@ -509,10 +564,12 @@ conditional extension.
 \end{quote}
 
 \noindent
+% Intent: Separate the proved ortho-unit theorem from the broader integral conjecture.
 \textbf{Status confirmed.}  This is a conjecture in the 2025 ortho-unit paper.
 The paper proves the ortho-unit theorem, not the full integral orthogonal
 polygon conjecture.  \NoProofFound
 
+% Intent: Record Shermer's holes conjecture while keeping the guard model explicit.
 \begin{quote}
 ``Floor[(n+h)/4] vertex guards''
 
@@ -521,10 +578,12 @@ polygon conjecture.  \NoProofFound
 \end{quote}
 
 \noindent
+% Intent: Prevent a vertex-guard conjecture from being mistaken for a point-guard perimeter theorem.
 \textbf{Status confirmed.}  This is a vertex-guard conjecture for orthogonal
 polygons with holes.  It is relevant to holes, but it is not the same as the
 point-guard perimeter-over-six question.
 
+% Intent: Quote the 3D point-guard obstruction.
 \begin{quote}
 ``no linear upper bound''
 
@@ -533,9 +592,11 @@ point-guard perimeter-over-six question.
 \end{quote}
 
 \noindent
+% Intent: Use the quote to justify moving from 3D point guards to edge-like guards.
 \textbf{Status confirmed.}  This is the main reason 3D point guards should not
 be treated as a direct analogue of the 2D perimeter theorem.
 
+% Intent: Quote the explicit open gap in 3D edge guarding.
 \begin{quote}
 ``Further reducing this gap is left as an open problem.''
 
@@ -544,10 +605,12 @@ be treated as a direct analogue of the 2D perimeter theorem.
 \end{quote}
 
 \noindent
+% Intent: Record that the edge-guard gap is source-confirmed.
 \textbf{Status confirmed.}  As of the 2022 general edge-guard paper, the gap
 between lower bounds and upper bounds for edge guarding polyhedra remains an
 explicit open problem.
 
+% Intent: Include a current related discrete visibility open problem without overstating relevance.
 \begin{quote}
 ``Is there a constant-factor approximation for polyominoes with holes?''
 
@@ -556,17 +619,20 @@ explicit open problem.
 \end{quote}
 
 \noindent
+% Intent: Classify the k-hop question as adjacent rather than part of the standard model.
 \textbf{Status confirmed.}  This is a current open problem in a related
 discrete visibility model, not in standard continuous point-guard visibility.
 
 \section{Relevant Open Problems}
 
+% Intent: Give readers a roadmap through the open-problem list before the details.
 Problems 1--3 are closest to the perimeter-over-six question.  Problems 4--5
 are the main 2D orthogonal-with-holes vertex-guard conjectures.  Problems 7--10
 are the 3D orthogonal-polyhedron directions.  Each item records whether its
 open status is source-stated, conditional, or derived from the literature.
 
 \begin{enumerate}
+  % Intent: State the most direct unresolved perimeter-over-six question.
   \item \textbf{Perimeter-over-six for polyominoes with holes.}
 
   \emph{Kind: conditional theorem gap; priority: high.}
@@ -578,6 +644,7 @@ open status is source-stated, conditional, or derived from the literature.
   \emph{Open-status check:} confirmed by Ma{\ss}berg's conditional wording in
   the habilitation text; \NoProofFound
 
+  % Intent: Isolate the structural conjecture that would imply the hole case.
   \item \textbf{Ma{\ss}berg's maximal-rectangle packing conjecture for holes.}
 
   \emph{Kind: source-stated conjecture; priority: high.}
@@ -589,6 +656,7 @@ open status is source-stated, conditional, or derived from the literature.
   Ma{\ss}berg's text.  A proof would extend the hole-free perimeter theorem to
   polyominoes with holes.
 
+  % Intent: State the broadest current 2D lattice-perimeter conjecture.
   \item \textbf{Integral orthogonal polygon perimeter conjecture.}
 
   \emph{Kind: source-stated conjecture; priority: high.}
@@ -599,6 +667,7 @@ open status is source-stated, conditional, or derived from the literature.
   \emph{Open-status check:} source-confirmed as the natural conjecture in the
   2025 ortho-unit paper; \NoProofFound
 
+  % Intent: Record the main vertex-guard conjecture for orthogonal polygons with holes.
   \item \textbf{Shermer's vertex-guard conjecture for orthogonal polygons with holes.}
 
   \emph{Kind: source-stated conjecture; priority: medium-high.}
@@ -610,6 +679,7 @@ open status is source-stated, conditional, or derived from the literature.
   Zylinski proves important partial cases, including Aggarwal's $h\leq 2$
   theorem.
 
+  % Intent: Record the second major vertex-guard conjecture for holes.
   \item \textbf{Hoffmann's vertex-guard conjecture for orthogonal polygons with holes.}
 
   \emph{Kind: source-stated conjecture; priority: medium.}
@@ -620,6 +690,7 @@ open status is source-stated, conditional, or derived from the literature.
   \emph{Open-status check:} Urrutia's page records this as a distinct open
   conjecture.  It is vertex-count based and does not imply perimeter-over-six.
 
+  % Intent: Provide a fallback research direction if P/6 fails with holes.
   \item \textbf{If perimeter-over-six with holes is false, find the correction term.}
 
   \emph{Kind: derived research direction; priority: high if counterexamples emerge.}
@@ -630,6 +701,7 @@ open status is source-stated, conditional, or derived from the literature.
   \emph{Open-status check:} this is a derived research direction, not a named
   source conjecture.  It follows from the current gap in the hole case.
 
+  % Intent: State the central edge-guard conjecture for orthogonal polyhedra.
   \item \textbf{3D Urrutia edge-guard conjecture for orthogonal polyhedra.}
 
   \emph{Kind: source-stated conjecture; priority: high for 3D.}
@@ -641,6 +713,7 @@ open status is source-stated, conditional, or derived from the literature.
   edge-guard literature; partial upper bounds are known, but the general
   conjecture is not settled.
 
+  % Intent: State the reflex-edge conjecture and its restricted solved case.
   \item \textbf{3D reflex-edge conjecture for orthogonal polyhedra.}
 
   \emph{Kind: source-stated conjecture with proven restricted cases; priority: high for 3D.}
@@ -651,6 +724,7 @@ open status is source-stated, conditional, or derived from the literature.
   \emph{Open-status check:} Viglietta proves this for 2-reflex orthogonal
   polyhedra and states the general version as a conjecture.
 
+  % Intent: Include the general edge-guard gap as a broader 3D problem.
   \item \textbf{Close the general 3D edge-guard gap.}
 
   \emph{Kind: source-stated open problem; priority: medium-high.}
@@ -661,6 +735,7 @@ open status is source-stated, conditional, or derived from the literature.
   \emph{Open-status check:} Cano, Toth, Urrutia, and Viglietta explicitly
   state that reducing this gap remains open.
 
+  % Intent: Emphasize that 3D progress depends on choosing the right parameter first.
   \item \textbf{Choose the correct 3D analogue of perimeter.}
 
   \emph{Kind: derived research direction; priority: high before theorem work.}
@@ -672,6 +747,7 @@ open status is source-stated, conditional, or derived from the literature.
   literature: point guards have a superlinear vertex bound, while edge/reflex
   edge and polycube models have different behavior.
 
+  % Intent: Add algorithmic questions without mixing them with extremal bound questions.
   \item \textbf{Algorithmic complexity and approximation for restricted orthogonal models.}
 
   \emph{Kind: mixed source-stated and derived direction; priority: medium.}
@@ -689,6 +765,7 @@ open status is source-stated, conditional, or derived from the literature.
 
 \section{Search Method and Source-Quality Notes}
 
+% Intent: Make the literature-search basis auditable without interrupting the main survey.
 This review was checked on May 22, 2026.  The source search prioritized
 peer-reviewed theorem statements, author-posted PDFs, theses when they contain
 explicit conjectures or model summaries, and curated open-problem pages by
@@ -703,6 +780,7 @@ researchers in the area.  Searches used combinations of:
   \item \texttt{k-hop visibility polyominoes holes}.
 \end{itemize}
 
+% Intent: Rank source authority so readers can judge the confidence of each claim.
 The review treats sources in the following order of strength:
 \begin{enumerate}
   \item Peer-reviewed theorem sources with exact guard model and parameter.
@@ -713,6 +791,7 @@ The review treats sources in the following order of strength:
   \item Derived questions created by comparing the known theorems and gaps.
 \end{enumerate}
 
+% Intent: Clarify that the search outcome is evidence, not a formal proof of openness.
 The phrase ``no later proof was found'' is not itself a mathematical proof of
 openness.  It records the outcome of this search and is included to prevent
 conditional statements from being accidentally cited as established theorems.
@@ -721,6 +800,7 @@ conditional statements from being accidentally cited as established theorems.
 
 \subsection*{Journals}
 
+% Intent: List journals where related discrete geometry, algorithms, and visibility work appears.
 \begin{itemize}
   \item \emph{Discrete \& Computational Geometry}
   \item \emph{Computational Geometry: Theory and Applications}
@@ -745,6 +825,7 @@ conditional statements from being accidentally cited as established theorems.
 
 \subsection*{Conferences and Workshops}
 
+% Intent: List conference venues likely to carry new results before journal publication.
 \begin{itemize}
   \item Symposium on Computational Geometry (SoCG)
   \item European Workshop on Computational Geometry (EuroCG)
@@ -762,6 +843,7 @@ conditional statements from being accidentally cited as established theorems.
 
 \subsection*{Foundational Art-Gallery Theory}
 
+% Intent: Group the foundational sources that define the classical art-gallery baseline.
 \begin{description}
   \item[Chvatal \cite{Chvatal1975} and Fisk \cite{Fisk1978}.]
   Foundational $\floor{n/3}$ theorem for simple polygons and the short
@@ -782,6 +864,7 @@ conditional statements from being accidentally cited as established theorems.
 
 \subsection*{2D Orthogonal Polygons and Holes}
 
+% Intent: Group sources on orthogonal polygons, holes, and related hardness.
 \begin{description}
   \item[Kahn--Klawe--Kleitman \cite{KahnKlaweKleitman1983}.]
   Primary source for the tight $\floor{n/4}$ theorem for simple orthogonal
@@ -820,6 +903,7 @@ conditional statements from being accidentally cited as established theorems.
 
 \subsection*{Polyomino, Perimeter, and Lattice Variants}
 
+% Intent: Group sources most directly connected to lattice perimeter and polyomino guarding.
 \begin{description}
   \item[Ma{\ss}berg \cite{Massberg2014}.]
   Primary peer-reviewed source for perimeter-over-six in hole-free
@@ -848,6 +932,7 @@ conditional statements from being accidentally cited as established theorems.
 
 \subsection*{3D Orthogonal Polyhedra}
 
+% Intent: Group the 3D sources by point, edge, reflex-edge, and face-guard models.
 \begin{description}
   \item[Paterson--Yao \cite{PatersonYao1992}.]
   Binary-space partition result used for the $\Theta(n^{3/2})$ point-guard
@@ -875,6 +960,7 @@ conditional statements from being accidentally cited as established theorems.
 
 \subsection*{Algorithms and Related Visibility Models}
 
+% Intent: Group algorithmic and variant-model sources separately from extremal theorem sources.
 \begin{description}
   \item[Motwani--Raghunathan--Saran \cite{MotwaniRaghunathanSaran1990}.]
   Perfect-graph approach to covering orthogonal polygons with star polygons.
@@ -893,24 +979,29 @@ conditional statements from being accidentally cited as established theorems.
 \section{Working Conclusions}
 
 \begin{enumerate}
+  % Intent: Give the citation rule for the proven perimeter-over-six theorem.
   \item The theorem ``$\ell/6$ guards suffice'' should be cited as proven only
   for \emph{hole-free polyominoes}.  The polyomino-with-holes version is
   conditional on Ma{\ss}berg's rectangle-packing conjecture and should be
   described as open unless a new proof is supplied.
 
+  % Intent: State the status of the broad integral perimeter statement.
   \item The broad integral statement ``an integral orthogonal polygon of
   perimeter $N$ is guardable by $\floor{N/6}$ guards'' is a current conjecture,
   not a theorem.
 
+  % Intent: Preserve the corrected 3D terminology for future writing.
   \item The right 3D terminology is \emph{orthogonal polyhedron} or
   \emph{orthogonal polytope}.  ``Orthonormal'' should not be used for the
   gallery object.
 
+  % Intent: Make the central 3D modeling recommendation explicit.
   \item A 3D point-guard analogue of the planar perimeter theorem is blocked by
   the $\Theta(n^{3/2})$ point-guard bound.  A serious 3D project should choose
   edge guards, reflex-edge guards, face guards, or a discrete polycube
   visibility model explicitly.
 
+  % Intent: End with the most promising project targets.
   \item The strongest project targets suggested by this review are:
   prove or refute Ma{\ss}berg's hole-packing conjecture; prove or refute the
   integral $\floor{N/6}$ conjecture; or make progress on the Urrutia
