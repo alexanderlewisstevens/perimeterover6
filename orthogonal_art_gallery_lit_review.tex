@@ -1,0 +1,897 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\setlist[itemize]{leftmargin=*, itemsep=0.35em}
+\setlist[enumerate]{leftmargin=*, itemsep=0.45em}
+\setlist[description]{style=nextline, leftmargin=1.5em, labelsep=0.5em, itemsep=0.45em, font=\normalfont\bfseries}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\loversix}{\floor{\ell/6}}
+\newcommand{\NoProofFound}{No later proof was found in this literature search, current to May 22, 2026.}
+
+\title{Literature Review: Art Gallery Problems for Orthogonal Polygons and Orthogonal Polyhedra}
+\author{}
+\date{May 22, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This review organizes the art-gallery literature most relevant to perimeter-type
+guard bounds for orthogonal objects.  In two dimensions, the perimeter-over-six
+question is meaningful only after fixing a lattice scale: it is proven for
+hole-free polyominoes, conditional/open for polyominoes with holes, and open
+for general integral orthogonal polygons.  In three dimensions, the standard
+term is \emph{orthogonal polyhedron} or \emph{orthogonal polytope}, not
+``orthonormal.''  A direct point-guard analogue of the planar theorem fails:
+orthogonal polyhedra may require $\Theta(n^{3/2})$ point guards.  The natural
+3D analogue therefore shifts to edge guards, reflex-edge guards, face guards,
+or discrete polycube visibility models, where several Urrutia-type conjectures
+remain open.
+\end{abstract}
+
+\section{Reading Guide and Terminology}
+
+\paragraph{2D objects.}
+An \emph{orthogonal polygon} is a polygon whose edges are horizontal or
+vertical.  A \emph{polyomino} is a finite edge-connected union of unit
+axis-parallel squares; its perimeter is naturally the number of unit boundary
+edges, including hole boundaries when holes are present.  An \emph{integral
+orthogonal polygon} has integer coordinates, so its perimeter is a lattice
+length.  An \emph{ortho-unit polygon} is an orthogonal polygon all of whose
+edges have length one; in that model, the number of vertices equals the
+perimeter.
+
+\paragraph{3D objects.}
+The standard 3D term is \emph{orthogonal polyhedron}: a polyhedron whose faces
+are axis-aligned, equivalently whose face normals are coordinate directions.
+In higher dimensions, the corresponding term is \emph{orthogonal polytope}.
+The word \emph{orthonormal} describes vectors or bases, not galleries.
+Polycubes are the voxel analogue of polyominoes and form a discrete subclass
+of orthogonal polyhedra.
+
+\paragraph{Guard models.}
+Unless a section says otherwise, a 2D guard is a standard point guard with
+straight-line visibility inside the polygon.  In 3D the model must be stated:
+the literature distinguishes point guards, vertex guards, edge guards,
+reflex-edge guards, face guards, open edge guards, and discrete polycube
+visibility graph models.  These models are not interchangeable.
+
+\paragraph{Why perimeter needs a lattice scale.}
+No theorem of the form ``at most $P/6$ guards'' can hold for arbitrary
+real-coordinate orthogonal polygons if $P$ is Euclidean perimeter: scaling a
+polygon down preserves the guard number while making $P$ arbitrarily small.
+The perimeter-over-six question is therefore a lattice-normalized question:
+polyomino perimeter, integral perimeter, or a fixed unit-edge model.
+
+\section{Flow of the Literature}
+
+\begin{enumerate}
+  \item Classical art-gallery theorems start with arbitrary simple polygons:
+  Chvatal proves $\floor{n/3}$ and Fisk gives the standard triangulation proof
+  \cite{Chvatal1975,Fisk1978}.  Shermer, O'Rourke, and Urrutia provide the
+  main survey/book context \cite{Shermer1992,ORourke1987,Urrutia2000}.
+
+  \item Orthogonal polygons admit stronger vertex-count theorems:
+  Kahn--Klawe--Kleitman prove the tight $\floor{n/4}$ bound for simple
+  orthogonal polygons \cite{KahnKlaweKleitman1983}.
+
+  \item Holes complicate the 2D theory.  Vertex-guard conjectures for
+  orthogonal polygons with holes, especially Shermer's and Hoffmann's
+  formulations, remain separate from the perimeter-over-six point-guard
+  question \cite{UrrutiaOpenProblems,HoffmannKriegel1996,Zylinski2006}.
+
+  \item Polyominoes introduce area and lattice-perimeter parameters.  The
+  tight area theorem allows holes \cite{BiedlEtAl2012}, while Ma{\ss}berg's
+  perimeter-over-six theorem is proven for hole-free polyominoes and becomes
+  conditional in the presence of holes \cite{Massberg2014,MassbergHabilitation}.
+
+  \item Recent ortho-unit work proves a strong unit-edge theorem and states
+  the broader integral-perimeter conjecture \cite{DiazBanezEtAl2025}.
+
+  \item In 3D, point guards are too weak for a planar-style theorem:
+  orthogonal polyhedra need $\Theta(n^{3/2})$ point guards in the worst case
+  \cite{PatersonYao1992,VigliettaThesis}.  Edge-guard and reflex-edge-guard
+  conjectures become the main 3D analogue \cite{BenbernouEtAl2011,Viglietta2020,CanoTothUrrutiaViglietta2022}.
+\end{enumerate}
+
+\section{Status by Model}
+
+\begin{description}
+  \item[Simple orthogonal polygons, point guards.]
+  Proven tight: every $n$-vertex simple orthogonal polygon is guardable by
+  $\floor{n/4}$ point guards \cite{KahnKlaweKleitman1983,Gyori1986}.
+
+  \item[Orthogonal polygons with holes, vertex guards.]
+  Several upper bounds and partial sharp results are known.  O'Rourke gives
+  the classical $\floor{(n+2h)/4}$ style bound for $h$ holes
+  \cite{ORourke1987}.  Shermer's stronger $\floor{(n+h)/4}$ conjecture is
+  open in general; Zylinski gives a coloring proof of Aggarwal's theorem for
+  $h \leq 2$ and cactus-dual quadrilateralizations
+  \cite{UrrutiaOpenProblems,Zylinski2006}.
+
+  \item[Hole-free polyominoes, point guards, lattice perimeter $\ell$.]
+  Proven tight: for $\ell \geq 6$, Ma{\ss}berg proves that $\loversix$ point
+  guards suffice \cite{Massberg2014}.  Use $\max\{1,\loversix\}$ if the
+  one-square case is included.
+
+  \item[Polyominoes with holes, point guards, lattice perimeter $\ell$.]
+  Open/conditional.  Ma{\ss}berg's text explicitly states that the extension
+  to holes would follow from a maximal-rectangle packing conjecture
+  \cite{MassbergHabilitation}.  \NoProofFound
+
+  \item[Polyominoes with holes, point guards, area $m$.]
+  Proven tight: every $m$-cell polyomino, holes allowed, is guardable by
+  $\floor{(m+1)/3}$ point guards \cite{BiedlEtAl2012}.  This does not settle
+  perimeter-over-six.
+
+  \item[Ortho-unit polygons, point guards.]
+  Proven tight: every ortho-unit polygon with $n \geq 12$ vertices is guardable
+  by $\floor{(n-4)/8}$ guards \cite{DiazBanezEtAl2025}.  Since $n=P$ in the
+  ortho-unit model, this is stronger than $P/6$ for that narrow class.
+
+  \item[Integral orthogonal polygons, point guards, perimeter $N$.]
+  Open.  Diaz-Banez et al. state the natural conjecture that
+  $\floor{N/6}$ guards suffice \cite{DiazBanezEtAl2025}.  \NoProofFound
+
+  \item[Polycubes and polyhypercubes.]
+  Pinciu studies discrete polyform variants, including polycubes and
+  polyhypercubes \cite{Pinciu2015}.  These are relevant for 3D lattice
+  analogues, but they use a discrete polyform/visibility-graph framework rather
+  than the continuous point-guard model for orthogonal polyhedra.
+
+  \item[Orthogonal polyhedra, point guards.]
+  No planar-style linear theorem exists in terms of vertices.  The Paterson--Yao
+  bound gives $\Theta(n^{3/2})$ point guards as sufficient and sometimes
+  necessary for $n$-vertex orthogonal polyhedra \cite{PatersonYao1992,VigliettaThesis}.
+
+  \item[Orthogonal polyhedra, edge and reflex-edge guards.]
+  The central open direction is an Urrutia-type edge-guard theorem:
+  lower-bound examples require roughly $m/12$ edge guards, while known upper
+  bounds are larger.  Benbernou et al. improve the orthogonal upper bound to
+  asymptotic $(11/72)m$ edge guards, or $(7/12)r$ in terms of reflex edges
+  \cite{BenbernouEtAl2011}.  Viglietta proves optimal-style bounds for
+  2-reflex orthogonal polyhedra \cite{Viglietta2020}.  Cano, Toth, Urrutia,
+  and Viglietta improve the general 3D polyhedron edge-guard bound to
+  $(5/6)m$, while noting a substantial remaining gap
+  \cite{CanoTothUrrutiaViglietta2022}.
+\end{description}
+
+\section{Two-Dimensional Orthogonal Polygons}
+
+\subsection{Classical Background}
+
+The original art-gallery theorem is due to Chvatal: $\floor{n/3}$ guards
+always suffice for a simple $n$-vertex polygon, and this is tight
+\cite{Chvatal1975}.  Fisk's short proof via triangulation and three-coloring
+became the standard proof template \cite{Fisk1978}.  O'Rourke's book remains
+the standard comprehensive reference for the classical theory
+\cite{ORourke1987}; Shermer and Urrutia survey art-gallery and illumination
+problems, including variants and open problems \cite{Shermer1992,Urrutia2000}.
+On the algorithmic side, Abrahamsen, Adamaszek, and Miltzow prove that the
+general art-gallery problem is $\exists\mathbb{R}$-complete, underscoring why
+restricted orthogonal and lattice models are usually treated separately
+\cite{AbrahamsenAdamaszekMiltzow2022}.
+
+\subsection{Simple Orthogonal Polygons}
+
+Kahn, Klawe, and Kleitman prove the tight orthogonal theorem:
+$\floor{n/4}$ point guards suffice for every simple orthogonal polygon with
+$n$ vertices \cite{KahnKlaweKleitman1983}.  Gyori gives a short proof
+\cite{Gyori1986}.  This theorem is a vertex-count theorem, not a perimeter
+theorem.  In a lattice setting the vertex count and the perimeter may be very
+different, which is why the polyomino and integral-perimeter questions are
+separate.
+
+The proof tradition connects to decomposition, coloring, and perfect-graph
+methods.  Motwani, Raghunathan, and Saran study covering orthogonal polygons
+with star polygons \cite{MotwaniRaghunathanSaran1990}; Worman and Keil develop
+decomposition and visibility-graph machinery for orthogonal art-gallery
+problems \cite{WormanKeil2007}.  Bj{\o}rling-Sachs proves the tight
+$\floor{n/4}$ edge-guard bound for rectilinear polygons, a useful 2D reference
+point for later edge-guard models \cite{BjorlingSachs1998}.
+
+\subsection{Holes}
+
+Holes are one of the main fault lines in the literature.  For orthogonal
+polygons with $h$ holes, classical vertex-guard bounds exist, but the strongest
+natural conjectures are not settled in general.  Urrutia's open-problem list
+records Shermer's conjecture that an $n$-vertex orthogonal polygon with $h$
+holes should be guardable by $\floor{(n+h)/4}$ vertex guards, and Hoffmann's
+conjecture that $\floor{2n/7}$ vertex guards should suffice for orthogonal
+polygons with holes \cite{UrrutiaOpenProblems}.  Zylinski proves the
+$\floor{(n+h)/4}$ bound under a cactus-dual quadrilateralization condition and
+recovers Aggarwal's theorem for $h \leq 2$ \cite{Zylinski2006}.  Hoffmann and
+Kriegel prove graph-coloring consequences for rectilinear polygons with holes,
+including upper bounds for rectilinear prison-yard variants
+\cite{HoffmannKriegel1996}.
+
+These hole results are relevant context, but they do not prove the
+perimeter-over-six statement.  They usually concern vertex guards and vertex
+counts; the perimeter-over-six problem concerns point guards and lattice
+perimeter.
+
+\section{Polyomino and Perimeter Results}
+
+\subsection{Hole-Free Polyominoes}
+
+Ma{\ss}berg proves the direct perimeter theorem for hole-free polyominoes
+\cite{Massberg2014}.  In the notation of that paper, if a hole-free polyomino
+has perimeter $\ell \geq 6$, then it can be guarded by at most $\loversix$
+point guards.  The proof uses maximal axis-parallel rectangles in a rectilinear
+gallery, relates a rectangle packing number to the guard number, and then
+bounds the packing by the perimeter.  Comb-like examples show tightness.
+
+\subsection{Polyominoes with Holes}
+
+The area theorem does allow holes: Biedl, Irfan, Iwerks, Kim, and Mitchell
+prove that every $m$-cell polyomino can be guarded by
+$\floor{(m+1)/3}$ point guards, and the bound is tight
+\cite{BiedlEtAl2012}.  This is the strongest clean theorem for arbitrary
+polyominoes with holes in the standard point-guard model, but it is an area
+bound rather than a perimeter bound.
+
+For perimeter, the hole case remains conditional.  Ma{\ss}berg observes that
+the perimeter theorem would extend to holes if a maximal-rectangle packing
+conjecture were true \cite{MassbergHabilitation}.  The important point for a
+new paper is that this is \emph{not} a proof of perimeter-over-six for holes.
+It identifies the missing structural statement.
+
+\subsection{Ortho-Unit and Integral Orthogonal Polygons}
+
+Diaz-Banez et al. prove that every ortho-unit polygon with $n \geq 12$ vertices
+can be guarded by $\floor{(n-4)/8}$ guards, and that the bound is tight
+\cite{DiazBanezEtAl2025}.  Since every edge has unit length in an ortho-unit
+polygon, $n$ is the perimeter.  This solves a narrow unit-edge class more
+strongly than $P/6$.
+
+The same paper frames the broader integral-perimeter conjecture: every
+integral orthogonal polygon of perimeter $N$ should be guardable by
+$\floor{N/6}$ point guards.  This remains the closest published statement of
+the general perimeter-over-six problem beyond hole-free polyominoes.
+
+\section{Three-Dimensional Orthogonal Polyhedra}
+
+\subsection{Point Guards}
+
+The direct 3D point-guard analogue of planar art-gallery theorems fails.  In
+orthogonal polyhedra with $n$ vertices, Paterson and Yao's binary-space
+partition result implies a tight $\Theta(n^{3/2})$ point-guard bound
+\cite{PatersonYao1992}.  Viglietta's thesis presents this as Theorem 3.7 and
+draws the key modeling conclusion: point guards do not yield a linear
+orthogonal-polyhedron art-gallery theorem \cite{VigliettaThesis}.  Therefore a
+3D ``perimeter-over-six'' theorem is not obtained by simply replacing polygons
+with orthogonal polyhedra and keeping point guards.
+
+\subsection{Edge and Reflex-Edge Guards}
+
+The 3D literature often treats edge guards as the analogue of planar vertex
+guards.  Urrutia conjectured that an orthogonal polyhedron with $m$ edges
+should be guardable by $m/12+O(1)$ closed edge guards, matching known lower
+bound examples up to an additive constant \cite{VigliettaThesis}.  A related
+reflex-edge conjecture asks whether roughly $(r-g)/2+1$ reflex edge guards
+suffice, where $r$ is the number of reflex edges and $g$ is the genus.
+
+Benbernou, Demaine, Demaine, Kurdia, O'Rourke, Toussaint, Urrutia, and
+Viglietta improve the known asymptotic upper bounds for orthogonal polyhedra:
+$(11/72)m$ edge guards suffice in terms of total edges, and $(7/12)r$ suffice
+in terms of reflex edges \cite{BenbernouEtAl2011}.  Viglietta later proves
+optimal-style bounds for 2-reflex orthogonal polyhedra, namely orthogonal
+polyhedra whose reflex edges occur in only two directions
+\cite{Viglietta2020}.  These are major partial results, but they do not settle
+the general 3-reflex orthogonal-polyhedron conjectures.
+
+Cano, Toth, Urrutia, and Viglietta give a broad theorem for arbitrary
+polyhedra in three-space: every polyhedron with $m$ edges can be guarded by at
+most $(5/6)m$ edge guards \cite{CanoTothUrrutiaViglietta2022}.  This improves
+the general-polyhedron edge-guard bound, but it still leaves a large gap from
+the conjectured $m/6$ style lower/upper behavior for general polyhedra and the
+$m/12+O(1)$ orthogonal-polyhedron conjecture.
+
+\subsection{Face Guards and Polycube Variants}
+
+Face guards are another 3D model.  Viglietta studies face-guarding for several
+classes of polyhedra, including orthogonal polyhedra, 4-oriented polyhedra, and
+2-reflex orthostacks \cite{VigliettaFace2014}.  Face guards are useful for
+mapping the 3D model space, but they are not a direct continuation of the
+point-guard perimeter-over-six question.
+
+For lattice 3D objects, Pinciu's work on polycubes and polyhypercubes gives a
+discrete polyform line of results \cite{Pinciu2015}.  This is the natural
+place to look if the intended 3D project is voxel/discrete rather than
+continuous orthogonal-polyhedron visibility.
+
+\section{Quoted Open-Problem Evidence}
+
+The following short quotations are included only to document open status.  Each
+quote is followed by the conclusion that should be drawn from it.
+
+\begin{quote}
+``If this conjecture is true''
+
+\hfill --- Ma{\ss}berg, immediately before the claimed hole extension
+\cite{MassbergHabilitation}
+\end{quote}
+
+\noindent
+\textbf{Status confirmed.}  Ma{\ss}berg's hole extension is conditional on
+Conjecture 6.10, not proven.  The conjecture concerns whether a packing of
+maximal rectangles bounds the guard number in rectilinear galleries with holes.
+\NoProofFound
+
+\begin{quote}
+``also true for polyominoes with holes''
+
+\hfill --- Ma{\ss}berg, conditional conclusion after Conjecture 6.10
+\cite{MassbergHabilitation}
+\end{quote}
+
+\noindent
+\textbf{Status confirmed.}  This quote must not be used without the preceding
+condition.  The published theorem is hole-free; the hole case is a stated
+conditional extension.
+
+\begin{quote}
+``guarded with at most $\floor{N/6}$ guards''
+
+\hfill --- Diaz-Banez et al., integral-perimeter conjecture
+\cite{DiazBanezEtAl2025}
+\end{quote}
+
+\noindent
+\textbf{Status confirmed.}  This is a conjecture in the 2025 ortho-unit paper.
+The paper proves the ortho-unit theorem, not the full integral orthogonal
+polygon conjecture.  \NoProofFound
+
+\begin{quote}
+``Floor[(n+h)/4] vertex guards''
+
+\hfill --- Urrutia's page recording Shermer's orthogonal-holes conjecture
+\cite{UrrutiaOpenProblems}
+\end{quote}
+
+\noindent
+\textbf{Status confirmed.}  This is a vertex-guard conjecture for orthogonal
+polygons with holes.  It is relevant to holes, but it is not the same as the
+point-guard perimeter-over-six question.
+
+\begin{quote}
+``no linear upper bound''
+
+\hfill --- Viglietta, discussing point guards in orthogonal polyhedra
+\cite{VigliettaThesis}
+\end{quote}
+
+\noindent
+\textbf{Status confirmed.}  This is the main reason 3D point guards should not
+be treated as a direct analogue of the 2D perimeter theorem.
+
+\begin{quote}
+``Further reducing this gap is left as an open problem.''
+
+\hfill --- Cano, Toth, Urrutia, and Viglietta, on edge guards in 3-space
+\cite{CanoTothUrrutiaViglietta2022}
+\end{quote}
+
+\noindent
+\textbf{Status confirmed.}  As of the 2022 general edge-guard paper, the gap
+between lower bounds and upper bounds for edge guarding polyhedra remains an
+explicit open problem.
+
+\begin{quote}
+``Is there a constant-factor approximation for polyominoes with holes?''
+
+\hfill --- Filtser et al., for $k$-hop visibility in polyominoes
+\cite{FiltserEtAl2025}
+\end{quote}
+
+\noindent
+\textbf{Status confirmed.}  This is a current open problem in a related
+discrete visibility model, not in standard continuous point-guard visibility.
+
+\section{Relevant Open Problems}
+
+\begin{enumerate}
+  \item \textbf{Perimeter-over-six for polyominoes with holes.}
+  Let $P$ be a polyomino with holes and total lattice perimeter $\ell$,
+  including all hole boundaries.  Is $P$ always guardable by
+  $\max\{1,\loversix\}$ point guards?
+
+  \emph{Open-status check:} confirmed by Ma{\ss}berg's conditional wording in
+  the habilitation text; \NoProofFound
+
+  \item \textbf{Ma{\ss}berg's maximal-rectangle packing conjecture for holes.}
+  In a rectilinear gallery with holes, does the maximum packing size of maximal
+  rectangles upper-bound the number of point guards?
+
+  \emph{Open-status check:} source-confirmed as Conjecture 6.10 in
+  Ma{\ss}berg's text.  A proof would extend the hole-free perimeter theorem to
+  polyominoes with holes.
+
+  \item \textbf{Integral orthogonal polygon perimeter conjecture.}
+  Is every integral orthogonal polygon of perimeter $N$ guardable by
+  $\floor{N/6}$ point guards?
+
+  \emph{Open-status check:} source-confirmed as the natural conjecture in the
+  2025 ortho-unit paper; \NoProofFound
+
+  \item \textbf{Shermer's vertex-guard conjecture for orthogonal polygons with holes.}
+  Is every $n$-vertex orthogonal polygon with $h$ holes guardable by
+  $\floor{(n+h)/4}$ vertex guards?
+
+  \emph{Open-status check:} Urrutia's open-problem list records it as open;
+  Zylinski proves important partial cases, including Aggarwal's $h\leq 2$
+  theorem.
+
+  \item \textbf{Hoffmann's vertex-guard conjecture for orthogonal polygons with holes.}
+  Does $\floor{2n/7}$ always suffice for vertex guarding any orthogonal polygon
+  with holes?
+
+  \emph{Open-status check:} Urrutia's page records this as a distinct open
+  conjecture.  It is vertex-count based and does not imply perimeter-over-six.
+
+  \item \textbf{If perimeter-over-six with holes is false, find the correction term.}
+  Possible parameters include total perimeter, outer perimeter, number of
+  holes, hole perimeter, reflex vertices, or rectangle-packing obstructions.
+
+  \emph{Open-status check:} this is a derived research direction, not a named
+  source conjecture.  It follows from the current gap in the hole case.
+
+  \item \textbf{3D Urrutia edge-guard conjecture for orthogonal polyhedra.}
+  Is every genus-zero orthogonal polyhedron with $m$ edges guardable by
+  $m/12+O(1)$ edge guards?
+
+  \emph{Open-status check:} recorded in Viglietta's thesis and subsequent
+  edge-guard literature; partial upper bounds are known, but the general
+  conjecture is not settled.
+
+  \item \textbf{3D reflex-edge conjecture for orthogonal polyhedra.}
+  Is every orthogonal polyhedron with $r>0$ reflex edges and genus $g$
+  guardable by $\floor{(r-g)/2}+1$ reflex-edge guards?
+
+  \emph{Open-status check:} Viglietta proves this for 2-reflex orthogonal
+  polyhedra and states the general version as a conjecture.
+
+  \item \textbf{Close the general 3D edge-guard gap.}
+  For arbitrary polyhedra with $m$ edges, improve the current gap between
+  lower-bound examples and the $(5/6)m$ upper bound.
+
+  \emph{Open-status check:} Cano, Toth, Urrutia, and Viglietta explicitly
+  state that reducing this gap remains open.
+
+  \item \textbf{Choose the correct 3D analogue of perimeter.}
+  For orthogonal polyhedra or polycubes, decide whether the right parameter is
+  total edges, reflex edges, surface area, voxel count, genus, or a combination.
+
+  \emph{Open-status check:} not a single named theorem, but forced by the
+  literature: point guards have a superlinear vertex bound, while edge/reflex
+  edge and polycube models have different behavior.
+
+  \item \textbf{Algorithmic complexity and approximation for restricted orthogonal models.}
+  Minimum guarding is NP-hard in many orthogonal settings
+  \cite{SchuchardtHecker1995,KatzRoisman2008,BiedlEtAl2012,DurocherEtAl2017,BiedlEtAl2019}.
+  Identify exact polynomial subclasses and approximation guarantees for
+  polyominoes with holes, integral orthogonal polygons, polycubes, and
+  orthogonal polyhedra.
+
+  \emph{Open-status check:} several hardness results are known, while recent
+  work on $k$-hop polyomino visibility still asks for a constant-factor
+  approximation for polyominoes with holes \cite{FiltserEtAl2025}.
+\end{enumerate}
+
+\section{Journals and Venues to Monitor}
+
+\subsection*{Journals}
+
+\begin{itemize}
+  \item \emph{Discrete \& Computational Geometry}
+  \item \emph{Computational Geometry: Theory and Applications}
+  \item \emph{Journal of Computational Geometry}
+  \item \emph{International Journal of Computational Geometry \& Applications}
+  \item \emph{Graphs and Combinatorics}
+  \item \emph{Algorithmica}
+  \item \emph{Journal of the ACM}
+  \item \emph{ACM Transactions on Algorithms}
+  \item \emph{SIAM Journal on Discrete Mathematics}
+  \item \emph{SIAM Journal on Computing}
+  \item \emph{Journal of Computer and System Sciences}
+  \item \emph{Journal of Algorithms} and successor venues
+  \item \emph{The Electronic Journal of Combinatorics}
+  \item \emph{Discrete Applied Mathematics}
+  \item \emph{Information Processing Letters}
+  \item \emph{Journal of Discrete Algorithms}
+  \item \emph{Theoretical Computer Science}
+  \item \emph{Mathematical Logic Quarterly}
+  \item \emph{Electronic Notes in Discrete Mathematics}
+\end{itemize}
+
+\subsection*{Conferences and Workshops}
+
+\begin{itemize}
+  \item Symposium on Computational Geometry (SoCG)
+  \item European Workshop on Computational Geometry (EuroCG)
+  \item Canadian Conference on Computational Geometry (CCCG)
+  \item Latin American Symposium on Theoretical Informatics (LATIN)
+  \item International Symposium on Algorithms and Computation (ISAAC)
+  \item European Symposium on Algorithms (ESA)
+  \item ACM-SIAM Symposium on Discrete Algorithms (SODA)
+  \item Workshop on Algorithms and Data Structures (WADS)
+  \item Workshop on Graph-Theoretic Concepts in Computer Science (WG)
+  \item EuroComb and related discrete-mathematics meetings
+\end{itemize}
+
+\section{Annotated Source List}
+
+\subsection*{Foundational Art-Gallery Theory}
+
+\begin{description}
+  \item[Chvatal \cite{Chvatal1975} and Fisk \cite{Fisk1978}.]
+  Foundational $\floor{n/3}$ theorem for simple polygons and the short
+  triangulation/coloring proof.
+
+  \item[O'Rourke \cite{ORourke1987}.]
+  Standard book reference for art-gallery theorems, algorithms, visibility,
+  decompositions, and early 3D context.
+
+  \item[Shermer \cite{Shermer1992} and Urrutia \cite{Urrutia2000}.]
+  Survey references for art-gallery and illumination problems, useful for
+  terminology, variants, and classical open-problem context.
+
+  \item[Abrahamsen--Adamaszek--Miltzow \cite{AbrahamsenAdamaszekMiltzow2022}.]
+  Modern complexity reference proving $\exists\mathbb{R}$-completeness for the
+  general art-gallery problem.
+\end{description}
+
+\subsection*{2D Orthogonal Polygons and Holes}
+
+\begin{description}
+  \item[Kahn--Klawe--Kleitman \cite{KahnKlaweKleitman1983}.]
+  Primary source for the tight $\floor{n/4}$ theorem for simple orthogonal
+  polygons.
+
+  \item[Gyori \cite{Gyori1986}.]
+  Short proof of the rectilinear art-gallery theorem.
+
+  \item[Hoffmann--Kriegel \cite{HoffmannKriegel1996}.]
+  Graph-coloring result with consequences for rectilinear polygons with holes
+  and prison-yard variants.
+
+  \item[Zylinski \cite{Zylinski2006}.]
+  Coloring proof of Aggarwal's theorem for orthogonal galleries with holes,
+  including the $\floor{(n+h)/4}$ bound for $h\leq 2$ and cactus-dual cases.
+
+  \item[Urrutia open-problem page \cite{UrrutiaOpenProblems}.]
+  Direct source for Shermer's and Hoffmann's open conjectures on orthogonal
+  polygons with holes using vertex guards.
+
+  \item[Schuchardt--Hecker \cite{SchuchardtHecker1995}.]
+  NP-hardness source for art-gallery problems in orthogonal polygons.
+
+  \item[Worman--Keil \cite{WormanKeil2007}.]
+  Decomposition and visibility-graph machinery for the orthogonal art-gallery
+  problem.
+
+  \item[Bj{\o}rling-Sachs \cite{BjorlingSachs1998}.]
+  Tight edge-guard theorem for rectilinear polygons; relevant when comparing
+  2D orthogonal edge guards with 3D edge-guard conjectures.
+
+  \item[Katz--Roisman \cite{KatzRoisman2008}.]
+  NP-hardness for guarding vertices of rectilinear domains by vertex, boundary,
+  or point guards.
+\end{description}
+
+\subsection*{Polyomino, Perimeter, and Lattice Variants}
+
+\begin{description}
+  \item[Ma{\ss}berg \cite{Massberg2014}.]
+  Primary peer-reviewed source for perimeter-over-six in hole-free
+  polyominoes.
+
+  \item[Ma{\ss}berg habilitation \cite{MassbergHabilitation}.]
+  Source for Conjecture 6.10 and the conditional hole extension.  This is the
+  key source for saying the holes case is not yet proven.
+
+  \item[Biedl--Irfan--Iwerks--Kim--Mitchell \cite{BiedlEtAl2012}.]
+  Tight $\floor{(m+1)/3}$ area theorem for polyominoes, holes allowed, plus
+  complexity context.
+
+  \item[Diaz-Banez et al. \cite{DiazBanezEtAl2025}.]
+  Recent tight theorem for ortho-unit polygons and source of the integral
+  orthogonal polygon $\floor{N/6}$ conjecture.
+
+  \item[Pinciu \cite{Pinciu2015}.]
+  Polyform extension including polyominoes, polycubes, and polyhypercubes.
+  Relevant for discrete 3D analogues.
+
+  \item[Filtser--Krohn--Nilsson--Rieck--Schmidt \cite{FiltserEtAl2025}.]
+  Current work on $k$-hop visibility in polyominoes, including open
+  approximation questions for polyominoes with holes.
+\end{description}
+
+\subsection*{3D Orthogonal Polyhedra}
+
+\begin{description}
+  \item[Paterson--Yao \cite{PatersonYao1992}.]
+  Binary-space partition result used for the $\Theta(n^{3/2})$ point-guard
+  bound in orthogonal polyhedra.
+
+  \item[Viglietta thesis \cite{VigliettaThesis}.]
+  Central survey and source for guarding/searching polyhedra, the point-guard
+  obstruction, and Urrutia-type edge-guard conjectures.
+
+  \item[Benbernou et al. \cite{BenbernouEtAl2011}.]
+  CCCG source for improved edge-guard bounds in orthogonal polyhedra:
+  asymptotic $(11/72)m$ and $(7/12)r$.
+
+  \item[Viglietta 2-reflex paper \cite{Viglietta2020}.]
+  Proves optimal-style reflex-edge bounds for 2-reflex orthogonal polyhedra and
+  gives an $O(n\log n)$ guard-placement algorithm.
+
+  \item[Viglietta face-guarding paper \cite{VigliettaFace2014}.]
+  Face-guarding results for several classes of polyhedra, including orthogonal
+  subclasses.
+
+  \item[Cano--Toth--Urrutia--Viglietta \cite{CanoTothUrrutiaViglietta2022}.]
+  General edge-guard result in three-space and explicit open gap.
+\end{description}
+
+\subsection*{Algorithms and Related Visibility Models}
+
+\begin{description}
+  \item[Motwani--Raghunathan--Saran \cite{MotwaniRaghunathanSaran1990}.]
+  Perfect-graph approach to covering orthogonal polygons with star polygons.
+
+  \item[Ghosh \cite{Ghosh2010}.]
+  General approximation-algorithm context for art-gallery problems.
+
+  \item[Durocher et al. \cite{DurocherEtAl2017}.]
+  Sliding-camera model for orthogonal art galleries, including holes.
+
+  \item[Biedl et al. \cite{BiedlEtAl2019}.]
+  Sliding $k$-transmitter hardness and approximation results for orthogonal
+  polygons.
+\end{description}
+
+\section{Working Conclusions}
+
+\begin{enumerate}
+  \item The theorem ``$\ell/6$ guards suffice'' should be cited as proven only
+  for \emph{hole-free polyominoes}.  The polyomino-with-holes version is
+  conditional on Ma{\ss}berg's rectangle-packing conjecture and should be
+  described as open unless a new proof is supplied.
+
+  \item The broad integral statement ``an integral orthogonal polygon of
+  perimeter $N$ is guardable by $\floor{N/6}$ guards'' is a current conjecture,
+  not a theorem.
+
+  \item The right 3D terminology is \emph{orthogonal polyhedron} or
+  \emph{orthogonal polytope}.  ``Orthonormal'' should not be used for the
+  gallery object.
+
+  \item A 3D point-guard analogue of the planar perimeter theorem is blocked by
+  the $\Theta(n^{3/2})$ point-guard bound.  A serious 3D project should choose
+  edge guards, reflex-edge guards, face guards, or a discrete polycube
+  visibility model explicitly.
+
+  \item The strongest project targets suggested by this review are:
+  prove or refute Ma{\ss}berg's hole-packing conjecture; prove or refute the
+  integral $\floor{N/6}$ conjecture; or make progress on the Urrutia
+  $m/12+O(1)$ and reflex-edge conjectures for general orthogonal polyhedra.
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+\bibitem{AbrahamsenAdamaszekMiltzow2022}
+M. Abrahamsen, A. Adamaszek, and T. Miltzow.
+\newblock The art gallery problem is $\exists\mathbb{R}$-complete.
+\newblock \emph{Journal of the ACM}, 69(1), Article 4, 2022.
+\newblock \url{https://doi.org/10.1145/3486220}
+
+\bibitem{BenbernouEtAl2011}
+N. M. Benbernou, E. D. Demaine, M. L. Demaine, A. Kurdia,
+J. O'Rourke, G. T. Toussaint, J. Urrutia, and G. Viglietta.
+\newblock Edge-guarding orthogonal polyhedra.
+\newblock In \emph{Proceedings of the 23rd Canadian Conference on Computational Geometry}, 461--466, 2011.
+\newblock \url{https://erikdemaine.org/papers/EdgeGuarding_CCCG2011/}
+\newblock \url{https://www.science.smith.edu/~jorourke/Papers/EdgeGuarding.pdf}
+
+\bibitem{BiedlEtAl2012}
+T. C. Biedl, M. T. Irfan, J. Iwerks, J. Kim, and J. S. B. Mitchell.
+\newblock The art gallery theorem for polyominoes.
+\newblock \emph{Discrete \& Computational Geometry}, 48, 711--720, 2012.
+\newblock \url{https://doi.org/10.1007/s00454-012-9429-1}
+\newblock \url{https://researchconnect.suny.edu/en/publications/the-art-gallery-theorem-for-polyominoes/}
+
+\bibitem{BiedlEtAl2019}
+T. Biedl, T. M. Chan, S. Lee, S. Mehrabi, F. Montecchiani, H. Vosoughpour, and Z. Yu.
+\newblock Guarding orthogonal art galleries with sliding $k$-transmitters: hardness and approximation.
+\newblock \emph{Algorithmica}, 81(1), 69--97, 2019.
+\newblock \url{https://doi.org/10.1007/s00453-018-0433-6}
+
+\bibitem{BjorlingSachs1998}
+I. Bj{\o}rling-Sachs.
+\newblock Edge guards in rectilinear polygons.
+\newblock \emph{Computational Geometry: Theory and Applications}, 11(2), 111--123, 1998.
+\newblock \url{https://doi.org/10.1016/S0925-7721(98)00024-8}
+
+\bibitem{CanoTothUrrutiaViglietta2022}
+J. Cano, C. D. Toth, J. Urrutia, and G. Viglietta.
+\newblock Edge guards for polyhedra in three-space.
+\newblock \emph{Computational Geometry: Theory and Applications}, 104, 101859, 2022.
+\newblock \url{https://doi.org/10.1016/j.comgeo.2022.101859}
+\newblock \url{https://giovanniviglietta.com/papers/edgeguards.pdf}
+
+\bibitem{Chvatal1975}
+V. Chvatal.
+\newblock A combinatorial theorem in plane geometry.
+\newblock \emph{Journal of Combinatorial Theory, Series B}, 18(1), 39--41, 1975.
+\newblock \url{https://doi.org/10.1016/0095-8956(75)90061-1}
+
+\bibitem{DiazBanezEtAl2025}
+J. M. Diaz-Banez, P. Horn, M. A. Lopez, N. Marin, A. Ramirez-Vigueras,
+O. Sole-Pi, A. Stevens, and J. Urrutia.
+\newblock Ortho-unit polygons can be guarded with at most $\floor{(n-4)/8}$ guards.
+\newblock \emph{Graphs and Combinatorics}, 41, 15, 2025.
+\newblock \url{https://doi.org/10.1007/s00373-024-02880-8}
+\newblock \url{https://arxiv.org/abs/2208.12864}
+
+\bibitem{DurocherEtAl2017}
+S. Durocher, O. Filtser, R. Fraser, A. D. Mehrabi, and S. Mehrabi.
+\newblock Guarding orthogonal art galleries with sliding cameras.
+\newblock \emph{Computational Geometry: Theory and Applications}, 65, 12--26, 2017.
+\newblock \url{https://doi.org/10.1016/j.comgeo.2017.04.001}
+
+\bibitem{FiltserEtAl2025}
+O. Filtser, E. Krohn, B. J. Nilsson, C. Rieck, and C. Schmidt.
+\newblock Guarding polyominoes under $k$-hop visibility.
+\newblock \emph{Algorithmica}, 87, 572--593, 2025.
+\newblock \url{https://doi.org/10.1007/s00453-024-01292-7}
+
+\bibitem{Fisk1978}
+S. Fisk.
+\newblock A short proof of Chvatal's watchman theorem.
+\newblock \emph{Journal of Combinatorial Theory, Series B}, 24(3), 374, 1978.
+\newblock \url{https://doi.org/10.1016/0095-8956(78)90059-X}
+
+\bibitem{Ghosh2010}
+S. K. Ghosh.
+\newblock Approximation algorithms for art gallery problems in polygons.
+\newblock \emph{Journal of Discrete Algorithms}, 8(1), 2010.
+\newblock \url{https://doi.org/10.1016/j.jda.2009.12.004}
+
+\bibitem{Gyori1986}
+E. Gyori.
+\newblock A short proof of the rectilinear art gallery theorem.
+\newblock \emph{SIAM Journal on Algebraic and Discrete Methods}, 7(3), 452--454, 1986.
+\newblock \url{https://doi.org/10.1137/0607051}
+
+\bibitem{HoffmannKriegel1996}
+F. Hoffmann and K. Kriegel.
+\newblock A graph-coloring result and its consequences for polygon-guarding problems.
+\newblock \emph{SIAM Journal on Discrete Mathematics}, 9(2), 210--224, 1996.
+\newblock \url{https://doi.org/10.1137/S0895480194265611}
+\newblock \url{https://refubium.fu-berlin.de/handle/fub188/18382}
+
+\bibitem{KahnKlaweKleitman1983}
+J. Kahn, M. Klawe, and D. Kleitman.
+\newblock Traditional galleries require fewer watchmen.
+\newblock \emph{SIAM Journal on Algebraic and Discrete Methods}, 4(2), 194--206, 1983.
+\newblock \url{https://doi.org/10.1137/0604020}
+
+\bibitem{KatzRoisman2008}
+M. J. Katz and G. S. Roisman.
+\newblock On guarding the vertices of rectilinear domains.
+\newblock \emph{Computational Geometry: Theory and Applications}, 39(3), 219--228, 2008.
+\newblock \url{https://doi.org/10.1016/j.comgeo.2007.02.002}
+
+\bibitem{Massberg2014}
+J. Ma{\ss}berg.
+\newblock Perfect graphs and guarding rectilinear art galleries.
+\newblock \emph{Discrete \& Computational Geometry}, 51, 569--577, 2014.
+\newblock \url{https://doi.org/10.1007/s00454-014-9587-4}
+
+\bibitem{MassbergHabilitation}
+J. Ma{\ss}berg.
+\newblock Perfect graphs and related topics: habilitation thesis, including Conjecture 6.10.
+\newblock Ulm University, 2013.
+\newblock \url{https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.080/Massberg/habilitation_massberg.pdf}
+
+\bibitem{MotwaniRaghunathanSaran1990}
+R. Motwani, A. Raghunathan, and H. Saran.
+\newblock Covering orthogonal polygons with star polygons: The perfect graph approach.
+\newblock \emph{Journal of Computer and System Sciences}, 40(1), 19--48, 1990.
+\newblock \url{https://doi.org/10.1016/0022-0000(90)90017-F}
+
+\bibitem{ORourke1987}
+J. O'Rourke.
+\newblock \emph{Art Gallery Theorems and Algorithms}.
+\newblock Oxford University Press, 1987.
+\newblock \url{https://www.science.smith.edu/~jorourke/books/ArtGalleryTheorems/Art_Gallery_Full_Book.pdf}
+
+\bibitem{PatersonYao1992}
+M. S. Paterson and F. F. Yao.
+\newblock Optimal binary space partitions for orthogonal objects.
+\newblock \emph{Journal of Algorithms}, 13(1), 99--113, 1992.
+\newblock \url{https://doi.org/10.1016/0196-6774(92)90007-Y}
+
+\bibitem{Pinciu2015}
+V. Pinciu.
+\newblock Guarding polyominoes, polycubes and polyhypercubes.
+\newblock \emph{Electronic Notes in Discrete Mathematics}, 49, 159--166, 2015.
+\newblock \url{https://doi.org/10.1016/j.endm.2015.06.024}
+
+\bibitem{SchuchardtHecker1995}
+D. Schuchardt and H.-D. Hecker.
+\newblock Two NP-hard art-gallery problems for orthogonal polygons.
+\newblock \emph{Mathematical Logic Quarterly}, 41(2), 261--267, 1995.
+\newblock \url{https://doi.org/10.1002/malq.19950410212}
+
+\bibitem{Shermer1992}
+T. C. Shermer.
+\newblock Recent results in art galleries.
+\newblock \emph{Proceedings of the IEEE}, 80(9), 1384--1399, 1992.
+\newblock \url{https://doi.org/10.1109/5.163407}
+
+\bibitem{Urrutia2000}
+J. Urrutia.
+\newblock Art gallery and illumination problems.
+\newblock In J.-R. Sack and J. Urrutia, editors, \emph{Handbook of Computational Geometry}, 973--1027. Elsevier, 2000.
+\newblock \url{https://doi.org/10.1016/B978-044482537-7/50023-1}
+
+\bibitem{UrrutiaOpenProblems}
+J. Urrutia.
+\newblock Illumination of polygons: open problems.
+\newblock \url{https://www.matem.unam.mx/~urrutia/openprob/Polygons/}
+
+\bibitem{VigliettaThesis}
+G. Viglietta.
+\newblock Guarding and searching polyhedra.
+\newblock Ph.D. thesis; arXiv:1211.2483, 2012.
+\newblock \url{https://arxiv.org/abs/1211.2483}
+\newblock \url{https://giovanniviglietta.com/papers/thesis.pdf}
+
+\bibitem{VigliettaFace2014}
+G. Viglietta.
+\newblock Face-guarding polyhedra.
+\newblock \emph{Computational Geometry: Theory and Applications}, 47(8), 833--846, 2014.
+\newblock \url{https://doi.org/10.1016/j.comgeo.2014.04.009}
+
+\bibitem{Viglietta2020}
+G. Viglietta.
+\newblock Optimally guarding 2-reflex orthogonal polyhedra by reflex edge guards.
+\newblock \emph{Computational Geometry: Theory and Applications}, 86, 101589, 2020.
+\newblock \url{https://doi.org/10.1016/j.comgeo.2019.101589}
+\newblock \url{https://arxiv.org/abs/1708.05469}
+
+\bibitem{WormanKeil2007}
+C. Worman and J. M. Keil.
+\newblock Polygon decomposition and the orthogonal art gallery problem.
+\newblock \emph{International Journal of Computational Geometry \& Applications}, 17(2), 105--138, 2007.
+\newblock \url{https://doi.org/10.1142/S0218195907002264}
+
+\bibitem{Zylinski2006}
+P. Zylinski.
+\newblock Orthogonal art galleries with holes: A coloring proof of Aggarwal's theorem.
+\newblock \emph{The Electronic Journal of Combinatorics}, 13(1), R20, 2006.
+\newblock \url{https://doi.org/10.37236/1046}
+\newblock \url{https://www.combinatorics.org/ojs/index.php/eljc/article/view/v13i1r20}
+
+\end{thebibliography}
+
+\end{document}
