@@ -30,11 +30,15 @@ Track at least:
 5. If a result is open or conditional, record the dependency in
    `literature/open_problems.json` and link it from the relevant claim and
    coverage cell.
-6. Add primary URLs/DOIs when available. Use secondary pages only as discovery
+6. Update `literature/framework_progress.md` when the stage status, next
+   action, or high-priority work queue changes.
+7. Update `literature/document_assembly.md` when the paper structure, artifact
+   roles, or reader-facing flow changes.
+8. Add primary URLs/DOIs when available. Use secondary pages only as discovery
    aids.
-7. Record meaningful searches, including relevant-looking exclusions, in
+9. Record meaningful searches, including relevant-looking exclusions, in
    `literature/search_log.md`.
-8. Update `orthogonal_art_gallery_lit_review.tex` only after source, claim,
+10. Update `orthogonal_art_gallery_lit_review.tex` only after source, claim,
    coverage, and open-problem records support the prose.
 
 ## Download Policy
@@ -56,6 +60,24 @@ Use a layered search:
    pages.
 
 Record reusable query strings in `literature/search_queries.md`.
+
+## Completeness Gate
+
+Before the paper says that a result is proved, unproved, conditional, or open,
+check that the evidence layer can answer these questions:
+
+1. What exact model cell is being discussed?
+2. Which primary source proves, states, or conditions the claim?
+3. Where is the claim located in that source?
+4. Which nearby model translations are blocked?
+5. Which coverage cells and open-problem records changed?
+6. Which searches support the conclusion, and which plausible sources were
+   excluded?
+7. Does `literature/framework_progress.md` reflect the remaining work?
+8. Does `literature/document_assembly.md` still describe the paper flow?
+
+If any answer is missing, record it as a next action in the coverage matrix or
+search log instead of smoothing it over in prose.
 
 ## Document Architecture
 

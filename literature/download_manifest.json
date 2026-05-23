@@ -8,7 +8,14 @@
       "url": "https://www.science.smith.edu/~jorourke/books/ArtGalleryTheorems/Art_Gallery_Full_Book.pdf",
       "local_path": "papers/downloads/ORourke1987_Art_Gallery_Theorems_and_Algorithms.pdf",
       "access_note": "author-hosted public book PDF",
-      "status": "not_downloaded"
+      "status": "downloaded"
+    },
+    {
+      "source_key": "BiedlEtAl2012",
+      "url": "https://tildesites.bowdoin.edu/~mirfan/papers/Art_Gallery_DCG_2012.pdf",
+      "local_path": "papers/downloads/BiedlEtAl2012_Art_Gallery_Theorem_for_Polyominoes.pdf",
+      "access_note": "author-hosted copy of journal PDF",
+      "status": "downloaded"
     },
     {
       "source_key": "Massberg2014",
@@ -27,44 +34,86 @@
     {
       "source_key": "BenbernouEtAl2011",
       "url": "https://www.science.smith.edu/~jorourke/Papers/EdgeGuarding.pdf",
-      "local_path": "papers/downloads/BenbernouEtAl2011_EdgeGuarding.pdf",
+      "local_path": "papers/downloads/BenbernouEtAl2011.pdf",
       "access_note": "author-hosted public PDF",
-      "status": "not_downloaded"
+      "status": "downloaded"
     },
     {
       "source_key": "CanoTothUrrutiaViglietta2022",
       "url": "https://giovanniviglietta.com/papers/edgeguards.pdf",
       "local_path": "papers/downloads/CanoTothUrrutiaViglietta2022_edgeguards.pdf",
       "access_note": "author-hosted public PDF",
-      "status": "not_downloaded"
+      "status": "downloaded"
     },
     {
       "source_key": "VigliettaThesis",
       "url": "https://arxiv.org/pdf/1211.2483",
       "local_path": "papers/downloads/Viglietta2012_thesis_arxiv.pdf",
       "access_note": "arXiv public PDF",
-      "status": "not_downloaded"
+      "status": "downloaded"
     },
     {
       "source_key": "Viglietta2020",
       "url": "https://arxiv.org/pdf/1708.05469",
       "local_path": "papers/downloads/Viglietta2020_2reflex_arxiv.pdf",
       "access_note": "arXiv public PDF",
-      "status": "not_downloaded"
+      "status": "downloaded"
+    },
+    {
+      "source_key": "VigliettaFace2014",
+      "url": "https://arxiv.org/pdf/1305.2866",
+      "local_path": "papers/downloads/VigliettaFace2014_arxiv.pdf",
+      "access_note": "arXiv public PDF",
+      "status": "downloaded"
+    },
+    {
+      "source_key": "DurocherEtAl2017",
+      "url": "https://arxiv.org/pdf/1308.2757",
+      "local_path": "papers/downloads/DurocherEtAl2017_sliding_cameras_arxiv.pdf",
+      "access_note": "arXiv public PDF for the conference version used for locator extraction",
+      "status": "downloaded"
+    },
+    {
+      "source_key": "FiltserEtAl2025",
+      "url": "https://link.springer.com/content/pdf/10.1007/s00453-024-01292-7.pdf",
+      "local_path": "papers/downloads/FiltserEtAl2025_khop_visibility.pdf",
+      "access_note": "Springer open-access article PDF",
+      "status": "downloaded"
+    },
+    {
+      "source_key": "PatersonYao1992",
+      "url": "https://wrap.warwick.ac.uk/id/eprint/60853/12/WRAP_cs-rr-158.pdf",
+      "local_path": "papers/downloads/PatersonYao1992_WRAP_cs_rr_158.pdf",
+      "access_note": "university repository public technical-report PDF",
+      "status": "downloaded"
+    },
+    {
+      "source_key": "Ghosh2010",
+      "url": "https://www.mpi-inf.mpg.de/fileadmin/inf/d1/art_galler_set_cover.pdf",
+      "local_path": "papers/downloads/Ghosh2010_approximation_art_gallery.pdf",
+      "access_note": "MPI-hosted public PDF",
+      "status": "downloaded"
+    },
+    {
+      "source_key": "HoffmannKriegel1996",
+      "url": "https://refubium.fu-berlin.de/bitstream/handle/fub188/18382/1993-08.pdf",
+      "local_path": "papers/downloads/HoffmannKriegel1996_refubium_1993_08.pdf",
+      "access_note": "university repository public technical-report PDF",
+      "status": "downloaded"
     },
     {
       "source_key": "DiazBanezEtAl2025",
       "url": "https://arxiv.org/pdf/2208.12864",
       "local_path": "papers/downloads/DiazBanezEtAl2025_ortho_unit_arxiv.pdf",
       "access_note": "arXiv public PDF",
-      "status": "not_downloaded"
+      "status": "downloaded"
     },
     {
       "source_key": "Zylinski2006",
       "url": "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v13i1r20/pdf/0",
       "local_path": "papers/downloads/Zylinski2006_orthogonal_holes.pdf",
       "access_note": "journal public PDF",
-      "status": "not_downloaded"
+      "status": "downloaded"
     }
   ]
 }

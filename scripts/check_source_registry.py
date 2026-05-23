@@ -14,6 +14,8 @@ REGISTRY = ROOT / "literature" / "source_registry.json"
 CLAIMS = ROOT / "literature" / "claims_registry.json"
 COVERAGE = ROOT / "literature" / "coverage_matrix.json"
 OPEN_PROBLEMS = ROOT / "literature" / "open_problems.json"
+PROGRESS_TRACKER = ROOT / "literature" / "framework_progress.md"
+DOCUMENT_ASSEMBLY = ROOT / "literature" / "document_assembly.md"
 TEX = ROOT / "orthogonal_art_gallery_lit_review.tex"
 
 REQUIRED_SOURCE_FIELDS = {
@@ -80,6 +82,20 @@ def load_json(path: Path) -> dict:
         return json.load(f)
 
 
+def status_values(data: dict, field: str, errors: list[str], label: str) -> set[str]:
+    values = data.get(field)
+    if not isinstance(values, list) or not values:
+        errors.append(f"{label} missing nonempty {field}")
+        return set()
+    invalid = [value for value in values if not isinstance(value, str) or not value.strip()]
+    if invalid:
+        errors.append(f"{label}.{field} contains non-string or empty values")
+    duplicates = {value for value in values if values.count(value) > 1}
+    if duplicates:
+        errors.append(f"{label}.{field} contains duplicates: {sorted(duplicates)}")
+    return set(values)
+
+
 def bibitem_keys(tex: str) -> set[str]:
     return set(re.findall(r"\\bibitem\{([^}]+)\}", tex))
 
@@ -102,6 +118,11 @@ def main() -> int:
     claims = claims_data.get("claims", [])
     coverage_cells = coverage_data.get("coverage_cells", [])
     open_problems = open_problem_data.get("open_problems", [])
+    source_status_values = status_values(registry, "status_values", errors, "source_registry")
+    claim_type_values = status_values(claims_data, "claim_type_values", errors, "claims_registry")
+    coverage_status_values = status_values(coverage_data, "coverage_status_values", errors, "coverage_matrix")
+    result_status_values = status_values(coverage_data, "result_status_values", errors, "coverage_matrix")
+    open_problem_status_values = status_values(open_problem_data, "status_values", errors, "open_problems")
 
     seen: set[str] = set()
     registry_keys: set[str] = set()
@@ -124,6 +145,9 @@ def main() -> int:
         for field in ("citation", "venue", "source_type", "status", "relevant_result", "translation_note"):
             if not isinstance(source[field], str) or not source[field].strip():
                 errors.append(f"{key}.{field} must be a nonempty string")
+
+        if source.get("status") not in source_status_values:
+            errors.append(f"{key}.status has undeclared value: {source.get('status')}")
 
     claim_ids: set[str] = set()
     source_keys_with_claims: set[str] = set()
@@ -153,6 +177,9 @@ def main() -> int:
         for field in ("result_statement", "locator", "verification_status", "translation_note", "importance"):
             if not isinstance(claim[field], str) or not claim[field].strip():
                 errors.append(f"{claim_id}.{field} must be a nonempty string")
+
+        if claim.get("claim_type") not in claim_type_values:
+            errors.append(f"{claim_id}.claim_type has undeclared value: {claim.get('claim_type')}")
 
         if "tracking_issue" in claim:
             tracking_issue = claim["tracking_issue"]
@@ -186,6 +213,9 @@ def main() -> int:
         for field in ("title", "question", "status", "known"):
             if not isinstance(problem[field], str) or not problem[field].strip():
                 errors.append(f"{problem_id}.{field} must be a nonempty string")
+
+        if problem.get("status") not in open_problem_status_values:
+            errors.append(f"{problem_id}.status has undeclared value: {problem.get('status')}")
 
     for source in sources:
         if "key" not in source:
@@ -237,6 +267,15 @@ def main() -> int:
         if cell["coverage_status"] in {"unsearched", "searching"}:
             warnings.append(f"{cell_id} is not complete: {cell['coverage_status']}")
 
+        if cell["coverage_status"].startswith("scope_excluded") and cell.get("supporting_claims"):
+            errors.append(f"{cell_id} is a scope-exclusion cell but has theorem-level supporting claims")
+
+        if cell.get("coverage_status") not in coverage_status_values:
+            errors.append(f"{cell_id}.coverage_status has undeclared value: {cell.get('coverage_status')}")
+
+        if cell.get("result_status") not in result_status_values:
+            errors.append(f"{cell_id}.result_status has undeclared value: {cell.get('result_status')}")
+
     for claim in claims:
         if "id" not in claim:
             continue
@@ -267,6 +306,31 @@ def main() -> int:
     cited_without_claim = sorted(cite_keys - source_keys_with_claims)
     if cited_without_claim:
         errors.append(f"cited sources missing claim records: {cited_without_claim}")
+
+    if not PROGRESS_TRACKER.exists():
+        errors.append("missing framework progress tracker: literature/framework_progress.md")
+    else:
+        progress_text = PROGRESS_TRACKER.read_text(encoding="utf-8")
+        for heading in (
+            "## Framework Stage Dashboard",
+            "## High-Priority Work Queue",
+            "## Update Transaction Checklist",
+        ):
+            if heading not in progress_text:
+                errors.append(f"progress tracker missing heading: {heading}")
+
+    if not DOCUMENT_ASSEMBLY.exists():
+        errors.append("missing document assembly map: literature/document_assembly.md")
+    else:
+        assembly_text = DOCUMENT_ASSEMBLY.read_text(encoding="utf-8")
+        for heading in (
+            "## Narrative Spine",
+            "## Artifact Roles",
+            "## Paper Flow",
+            "## Update Order",
+        ):
+            if heading not in assembly_text:
+                errors.append(f"document assembly map missing heading: {heading}")
 
     if errors:
         for error in errors:

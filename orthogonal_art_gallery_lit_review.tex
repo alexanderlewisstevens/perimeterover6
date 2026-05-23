@@ -107,7 +107,7 @@
 \vspace{0.5em}
 {\large A Literature Review of Results and Open Problems\par}
 \vspace{0.85em}
-{\normalsize May 22, 2026\par}
+{\normalsize May 23, 2026\par}
 \vspace{1.1em}
 \textcolor{ReviewRule}{\rule{0.88\textwidth}{0.6pt}}
 \end{center}
@@ -131,6 +131,80 @@ gap-closing problems remain open.
 
 \tableofcontents
 \clearpage
+
+\section{Executive Synthesis}
+
+The review has one organizing question: which art-gallery bounds survive when
+the object is orthogonal, the perimeter is lattice-normalized, holes may be
+present, and the dimension changes?  The answer is not a single theorem but a
+map of comparable models.  The sharp perimeter-over-six theorem is known for
+hole-free polyominoes, and the same theorem settles the hole-free integral
+orthogonal-polygon reading by subdivision.  The remaining two-dimensional
+frontier is the holes version, together with any broader lattice-domain
+formulation that does not reduce to a hole-free polyomino.  In three
+dimensions, the direct point-guard analogy fails; edge, reflex-edge, face, and
+polycube guard models carry the relevant open questions.
+
+\begin{table}[htbp]
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.25\textwidth}
+  >{\raggedright\arraybackslash}p{0.22\textwidth}
+  Y
+  >{\raggedright\arraybackslash}p{0.18\textwidth}}
+\toprule
+Result line & Current status & Why it matters here & Main evidence \\
+\midrule
+Simple orthogonal polygons & Tight $\floor{n/4}$ vertex/point-guard baseline
+for hole-free orthogonal polygons. & Establishes the classical 2D orthogonal
+benchmark, but it is a vertex-count theorem, not a perimeter theorem. &
+Kahn--Klawe--Kleitman; Gyori
+\cite{KahnKlaweKleitman1983,Gyori1986} \\
+
+Hole-free polyomino perimeter & Tight
+$\max\{1,\floor{\ell/6}\}$ point-guard theorem. & This is the core
+perimeter-over-six result and the source of the hole-free integral-polygon
+overlap. & Ma{\ss}berg \cite[Theorem~1]{Massberg2014} \\
+
+Integral orthogonal polygons, no holes & Solved by reduction to hole-free
+polyominoes after unit-grid subdivision. & Prevents the Diaz-Banez et al.
+$\floor{N/6}$ question from being misread as open in the hole-free case. &
+Ma{\ss}berg; Diaz-Banez et al.
+\cite[Theorem~1]{Massberg2014}; \cite{DiazBanezEtAl2025} \\
+
+Polyomino or integral domains with holes & Open or conditional for
+perimeter-over-six point guards. & This is the main 2D open direction closest
+to the original perimeter question. & Ma{\ss}berg habilitation
+\cite[Conj.~6.10]{MassbergHabilitation} \\
+
+Orthogonal polygons with holes, vertex guards & Partially solved; strongest
+conjectured bounds remain open. & These results explain the role of holes, but
+they do not settle point-guard perimeter bounds. & Urrutia; Zylinski;
+Michael--Pinciu
+\cite{UrrutiaOpenProblems,Zylinski2006,MichaelPinciu2016} \\
+
+Orthogonal polyhedra in 3D & No direct point-guard analogue; edge and
+reflex-edge variants remain active. & The 3D branch must be read through guard
+model changes rather than by copying the planar perimeter theorem. &
+Paterson--Yao; Viglietta; Benbernou et al.; Cano et al.
+\cite{PatersonYao1992,VigliettaThesis,BenbernouEtAl2011,CanoTothUrrutiaViglietta2022} \\
+\bottomrule
+\end{tabularx}
+\caption{Reader-facing synthesis of the central result lines.  Each row is
+intended to be read only under the stated model; later sections give the
+definitions, non-implications, and evidence trail.}
+\label{tab:executive-synthesis}
+\end{table}
+
+The document is assembled in layers.  The front matter gives the short answer;
+the terminology section fixes the model axes; the historical flow explains how
+the result lines diverged; the status matrix and coverage chart show what is
+proved, conditional, or open; the non-implication and proof-technique sections
+explain why adjacent theorems do not automatically transfer; the model-by-model
+sections give the detailed survey; and the open-problem, source-guide, and
+evidence sections make the unresolved directions auditable.
 
 \section{Introduction and Scope}
 
@@ -275,7 +349,8 @@ formula is involved. & Real-coordinate Euclidean perimeter is not scale-free. \\
   question \cite{UrrutiaOpenProblems,HoffmannKriegel1996,Zylinski2006,MichaelPinciu2016}.
 
   \item Polyominoes introduce area and lattice-perimeter parameters.  The
-  tight area theorem allows holes \cite{BiedlEtAl2012}, while Ma{\ss}berg's
+  tight cell-count theorem covers connected $m$-polyominoes with $m\geq 2$,
+  holes allowed \cite[Cor.~1]{BiedlEtAl2012}, while Ma{\ss}berg's
   perimeter-over-six theorem is proven for hole-free polyominoes and becomes
   conditional in the presence of holes
   \cite[Theorem~1]{Massberg2014}; \cite[Thm.~6.3 and
@@ -332,8 +407,8 @@ conjecture & Ma{\ss}berg habilitation
 \cite[Conj.~6.10]{MassbergHabilitation} \\
 
 Polyomino with holes & point & cells $m$ &
-Proven tight: $\floor{(m+1)/3}$; does not imply perimeter-over-six & Biedl et
-al. \cite{BiedlEtAl2012} \\
+Proven tight for $m\geq 2$: $\floor{(m+1)/3}$; $m=1$ is trivial; does not
+imply perimeter-over-six & Biedl et al. \cite[Cor.~1]{BiedlEtAl2012} \\
 
 Ortho-unit polygon & point & perimeter $P=n$ &
 Proven tight for $n\geq 12$: $\floor{(n-4)/8}$, stronger than $P/6$ in this
@@ -475,6 +550,18 @@ most apparent overlaps in this part of the literature.
   vertex-guard conjectures are adjacent to, but distinct from, the polyomino
   perimeter question.
 
+  \item[Standard visibility versus restricted visibility.]
+  Floodlights, half-plane guards, sliding cameras, transmitters, $k$-hop
+  visibility, and rook/queen polycube models are adjacent to standard
+  point-guard or vertex-guard visibility, but they are not interchangeable
+  with it.  They can supply techniques and open problems, but each requires a
+  separate model cell before its theorems can be used in this review.  The
+  current evidence matrix has separate cells for the currently cited
+  sliding-camera, sliding-transmitter, $k$-hop, polyform, face-guard, and
+  2-reflex variants.  It also has explicit scope-exclusion cells for
+  floodlight, half-plane, dispersive, contiguous, mobile, point-boundary, and
+  related variants that have not been promoted into theorem-level discussion.
+
   \item[Holes versus hole-free domains.]
   The hole-free perimeter theorem is not automatically stable under adding
   holes.  Holes change the intersection graph of maximal rectangles and break
@@ -483,8 +570,9 @@ most apparent overlaps in this part of the literature.
   structure in that setting.
 
   \item[Area versus perimeter.]
-  The tight $\floor{(m+1)/3}$ theorem for $m$-cell polyominoes with holes is
-  an area theorem.  It does not imply a perimeter theorem because polyominoes
+  The tight $\floor{(m+1)/3}$ theorem for connected $m$-cell polyominoes with
+  holes, $m\geq 2$, is an area theorem; the one-cell case is the trivial
+  one-guard case.  It does not imply a perimeter theorem because polyominoes
   can have very different area-to-perimeter ratios, and the conjectured
   perimeter bound is sensitive to boundary complexity rather than cell count.
 
@@ -532,11 +620,12 @@ most apparent overlaps in this part of the literature.
   \cite[Conj.~6.10]{MassbergHabilitation}.
 
   \item[Area and grid-cell arguments.]
-  Biedl et al. prove the tight $\floor{(m+1)/3}$ theorem for polyominoes with
-  holes by using the cell structure rather than perimeter
-  \cite{BiedlEtAl2012}.  This is strong evidence that holes are tractable in a
-  discrete model, but it leaves open whether perimeter alone controls the
-  guard number.
+  Biedl et al. prove the tight $\floor{(m+1)/3}$ theorem for connected
+  $m$-polyominoes with $m\geq 2$ by using the cell structure rather than
+  perimeter; the sufficiency proof works even for restrictive $r$-visibility
+  \cite[Theorem~1 and Cor.~1]{BiedlEtAl2012}.  This is strong evidence that
+  holes are tractable in a discrete model, but it leaves open whether
+  perimeter alone controls the guard number.
 
   \item[Hardness and approximation reductions.]
   Schuchardt--Hecker, Katz--Roisman, and later work on sliding cameras and
@@ -623,13 +712,18 @@ invariant.
 
 \subsection{Cell-Count Polyomino Bounds}
 
-Biedl et al. prove the tight $\floor{(m+1)/3}$ theorem for $m$-cell
-polyominoes, including holes \cite{BiedlEtAl2012}.  This proof line uses the
-cell structure directly, which is why it survives holes cleanly.  The result
-is strong, but it answers a different extremal question: how guard number
-scales with area, not with boundary complexity.  For research purposes, the
-important lesson is that holes are not inherently fatal in polyomino models;
-they are fatal to the specific perimeter proof technology currently known.
+Biedl et al. prove the tight $\floor{(m+1)/3}$ theorem for connected
+$m$-cell polyominoes with $m\geq 2$, including holes
+\cite[Cor.~1]{BiedlEtAl2012}.  The lower bound is given by a comb family, and
+the upper bound follows from a constructive decomposition that also works
+under restrictive $r$-visibility \cite[Fig.~3 and Theorem~1]{BiedlEtAl2012}.
+The one-cell case is handled separately by the obvious one guard.  This proof
+line uses the cell structure directly, which is why it survives holes cleanly.
+The result is strong, but it answers a different extremal question: how guard
+number scales with area, not with boundary complexity.  For research purposes,
+the important lesson is that holes are not inherently fatal in polyomino
+models; they are fatal to the specific perimeter proof technology currently
+known.
 
 \subsection{3D Decomposition and Guard Models}
 
@@ -678,9 +772,10 @@ methods can be sharpened to the lower-bound scale.
   \cite[Lem.~6.9 and Conj.~6.10]{MassbergHabilitation}.
 
   \item[Polyominoes with holes, point guards, area $m$.]
-  Proven tight: every $m$-cell polyomino, holes allowed, is guardable by
-  $\floor{(m+1)/3}$ point guards \cite{BiedlEtAl2012}.  This does not settle
-  perimeter-over-six.
+  Proven tight: every connected $m$-cell polyomino with $m\geq 2$, holes
+  allowed, is guardable by $\floor{(m+1)/3}$ point guards
+  \cite[Cor.~1]{BiedlEtAl2012}.  The one-cell case needs one guard.  This
+  does not settle perimeter-over-six.
 
   \item[Ortho-unit polygons, point guards.]
   Proven tight: every ortho-unit polygon with $n \geq 12$ vertices is guardable
@@ -797,11 +892,13 @@ bounds the packing by the perimeter.  A comb construction shows tightness
 \subsection{Polyominoes with Holes}
 
 The area theorem does allow holes: Biedl, Irfan, Iwerks, Kim, and Mitchell
-prove that every $m$-cell polyomino can be guarded by
-$\floor{(m+1)/3}$ point guards, and the bound is tight
-\cite{BiedlEtAl2012}.  This is the strongest clean theorem for arbitrary
-polyominoes with holes in the standard point-guard model, but it is an area
-bound rather than a perimeter bound.
+prove that every connected $m$-cell polyomino with $m\geq 2$ can be guarded
+by $\floor{(m+1)/3}$ point guards, and the bound is tight
+\cite[Cor.~1]{BiedlEtAl2012}.  The one-cell case is trivial, and the
+sufficiency proof works even under restrictive $r$-visibility
+\cite[Theorem~1]{BiedlEtAl2012}.  This is the strongest clean theorem for
+arbitrary polyominoes with holes in the standard point-guard model, but it is
+an area bound rather than a perimeter bound.
 
 For perimeter, the hole case remains conditional.  Ma{\ss}berg observes that
 the perimeter theorem would extend to holes if a maximal-rectangle packing
@@ -1138,8 +1235,9 @@ conjectures. \\
   for rectilinear galleries with holes.
 
   \item[Biedl--Irfan--Iwerks--Kim--Mitchell \cite{BiedlEtAl2012}.]
-  Tight $\floor{(m+1)/3}$ area theorem for polyominoes, holes allowed, plus
-  complexity context.
+  Tight $\floor{(m+1)/3}$ cell-count theorem for connected $m$-polyominoes
+  with $m\geq 2$, holes allowed.  The definitions are on p.~712, the comb
+  lower bound is Fig.~3, and Corollary~1 gives the theorem.
 
   \item[Diaz-Banez et al. \cite{DiazBanezEtAl2025}.]
   Recent tight theorem for ortho-unit polygons and source of the integral
@@ -1201,6 +1299,113 @@ conjectures. \\
   polygons.
 \end{description}
 
+\section{Completeness Protocol for This Review}
+
+This review treats completeness as an auditable process rather than as a claim
+that any finite search has exhausted the literature.  A result should enter
+the narrative only after its source, exact model, theorem or problem statement,
+safe translation, coverage status, and open-problem consequences have been
+recorded.  This discipline matters here because small changes in holes,
+lattice assumptions, guard type, dimension, and parameter frequently turn a
+valid theorem into a non-comparable statement.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.08\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}
+  Y}
+\toprule
+Step & Question & Review artifact \\
+\midrule
+1 & What is the exact scope cell?  Record object class, holes, guard model,
+dimension, and parameter before comparing results. &
+Coverage matrix row or new coverage cell. \\
+
+2 & What are the seed sources?  Start from books, surveys, theses,
+open-problem pages, and named theorem papers. &
+Source-registry records with primary DOI, publisher, arXiv, or author links
+when available. \\
+
+3 & What searches have been run?  Use exact-title searches, DOI/arXiv
+lookups, author pages, backward references, forward citation searches, venue
+scans, and terminology variants. &
+Search-log entries with included sources, exclusions, and follow-up actions. \\
+
+4 & Is the source primary for the claim?  Prefer the paper that proves or
+states the result; use surveys and books to orient the search and explain
+history. &
+Source type and role recorded in the source registry. \\
+
+5 & What exactly is the claim?  Extract theorem, conjecture, lower bound,
+hardness, algorithmic, survey, or open-problem records without changing the
+model. &
+Claim-registry entry with status, model, parameter, locator, and citation. \\
+
+6 & What does the claim not imply?  Record blocked translations across holes,
+polyominoes, integral polygons, guard models, and 3D analogues. &
+Translation note in the claim registry and, when central, prose in the
+model-separation section. \\
+
+7 & Which status changed?  Update every affected coverage cell as proved,
+tight, conditional, open, synthesized, out of scope, or still needing
+follow-up. &
+Coverage matrix with supporting claim identifiers and next action. \\
+
+8 & Is an open problem source-stated, conditional, or derived?  Keep these
+categories separate and record dependencies. &
+Open-problem ledger linked to supporting sources and claims. \\
+
+9 & Are locators and quotations sufficient?  Add theorem numbers, page
+numbers, figure references, or short quotations for problem statements where
+available. &
+Evidence-report gap list should shrink after each locator pass. \\
+
+10 & Does the document still assemble cleanly?  Check that the short answer,
+status maps, proof discussion, open problems, source guide, and evidence trail
+still form one reader-facing flow. &
+Document assembly map and paper outline. \\
+
+11 & Is the framework progress current?  Record which stage changed, what
+remains incomplete, and which artifact should be updated next. &
+Progress tracker and current work queue. \\
+
+12 & Is the prose synchronized with the evidence?  Regenerate the evidence
+report, run registry checks, rebuild the PDF, and inspect the log before
+finalizing. &
+Updated paper, generated evidence report, and clean validation run. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection*{Completeness Gates}
+
+The practical standard for this paper is not ``no missing papers.''  It is
+that every central status statement can be audited.  In particular, a claim
+that a problem is open should be supported by one of three paths: an explicit
+open-problem statement in a primary or survey source, a conditional theorem
+whose stated hypothesis remains unproved in the tracked sources, or a derived
+gap visible from the coverage matrix after the relevant model cells have been
+searched.  The last category should be phrased cautiously and should identify
+the completed searches that make the gap credible.
+
+The current framework therefore makes gaps visible instead of hiding them in
+prose.  At the time of this pass, every claim record has a locator at the
+level currently available from primary PDFs, open-problem pages, public
+technical reports, or primary metadata.  The first forward and adjacent-model
+sweep for the central holes, perimeter, and 3D edge/reflex-edge clusters is
+now logged.  It did not add a tracked theorem that changes the main statuses.
+The current coverage matrix now separates the cited adjacent variants that
+already have source records: two-dimensional edge guards, sliding-camera and
+sliding-transmitter visibility, $k$-hop and polyform visibility, 3D face
+guards, and 2-reflex reflex-edge guards.  It also records scope-exclusion
+cells for floodlight, half-plane, dispersive, contiguous, mobile,
+point-boundary, and related variants.  Those cells are not source claims; they
+are checkpoints requiring source intake before any such variant is used as a
+theorem-level result.  The remaining completeness work is recurring
+search-frontier work rather than a missing-locator problem.
+
 \section{Evidence Audit Trail}
 
 The review is backed by a structured evidence layer in the repository.  The
@@ -1214,8 +1419,21 @@ their supporting sources.
 The generated evidence report is intended as an audit companion to the prose.
 It lists central proved results, open and conditional problems, coverage cells,
 missing page or theorem locators, and next actions for improving the review.
-The prose above should be updated only after the corresponding source, claim,
-coverage, and open-problem records support the statement being added.
+The document assembly map records how the evidence artifacts become a readable
+paper, and the framework progress tracker records which part of the review
+process is current, which part needs work, and which artifact should be touched
+next.  The prose above should be updated only after the corresponding source,
+claim, coverage, open-problem, assembly, and progress records support the
+statement being added.
+
+The May 23, 2026 search-log entry is the current checkpoint for recent-status
+claims.  It records exact-title, forward-citation-style, arXiv/DROPS/topic,
+and adjacent-model queries for the orthogonal-polygons-with-holes,
+polyomino-perimeter-with-holes, and 3D orthogonal-polyhedron clusters.  The
+result was status preservation rather than source expansion: the central open
+and conditional cells remain open or conditional in the tracked evidence, and
+the relevant-looking adjacent hits are recorded either as cited adjacent cells
+or as explicit scope-exclusion cells.
 
 \section{Conclusion}
 
@@ -1267,6 +1485,7 @@ T. C. Biedl, M. T. Irfan, J. Iwerks, J. Kim, and J. S. B. Mitchell.
 \newblock The art gallery theorem for polyominoes.
 \newblock \emph{Discrete \& Computational Geometry}, 48, 711--720, 2012.
 \newblock \url{https://doi.org/10.1007/s00454-012-9429-1}
+\newblock \url{https://tildesites.bowdoin.edu/~mirfan/papers/Art_Gallery_DCG_2012.pdf}
 \newblock \url{https://researchconnect.suny.edu/en/publications/the-art-gallery-theorem-for-polyominoes/}
 
 \bibitem{BiedlEtAl2019}
@@ -1323,8 +1542,8 @@ S. Fisk.
 \bibitem{Ghosh2010}
 S. K. Ghosh.
 \newblock Approximation algorithms for art gallery problems in polygons.
-\newblock \emph{Journal of Discrete Algorithms}, 8(1), 2010.
-\newblock \url{https://doi.org/10.1016/j.jda.2009.12.004}
+\newblock \emph{Discrete Applied Mathematics}, 158(6):718--722, 2010.
+\newblock \url{https://doi.org/10.1016/j.dam.2009.12.004}
 
 \bibitem{Gyori1986}
 E. Gyori.

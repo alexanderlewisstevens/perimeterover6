@@ -7,7 +7,7 @@
 - [International Journal of Computational Geometry & Applications](https://www.worldscientific.com/worldscinet/ijcga)
 - [Journal of Computational Geometry](https://jocg.org/)
 - [Algorithmica](https://link.springer.com/journal/453)
-- [Journal of Discrete Algorithms](https://www.sciencedirect.com/journal/journal-of-discrete-algorithms)
+- [Discrete Applied Mathematics](https://www.sciencedirect.com/journal/discrete-applied-mathematics)
 
 ## Discrete Math, Graphs, and Algorithms
 

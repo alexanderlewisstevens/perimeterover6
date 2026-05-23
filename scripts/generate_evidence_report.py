@@ -15,6 +15,8 @@ CLAIMS = LITERATURE / "claims_registry.json"
 COVERAGE = LITERATURE / "coverage_matrix.json"
 OPEN_PROBLEMS = LITERATURE / "open_problems.json"
 SEARCH_LOG = LITERATURE / "search_log.md"
+PROGRESS_TRACKER = LITERATURE / "framework_progress.md"
+DOCUMENT_ASSEMBLY = LITERATURE / "document_assembly.md"
 OUTPUT = LITERATURE / "evidence_report.md"
 
 
@@ -69,6 +71,11 @@ def main() -> int:
         for cell in coverage_cells
         if cell["coverage_status"] in {"unsearched", "searching"}
     ]
+    scope_exclusion_cells = [
+        cell
+        for cell in coverage_cells
+        if cell["coverage_status"].startswith("scope_excluded")
+    ]
     next_actions = [
         f"{cell['title']}: {cell['next_action']}"
         for cell in coverage_cells
@@ -86,6 +93,7 @@ def main() -> int:
     lines.append(f"- Sources: {len(sources)}\n")
     lines.append(f"- Claims: {len(claims)}\n")
     lines.append(f"- Coverage cells: {len(coverage_cells)}\n")
+    lines.append(f"- Scope-exclusion cells: {len(scope_exclusion_cells)}\n")
     lines.append(f"- Open-problem clusters: {len(open_problems)}\n")
     lines.append(f"- Claims missing page/theorem locators: {len(missing_locators)}\n")
     lines.append(f"- Coverage cells still unsearched/searching: {len(unsearched_cells)}\n\n")
@@ -99,6 +107,19 @@ def main() -> int:
     lines.append(bullet_list([f"`{key}`: {value}" for key, value in sorted(coverage_statuses.items())]))
     lines.append("\n### Open-Problem Statuses\n\n")
     lines.append(bullet_list([f"`{key}`: {value}" for key, value in sorted(open_problem_statuses.items())]))
+    lines.append("\n")
+
+    lines.append("## Declared Status Vocabularies\n\n")
+    lines.append("### Source Status Values\n\n")
+    lines.append(bullet_list([f"`{value}`" for value in source_data.get("status_values", [])]))
+    lines.append("\n### Claim Type Values\n\n")
+    lines.append(bullet_list([f"`{value}`" for value in claim_data.get("claim_type_values", [])]))
+    lines.append("\n### Coverage Status Values\n\n")
+    lines.append(bullet_list([f"`{value}`" for value in coverage_data.get("coverage_status_values", [])]))
+    lines.append("\n### Result Status Values\n\n")
+    lines.append(bullet_list([f"`{value}`" for value in coverage_data.get("result_status_values", [])]))
+    lines.append("\n### Open-Problem Status Values\n\n")
+    lines.append(bullet_list([f"`{value}`" for value in open_problem_data.get("status_values", [])]))
     lines.append("\n")
 
     lines.append("## Major Proven Results\n\n")
@@ -140,7 +161,18 @@ def main() -> int:
         lines.append(f"- Coverage status: `{cell['coverage_status']}`\n")
         lines.append(f"- Result status: `{cell['result_status']}`\n")
         lines.append(f"- Summary: {cell['summary']}\n")
-        lines.append(f"- Supporting claims: {', '.join(cell['supporting_claims'])}\n")
+        if cell in scope_exclusion_cells:
+            lines.append(
+                "- Evidence role: Scope-exclusion cell; this records a model "
+                "decision, not a theorem-level claim.\n"
+            )
+            supporting_claims = ", ".join(cell["supporting_claims"]) or (
+                "None recorded; this is expected for a scope-exclusion cell."
+            )
+            lines.append(f"- Supporting theorem claims: {supporting_claims}\n")
+        else:
+            supporting_claims = ", ".join(cell["supporting_claims"]) or "None recorded."
+            lines.append(f"- Supporting claims: {supporting_claims}\n")
         lines.append(f"- Next action: {cell['next_action']}\n\n")
 
     lines.append("## Verification Gaps\n\n")
@@ -164,14 +196,29 @@ def main() -> int:
             lines.append(f"- `{cell['id']}` is `{cell['coverage_status']}`.\n")
     else:
         lines.append("- No coverage cells are currently marked `unsearched` or `searching`.\n")
+    if scope_exclusion_cells:
+        excluded_ids = ", ".join(f"`{cell['id']}`" for cell in scope_exclusion_cells)
+        lines.append(f"- Scope-exclusion cells tracked: {excluded_ids}.\n")
     if SEARCH_LOG.exists():
         lines.append(f"- Search log present: `{SEARCH_LOG.relative_to(ROOT)}`.\n")
     else:
         lines.append("- Search log missing.\n")
+    if PROGRESS_TRACKER.exists():
+        lines.append(f"- Progress tracker present: `{PROGRESS_TRACKER.relative_to(ROOT)}`.\n")
+    else:
+        lines.append("- Progress tracker missing.\n")
+    if DOCUMENT_ASSEMBLY.exists():
+        lines.append(f"- Document assembly map present: `{DOCUMENT_ASSEMBLY.relative_to(ROOT)}`.\n")
+    else:
+        lines.append("- Document assembly map missing.\n")
     lines.append("\n")
 
     lines.append("## Next Actions\n\n")
     lines.append(bullet_list(next_actions))
+    if PROGRESS_TRACKER.exists():
+        lines.append(f"\nSee `{PROGRESS_TRACKER.relative_to(ROOT)}` for the framework-stage work queue.\n")
+    if DOCUMENT_ASSEMBLY.exists():
+        lines.append(f"See `{DOCUMENT_ASSEMBLY.relative_to(ROOT)}` for the reader-facing document flow.\n")
 
     OUTPUT.write_text("".join(lines), encoding="utf-8")
     print(f"Wrote {OUTPUT.relative_to(ROOT)}")

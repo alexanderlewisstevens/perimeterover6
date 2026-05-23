@@ -1,7 +1,29 @@
 {
   "schema_version": 1,
-  "updated": "2026-05-22",
+  "updated": "2026-05-23",
   "purpose": "Completeness map for the review. Each cell records a model/result area and its evidence status.",
+  "coverage_status_values": [
+    "unsearched",
+    "searching",
+    "synthesized",
+    "open_gap",
+    "scope_excluded_adjacent"
+  ],
+  "result_status_values": [
+    "theorem",
+    "tight_theorem",
+    "tight_theorem_context",
+    "tight_theorem_for_restricted_class",
+    "conditional",
+    "open_with_partial_results",
+    "open_or_conditional_beyond_hole_free",
+    "restricted_visibility_context",
+    "restricted_visibility_out_of_scope",
+    "optimization_or_motion_variant_out_of_scope",
+    "discrete_visibility_context",
+    "face_guard_context",
+    "hardness_and_approximation_context"
+  ],
   "coverage_cells": [
     {
       "id": "simple_orthogonal_polygons_point_guards_vertex_count",
@@ -30,7 +52,7 @@
         "Status by Model",
         "Two-Dimensional Orthogonal Polygons"
       ],
-      "next_action": "Record page/theorem locators from primary sources."
+      "next_action": "KKK and Gyori locators are now recorded from SIAM metadata, with O'Rourke book cross-checks for Theorems 2.1--2.2; full primary proof text can still be checked if access is available."
     },
     {
       "id": "orthogonal_polygons_with_holes_vertex_guards",
@@ -65,7 +87,7 @@
         "Two-Dimensional Orthogonal Polygons",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Primary-check exact theorem statements and page locators for the partial bounds."
+      "next_action": "Urrutia, Zylinski, Hoffmann--Kriegel, and Michael--Pinciu locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked source changing this open-with-partial-results status; continue periodic exact-title and venue scans. Floodlight, half-plane, and other restricted-visibility variants now require source and claim records before theorem-level treatment."
     },
     {
       "id": "hole_free_polyominoes_point_guards_lattice_perimeter",
@@ -123,7 +145,7 @@
         "Polyomino and Perimeter Results",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Complete for the Massberg conditional route; next pass should verify independent area/cell-count bounds for holes."
+      "next_action": "Complete for the Massberg conditional route. A 2026-05-23 forward sweep found no tracked independent proof of the ell/6 holes extension; keep area/cell-count and discrete-visibility variants separate from the perimeter claim."
     },
     {
       "id": "polyominoes_with_holes_point_guards_area",
@@ -137,7 +159,7 @@
       },
       "coverage_status": "synthesized",
       "result_status": "tight_theorem",
-      "summary": "Biedl et al. prove the tight floor((m+1)/3) theorem for m-cell polyominoes, holes allowed.",
+      "summary": "Biedl et al. prove the tight floor((m+1)/3) theorem for connected m-cell polyominoes with m >= 2, holes allowed; m=1 is the trivial one-guard case.",
       "supporting_sources": [
         "BiedlEtAl2012"
       ],
@@ -151,7 +173,7 @@
         "Status Overview",
         "Polyomino and Perimeter Results"
       ],
-      "next_action": "Record theorem/page locator and examples showing tightness."
+      "next_action": "Complete for the main cell-count theorem; a later algorithmic pass can separate the related SoCG 2011 complexity results."
     },
     {
       "id": "ortho_unit_polygons_point_guards_perimeter",
@@ -179,7 +201,7 @@
         "Status Overview",
         "Polyomino and Perimeter Results"
       ],
-      "next_action": "Record exact theorem locator and clarify hole assumptions from the primary paper."
+      "next_action": "Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap."
     },
     {
       "id": "integral_orthogonal_polygons_point_guards_perimeter",
@@ -213,7 +235,7 @@
         "Status Overview",
         "Polyomino and Perimeter Results"
       ],
-      "next_action": "Make the exact broader domain convention explicit before stating a standalone open problem."
+      "next_action": "The hole-free overlap is recorded; before stating any standalone broader-domain open problem, specify whether holes, disconnected domains, or a different lattice-domain convention are intended."
     },
     {
       "id": "orthogonal_polyhedra_point_guards",
@@ -243,7 +265,7 @@
         "Status Overview",
         "Three-Dimensional Orthogonal Polyhedra"
       ],
-      "next_action": "Primary-check the precise transfer from binary-space partitions to the guarding statement."
+      "next_action": "Paterson--Yao BSP locators and Viglietta thesis guard-translation locator are recorded; next action is optional full journal-version access if needed."
     },
     {
       "id": "orthogonal_polyhedra_edge_and_reflex_edge_guards",
@@ -280,7 +302,201 @@
         "Three-Dimensional Orthogonal Polyhedra",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Separate arbitrary-polyhedron bounds from orthogonal-specific conjectures in claim locators."
+      "next_action": "Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked result closing the general edge/reflex-edge gaps; face guards, 2-reflex restrictions, and discrete polyform variants are now represented in separate adjacent-model cells."
+    },
+    {
+      "id": "rectilinear_polygons_edge_guards_2d",
+      "title": "Rectilinear polygons, edge guards",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "rectilinear polygon",
+        "holes": "as in source",
+        "guard_model": "edge guards",
+        "parameter": "vertices n"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "tight_theorem_context",
+      "summary": "Bjorling-Sachs gives the 2D rectilinear edge-guard reference point used when comparing edge-guard models.",
+      "supporting_sources": [
+        "BjorlingSachs1998"
+      ],
+      "supporting_claims": [
+        "claim_BjorlingSachs1998"
+      ],
+      "open_problem_links": [],
+      "paper_sections": [
+        "Annotated Source Guide",
+        "Three-Dimensional Orthogonal Polyhedra"
+      ],
+      "next_action": "Keep this cell as 2D edge-guard context; do not translate it into point-guard perimeter or 3D edge-guard statements."
+    },
+    {
+      "id": "orthogonal_polygons_sliding_camera_transmitter_visibility",
+      "title": "Orthogonal polygons, sliding cameras and sliding k-transmitters",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "orthogonal polygon",
+        "holes": "varies by source",
+        "guard_model": "sliding cameras and sliding k-transmitters",
+        "parameter": "optimization input size and k"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "restricted_visibility_context",
+      "summary": "Sliding-camera and sliding k-transmitter results form a restricted-visibility algorithmic line, not a standard point-guard perimeter theorem.",
+      "supporting_sources": [
+        "DurocherEtAl2017",
+        "BiedlEtAl2019"
+      ],
+      "supporting_claims": [
+        "claim_DurocherEtAl2017",
+        "claim_BiedlEtAl2019"
+      ],
+      "open_problem_links": [
+        "algorithmic_restricted_cases"
+      ],
+      "paper_sections": [
+        "Model Separations and Non-Implications",
+        "Algorithmic and Optimization Context",
+        "Open Problems and Research Directions"
+      ],
+      "next_action": "Extract theorem-level algorithmic statements only if the review expands beyond extremal counting bounds."
+    },
+    {
+      "id": "orthogonal_polygons_floodlight_half_plane_visibility",
+      "title": "Orthogonal polygons, floodlights and half-plane guards",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "orthogonal polygon or rectilinear domain",
+        "holes": "varies by source",
+        "guard_model": "floodlights and half-plane guards",
+        "parameter": "model-specific angle, direction, or optimization parameters"
+      },
+      "coverage_status": "scope_excluded_adjacent",
+      "result_status": "restricted_visibility_out_of_scope",
+      "summary": "Floodlight and half-plane guarding results use directional or restricted visibility and are not standard point-guard, vertex-guard, or perimeter-over-six theorems.",
+      "supporting_sources": [],
+      "supporting_claims": [],
+      "open_problem_links": [
+        "orthogonal_holes_vertex_guards",
+        "algorithmic_restricted_cases"
+      ],
+      "paper_sections": [
+        "Model Separations and Non-Implications",
+        "Completeness Protocol and Evidence Trail"
+      ],
+      "next_action": "Keep as an explicit exclusion unless a specific theorem is promoted into the review; promotion requires source, claim, locator, and translation records first."
+    },
+    {
+      "id": "guarding_variants_optimization_and_motion_models",
+      "title": "Dispersive, contiguous, mobile, point-boundary, and related guarding variants",
+      "domain_axes": {
+        "dimension": "2D and 3D",
+        "object_class": "orthogonal polygons, polygonal domains, and related discrete domains",
+        "holes": "varies by source",
+        "guard_model": "dispersive guards, contiguous guards, mobile guards, point-boundary guards, and related variants",
+        "parameter": "model-specific objective, motion, adjacency, or placement parameters"
+      },
+      "coverage_status": "scope_excluded_adjacent",
+      "result_status": "optimization_or_motion_variant_out_of_scope",
+      "summary": "These variants are useful for search completeness and terminology, but their objectives or guard behavior differ from the extremal point/vertex/edge-guard bounds surveyed here.",
+      "supporting_sources": [],
+      "supporting_claims": [],
+      "open_problem_links": [
+        "algorithmic_restricted_cases"
+      ],
+      "paper_sections": [
+        "Model Separations and Non-Implications",
+        "Completeness Protocol and Evidence Trail"
+      ],
+      "next_action": "Record exact source and claim data only if the paper later discusses one of these variants beyond an exclusion note."
+    },
+    {
+      "id": "polyomino_discrete_k_hop_and_polyform_visibility",
+      "title": "Polyominoes and polyforms, discrete visibility variants",
+      "domain_axes": {
+        "dimension": "2D and higher-dimensional discrete analogues",
+        "object_class": "polyomino, polycube, and polyhypercube",
+        "holes": "varies by source",
+        "guard_model": "k-hop visibility and discrete polyform visibility",
+        "parameter": "k, cells, and polyform-specific parameters"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "discrete_visibility_context",
+      "summary": "k-hop and polyform visibility results are discrete analogues and algorithmic context, not straight-line point-guard perimeter results.",
+      "supporting_sources": [
+        "FiltserEtAl2025",
+        "Pinciu2015"
+      ],
+      "supporting_claims": [
+        "claim_FiltserEtAl2025",
+        "claim_Pinciu2015"
+      ],
+      "open_problem_links": [
+        "algorithmic_restricted_cases"
+      ],
+      "paper_sections": [
+        "Model Separations and Non-Implications",
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Algorithmic and Optimization Context"
+      ],
+      "next_action": "Keep discrete visibility and continuous orthogonal-polyhedron visibility separate unless a future source explicitly bridges them."
+    },
+    {
+      "id": "orthogonal_polyhedra_face_guards",
+      "title": "Orthogonal polyhedra and related classes, face guards",
+      "domain_axes": {
+        "dimension": "3D",
+        "object_class": "polyhedra, orthogonal polyhedra, and 2-reflex orthostacks",
+        "holes": "varies by source",
+        "guard_model": "face guards",
+        "parameter": "polyhedron class parameters"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "face_guard_context",
+      "summary": "Face-guard results map part of the 3D model space but are not edge-guard, reflex-edge-guard, or point-guard perimeter analogues.",
+      "supporting_sources": [
+        "VigliettaFace2014"
+      ],
+      "supporting_claims": [
+        "claim_VigliettaFace2014"
+      ],
+      "open_problem_links": [
+        "orthogonal_polyhedra_edge_guards"
+      ],
+      "paper_sections": [
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Annotated Source Guide"
+      ],
+      "next_action": "If face guards become more than context, add theorem-level subclaims by polyhedron class."
+    },
+    {
+      "id": "orthogonal_polyhedra_2_reflex_reflex_edge_guards",
+      "title": "2-reflex orthogonal polyhedra, reflex-edge guards",
+      "domain_axes": {
+        "dimension": "3D",
+        "object_class": "2-reflex orthogonal polyhedron",
+        "holes": "genus tracked where relevant",
+        "guard_model": "reflex-edge guards and open reflex-edge guards",
+        "parameter": "reflex edges r, genus g, edges m"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "tight_theorem_for_restricted_class",
+      "summary": "Viglietta proves tight-style reflex-edge guard bounds for 2-reflex orthogonal polyhedra, a restricted class that does not settle general 3-reflex cases.",
+      "supporting_sources": [
+        "Viglietta2020"
+      ],
+      "supporting_claims": [
+        "claim_Viglietta2020"
+      ],
+      "open_problem_links": [
+        "orthogonal_polyhedra_reflex_edge_guards"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Open Problems and Research Directions"
+      ],
+      "next_action": "Use as the restricted-class positive result when explaining why the general reflex-edge problem remains open."
     },
     {
       "id": "algorithmic_and_restricted_visibility_context",
@@ -324,7 +540,7 @@
         "Algorithmic and Optimization Context",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Decide which adjacent models deserve deeper theorem-level extraction versus brief survey treatment."
+      "next_action": "Core restricted-visibility, hardness, and approximation locators are recorded. The currently cited adjacent variants now have separate cells, and the currently excluded adjacent variants now have explicit scope-exclusion cells; newly discovered variants should receive a scope decision before theorem-level use."
     }
   ]
 }

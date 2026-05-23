@@ -6,8 +6,12 @@ title searches and primary sources before secondary summaries.
 ## Perimeter and Polyominoes
 
 - `"Perfect graphs and guarding rectilinear art galleries" polyomino perimeter`
+- `"Massberg" "Perfect graphs and guarding rectilinear art galleries" citations`
 - `"polyomino" "perimeter" "floor" "guards" "art gallery"`
 - `"Massberg" "Conjecture 6.10" maximal rectangles guarding holes`
+- `"polyominoes with holes" "perimeter" "guards" "ell/6"`
+- `"perimeter-over-six" polyomino guards holes`
+- `"l/6" "polyomino" "guards"`
 - `"maximal rectangle" packing conjecture rectilinear gallery holes guards`
 - `"The art gallery theorem for polyominoes" "m+1" "3"`
 
@@ -17,6 +21,8 @@ title searches and primary sources before secondary summaries.
 - `"floor((n+h)/4)" "orthogonal polygon" holes "vertex guards"`
 - `"floor(2n/7)" "orthogonal polygon" holes "vertex guards"`
 - `"How to guard orthogonal polygons" "diagonal graphs" "vertex covers"`
+- `"orthogonal polygons with holes" "vertex guards" "2025"`
+- `"Shermer's Conjecture" "orthogonal" "holes" "vertex guards"`
 - `"Aggarwal" "orthogonal art galleries" holes vertex guards`
 
 ## Ortho-Unit and Integral Orthogonal Polygons
@@ -29,8 +35,12 @@ title searches and primary sources before secondary summaries.
 
 - `"orthogonal polyhedron" "edge guards" "m/12"`
 - `"Urrutia" "m/12" "orthogonal polyhedron" guards`
+- `"Edge Guards for Polyhedra in Three-space" citations`
 - `"reflex edge guards" "orthogonal polyhedra" "2-reflex"`
+- `"Optimally Guarding 2-Reflex Orthogonal Polyhedra" citations`
 - `"orthogonal polyhedra" "Theta(n^{3/2})" point guards`
+- `"orthogonal polyhedra" "edge guards" "2025"`
+- `"orthogonal polyhedron" "reflex edge guards" "2024"`
 - `"face-guarding polyhedra" orthogonal`
 
 ## Algorithms and Complexity
@@ -41,6 +51,18 @@ title searches and primary sources before secondary summaries.
 - `"sliding cameras" "orthogonal art galleries" holes`
 - `"sliding k-transmitters" "orthogonal art galleries" hardness approximation`
 - `"guarding polyominoes" "k-hop visibility"`
+
+## Adjacent-Model Exclusions
+
+- `"orthogonal floodlights" holes Abello Urrutia`
+- `"Abello" "orthogonal polygon" "holes" "vertex guards"`
+- `"Half-Guarding Orthogonal Polygons with Holes"`
+- `"Rook and Queen Vision" polycubes polyhypercubes`
+- `"art gallery" dispersive guards orthogonal polygon holes`
+- `"point-boundary" "art gallery" orthogonal polygon`
+- `site:arxiv.org art gallery orthogonal polygon holes guards 2025`
+- `site:arxiv.org orthogonal polyhedra edge guards 2025`
+- `site:drops.dagstuhl.de orthogonal art gallery polygon holes vertex guards 2025`
 
 ## Search Targets
 

@@ -1,7 +1,18 @@
 {
   "schema_version": 1,
-  "updated": "2026-05-22",
+  "updated": "2026-05-23",
   "purpose": "One extracted result or contextual claim per record. Claims are the auditable bridge from source records to review prose.",
+  "claim_type_values": [
+    "theorem",
+    "tight_theorem",
+    "conditional",
+    "conjecture",
+    "lower_bound",
+    "open_problem",
+    "hardness",
+    "approximation",
+    "survey"
+  ],
   "claims": [
     {
       "id": "claim_AbrahamsenAdamaszekMiltzow2022",
@@ -101,25 +112,35 @@
       "id": "claim_BiedlEtAl2012",
       "source_key": "BiedlEtAl2012",
       "claim_type": "tight_theorem",
-      "result_statement": "Every m-cell polyomino, possibly with holes, can be guarded by floor((m+1)/3) point guards; the bound is sometimes necessary.",
+      "result_statement": "For m >= 2, floor((m+1)/3) guards are sometimes necessary and always sufficient to cover a connected m-polyomino, possibly with holes; the sufficiency proof works even in the more restrictive r-visibility model.",
       "model_scope": {
         "objects": [
           "polyominoes",
           "polyominoes with holes"
         ],
         "variants": [
-          "point guards"
+          "point guards",
+          "r-visibility guards"
         ],
         "parameters": [
           "cells m"
         ],
-        "assumptions": []
+        "assumptions": [
+          "The polyomino is connected and consists of m closed integral unit-square cells.",
+          "The tight formula is stated for m >= 2; the one-cell case is trivially guardable by one guard."
+        ]
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
-      "translation_note": "This is an area/cell-count theorem. It does not imply a perimeter-over-six theorem because area and perimeter are incomparable for the needed extremal question.",
-      "limitations": [],
-      "non_implications": [],
+      "locator": "Definitions on journal p. 712; model/result overview in Section 2, journal p. 713; lower-bound construction in Fig. 3, journal p. 714; decomposition theorem in Theorem 1, journal pp. 716-717; tight guard bound in Corollary 1, journal p. 717; holes-with-or-without emphasis and open approximation note in Conclusion, journal p. 719.",
+      "verification_status": "primary_checked",
+      "translation_note": "This is an area/cell-count theorem for connected m-polyominoes, with the one-cell case handled separately. It does not imply a perimeter-over-six theorem because area and perimeter are incomparable for the needed extremal question.",
+      "limitations": [
+        "The formula floor((m+1)/3) is stated for m >= 2; m=1 needs one guard.",
+        "The theorem is parameterized by cell count m, not lattice perimeter."
+      ],
+      "non_implications": [
+        "Does not prove perimeter-over-six for polyominoes with holes.",
+        "Does not settle real-coordinate orthogonal polygons that are not presented as unit-square polyominoes."
+      ],
       "open_problem_links": [
         "polyomino_perimeter_holes",
         "algorithmic_restricted_cases"
@@ -156,8 +177,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Springer DOI page abstract and article metadata, Algorithmica 81(1), pp. 69--97; use as restricted-visibility hardness/approximation context until theorem-level extraction is needed.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Related visibility model only. Do not cite it as evidence for standard point-guard perimeter bounds.",
       "limitations": [],
       "non_implications": [],
@@ -165,6 +186,7 @@
         "algorithmic_restricted_cases"
       ],
       "coverage_cells": [
+        "orthogonal_polygons_sliding_camera_transmitter_visibility",
         "algorithmic_and_restricted_visibility_context"
       ],
       "paper_sections": [
@@ -196,14 +218,19 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "ScienceDirect DOI page abstract and article metadata, Computational Geometry 11(2), pp. 111--123; Ghosh2010 open PDF, p. 1, cites Bjorling--Sachs for the simple-orthogonal edge-guard bound.",
+      "verification_status": "primary_metadata_plus_secondary_context_checked",
       "translation_note": "Useful 2D edge-guard reference point. It should not be confused with 2D point guards or 3D edge guards.",
       "limitations": [],
       "non_implications": [],
       "open_problem_links": [],
-      "coverage_cells": [],
-      "paper_sections": [],
+      "coverage_cells": [
+        "rectilinear_polygons_edge_guards_2d"
+      ],
+      "paper_sections": [
+        "Annotated Source Guide",
+        "Three-Dimensional Orthogonal Polyhedra"
+      ],
       "importance": "supporting",
       "tracking_issue": {
         "number": 5,
@@ -228,8 +255,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Abstract and open-gap discussion, author PDF pp. 1-2; Lemma 10 and Theorem 11, author PDF p. 10; Theorem 12, author PDF p. 11.",
+      "verification_status": "primary_checked",
       "translation_note": "General 3D edge-guard result. For this review it frames the broader 3D gap around the sharper orthogonal-polyhedron conjectures.",
       "limitations": [],
       "non_implications": [],
@@ -269,8 +296,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "Original article pp. 39-41; O'Rourke Chapter 1 states Theorem 1.1 on book p. 9 and discusses Chvatal's proof in Section 1.2.1.",
+      "verification_status": "secondary_locator_checked",
       "translation_note": "Foundational non-orthogonal bound. It is weaker than the orthogonal n/4 theorem and unrelated to lattice perimeter.",
       "limitations": [],
       "non_implications": [],
@@ -304,8 +331,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Theorem 1, arXiv PDF p. 5; proof conclusion, arXiv PDF pp. 10-13; integral-perimeter lower-bound Figure 11 and N/6 conjecture, arXiv PDF p. 14.",
+      "verification_status": "primary_checked",
       "translation_note": "The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. The hole-free integral N/6 reading is covered by Massberg after subdivision; only holes or broader lattice-domain readings remain open.",
       "limitations": [],
       "non_implications": [],
@@ -345,8 +372,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "arXiv/conference PDF abstract and Theorem 2/Corollary 1, p. 10; conclusion open questions, p. 11; journal DOI metadata records Computational Geometry 65, pp. 12--26.",
+      "verification_status": "preprint_checked",
       "translation_note": "Related model only. It supplies algorithmic context, not a standard point-guard perimeter theorem.",
       "limitations": [],
       "non_implications": [],
@@ -354,6 +381,7 @@
         "algorithmic_restricted_cases"
       ],
       "coverage_cells": [
+        "orthogonal_polygons_sliding_camera_transmitter_visibility",
         "algorithmic_and_restricted_visibility_context"
       ],
       "paper_sections": [
@@ -386,8 +414,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "Springer open PDF abstract and Theorems 2--5, pp. 1, 7, 9, 12, and 18; open questions, p. 19.",
+      "verification_status": "primary_checked",
       "translation_note": "Discrete visibility variant. Useful for adjacent open problems but not evidence for straight-line point-guard perimeter-over-six.",
       "limitations": [],
       "non_implications": [],
@@ -395,6 +423,7 @@
         "algorithmic_restricted_cases"
       ],
       "coverage_cells": [
+        "polyomino_discrete_k_hop_and_polyform_visibility",
         "algorithmic_and_restricted_visibility_context"
       ],
       "paper_sections": [
@@ -425,8 +454,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Original journal note p. 374; O'Rourke Chapter 1 discusses Fisk's triangulation/three-coloring proof in Section 1.2.1, book pp. 5-9.",
+      "verification_status": "secondary_locator_checked",
       "translation_note": "Proof-template reference for coloring arguments. It is not an orthogonal, hole, or perimeter result.",
       "limitations": [],
       "non_implications": [],
@@ -457,8 +486,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Open MPI-hosted PDF abstract and Theorems 2.1--2.2 and 3.1--3.2, pp. 1, 3--4; conclusion open problem on constant-factor approximations, p. 5.",
+      "verification_status": "primary_checked",
       "translation_note": "Use for algorithmic landscape and approximation context. It should not be used to state extremal perimeter bounds.",
       "limitations": [],
       "non_implications": [],
@@ -496,8 +525,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "SIAM DOI page abstract and article metadata, journal pp. 452-454.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Vertex-count theorem for simple orthogonal polygons. It does not address holes or lattice perimeter.",
       "limitations": [],
       "non_implications": [],
@@ -537,8 +566,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "Refubium technical-report PDF abstract; Theorem 2.1, p. 3; Corollary 4.1 and Conjecture 4.2, p. 13; Corollary 4.4, p. 14.",
+      "verification_status": "primary_checked",
       "translation_note": "Relevant to hole/vertex-guard context. It is not a point-guard perimeter theorem.",
       "limitations": [],
       "non_implications": [],
@@ -577,8 +606,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "SIAM DOI page abstract and article metadata, journal pp. 194-206; O'Rourke Chapter 2, Theorems 2.1-2.2, book pp. 45-46.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Core 2D orthogonal theorem. It is a vertex-count result for simple polygons; holes and perimeter are separate.",
       "limitations": [],
       "non_implications": [],
@@ -617,8 +646,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "ScienceDirect DOI page abstract and article metadata, Computational Geometry 39(3), pp. 219--228; use as rectilinear-domain optimization context.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Algorithmic context for rectilinear domains. Do not translate to extremal perimeter sufficiency.",
       "limitations": [],
       "non_implications": [],
@@ -657,8 +686,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "IEEE DOI page abstract and article metadata, IEEE Transactions on Information Theory 32(2), pp. 276--282; Ghosh2010 open PDF, p. 1, cites Lee--Lin for NP-hardness of minimum vertex, point, and edge guards in simple polygons.",
+      "verification_status": "primary_metadata_plus_secondary_context_checked",
       "translation_note": "Use to separate minimum-guard computation from worst-case existence theorems.",
       "limitations": [],
       "non_implications": [],
@@ -803,8 +832,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Springer DOI page abstract and article metadata, Discrete & Computational Geometry 55(2), pp. 410--422; exact-title searches record the diagonal-graph/vertex-cover framework and the floor((17n-8)/52) h-independent bound.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Important improvement for holes in vertex-count frameworks. It does not settle perimeter-over-six point guards.",
       "limitations": [],
       "non_implications": [],
@@ -843,8 +872,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "ScienceDirect DOI page abstract and article metadata, Journal of Computer and System Sciences 40(1), pp. 19--48.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Proof-technology source for later rectangle/perfect-graph approaches; not directly a perimeter theorem.",
       "limitations": [],
       "non_implications": [],
@@ -879,8 +908,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Preface, book pp. vii-viii, for survey/open-problem role; Chapter 1, Theorem 1.1, book p. 9; Chapter 2 orthogonal-polygon setup, book p. 31, and Theorems 2.1-2.2, book pp. 45-46; Chapter 5 holes material, book pp. 125-145.",
+      "verification_status": "primary_checked",
       "translation_note": "Use as background and for classical bounds. When citing a theorem, prefer the original source as well.",
       "limitations": [],
       "non_implications": [],
@@ -914,8 +943,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "WRAP technical-report PDF application paragraph, p. 4, and Theorems 2--3, pp. 11 and 13; guard-theorem translation cross-checked in Viglietta thesis Theorem 3.7, p. 48.",
+      "verification_status": "primary_checked_with_secondary_translation",
       "translation_note": "This blocks a direct linear point-guard analogue in 3D and motivates edge/reflex-edge models.",
       "limitations": [],
       "non_implications": [],
@@ -955,8 +984,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "ScienceDirect DOI page abstract and article metadata, Electronic Notes in Discrete Mathematics 49, pp. 159--166.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Useful for discrete 3D analogues. It is not the continuous orthogonal-polyhedron point-guard model.",
       "limitations": [],
       "non_implications": [],
@@ -964,6 +993,7 @@
         "algorithmic_restricted_cases"
       ],
       "coverage_cells": [
+        "polyomino_discrete_k_hop_and_polyform_visibility",
         "algorithmic_and_restricted_visibility_context"
       ],
       "paper_sections": [
@@ -994,8 +1024,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Wiley DOI page metadata, Mathematical Logic Quarterly 41(2), pp. 261--267; Ghosh2010 open PDF, p. 1, cites it for NP-hardness of minimum vertex and point guards in simple orthogonal polygons.",
+      "verification_status": "primary_metadata_plus_secondary_context_checked",
       "translation_note": "Optimization-hardness evidence only. It does not negate existential upper bounds.",
       "limitations": [],
       "non_implications": [],
@@ -1036,8 +1066,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "IEEE DOI page abstract and article metadata, Proceedings of the IEEE 80(9), pp. 1384--1399.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Use for historical survey context. For current open status, pair with Urrutia's open-problem page and later papers.",
       "limitations": [],
       "non_implications": [],
@@ -1072,8 +1102,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Elsevier DOI chapter metadata, Handbook of Computational Geometry, pp. 973--1027; use as survey taxonomy paired with original theorem/open-problem sources.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Use for background and variant taxonomy; cite original sources for exact theorem statements.",
       "limitations": [],
       "non_implications": [],
@@ -1108,8 +1138,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "Urrutia open-problem webpage, table-of-contents entries for Shermer and Hoffman problems and the corresponding orthogonal-polygons-with-holes sections; checked 2026-05-22.",
+      "verification_status": "primary_checked",
       "translation_note": "This is the direct open-problem source for 2D orthogonal holes with vertex guards. It is adjacent to but distinct from point-guard perimeter-over-six.",
       "limitations": [],
       "non_implications": [],
@@ -1155,8 +1185,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Chapter 3, Theorem 3.7 and point-guard obstruction, arXiv PDF p. 52; edge-guard model and Urrutia bounds/conjectures, Observations 3.10-3.13 and Conjectures 3.12-3.14, arXiv PDF pp. 54-55; Theorem 3.15, arXiv PDF p. 56.",
+      "verification_status": "primary_checked",
       "translation_note": "Use as the bridge from Paterson-Yao BSP results to guarding orthogonal polyhedra, and as a source for 3D open-problem formulations.",
       "limitations": [],
       "non_implications": [],
@@ -1199,16 +1229,21 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "arXiv PDF abstract; Theorems 3.1--3.3, pp. 7--9; Theorem 3.9, p. 14; Theorem 4.1 and Corollary 4.2, pp. 16 and 18.",
+      "verification_status": "preprint_checked",
       "translation_note": "Maps the 3D model space but should not be merged with edge-guard or point-guard statements.",
       "limitations": [],
       "non_implications": [],
       "open_problem_links": [
         "orthogonal_polyhedra_edge_guards"
       ],
-      "coverage_cells": [],
-      "paper_sections": [],
+      "coverage_cells": [
+        "orthogonal_polyhedra_face_guards"
+      ],
+      "paper_sections": [
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Annotated Source Guide"
+      ],
       "importance": "supporting",
       "tracking_issue": {
         "number": 30,
@@ -1236,8 +1271,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "arXiv PDF abstract; Theorems 1.3, 3.5, 4.2, and 4.3, pp. 6, 21, and 26; Proposition 6.3, p. 33.",
+      "verification_status": "preprint_checked",
       "translation_note": "Strong partial result for a restricted 3D class. It does not settle general 3-reflex orthogonal polyhedra.",
       "limitations": [],
       "non_implications": [],
@@ -1245,6 +1280,7 @@
         "orthogonal_polyhedra_reflex_edge_guards"
       ],
       "coverage_cells": [
+        "orthogonal_polyhedra_2_reflex_reflex_edge_guards",
         "orthogonal_polyhedra_edge_and_reflex_edge_guards"
       ],
       "paper_sections": [
@@ -1277,8 +1313,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "World Scientific DOI page abstract and article metadata, International Journal of Computational Geometry & Applications 17(2), pp. 105--138.",
+      "verification_status": "primary_metadata_checked",
       "translation_note": "Methodological source for decomposition approaches; exact downstream theorem use should be primary-checked before adding new claims.",
       "limitations": [],
       "non_implications": [],
@@ -1312,8 +1348,8 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
+      "locator": "Conjecture 1.1 and Theorems 1.2-1.4, journal PDF p. 2; Theorem 1.5, journal PDF p. 3; final open-status remark, journal PDF p. 10.",
+      "verification_status": "primary_checked",
       "translation_note": "Partial positive result for Shermer-type vertex-guard conjectures. It does not settle arbitrary holes or point-guard perimeter bounds.",
       "limitations": [],
       "non_implications": [],

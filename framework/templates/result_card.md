@@ -31,5 +31,9 @@ approximation result, survey claim, or open-problem statement.
 
 - Do not merge multiple unrelated theorems into one claim.
 - Do not translate across models without recording the changed assumption.
+- Do not create a claim record just to justify an exclusion. Use a
+  scope-exclusion coverage cell or search-log exclusion unless a specific
+  theorem, conjecture, lower bound, hardness result, survey claim, or
+  open-problem statement is being used.
 - Record missing page/theorem locators as `not_recorded`; the evidence report
   will surface them as verification gaps.

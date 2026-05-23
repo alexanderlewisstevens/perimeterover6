@@ -27,6 +27,8 @@ results from conditional or conjectural statements.
   cameras, transmitters, and discrete visibility variants.
 - A research-facing open-problem table, a concise problem list, and an
   annotated source guide.
+- A completeness protocol explaining how sources, claims, searches, coverage
+  cells, and open-problem records support the prose.
 
 ## Files
 
@@ -35,6 +37,11 @@ results from conditional or conjectural statements.
 - `AGENTS.md`: working instructions for future literature-review agents.
 - `framework/templates/`: reusable templates for CS literature-review papers,
   result cards, open-problem cards, and evidence reports.
+- `framework/templates/completeness_protocol.md`: reusable checklist for
+  completeness and open-problem status claims.
+- `framework/templates/document_assembly_map.md`: reusable map for turning
+  evidence artifacts into a readable review paper.
+- `framework/templates/progress_tracker.md`: reusable framework-stage tracker.
 - `literature/source_registry.json`: structured source-by-source evidence
   ledger.
 - `literature/claims_registry.json`: one result/claim record per extracted
@@ -43,6 +50,10 @@ results from conditional or conjectural statements.
   cells covered by the review.
 - `literature/open_problems.json`: open-problem clusters and their supporting
   sources.
+- `literature/framework_progress.md`: live progress board for framework stages,
+  current gaps, and the next update queue.
+- `literature/document_assembly.md`: map showing how the evidence ledgers,
+  progress tracker, evidence report, and PDF fit together.
 - `literature/search_log.md`: search audit log for included and excluded
   literature.
 - `literature/search_queries.md`: reusable search strings for follow-up
@@ -61,11 +72,18 @@ results from conditional or conjectural statements.
 
 ## Review Workflow
 
-The paper is now backed by an auditable evidence layer. Add each source to
-`literature/source_registry.json`, extract each result into
-`literature/claims_registry.json`, update the relevant cells in
-`literature/coverage_matrix.json`, link any affected open problem in
-`literature/open_problems.json`, and only then update the LaTeX prose.
+The paper is backed by an auditable evidence layer. Completeness means that
+central claims can be traced and challenged, not that a finite search proves no
+paper was missed.
+
+For each result or open problem, identify the scope cell, add the source to
+`literature/source_registry.json`, record the search path in
+`literature/search_log.md`, extract the claim into
+`literature/claims_registry.json`, add theorem/page/problem locators where
+available, update the relevant cells in `literature/coverage_matrix.json`,
+link any affected open problem in `literature/open_problems.json`, update
+`literature/framework_progress.md` if the stage status or next action changed,
+and only then update the LaTeX prose.
 
 Run these checks before publishing changes:
 

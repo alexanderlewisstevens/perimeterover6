@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "updated": "2026-05-22",
+  "updated": "2026-05-23",
   "purpose": "Structured evidence ledger for the orthogonal art-gallery literature review.",
   "status_values": [
     "theorem",
     "tight_theorem",
     "conditional",
     "conjecture",
+    "lower_bound",
     "open_problem",
     "hardness",
     "approximation",
@@ -46,17 +47,17 @@
     {
       "key": "BiedlEtAl2012",
       "citation": "T. C. Biedl, M. T. Irfan, J. Iwerks, J. Kim, and J. S. B. Mitchell. The art gallery theorem for polyominoes. Discrete & Computational Geometry 48, 711--720, 2012.",
-      "links": ["https://doi.org/10.1007/s00454-012-9429-1", "https://researchconnect.suny.edu/en/publications/the-art-gallery-theorem-for-polyominoes/"],
+      "links": ["https://doi.org/10.1007/s00454-012-9429-1", "https://tildesites.bowdoin.edu/~mirfan/papers/Art_Gallery_DCG_2012.pdf", "https://researchconnect.suny.edu/en/publications/the-art-gallery-theorem-for-polyominoes/"],
       "venue": "Discrete & Computational Geometry",
       "source_type": "journal_article",
       "status": "tight_theorem",
       "objects": ["polyominoes", "polyominoes with holes"],
-      "guard_models": ["point guards"],
+      "guard_models": ["point guards", "r-visibility guards"],
       "parameters": ["cells m"],
-      "relevant_result": "Every m-cell polyomino, possibly with holes, can be guarded by floor((m+1)/3) point guards; the bound is sometimes necessary.",
-      "translation_note": "This is an area/cell-count theorem. It does not imply a perimeter-over-six theorem because area and perimeter are incomparable for the needed extremal question.",
+      "relevant_result": "For m >= 2, floor((m+1)/3) guards are sometimes necessary and always sufficient to cover a connected m-polyomino, possibly with holes; the sufficiency proof works even in the more restrictive r-visibility model.",
+      "translation_note": "This is an area/cell-count theorem for connected m-polyominoes, with the one-cell case handled separately by one guard. It does not imply a perimeter-over-six theorem because area and perimeter are incomparable for the needed extremal question.",
       "open_problem_links": ["polyomino_perimeter_holes", "algorithmic_restricted_cases"],
-      "verification": ["DOI recorded.", "University publication page states the m-cell bound and that holes are allowed."]
+      "verification": ["Primary/author-hosted journal PDF checked.", "Definitions of connected m-polyominoes and holes are on journal p. 712; Section 2 states the tight result and model details on p. 713; Fig. 3 gives the lower-bound construction on p. 714; Theorem 1 is on pp. 716-717; Corollary 1 gives the tight m-polyomino guard bound on p. 717; the conclusion emphasizes that the bounds apply with or without holes on p. 719."]
     },
     {
       "key": "BiedlEtAl2019",
@@ -71,7 +72,7 @@
       "relevant_result": "Studies hardness and approximation for guarding orthogonal art galleries with sliding k-transmitters.",
       "translation_note": "Related visibility model only. Do not cite it as evidence for standard point-guard perimeter bounds.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded; used for algorithmic/restricted-visibility context."]
+      "verification": ["Springer DOI metadata checked for title, venue, and page range; used for algorithmic/restricted-visibility context."]
     },
     {
       "key": "BjorlingSachs1998",
@@ -86,7 +87,7 @@
       "relevant_result": "Provides a tight edge-guard theorem for rectilinear polygons.",
       "translation_note": "Useful 2D edge-guard reference point. It should not be confused with 2D point guards or 3D edge guards.",
       "open_problem_links": [],
-      "verification": ["DOI recorded; exact theorem should be checked against primary PDF if further expanded."]
+      "verification": ["ScienceDirect DOI metadata checked for title, venue, and page range.", "Ghosh2010 open PDF p. 1 cites the simple-orthogonal edge-guard bound as due to Bjorling--Sachs; exact proof should still be checked against the primary article if the edge-guard section is expanded."]
     },
     {
       "key": "CanoTothUrrutiaViglietta2022",
@@ -101,7 +102,7 @@
       "relevant_result": "Every polyhedron with m edges can be guarded by at most (5/6)m edge guards; the paper emphasizes the remaining gap to lower bounds.",
       "translation_note": "General 3D edge-guard result. For this review it frames the broader 3D gap around the sharper orthogonal-polyhedron conjectures.",
       "open_problem_links": ["general_edge_guard_gap", "orthogonal_polyhedra_edge_guards"],
-      "verification": ["DOI and author PDF recorded.", "Search result confirmed the general m-edge context and open gap."]
+      "verification": ["DOI and author PDF recorded.", "Author PDF primary-checked for Theorem 11, Theorem 12, and open-gap discussion."]
     },
     {
       "key": "Chvatal1975",
@@ -116,7 +117,7 @@
       "relevant_result": "Every simple n-vertex polygon can be guarded by floor(n/3) point guards, and this is tight.",
       "translation_note": "Foundational non-orthogonal bound. It is weaker than the orthogonal n/4 theorem and unrelated to lattice perimeter.",
       "open_problem_links": [],
-      "verification": ["DOI recorded; standard foundational theorem."]
+      "verification": ["DOI recorded; standard foundational theorem.", "O'Rourke book checked: Chapter 1 states Theorem 1.1 on book p. 9 and discusses Chvatal's proof in Section 1.2.1; original article page span pp. 39--41 recorded."]
     },
     {
       "key": "DiazBanezEtAl2025",
@@ -131,12 +132,12 @@
       "relevant_result": "Every ortho-unit polygon with n >= 12 vertices can be guarded by floor((n-4)/8) guards, tightly. The paper also frames an integral-perimeter N/6 direction.",
       "translation_note": "The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. The hole-free integral N/6 reading is covered by Massberg after subdivision; only holes or broader lattice-domain readings remain open.",
       "open_problem_links": ["integral_perimeter_beyond_hole_free"],
-      "verification": ["DOI and arXiv recorded."]
+      "verification": ["DOI and arXiv recorded.", "arXiv PDF primary-checked for Theorem 1, Figure 11, and the integral-perimeter N/6 conjecture."]
     },
     {
       "key": "DurocherEtAl2017",
       "citation": "S. Durocher, O. Filtser, R. Fraser, A. D. Mehrabi, and S. Mehrabi. Guarding orthogonal art galleries with sliding cameras. Computational Geometry: Theory and Applications 65, 12--26, 2017.",
-      "links": ["https://doi.org/10.1016/j.comgeo.2017.04.001"],
+      "links": ["https://doi.org/10.1016/j.comgeo.2017.04.001", "https://arxiv.org/abs/1308.2757"],
       "venue": "Computational Geometry: Theory and Applications",
       "source_type": "journal_article",
       "status": "theorem",
@@ -146,12 +147,12 @@
       "relevant_result": "Develops results for sliding-camera guarding in orthogonal art galleries.",
       "translation_note": "Related model only. It supplies algorithmic context, not a standard point-guard perimeter theorem.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded; exact theorem breakdown should be primary-checked for deeper algorithmic section."]
+      "verification": ["DOI metadata recorded for the journal article.", "arXiv/conference PDF checked for Theorem 2, Corollary 1, and conclusion open questions."]
     },
     {
       "key": "FiltserEtAl2025",
       "citation": "O. Filtser, E. Krohn, B. J. Nilsson, C. Rieck, and C. Schmidt. Guarding polyominoes under k-hop visibility. Algorithmica 87, 572--593, 2025.",
-      "links": ["https://doi.org/10.1007/s00453-024-01292-7"],
+      "links": ["https://doi.org/10.1007/s00453-024-01292-7", "https://link.springer.com/content/pdf/10.1007/s00453-024-01292-7.pdf"],
       "venue": "Algorithmica",
       "source_type": "journal_article",
       "status": "theorem",
@@ -161,7 +162,7 @@
       "relevant_result": "Studies guarding polyominoes under k-hop visibility, including algorithmic and approximation questions.",
       "translation_note": "Discrete visibility variant. Useful for adjacent open problems but not evidence for straight-line point-guard perimeter-over-six.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded.", "Springer page summary checked during web search."]
+      "verification": ["Springer open PDF checked for abstract, Theorems 2--5, and concluding open questions."]
     },
     {
       "key": "Fisk1978",
@@ -176,13 +177,13 @@
       "relevant_result": "Gives the short triangulation and three-coloring proof of Chvatal's floor(n/3) theorem.",
       "translation_note": "Proof-template reference for coloring arguments. It is not an orthogonal, hole, or perimeter result.",
       "open_problem_links": [],
-      "verification": ["DOI recorded; standard proof reference."]
+      "verification": ["DOI recorded; standard proof reference.", "O'Rourke book checked for Fisk's triangulation and three-coloring proof discussion in Chapter 1, Section 1.2.1, book pp. 5--9; original journal note p. 374 recorded."]
     },
     {
       "key": "Ghosh2010",
-      "citation": "S. K. Ghosh. Approximation algorithms for art gallery problems in polygons. Journal of Discrete Algorithms 8(1), 2010.",
-      "links": ["https://doi.org/10.1016/j.jda.2009.12.004"],
-      "venue": "Journal of Discrete Algorithms",
+      "citation": "S. K. Ghosh. Approximation algorithms for art gallery problems in polygons. Discrete Applied Mathematics 158(6), 718--722, 2010.",
+      "links": ["https://doi.org/10.1016/j.dam.2009.12.004", "https://www.mpi-inf.mpg.de/fileadmin/inf/d1/art_galler_set_cover.pdf"],
+      "venue": "Discrete Applied Mathematics",
       "source_type": "journal_article",
       "status": "approximation",
       "objects": ["polygons"],
@@ -191,7 +192,7 @@
       "relevant_result": "Surveys/develops approximation-algorithm context for art-gallery problems.",
       "translation_note": "Use for algorithmic landscape and approximation context. It should not be used to state extremal perimeter bounds.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded."]
+      "verification": ["Corrected DOI and venue against publisher metadata; the earlier Journal of Discrete Algorithms DOI was erroneous.", "Open MPI-hosted PDF checked for Theorems 2.1--2.2 and 3.1--3.2 and the concluding approximation open problem."]
     },
     {
       "key": "Gyori1986",
@@ -206,12 +207,12 @@
       "relevant_result": "Provides a short proof of the floor(n/4) rectilinear art-gallery theorem.",
       "translation_note": "Vertex-count theorem for simple orthogonal polygons. It does not address holes or lattice perimeter.",
       "open_problem_links": [],
-      "verification": ["DOI recorded."]
+      "verification": ["DOI recorded.", "SIAM DOI metadata primary-checked for article title and journal pp. 452--454."]
     },
     {
       "key": "HoffmannKriegel1996",
       "citation": "F. Hoffmann and K. Kriegel. A graph-coloring result and its consequences for polygon-guarding problems. SIAM Journal on Discrete Mathematics 9(2), 210--224, 1996.",
-      "links": ["https://doi.org/10.1137/S0895480194265611", "https://refubium.fu-berlin.de/handle/fub188/18382"],
+      "links": ["https://doi.org/10.1137/S0895480194265611", "https://refubium.fu-berlin.de/handle/fub188/18382", "https://refubium.fu-berlin.de/bitstream/handle/fub188/18382/1993-08.pdf"],
       "venue": "SIAM Journal on Discrete Mathematics",
       "source_type": "journal_article",
       "status": "theorem",
@@ -221,7 +222,7 @@
       "relevant_result": "Uses graph coloring to obtain guarding bounds for polygon-guarding problems, including orthogonal polygons with holes.",
       "translation_note": "Relevant to hole/vertex-guard context. It is not a point-guard perimeter theorem.",
       "open_problem_links": ["orthogonal_holes_vertex_guards"],
-      "verification": ["DOI and repository link recorded.", "Urrutia open-problem page cites Hoffmann-style floor(2n/7) conjecture."]
+      "verification": ["DOI and repository link recorded.", "Refubium technical-report PDF checked for Theorem 2.1, Corollary 4.1, Conjecture 4.2, Corollary 4.4, and related prison-yard conjectures.", "Urrutia open-problem page cites Hoffmann-style floor(2n/7) conjecture."]
     },
     {
       "key": "KahnKlaweKleitman1983",
@@ -236,7 +237,7 @@
       "relevant_result": "Every simple orthogonal n-vertex polygon is guardable by floor(n/4) point guards, and the bound is tight.",
       "translation_note": "Core 2D orthogonal theorem. It is a vertex-count result for simple polygons; holes and perimeter are separate.",
       "open_problem_links": [],
-      "verification": ["DOI recorded; standard theorem."]
+      "verification": ["DOI recorded; standard theorem.", "SIAM DOI metadata primary-checked for article title and journal pp. 194--206; O'Rourke Chapter 2 checked for Theorems 2.1--2.2 on book pp. 45--46."]
     },
     {
       "key": "KatzRoisman2008",
@@ -251,7 +252,7 @@
       "relevant_result": "Studies guarding vertices of rectilinear domains and associated hardness.",
       "translation_note": "Algorithmic context for rectilinear domains. Do not translate to extremal perimeter sufficiency.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded."]
+      "verification": ["ScienceDirect DOI metadata checked for title, venue, and page range."]
     },
     {
       "key": "LeeLin1986",
@@ -266,7 +267,7 @@
       "relevant_result": "Classical NP-hardness framework for art-gallery optimization problems.",
       "translation_note": "Use to separate minimum-guard computation from worst-case existence theorems.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded; exact title and venue checked."]
+      "verification": ["IEEE DOI metadata checked for title, venue, and page range.", "Ghosh2010 open PDF p. 1 cites Lee--Lin for classical NP-hardness context."]
     },
     {
       "key": "Massberg2014",
@@ -311,7 +312,7 @@
       "relevant_result": "Introduces same-sign diagonal graphs and vertex-cover methods, including h-independent upper bounds such as floor((17n-8)/52) for orthogonal polygons with holes.",
       "translation_note": "Important improvement for holes in vertex-count frameworks. It does not settle perimeter-over-six point guards.",
       "open_problem_links": ["orthogonal_holes_vertex_guards"],
-      "verification": ["DOI recorded.", "Exact-title searches confirmed the diagonal graph and vertex cover framework."]
+      "verification": ["Springer DOI metadata checked for title, venue, and page range.", "Exact-title searches confirmed the diagonal graph and vertex cover framework and the h-independent floor((17n-8)/52) bound; proof text still needs primary article access before expanding the theorem."]
     },
     {
       "key": "MotwaniRaghunathanSaran1990",
@@ -326,7 +327,7 @@
       "relevant_result": "Develops perfect-graph methods for covering orthogonal polygons with star polygons.",
       "translation_note": "Proof-technology source for later rectangle/perfect-graph approaches; not directly a perimeter theorem.",
       "open_problem_links": [],
-      "verification": ["DOI recorded."]
+      "verification": ["ScienceDirect DOI metadata checked for title, venue, and page range."]
     },
     {
       "key": "ORourke1987",
@@ -341,12 +342,12 @@
       "relevant_result": "Standard book reference for art-gallery theorems, algorithms, visibility, rectilinear galleries, holes, and early 3D context.",
       "translation_note": "Use as background and for classical bounds. When citing a theorem, prefer the original source as well.",
       "open_problem_links": ["orthogonal_holes_vertex_guards"],
-      "verification": ["Author-hosted public book PDF recorded."]
+      "verification": ["Author-hosted public book PDF recorded.", "Public book PDF downloaded and primary-checked for the preface, Chapter 1 Theorem 1.1, Chapter 2 orthogonal-polygon setup and Theorems 2.1--2.2, and Chapter 5 holes material."]
     },
     {
       "key": "PatersonYao1992",
       "citation": "M. S. Paterson and F. F. Yao. Optimal binary space partitions for orthogonal objects. Journal of Algorithms 13(1), 99--113, 1992.",
-      "links": ["https://doi.org/10.1016/0196-6774(92)90007-Y"],
+      "links": ["https://doi.org/10.1016/0196-6774(92)90007-Y", "https://wrap.warwick.ac.uk/id/eprint/60853/12/WRAP_cs-rr-158.pdf"],
       "venue": "Journal of Algorithms",
       "source_type": "journal_article",
       "status": "theorem",
@@ -356,7 +357,7 @@
       "relevant_result": "Binary-space partition result used in the 3D guarding literature to obtain tight Theta(n^(3/2)) point-guard behavior for orthogonal polyhedra.",
       "translation_note": "This blocks a direct linear point-guard analogue in 3D and motivates edge/reflex-edge models.",
       "open_problem_links": ["orthogonal_polyhedra_edge_guards"],
-      "verification": ["DOI recorded; review currently relies on Viglietta for the guard-theorem translation."]
+      "verification": ["DOI recorded for the journal article.", "WRAP technical-report PDF checked for the application paragraph and Theorems 2--3.", "Guarding translation cross-checked against Viglietta thesis Theorem 3.7."]
     },
     {
       "key": "Pinciu2015",
@@ -371,7 +372,7 @@
       "relevant_result": "Studies guarding in discrete polyform families including polyominoes, polycubes, and polyhypercubes.",
       "translation_note": "Useful for discrete 3D analogues. It is not the continuous orthogonal-polyhedron point-guard model.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded; primary details should be checked before stating exact bounds."]
+      "verification": ["ScienceDirect DOI metadata checked for title, venue, and page range; primary details should be checked before stating exact bounds."]
     },
     {
       "key": "SchuchardtHecker1995",
@@ -386,7 +387,7 @@
       "relevant_result": "Proves NP-hardness for two art-gallery problems restricted to orthogonal polygons.",
       "translation_note": "Optimization-hardness evidence only. It does not negate existential upper bounds.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded."]
+      "verification": ["Wiley DOI metadata checked for title, venue, and page range.", "Ghosh2010 open PDF p. 1 cites this source for NP-hardness of minimum vertex and point guards in simple orthogonal polygons."]
     },
     {
       "key": "Shermer1992",
@@ -401,7 +402,7 @@
       "relevant_result": "Surveys art-gallery results and open problems, including hole-related conjectural directions.",
       "translation_note": "Use for historical survey context. For current open status, pair with Urrutia's open-problem page and later papers.",
       "open_problem_links": ["orthogonal_holes_vertex_guards"],
-      "verification": ["DOI recorded."]
+      "verification": ["IEEE DOI metadata checked for title, venue, and page range."]
     },
     {
       "key": "Urrutia2000",
@@ -416,7 +417,7 @@
       "relevant_result": "Comprehensive survey chapter for art-gallery and illumination problems.",
       "translation_note": "Use for background and variant taxonomy; cite original sources for exact theorem statements.",
       "open_problem_links": ["orthogonal_holes_vertex_guards", "orthogonal_polyhedra_edge_guards"],
-      "verification": ["DOI recorded."]
+      "verification": ["Elsevier DOI chapter metadata checked for title, handbook, and page range."]
     },
     {
       "key": "UrrutiaOpenProblems",
@@ -431,7 +432,7 @@
       "relevant_result": "Records Shermer's floor((n+h)/4) vertex-guard conjecture and Hoffmann's floor(2n/7) vertex-guard conjecture for orthogonal polygons with holes.",
       "translation_note": "This is the direct open-problem source for 2D orthogonal holes with vertex guards. It is adjacent to but distinct from point-guard perimeter-over-six.",
       "open_problem_links": ["orthogonal_holes_vertex_guards"],
-      "verification": ["Open-problem page checked in web search."]
+      "verification": ["Open-problem page checked for Shermer and Hoffman orthogonal-polygons-with-holes sections."]
     },
     {
       "key": "VigliettaThesis",
@@ -446,12 +447,12 @@
       "relevant_result": "Central 3D guarding/searching reference; presents the point-guard obstruction and Urrutia-type edge/reflex-edge conjectures.",
       "translation_note": "Use as the bridge from Paterson-Yao BSP results to guarding orthogonal polyhedra, and as a source for 3D open-problem formulations.",
       "open_problem_links": ["orthogonal_polyhedra_edge_guards", "orthogonal_polyhedra_reflex_edge_guards"],
-      "verification": ["arXiv and author-hosted PDF recorded."]
+      "verification": ["arXiv and author-hosted PDF recorded.", "arXiv thesis PDF primary-checked for Chapter 3 point-guard obstruction and Urrutia-type edge-guard conjectures."]
     },
     {
       "key": "VigliettaFace2014",
       "citation": "G. Viglietta. Face-guarding polyhedra. Computational Geometry: Theory and Applications 47(8), 833--846, 2014.",
-      "links": ["https://doi.org/10.1016/j.comgeo.2014.04.009"],
+      "links": ["https://doi.org/10.1016/j.comgeo.2014.04.009", "https://arxiv.org/abs/1305.2866"],
       "venue": "Computational Geometry: Theory and Applications",
       "source_type": "journal_article",
       "status": "theorem",
@@ -461,7 +462,7 @@
       "relevant_result": "Studies face-guarding for several classes of polyhedra, including orthogonal subclasses.",
       "translation_note": "Maps the 3D model space but should not be merged with edge-guard or point-guard statements.",
       "open_problem_links": ["orthogonal_polyhedra_edge_guards"],
-      "verification": ["DOI recorded."]
+      "verification": ["DOI metadata recorded for the journal article.", "arXiv PDF checked for Theorems 3.1--3.3, Theorem 3.9, and Theorem 4.1/Corollary 4.2."]
     },
     {
       "key": "Viglietta2020",
@@ -476,7 +477,7 @@
       "relevant_result": "For 2-reflex orthogonal polyhedra, proves tight-style reflex-edge guard bounds and an O(n log n) guard-placement algorithm.",
       "translation_note": "Strong partial result for a restricted 3D class. It does not settle general 3-reflex orthogonal polyhedra.",
       "open_problem_links": ["orthogonal_polyhedra_reflex_edge_guards"],
-      "verification": ["DOI and arXiv recorded.", "Search result confirmed the 2-reflex restriction and algorithmic statement."]
+      "verification": ["DOI and arXiv recorded.", "arXiv PDF checked for Theorems 1.3, 3.5, 4.2, 4.3, Proposition 6.3, and the O(n log n) algorithmic statement."]
     },
     {
       "key": "WormanKeil2007",
@@ -491,7 +492,7 @@
       "relevant_result": "Develops polygon decomposition and visibility-graph machinery for orthogonal art-gallery problems.",
       "translation_note": "Methodological source for decomposition approaches; exact downstream theorem use should be primary-checked before adding new claims.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded."]
+      "verification": ["World Scientific DOI metadata checked for title, venue, and page range."]
     },
     {
       "key": "Zylinski2006",
@@ -506,7 +507,7 @@
       "relevant_result": "Gives a coloring proof of Aggarwal's theorem: floor((n+h)/4) vertex guards suffice for orthogonal polygons with h <= 2 holes and for cactus-dual quadrilateralizations.",
       "translation_note": "Partial positive result for Shermer-type vertex-guard conjectures. It does not settle arbitrary holes or point-guard perimeter bounds.",
       "open_problem_links": ["orthogonal_holes_vertex_guards"],
-      "verification": ["DOI and public journal page recorded.", "Web search result confirmed the h <= 2 / cactus-dual scope."]
+      "verification": ["DOI and public journal page recorded.", "Journal PDF primary-checked for Conjecture 1.1, Theorem 1.5, and final open-status remark."]
     }
   ]
 }
