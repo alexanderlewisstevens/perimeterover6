@@ -735,7 +735,7 @@
       "id": "claim_MassbergHabilitation",
       "source_key": "MassbergHabilitation",
       "claim_type": "conditional",
-      "result_statement": "States a maximal-rectangle packing conjecture whose truth would extend the perimeter-over-six method to hole cases.",
+      "result_statement": "Conjecture 6.10 states that, in any rectilinear gallery that may contain holes, the maximum size of a packing of maximal rectangles is an upper bound on the number of guards required; if true, Lemma 6.9 would extend the perimeter-over-six theorem to polyominoes with holes.",
       "model_scope": {
         "objects": [
           "rectilinear galleries with holes",
@@ -748,13 +748,22 @@
           "lattice perimeter ell",
           "maximal-rectangle packing number"
         ],
-        "assumptions": []
+        "assumptions": [
+          "Chapter 6 uses the no-holes convention unless holes are explicitly mentioned.",
+          "The implication to a perimeter bound for holes uses Lemma 6.9 plus Conjecture 6.10."
+        ]
       },
-      "locator": "not_recorded",
-      "verification_status": "partial",
-      "translation_note": "This is the key source for conditional/open status. It is not itself a proof of perimeter-over-six with holes.",
-      "limitations": [],
-      "non_implications": [],
+      "locator": "Chapter 6.3: Theorem 6.3 on thesis p. 67; Lemma 6.9 on thesis p. 72; Conjecture 6.10 and the stated implication for polyominoes with holes on thesis p. 73; Figure 6.6 on thesis p. 73.",
+      "verification_status": "primary_checked",
+      "translation_note": "This is the key source for conditional/open status. The conjecture is a rectangle-packing-to-guard-number statement for rectilinear galleries with holes; perimeter-over-six for polyominoes with holes follows only if that conjecture is true.",
+      "limitations": [
+        "The source explicitly says the author was not able to prove the packing-number upper bound for galleries with holes.",
+        "The conjecture is stated for rectilinear galleries with holes, while the perimeter consequence is stated for polyominoes with holes."
+      ],
+      "non_implications": [
+        "Does not prove perimeter-over-six for polyominoes with holes.",
+        "Does not imply that maximal-rectangle intersection graphs are perfect for galleries with holes; Figure 6.6 gives a one-hole non-perfect example."
+      ],
       "open_problem_links": [
         "polyomino_perimeter_holes",
         "massberg_rectangle_packing"

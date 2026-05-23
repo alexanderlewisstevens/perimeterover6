@@ -8,7 +8,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Claims: 33
 - Coverage cells: 10
 - Open-problem clusters: 8
-- Claims missing page/theorem locators: 30
+- Claims missing page/theorem locators: 29
 - Coverage cells still unsearched/searching: 0
 
 ## Status Counts
@@ -154,7 +154,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Perimeter-over-six for polyominoes with holes
 - Status: `open_or_conditional`
 - Question: If a polyomino has total lattice perimeter ell, including hole boundaries, do max(1, floor(ell/6)) point guards always suffice?
-- Known: Massberg proves the hole-free theorem. The hole extension is identified as conditional on a maximal-rectangle packing conjecture.
+- Known: Massberg proves the hole-free theorem. The hole extension would follow from Conjecture 6.10 in Massberg's habilitation, together with Lemma 6.9.
 - Confirming sources: Massberg2014, MassbergHabilitation, BiedlEtAl2012
 - Progress paths: Prove the packing conjecture.; Prove the ell/6 bound by another structural method.; Construct a counterexample with holes.
 
@@ -163,7 +163,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Massberg maximal-rectangle packing conjecture
 - Status: `open`
 - Question: Does the maximal-rectangle packing structure needed for Massberg's method hold in rectilinear galleries with holes?
-- Known: Massberg's habilitation identifies this as the missing ingredient for extending the perimeter theorem to holes.
+- Known: Massberg's habilitation states Conjecture 6.10: in a rectilinear gallery with holes, the maximum packing size of maximal rectangles should upper-bound the required number of guards.
 - Confirming sources: MassbergHabilitation
 - Progress paths: Prove the packing statement.; Find the precise obstruction and replace it with a different guard-count invariant.
 
@@ -223,7 +223,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 ## Conditional or Open Claim Records
 
-- `claim_MassbergHabilitation` (`conditional`): States a maximal-rectangle packing conjecture whose truth would extend the perimeter-over-six method to hole cases.
+- `claim_MassbergHabilitation` (`conditional`): Conjecture 6.10 states that, in any rectilinear gallery that may contain holes, the maximum size of a packing of maximal rectangles is an upper bound on the number of guards required; if true, Lemma 6.9 would extend the perimeter-over-six theorem to polyominoes with holes.
 - `claim_UrrutiaOpenProblems` (`open_problem`): Records Shermer's floor((n+h)/4) vertex-guard conjecture and Hoffmann's floor(2n/7) vertex-guard conjecture for orthogonal polygons with holes.
 
 ## Coverage Matrix
@@ -262,7 +262,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `conditional`
 - Summary: The perimeter-over-six extension to holes is conditional on Massberg's maximal-rectangle packing conjecture.
 - Supporting claims: claim_MassbergHabilitation, claim_Massberg2014
-- Next action: Extract the exact Conjecture 6.10 statement and surrounding examples from Massberg's habilitation.
+- Next action: Complete for the Massberg conditional route; next pass should verify independent area/cell-count bounds for holes.
 
 ### `polyominoes_with_holes_point_guards_area`
 
@@ -335,7 +335,6 @@ Generated from the structured literature ledgers. This report is an audit compan
 - `claim_KahnKlaweKleitman1983` needs page/theorem locator ([#15](https://github.com/alexanderlewisstevens/perimeterover6/issues/15)).
 - `claim_KatzRoisman2008` needs page/theorem locator ([#16](https://github.com/alexanderlewisstevens/perimeterover6/issues/16)).
 - `claim_LeeLin1986` needs page/theorem locator ([#17](https://github.com/alexanderlewisstevens/perimeterover6/issues/17)).
-- `claim_MassbergHabilitation` needs page/theorem locator ([#19](https://github.com/alexanderlewisstevens/perimeterover6/issues/19)).
 - `claim_MichaelPinciu2016` needs page/theorem locator ([#20](https://github.com/alexanderlewisstevens/perimeterover6/issues/20)).
 - `claim_MotwaniRaghunathanSaran1990` needs page/theorem locator ([#21](https://github.com/alexanderlewisstevens/perimeterover6/issues/21)).
 - `claim_ORourke1987` needs page/theorem locator ([#22](https://github.com/alexanderlewisstevens/perimeterover6/issues/22)).
@@ -361,7 +360,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Simple orthogonal polygons, point guards, vertex count: Record page/theorem locators from primary sources.
 - Orthogonal polygons with holes, vertex guards: Primary-check exact theorem statements and page locators for the partial bounds.
 - Hole-free polyominoes, point guards, lattice perimeter: Complete unless a later pass adds algorithmic construction details.
-- Polyominoes with holes, point guards, lattice perimeter: Extract the exact Conjecture 6.10 statement and surrounding examples from Massberg's habilitation.
+- Polyominoes with holes, point guards, lattice perimeter: Complete for the Massberg conditional route; next pass should verify independent area/cell-count bounds for holes.
 - Polyominoes with holes, point guards, cell count: Record theorem/page locator and examples showing tightness.
 - Ortho-unit polygons, point guards, perimeter: Record exact theorem locator and clarify hole assumptions from the primary paper.
 - Integral orthogonal polygons, point guards, perimeter: Make the exact broader domain convention explicit before stating a standalone open problem.

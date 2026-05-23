@@ -285,7 +285,7 @@
     },
     {
       "key": "MassbergHabilitation",
-      "citation": "J. Massberg. Perfect graphs and related topics: habilitation thesis, including Conjecture 6.10. Ulm University, 2013.",
+      "citation": "J. Massberg. Geometrical and Combinatorial Optimization Problems. Habilitationsschrift, Universitat Ulm, 2015.",
       "links": ["https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.080/Massberg/habilitation_massberg.pdf"],
       "venue": "Ulm University habilitation thesis",
       "source_type": "thesis",
@@ -293,10 +293,10 @@
       "objects": ["rectilinear galleries with holes", "polyominoes with holes"],
       "guard_models": ["point guards"],
       "parameters": ["lattice perimeter ell", "maximal-rectangle packing number"],
-      "relevant_result": "States a maximal-rectangle packing conjecture whose truth would extend the perimeter-over-six method to hole cases.",
-      "translation_note": "This is the key source for conditional/open status. It is not itself a proof of perimeter-over-six with holes.",
+      "relevant_result": "Conjecture 6.10 states that, in any rectilinear gallery that may contain holes, the maximum size of a packing of maximal rectangles is an upper bound on the number of guards required. Together with Lemma 6.9, this would extend Theorem 6.3 to polyominoes with holes.",
+      "translation_note": "This is the key source for conditional/open status. It records the exact packing conjecture and explains why it would imply perimeter-over-six for polyominoes with holes, but it is not itself a proof of that perimeter theorem.",
       "open_problem_links": ["polyomino_perimeter_holes", "massberg_rectangle_packing"],
-      "verification": ["University-hosted PDF recorded.", "Web search snippet confirmed Conjecture 6.10 and a hole example where maximal-rectangle graph perfection fails."]
+      "verification": ["Primary Ulm habilitation PDF checked.", "Chapter 6 states the default no-holes convention on thesis p. 67, Theorem 6.3 on p. 67, Lemma 6.9 on p. 72, and Conjecture 6.10 plus the hole-extension consequence on p. 73. Figure 6.6 on p. 73 gives a one-hole example whose maximal-rectangle intersection graph is not perfect."]
     },
     {
       "key": "MichaelPinciu2016",

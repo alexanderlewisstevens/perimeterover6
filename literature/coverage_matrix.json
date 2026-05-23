@@ -123,7 +123,7 @@
         "Polyomino and Perimeter Results",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Extract the exact Conjecture 6.10 statement and surrounding examples from Massberg's habilitation."
+      "next_action": "Complete for the Massberg conditional route; next pass should verify independent area/cell-count bounds for holes."
     },
     {
       "id": "polyominoes_with_holes_point_guards_area",

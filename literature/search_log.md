@@ -32,6 +32,20 @@ Use one entry per meaningful search.
   Conjecture 9 is related to but not identical with the habilitation's
   Conjecture 6.10 reference already tracked in the review.
 
+### 2026-05-22 -- Massberg habilitation conditional hole route
+
+- Search target: primary habilitation PDF for the rectangle-packing conjecture
+  behind the conditional holes statement.
+- Query: exact URL
+  `https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.080/Massberg/habilitation_massberg.pdf`,
+  plus text searches for `Conjecture 6.10`, `Lemma 6.9`, and `Theorem 6.3`.
+- Hits inspected: Ulm-hosted habilitation PDF, Chapter 6, pp. 67--75.
+- Included: `MassbergHabilitation`.
+- Excluded: no secondary pages were used for locators.
+- Follow-up: verify `BiedlEtAl2012` next, because it is the independent
+  holes-allowed area theorem that should be kept separate from the conditional
+  perimeter theorem.
+
 ### 2026-05-22 -- perimeter-over-six and polyomino perimeter
 
 - Search target: DOI pages, author/university PDFs, exact title searches.

@@ -277,7 +277,9 @@ formula is involved. & Real-coordinate Euclidean perimeter is not scale-free. \\
   \item Polyominoes introduce area and lattice-perimeter parameters.  The
   tight area theorem allows holes \cite{BiedlEtAl2012}, while Ma{\ss}berg's
   perimeter-over-six theorem is proven for hole-free polyominoes and becomes
-  conditional in the presence of holes \cite{Massberg2014,MassbergHabilitation}.
+  conditional in the presence of holes
+  \cite[Theorem~1]{Massberg2014}; \cite[Thm.~6.3 and
+  Conj.~6.10]{MassbergHabilitation}.
 
   \item Recent ortho-unit work proves a strong unit-edge theorem and states
   an integral-perimeter conjecture \cite{DiazBanezEtAl2025}.  Its literal
@@ -326,7 +328,8 @@ Proven tight for $\ell\geq 6$: $\loversix$ & Ma{\ss}berg
 
 Polyomino with holes & point & lattice perimeter $\ell$ &
 Conditional/open: Ma{\ss}berg's extension depends on a rectangle-packing
-conjecture & Ma{\ss}berg habilitation \cite{MassbergHabilitation} \\
+conjecture & Ma{\ss}berg habilitation
+\cite[Conj.~6.10]{MassbergHabilitation} \\
 
 Polyomino with holes & point & cells $m$ &
 Proven tight: $\floor{(m+1)/3}$; does not imply perimeter-over-six & Biedl et
@@ -345,7 +348,7 @@ Ma{\ss}berg; Diaz-Banez et al.
 Integral or polyomino domain with holes & point & lattice perimeter $N$ or
 $\ell$ & Still open/conditional: Ma{\ss}berg's hole extension depends on a
 rectangle-packing conjecture & Ma{\ss}berg habilitation
-\cite{MassbergHabilitation} \\
+\cite[Conj.~6.10]{MassbergHabilitation} \\
 
 Orthogonal polyhedron & point & vertices $n$ &
 No linear planar analogue: worst case is $\Theta(n^{3/2})$ & Paterson--Yao;
@@ -526,7 +529,7 @@ most apparent overlaps in this part of the literature.
   This is the proof technology behind the hole-free polyomino perimeter
   theorem.  Its failure point is explicit: the hole case depends on
   Ma{\ss}berg's maximal-rectangle packing conjecture
-  \cite{MassbergHabilitation}.
+  \cite[Conj.~6.10]{MassbergHabilitation}.
 
   \item[Area and grid-cell arguments.]
   Biedl et al. prove the tight $\floor{(m+1)/3}$ theorem for polyominoes with
@@ -609,10 +612,14 @@ genuinely different from the $\floor{n/4}$ orthogonal-polygon theorem.
 The same roadmap also explains the open hole case.  In a rectilinear gallery
 with holes, the intersection graph of maximal rectangles need not retain the
 same perfect-graph behavior.  Ma{\ss}berg's habilitation identifies a
-maximal-rectangle packing conjecture as the missing structural substitute
-\cite{MassbergHabilitation}.  A proof of that conjecture would be a proof
-route for the perimeter theorem with holes; a counterexample would likely
-force either a correction term or a different invariant.
+maximal-rectangle packing conjecture as the missing structural substitute:
+for rectilinear galleries with holes, the maximum packing size of maximal
+rectangles should upper-bound the number of guards required
+\cite[Conj.~6.10]{MassbergHabilitation}.  A proof of that conjecture, combined
+with the perimeter charging lemma for polyominoes with possible holes, would
+prove the perimeter theorem with holes \cite[Lem.~6.9]{MassbergHabilitation};
+a counterexample would likely force either a correction term or a different
+invariant.
 
 \subsection{Cell-Count Polyomino Bounds}
 
@@ -668,7 +675,7 @@ methods can be sharpened to the lower-bound scale.
   \item[Polyominoes with holes, point guards, lattice perimeter $\ell$.]
   Open/conditional.  Ma{\ss}berg's text explicitly states that the extension
   to holes would follow from a maximal-rectangle packing conjecture
-  \cite{MassbergHabilitation}.
+  \cite[Lem.~6.9 and Conj.~6.10]{MassbergHabilitation}.
 
   \item[Polyominoes with holes, point guards, area $m$.]
   Proven tight: every $m$-cell polyomino, holes allowed, is guardable by
@@ -798,9 +805,11 @@ bound rather than a perimeter bound.
 
 For perimeter, the hole case remains conditional.  Ma{\ss}berg observes that
 the perimeter theorem would extend to holes if a maximal-rectangle packing
-conjecture were true \cite{MassbergHabilitation}.  This is \emph{not} a proof
-of perimeter-over-six for holes; it identifies the missing structural
-statement.
+conjecture were true \cite[Conj.~6.10]{MassbergHabilitation}.  The thesis
+also proves the perimeter charging lemma for maximum packings in polyominoes
+with possible holes \cite[Lem.~6.9]{MassbergHabilitation}.  This is
+\emph{not} a proof of perimeter-over-six for holes; it identifies the missing
+structural statement.
 
 \subsection{Ortho-Unit and Integral Orthogonal Polygons}
 
@@ -930,7 +939,7 @@ conditional dependency.
 Problem cluster & Status source & What is known & What would constitute progress \\
 \midrule
 Polyomino perimeter with holes &
-Ma{\ss}berg habilitation \cite{MassbergHabilitation} &
+Ma{\ss}berg habilitation \cite[Conj.~6.10]{MassbergHabilitation} &
 Hole-free theorem is published; hole extension is conditional on a
 maximal-rectangle packing conjecture. &
 Prove the packing conjecture, prove $\floor{\ell/6}$ by another method, or
@@ -981,15 +990,19 @@ conjectures. \\
   counting both outer and hole boundaries.  Is $P$ always guardable by
   $\max\{1,\loversix\}$ point guards?  Ma{\ss}berg's habilitation gives a
   conditional route to this theorem through a maximal-rectangle packing
-  conjecture \cite{MassbergHabilitation}; the published perimeter theorem is
-  the hole-free case \cite[Theorem~1]{Massberg2014}.
+  conjecture \cite[Lem.~6.9 and Conj.~6.10]{MassbergHabilitation}; the
+  published perimeter theorem is the hole-free case
+  \cite[Theorem~1]{Massberg2014}.
 
   \item \textbf{Ma{\ss}berg's maximal-rectangle packing conjecture.}
   In a rectilinear gallery with holes, does the maximum packing size of
   maximal rectangles control the required number of point guards?  This is the
   structural conjecture identified by Ma{\ss}berg as sufficient for extending
   the perimeter-over-six theorem to polyominoes with holes
-  \cite{MassbergHabilitation}.
+  \cite[Conj.~6.10]{MassbergHabilitation}.  The same discussion notes that
+  maximal-rectangle intersection graphs need not be perfect in the hole case,
+  so the conjecture is not a routine extension of the hole-free perfect-graph
+  argument.
 
   \item \textbf{Integral-perimeter bounds beyond the hole-free case.}
   The hole-free integral orthogonal polygon version follows from
@@ -1119,8 +1132,10 @@ conjectures. \\
   orthogonal polygon $\floor{N/6}$ statement after unit-grid subdivision.
 
   \item[Ma{\ss}berg habilitation \cite{MassbergHabilitation}.]
-  Source for Conjecture 6.10 and the conditional hole extension.  This is the
-  key source for the conditional status of the perimeter theorem with holes.
+  Source for the conditional hole extension.  Lemma 6.9 gives the perimeter
+  charging statement for maximum rectangle packings in polyominoes with
+  possible holes, and Conjecture 6.10 is the missing guard-number statement
+  for rectilinear galleries with holes.
 
   \item[Biedl--Irfan--Iwerks--Kim--Mitchell \cite{BiedlEtAl2012}.]
   Tight $\floor{(m+1)/3}$ area theorem for polyominoes, holes allowed, plus
@@ -1350,8 +1365,8 @@ J. Ma{\ss}berg.
 
 \bibitem{MassbergHabilitation}
 J. Ma{\ss}berg.
-\newblock Perfect graphs and related topics: habilitation thesis, including Conjecture 6.10.
-\newblock Ulm University, 2013.
+\newblock \emph{Geometrical and Combinatorial Optimization Problems}.
+\newblock Habilitationsschrift, Universit\"at Ulm, 2015.
 \newblock \url{https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.080/Massberg/habilitation_massberg.pdf}
 
 \bibitem{MichaelPinciu2016}

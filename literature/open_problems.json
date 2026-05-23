@@ -7,7 +7,7 @@
       "title": "Perimeter-over-six for polyominoes with holes",
       "question": "If a polyomino has total lattice perimeter ell, including hole boundaries, do max(1, floor(ell/6)) point guards always suffice?",
       "status": "open_or_conditional",
-      "known": "Massberg proves the hole-free theorem. The hole extension is identified as conditional on a maximal-rectangle packing conjecture.",
+      "known": "Massberg proves the hole-free theorem. The hole extension would follow from Conjecture 6.10 in Massberg's habilitation, together with Lemma 6.9.",
       "confirming_sources": ["Massberg2014", "MassbergHabilitation", "BiedlEtAl2012"],
       "non_implications": ["BiedlEtAl2012 is an area/cell-count theorem and does not imply a perimeter theorem."],
       "progress_paths": ["Prove the packing conjecture.", "Prove the ell/6 bound by another structural method.", "Construct a counterexample with holes."]
@@ -17,7 +17,7 @@
       "title": "Massberg maximal-rectangle packing conjecture",
       "question": "Does the maximal-rectangle packing structure needed for Massberg's method hold in rectilinear galleries with holes?",
       "status": "open",
-      "known": "Massberg's habilitation identifies this as the missing ingredient for extending the perimeter theorem to holes.",
+      "known": "Massberg's habilitation states Conjecture 6.10: in a rectilinear gallery with holes, the maximum packing size of maximal rectangles should upper-bound the required number of guards.",
       "confirming_sources": ["MassbergHabilitation"],
       "non_implications": ["The published DCG paper should be cited only for the hole-free theorem."],
       "progress_paths": ["Prove the packing statement.", "Find the precise obstruction and replace it with a different guard-count invariant."]
