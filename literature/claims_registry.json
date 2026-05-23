@@ -7,10 +7,11 @@
       "id": "claim_AbrahamsenAdamaszekMiltzow2022",
       "source_key": "AbrahamsenAdamaszekMiltzow2022",
       "claim_type": "hardness",
-      "result_statement": "The standard art-gallery decision problem is exists-R-complete.",
+      "result_statement": "The standard art-gallery decision problem is exists-R-complete, even for simple polygons with integer-coordinate vertices.",
       "model_scope": {
         "objects": [
-          "general polygons"
+          "general polygons",
+          "simple polygons with integer-coordinate vertices"
         ],
         "variants": [
           "point guards"
@@ -20,11 +21,15 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
+      "locator": "Theorem 1, Journal of the ACM 69(1), Article 4, p. 4:2; membership proof in Theorem 13, p. 4:12.",
+      "verification_status": "primary_checked",
       "translation_note": "Use as modern complexity context only. It does not contradict extremal upper bounds for restricted orthogonal or lattice classes.",
-      "limitations": [],
-      "non_implications": [],
+      "limitations": [
+        "The claim concerns the decision/optimization complexity of finding a guard set, not a worst-case extremal upper bound."
+      ],
+      "non_implications": [
+        "Does not rule out sharp universal counting theorems for restricted orthogonal, polyomino, or lattice-normalized models."
+      ],
       "open_problem_links": [
         "algorithmic_restricted_cases"
       ],

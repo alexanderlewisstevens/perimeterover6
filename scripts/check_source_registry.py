@@ -86,7 +86,7 @@ def bibitem_keys(tex: str) -> set[str]:
 
 def citation_keys(tex: str) -> set[str]:
     keys: set[str] = set()
-    for match in re.findall(r"\\cite\{([^}]+)\}", tex):
+    for match in re.findall(r"\\cite(?:\[[^\]]*\])*\{([^}]+)\}", tex):
         keys.update(part.strip() for part in match.split(",") if part.strip())
     return keys
 

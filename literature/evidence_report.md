@@ -8,7 +8,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Claims: 33
 - Coverage cells: 10
 - Open-problem clusters: 8
-- Claims missing page/theorem locators: 33
+- Claims missing page/theorem locators: 32
 - Coverage cells still unsearched/searching: 0
 
 ## Status Counts
@@ -320,7 +320,6 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 ## Verification Gaps
 
-- `claim_AbrahamsenAdamaszekMiltzow2022` needs page/theorem locator ([#1](https://github.com/alexanderlewisstevens/perimeterover6/issues/1)).
 - `claim_BenbernouEtAl2011` needs page/theorem locator ([#2](https://github.com/alexanderlewisstevens/perimeterover6/issues/2)).
 - `claim_BiedlEtAl2012` needs page/theorem locator ([#3](https://github.com/alexanderlewisstevens/perimeterover6/issues/3)).
 - `claim_BiedlEtAl2019` needs page/theorem locator ([#4](https://github.com/alexanderlewisstevens/perimeterover6/issues/4)).

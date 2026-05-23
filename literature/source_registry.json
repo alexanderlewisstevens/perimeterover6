@@ -16,17 +16,17 @@
     {
       "key": "AbrahamsenAdamaszekMiltzow2022",
       "citation": "M. Abrahamsen, A. Adamaszek, and T. Miltzow. The art gallery problem is exists-R-complete. Journal of the ACM 69(1), Article 4, 2022.",
-      "links": ["https://doi.org/10.1145/3486220"],
+      "links": ["https://doi.org/10.1145/3486220", "https://dspace.library.uu.nl/handle/1874/424939"],
       "venue": "Journal of the ACM",
       "source_type": "journal_article",
       "status": "hardness",
-      "objects": ["general polygons"],
+      "objects": ["general polygons", "simple polygons with integer-coordinate vertices"],
       "guard_models": ["point guards"],
       "parameters": ["optimization input size"],
-      "relevant_result": "The standard art-gallery decision problem is exists-R-complete.",
+      "relevant_result": "The standard art-gallery decision problem is exists-R-complete, even for simple polygons with integer-coordinate vertices.",
       "translation_note": "Use as modern complexity context only. It does not contradict extremal upper bounds for restricted orthogonal or lattice classes.",
       "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["DOI recorded; result is standard and cited for complexity context."]
+      "verification": ["Primary JACM article checked via Utrecht repository record.", "Theorem 1 on article page 4:2 states the exists-R-completeness result; Theorem 13 on page 4:12 gives membership in exists-R."]
     },
     {
       "key": "BenbernouEtAl2011",
