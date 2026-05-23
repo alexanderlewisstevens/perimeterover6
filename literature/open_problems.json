@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-22",
+  "open_problems": [
+    {
+      "id": "polyomino_perimeter_holes",
+      "title": "Perimeter-over-six for polyominoes with holes",
+      "question": "If a polyomino has total lattice perimeter ell, including hole boundaries, do max(1, floor(ell/6)) point guards always suffice?",
+      "status": "open_or_conditional",
+      "known": "Massberg proves the hole-free theorem. The hole extension is identified as conditional on a maximal-rectangle packing conjecture.",
+      "confirming_sources": ["Massberg2014", "MassbergHabilitation", "BiedlEtAl2012"],
+      "non_implications": ["BiedlEtAl2012 is an area/cell-count theorem and does not imply a perimeter theorem."],
+      "progress_paths": ["Prove the packing conjecture.", "Prove the ell/6 bound by another structural method.", "Construct a counterexample with holes."]
+    },
+    {
+      "id": "massberg_rectangle_packing",
+      "title": "Massberg maximal-rectangle packing conjecture",
+      "question": "Does the maximal-rectangle packing structure needed for Massberg's method hold in rectilinear galleries with holes?",
+      "status": "open",
+      "known": "Massberg's habilitation identifies this as the missing ingredient for extending the perimeter theorem to holes.",
+      "confirming_sources": ["MassbergHabilitation"],
+      "non_implications": ["The published DCG paper should be cited only for the hole-free theorem."],
+      "progress_paths": ["Prove the packing statement.", "Find the precise obstruction and replace it with a different guard-count invariant."]
+    },
+    {
+      "id": "integral_perimeter_beyond_hole_free",
+      "title": "Integral orthogonal polygon perimeter bounds beyond the hole-free case",
+      "question": "Under the broader integral-domain reading, does floor(N/6) point guarding hold when holes or other lattice-domain conventions are allowed?",
+      "status": "open_or_conditional",
+      "known": "The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision.",
+      "confirming_sources": ["DiazBanezEtAl2025", "Massberg2014", "MassbergHabilitation"],
+      "non_implications": ["The Diaz-Banez et al. ortho-unit theorem is stronger but only for unit-edge polygons.", "The hole-free integral reading is not a separate open problem."],
+      "progress_paths": ["State the exact integral-domain convention.", "Resolve the holes version or reduce it to the polyomino-with-holes problem."]
+    },
+    {
+      "id": "orthogonal_holes_vertex_guards",
+      "title": "Vertex guards for orthogonal polygons with holes",
+      "question": "Do the Shermer floor((n+h)/4) and Hoffmann floor(2n/7) style vertex-guard bounds hold for orthogonal polygons with holes?",
+      "status": "open_with_partial_results",
+      "known": "Zylinski proves the floor((n+h)/4) bound for h <= 2 and cactus-dual cases; Michael-Pinciu give improved h-independent bounds.",
+      "confirming_sources": ["UrrutiaOpenProblems", "Zylinski2006", "HoffmannKriegel1996", "MichaelPinciu2016"],
+      "non_implications": ["These are vertex-count/vertex-guard questions, not point-guard perimeter questions."],
+      "progress_paths": ["Close the gap between conjectured bounds and h-independent upper bounds.", "Classify quadrilateralization or diagonal-graph structures that force the conjectured color class."]
+    },
+    {
+      "id": "orthogonal_polyhedra_edge_guards",
+      "title": "Urrutia-type edge-guard bounds for orthogonal polyhedra",
+      "question": "Can genus-zero orthogonal polyhedra with m edges be guarded with m/12 + O(1) closed edge guards?",
+      "status": "open_with_partial_results",
+      "known": "Benbernou et al. improve upper bounds but do not reach the conjectured target; Viglietta's thesis records the point-guard obstruction and edge-guard direction.",
+      "confirming_sources": ["VigliettaThesis", "BenbernouEtAl2011", "CanoTothUrrutiaViglietta2022"],
+      "non_implications": ["3D point-guard bounds are superlinear and are not the right analogue."],
+      "progress_paths": ["Improve edge-guard upper bounds for orthogonal polyhedra.", "Find lower-bound constructions requiring a larger correction term."]
+    },
+    {
+      "id": "orthogonal_polyhedra_reflex_edge_guards",
+      "title": "Reflex-edge guards in general orthogonal polyhedra",
+      "question": "Can the tight 2-reflex reflex-edge-guard behavior be extended to general 3-reflex orthogonal polyhedra?",
+      "status": "open_with_partial_results",
+      "known": "Viglietta proves strong results for 2-reflex orthogonal polyhedra; the general case remains open.",
+      "confirming_sources": ["Viglietta2020", "VigliettaThesis", "BenbernouEtAl2011"],
+      "non_implications": ["The 2-reflex restriction is structural and should not be silently dropped."],
+      "progress_paths": ["Extend induction or charging methods beyond two reflex-edge directions.", "Identify a counterexample to the direct generalization."]
+    },
+    {
+      "id": "general_edge_guard_gap",
+      "title": "General 3D polyhedron edge-guard gap",
+      "question": "How close can the best edge-guard upper bound for arbitrary polyhedra be brought to known lower-bound constructions?",
+      "status": "open_with_partial_results",
+      "known": "Cano, Toth, Urrutia, and Viglietta prove a (5/6)m edge-guard upper bound for arbitrary m-edge polyhedra and leave a substantial gap to known lower bounds.",
+      "confirming_sources": ["CanoTothUrrutiaViglietta2022"],
+      "non_implications": ["This is broader than the orthogonal-polyhedron m/12 + O(1) target, so it should not be cited as an orthogonal-specific theorem."],
+      "progress_paths": ["Improve the general upper bound.", "Separate the arbitrary-polyhedron and orthogonal-polyhedron gaps with sharper examples."]
+    },
+    {
+      "id": "algorithmic_restricted_cases",
+      "title": "Algorithmic restricted cases aligned with extremal bounds",
+      "question": "Which restricted orthogonal, polyomino, or polyhedral models admit exact polynomial algorithms or useful approximation guarantees for minimum guarding?",
+      "status": "active_research_direction",
+      "known": "General and many orthogonal variants are hard; several restricted visibility models have approximation or hardness results.",
+      "confirming_sources": ["LeeLin1986", "SchuchardtHecker1995", "KatzRoisman2008", "DurocherEtAl2017", "BiedlEtAl2019", "FiltserEtAl2025", "Ghosh2010"],
+      "non_implications": ["Hardness of optimization does not rule out universal upper-bound theorems."],
+      "progress_paths": ["Find exact algorithms for natural subclasses.", "Connect approximation algorithms to the structural decompositions used in extremal proofs."]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "purpose": "Open-access PDFs that may be downloaded locally for evidence extraction. Do not commit downloaded PDFs.",
+  "download_directory": "papers/downloads/",
+  "items": [
+    {
+      "source_key": "ORourke1987",
+      "url": "https://www.science.smith.edu/~jorourke/books/ArtGalleryTheorems/Art_Gallery_Full_Book.pdf",
+      "local_path": "papers/downloads/ORourke1987_Art_Gallery_Theorems_and_Algorithms.pdf",
+      "access_note": "author-hosted public book PDF",
+      "status": "not_downloaded"
+    },
+    {
+      "source_key": "MassbergHabilitation",
+      "url": "https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.080/Massberg/habilitation_massberg.pdf",
+      "local_path": "papers/downloads/Massberg2013_habilitation.pdf",
+      "access_note": "university-hosted public thesis PDF",
+      "status": "not_downloaded"
+    },
+    {
+      "source_key": "BenbernouEtAl2011",
+      "url": "https://www.science.smith.edu/~jorourke/Papers/EdgeGuarding.pdf",
+      "local_path": "papers/downloads/BenbernouEtAl2011_EdgeGuarding.pdf",
+      "access_note": "author-hosted public PDF",
+      "status": "not_downloaded"
+    },
+    {
+      "source_key": "CanoTothUrrutiaViglietta2022",
+      "url": "https://giovanniviglietta.com/papers/edgeguards.pdf",
+      "local_path": "papers/downloads/CanoTothUrrutiaViglietta2022_edgeguards.pdf",
+      "access_note": "author-hosted public PDF",
+      "status": "not_downloaded"
+    },
+    {
+      "source_key": "VigliettaThesis",
+      "url": "https://arxiv.org/pdf/1211.2483",
+      "local_path": "papers/downloads/Viglietta2012_thesis_arxiv.pdf",
+      "access_note": "arXiv public PDF",
+      "status": "not_downloaded"
+    },
+    {
+      "source_key": "Viglietta2020",
+      "url": "https://arxiv.org/pdf/1708.05469",
+      "local_path": "papers/downloads/Viglietta2020_2reflex_arxiv.pdf",
+      "access_note": "arXiv public PDF",
+      "status": "not_downloaded"
+    },
+    {
+      "source_key": "DiazBanezEtAl2025",
+      "url": "https://arxiv.org/pdf/2208.12864",
+      "local_path": "papers/downloads/DiazBanezEtAl2025_ortho_unit_arxiv.pdf",
+      "access_note": "arXiv public PDF",
+      "status": "not_downloaded"
+    },
+    {
+      "source_key": "Zylinski2006",
+      "url": "https://www.combinatorics.org/ojs/index.php/eljc/article/download/v13i1r20/pdf/0",
+      "local_path": "papers/downloads/Zylinski2006_orthogonal_holes.pdf",
+      "access_note": "journal public PDF",
+      "status": "not_downloaded"
+    }
+  ]
+}

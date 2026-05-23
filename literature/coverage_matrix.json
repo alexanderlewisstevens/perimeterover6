@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-22",
+  "purpose": "Completeness map for the review. Each cell records a model/result area and its evidence status.",
+  "coverage_cells": [
+    {
+      "id": "simple_orthogonal_polygons_point_guards_vertex_count",
+      "title": "Simple orthogonal polygons, point guards, vertex count",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "simple orthogonal polygon",
+        "holes": "forbidden",
+        "guard_model": "point guards",
+        "parameter": "vertices n"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "tight_theorem",
+      "summary": "The floor(n/4) bound is proven tight for simple orthogonal polygons.",
+      "supporting_sources": [
+        "KahnKlaweKleitman1983",
+        "Gyori1986"
+      ],
+      "supporting_claims": [
+        "claim_KahnKlaweKleitman1983",
+        "claim_Gyori1986"
+      ],
+      "open_problem_links": [],
+      "paper_sections": [
+        "Status Overview",
+        "Status by Model",
+        "Two-Dimensional Orthogonal Polygons"
+      ],
+      "next_action": "Record page/theorem locators from primary sources."
+    },
+    {
+      "id": "orthogonal_polygons_with_holes_vertex_guards",
+      "title": "Orthogonal polygons with holes, vertex guards",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "orthogonal polygon",
+        "holes": "allowed",
+        "guard_model": "vertex guards",
+        "parameter": "vertices n and holes h"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "open_with_partial_results",
+      "summary": "Shermer/Hoffmann-style bounds remain open in general; cactus-dual, h <= 2, and h-independent upper-bound results are known.",
+      "supporting_sources": [
+        "UrrutiaOpenProblems",
+        "Zylinski2006",
+        "HoffmannKriegel1996",
+        "MichaelPinciu2016"
+      ],
+      "supporting_claims": [
+        "claim_UrrutiaOpenProblems",
+        "claim_Zylinski2006",
+        "claim_HoffmannKriegel1996",
+        "claim_MichaelPinciu2016"
+      ],
+      "open_problem_links": [
+        "orthogonal_holes_vertex_guards"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Two-Dimensional Orthogonal Polygons",
+        "Open Problems and Research Directions"
+      ],
+      "next_action": "Primary-check exact theorem statements and page locators for the partial bounds."
+    },
+    {
+      "id": "hole_free_polyominoes_point_guards_lattice_perimeter",
+      "title": "Hole-free polyominoes, point guards, lattice perimeter",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "polyomino",
+        "holes": "forbidden",
+        "guard_model": "point guards",
+        "parameter": "lattice perimeter ell"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "tight_theorem",
+      "summary": "Massberg proves the tight floor(ell/6) perimeter theorem for hole-free polyominoes.",
+      "supporting_sources": [
+        "Massberg2014"
+      ],
+      "supporting_claims": [
+        "claim_Massberg2014"
+      ],
+      "open_problem_links": [],
+      "paper_sections": [
+        "Status Overview",
+        "Polyomino and Perimeter Results"
+      ],
+      "next_action": "Record theorem/page locator and lower-bound construction details."
+    },
+    {
+      "id": "polyominoes_with_holes_point_guards_lattice_perimeter",
+      "title": "Polyominoes with holes, point guards, lattice perimeter",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "polyomino",
+        "holes": "allowed",
+        "guard_model": "point guards",
+        "parameter": "lattice perimeter ell"
+      },
+      "coverage_status": "open_gap",
+      "result_status": "conditional",
+      "summary": "The perimeter-over-six extension to holes is conditional on Massberg's maximal-rectangle packing conjecture.",
+      "supporting_sources": [
+        "MassbergHabilitation",
+        "Massberg2014"
+      ],
+      "supporting_claims": [
+        "claim_MassbergHabilitation",
+        "claim_Massberg2014"
+      ],
+      "open_problem_links": [
+        "polyomino_perimeter_holes",
+        "massberg_rectangle_packing"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Polyomino and Perimeter Results",
+        "Open Problems and Research Directions"
+      ],
+      "next_action": "Extract the exact Conjecture 6.10 statement and surrounding examples from Massberg's habilitation."
+    },
+    {
+      "id": "polyominoes_with_holes_point_guards_area",
+      "title": "Polyominoes with holes, point guards, cell count",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "polyomino",
+        "holes": "allowed",
+        "guard_model": "point guards",
+        "parameter": "cells m"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "tight_theorem",
+      "summary": "Biedl et al. prove the tight floor((m+1)/3) theorem for m-cell polyominoes, holes allowed.",
+      "supporting_sources": [
+        "BiedlEtAl2012"
+      ],
+      "supporting_claims": [
+        "claim_BiedlEtAl2012"
+      ],
+      "open_problem_links": [
+        "polyomino_perimeter_holes"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Polyomino and Perimeter Results"
+      ],
+      "next_action": "Record theorem/page locator and examples showing tightness."
+    },
+    {
+      "id": "ortho_unit_polygons_point_guards_perimeter",
+      "title": "Ortho-unit polygons, point guards, perimeter",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "ortho-unit polygon",
+        "holes": "as in source",
+        "guard_model": "point guards",
+        "parameter": "vertices/perimeter n"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "tight_theorem",
+      "summary": "Diaz-Banez et al. prove the tight floor((n-4)/8) theorem for ortho-unit polygons.",
+      "supporting_sources": [
+        "DiazBanezEtAl2025"
+      ],
+      "supporting_claims": [
+        "claim_DiazBanezEtAl2025"
+      ],
+      "open_problem_links": [
+        "integral_perimeter_beyond_hole_free"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Polyomino and Perimeter Results"
+      ],
+      "next_action": "Record exact theorem locator and clarify hole assumptions from the primary paper."
+    },
+    {
+      "id": "integral_orthogonal_polygons_point_guards_perimeter",
+      "title": "Integral orthogonal polygons, point guards, perimeter",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "integral orthogonal polygon",
+        "holes": "hole-free solved; holes open/conditional",
+        "guard_model": "point guards",
+        "parameter": "integral perimeter N"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "open_or_conditional_beyond_hole_free",
+      "summary": "Hole-free integral polygons reduce to hole-free polyominoes; broader versions with holes remain open or conditional.",
+      "supporting_sources": [
+        "Massberg2014",
+        "DiazBanezEtAl2025",
+        "MassbergHabilitation"
+      ],
+      "supporting_claims": [
+        "claim_Massberg2014",
+        "claim_DiazBanezEtAl2025",
+        "claim_MassbergHabilitation"
+      ],
+      "open_problem_links": [
+        "integral_perimeter_beyond_hole_free",
+        "polyomino_perimeter_holes"
+      ],
+      "paper_sections": [
+        "Introduction and Scope",
+        "Status Overview",
+        "Polyomino and Perimeter Results"
+      ],
+      "next_action": "Make the exact broader domain convention explicit before stating a standalone open problem."
+    },
+    {
+      "id": "orthogonal_polyhedra_point_guards",
+      "title": "Orthogonal polyhedra, point guards",
+      "domain_axes": {
+        "dimension": "3D",
+        "object_class": "orthogonal polyhedron",
+        "holes": "genus varies",
+        "guard_model": "point guards",
+        "parameter": "vertices n"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "theorem",
+      "summary": "Paterson-Yao/Viglietta give Theta(n^(3/2)) point-guard behavior, blocking a direct planar linear analogue.",
+      "supporting_sources": [
+        "PatersonYao1992",
+        "VigliettaThesis"
+      ],
+      "supporting_claims": [
+        "claim_PatersonYao1992",
+        "claim_VigliettaThesis"
+      ],
+      "open_problem_links": [
+        "orthogonal_polyhedra_edge_guards"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Three-Dimensional Orthogonal Polyhedra"
+      ],
+      "next_action": "Primary-check the precise transfer from binary-space partitions to the guarding statement."
+    },
+    {
+      "id": "orthogonal_polyhedra_edge_and_reflex_edge_guards",
+      "title": "Orthogonal polyhedra, edge and reflex-edge guards",
+      "domain_axes": {
+        "dimension": "3D",
+        "object_class": "orthogonal polyhedron",
+        "holes": "genus tracked where relevant",
+        "guard_model": "edge guards and reflex-edge guards",
+        "parameter": "edges m, reflex edges r, genus g"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "open_with_partial_results",
+      "summary": "Known edge/reflex-edge upper bounds do not yet reach Urrutia-type lower-bound targets; 2-reflex cases are much better understood.",
+      "supporting_sources": [
+        "BenbernouEtAl2011",
+        "VigliettaThesis",
+        "Viglietta2020",
+        "CanoTothUrrutiaViglietta2022"
+      ],
+      "supporting_claims": [
+        "claim_BenbernouEtAl2011",
+        "claim_VigliettaThesis",
+        "claim_Viglietta2020",
+        "claim_CanoTothUrrutiaViglietta2022"
+      ],
+      "open_problem_links": [
+        "orthogonal_polyhedra_edge_guards",
+        "orthogonal_polyhedra_reflex_edge_guards",
+        "general_edge_guard_gap"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Open Problems and Research Directions"
+      ],
+      "next_action": "Separate arbitrary-polyhedron bounds from orthogonal-specific conjectures in claim locators."
+    },
+    {
+      "id": "algorithmic_and_restricted_visibility_context",
+      "title": "Algorithmic and restricted-visibility context",
+      "domain_axes": {
+        "dimension": "2D and 3D",
+        "object_class": "orthogonal polygons, polyominoes, domains",
+        "holes": "varies",
+        "guard_model": "optimization, sliding cameras, transmitters, k-hop visibility",
+        "parameter": "input size and model-specific parameters"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "hardness_and_approximation_context",
+      "summary": "Optimization hardness and restricted visibility variants provide context but do not settle extremal perimeter bounds.",
+      "supporting_sources": [
+        "LeeLin1986",
+        "SchuchardtHecker1995",
+        "KatzRoisman2008",
+        "AbrahamsenAdamaszekMiltzow2022",
+        "Ghosh2010",
+        "DurocherEtAl2017",
+        "BiedlEtAl2019",
+        "FiltserEtAl2025",
+        "Pinciu2015"
+      ],
+      "supporting_claims": [
+        "claim_LeeLin1986",
+        "claim_SchuchardtHecker1995",
+        "claim_KatzRoisman2008",
+        "claim_AbrahamsenAdamaszekMiltzow2022",
+        "claim_Ghosh2010",
+        "claim_DurocherEtAl2017",
+        "claim_BiedlEtAl2019",
+        "claim_FiltserEtAl2025",
+        "claim_Pinciu2015"
+      ],
+      "open_problem_links": [
+        "algorithmic_restricted_cases"
+      ],
+      "paper_sections": [
+        "Algorithmic and Optimization Context",
+        "Open Problems and Research Directions"
+      ],
+      "next_action": "Decide which adjacent models deserve deeper theorem-level extraction versus brief survey treatment."
+    }
+  ]
+}
