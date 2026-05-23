@@ -4,9 +4,9 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 ## Summary
 
-- Sources: 33
-- Claims: 33
-- Coverage cells: 17
+- Sources: 34
+- Claims: 34
+- Coverage cells: 18
 - Scope-exclusion cells: 2
 - Open-problem clusters: 8
 - Claims missing page/theorem locators: 0
@@ -21,7 +21,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - `hardness`: 5
 - `open_problem`: 1
 - `survey`: 4
-- `theorem`: 14
+- `theorem`: 15
 - `tight_theorem`: 7
 
 ### Claim Types
@@ -31,14 +31,14 @@ Generated from the structured literature ledgers. This report is an audit compan
 - `hardness`: 5
 - `open_problem`: 1
 - `survey`: 4
-- `theorem`: 14
+- `theorem`: 15
 - `tight_theorem`: 7
 
 ### Coverage Statuses
 
 - `open_gap`: 1
 - `scope_excluded_adjacent`: 2
-- `synthesized`: 14
+- `synthesized`: 15
 
 ### Open-Problem Statuses
 
@@ -87,6 +87,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - `tight_theorem`
 - `tight_theorem_context`
 - `tight_theorem_for_restricted_class`
+- `adjacent_limited_field_theorem`
 - `conditional`
 - `open_with_partial_results`
 - `open_or_conditional_beyond_hole_free`
@@ -213,7 +214,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Perimeter-over-six for polyominoes with holes
 - Status: `open_or_conditional`
 - Question: If a polyomino has total lattice perimeter ell, including hole boundaries, do max(1, floor(ell/6)) point guards always suffice?
-- Known: Massberg proves the hole-free theorem. The hole extension would follow from Conjecture 6.10 in Massberg's habilitation, together with Lemma 6.9. A 2026-05-23 forward sweep found no tracked source closing this gap.
+- Known: Massberg proves the hole-free theorem. The hole extension would follow from Conjecture 6.10 in Massberg's habilitation, together with Lemma 6.9. A 2026-05-23 forward-citation pass found only already tracked MassbergHabilitation and Pinciu2015 citing Massberg2014; no tracked source closes this gap.
 - Confirming sources: Massberg2014, MassbergHabilitation, BiedlEtAl2012
 - Progress paths: Prove the packing conjecture.; Prove the ell/6 bound by another structural method.; Construct a counterexample with holes.
 
@@ -231,7 +232,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Integral orthogonal polygon perimeter bounds beyond the hole-free case
 - Status: `open_or_conditional`
 - Question: Under the broader integral-domain reading, does floor(N/6) point guarding hold when holes or other lattice-domain conventions are allowed?
-- Known: The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. The 2026-05-23 forward sweep did not identify a tracked source that changes the holes/broader-domain status.
+- Known: The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. The 2026-05-23 forward-citation and exact-title pass for Diaz-Banez et al. found no tracked source that changes the holes/broader-domain status.
 - Confirming sources: DiazBanezEtAl2025, Massberg2014, MassbergHabilitation
 - Progress paths: State the exact integral-domain convention.; Resolve the holes version or reduce it to the polyomino-with-holes problem.
 
@@ -240,7 +241,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Vertex guards for orthogonal polygons with holes
 - Status: `open_with_partial_results`
 - Question: Do the Shermer floor((n+h)/4) and Hoffmann floor(2n/7) style vertex-guard bounds hold for orthogonal polygons with holes?
-- Known: Zylinski proves the floor((n+h)/4) bound for h <= 2 and cactus-dual cases; Michael-Pinciu give improved h-independent bounds. A 2026-05-23 forward/adjacent-model sweep found relevant-looking floodlight and half-plane guarding work, now recorded as an explicit adjacent scope exclusion, but no tracked standard vertex-guard resolution.
+- Known: Zylinski proves the floor((n+h)/4) bound for h <= 2 and cactus-dual cases; Michael-Pinciu give improved h-independent bounds. A 2026-05-23 forward/adjacent-model sweep and final OpenAlex/web pass found relevant-looking floodlight and half-plane guarding work, now recorded as explicit adjacent scope exclusions, but no tracked standard vertex-guard resolution.
 - Confirming sources: UrrutiaOpenProblems, Zylinski2006, HoffmannKriegel1996, MichaelPinciu2016
 - Progress paths: Close the gap between conjectured bounds and h-independent upper bounds.; Classify quadrilateralization or diagonal-graph structures that force the conjectured color class.
 
@@ -249,7 +250,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Urrutia-type edge-guard bounds for orthogonal polyhedra
 - Status: `open_with_partial_results`
 - Question: Can genus-zero orthogonal polyhedra with m edges be guarded with m/12 + O(1) closed edge guards?
-- Known: Benbernou et al. prove floor((e+r)/12) open edge guards and the derived (11/72)e and (7/12)r parameterized upper bounds, but these do not reach the conjectured m/12 + O(1) closed-edge target; Viglietta's thesis records the point-guard obstruction and edge-guard direction. A 2026-05-23 forward/adjacent-model sweep found no tracked source closing the general gap.
+- Known: Benbernou et al. prove floor((e+r)/12) open edge guards and the derived (11/72)e and (7/12)r parameterized upper bounds, but these do not reach the conjectured m/12 + O(1) closed-edge target; Viglietta's thesis records the point-guard obstruction and edge-guard direction. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked source closing the general gap. Aldana-Galvan et al. give an adjacent pi/2-edge-guard theorem, but that is a limited-field model rather than a standard edge-guard closure.
 - Confirming sources: VigliettaThesis, BenbernouEtAl2011, CanoTothUrrutiaViglietta2022
 - Progress paths: Improve edge-guard upper bounds for orthogonal polyhedra.; Find lower-bound constructions requiring a larger correction term.
 
@@ -258,7 +259,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Reflex-edge guards in general orthogonal polyhedra
 - Status: `open_with_partial_results`
 - Question: Can the tight 2-reflex reflex-edge-guard behavior be extended to general 3-reflex orthogonal polyhedra?
-- Known: Viglietta proves strong results for 2-reflex orthogonal polyhedra; Benbernou et al. give edge-guard bounds parameterized by r and conjectural evidence around open reflex edges, but the general reflex-edge-only case remains open. A 2026-05-23 forward/adjacent-model sweep found no tracked source closing this general reflex-edge-only case.
+- Known: Viglietta proves strong results for 2-reflex orthogonal polyhedra; Benbernou et al. give edge-guard bounds parameterized by r and conjectural evidence around open reflex edges, but the general reflex-edge-only case remains open. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked source closing this general reflex-edge-only case.
 - Confirming sources: Viglietta2020, VigliettaThesis, BenbernouEtAl2011
 - Progress paths: Extend induction or charging methods beyond two reflex-edge directions.; Identify a counterexample to the direct generalization.
 
@@ -303,7 +304,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `open_with_partial_results`
 - Summary: Shermer/Hoffmann-style bounds remain open in general; cactus-dual, h <= 2, and h-independent upper-bound results are known.
 - Supporting claims: claim_UrrutiaOpenProblems, claim_Zylinski2006, claim_HoffmannKriegel1996, claim_MichaelPinciu2016
-- Next action: Urrutia, Zylinski, Hoffmann--Kriegel, and Michael--Pinciu locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked source changing this open-with-partial-results status; continue periodic exact-title and venue scans. Floodlight, half-plane, and other restricted-visibility variants now require source and claim records before theorem-level treatment.
+- Next action: Urrutia, Zylinski, Hoffmann--Kriegel, and Michael--Pinciu locators are recorded. A 2026-05-23 forward/adjacent-model sweep and final OpenAlex/web pass found no tracked source changing this open-with-partial-results status; continue periodic exact-title and venue scans. Floodlight, half-plane, and other restricted-visibility variants require source and claim records before theorem-level treatment.
 
 ### `hole_free_polyominoes_point_guards_lattice_perimeter`
 
@@ -321,7 +322,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `conditional`
 - Summary: The perimeter-over-six extension to holes is conditional on Massberg's maximal-rectangle packing conjecture.
 - Supporting claims: claim_MassbergHabilitation, claim_Massberg2014
-- Next action: Complete for the Massberg conditional route. A 2026-05-23 forward sweep found no tracked independent proof of the ell/6 holes extension; keep area/cell-count and discrete-visibility variants separate from the perimeter claim.
+- Next action: Complete for the Massberg conditional route. A 2026-05-23 OpenAlex forward-citation pass for Massberg2014 found only Pinciu2015 and MassbergHabilitation as citing works; both are already tracked and neither is an independent proof of the ell/6 holes extension. Keep area/cell-count and discrete-visibility variants separate from the perimeter claim.
 
 ### `polyominoes_with_holes_point_guards_area`
 
@@ -339,7 +340,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `tight_theorem`
 - Summary: Diaz-Banez et al. prove the tight floor((n-4)/8) theorem for ortho-unit polygons.
 - Supporting claims: claim_DiazBanezEtAl2025
-- Next action: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap.
+- Next action: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit.
 
 ### `integral_orthogonal_polygons_point_guards_perimeter`
 
@@ -366,7 +367,16 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `open_with_partial_results`
 - Summary: Known edge/reflex-edge upper bounds do not yet reach Urrutia-type lower-bound targets; 2-reflex cases are much better understood.
 - Supporting claims: claim_BenbernouEtAl2011, claim_VigliettaThesis, claim_Viglietta2020, claim_CanoTothUrrutiaViglietta2022
-- Next action: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked result closing the general edge/reflex-edge gaps; face guards, 2-reflex restrictions, and discrete polyform variants are now represented in separate adjacent-model cells.
+- Next action: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polyform variants are represented in separate adjacent-model cells.
+
+### `orthogonal_polyhedra_pi_over_2_edge_guards`
+
+- Title: Orthogonal polyhedra, pi/2-edge guards
+- Coverage status: `synthesized`
+- Result status: `adjacent_limited_field_theorem`
+- Summary: Aldana-Galvan et al. prove a pi/2-edge-guard bound for orthogonal polyhedra; the guard model is adjacent to, but distinct from, standard edge guards.
+- Supporting claims: claim_AldanaGalvanEtAl2016
+- Next action: Use only as adjacent 3D model context unless the review expands to limited-field edge-guard variants.
 
 ### `rectilinear_polygons_edge_guards_2d`
 
@@ -457,14 +467,15 @@ Generated from the structured literature ledgers. This report is an audit compan
 ## Next Actions
 
 - Simple orthogonal polygons, point guards, vertex count: KKK and Gyori locators are now recorded from SIAM metadata, with O'Rourke book cross-checks for Theorems 2.1--2.2; full primary proof text can still be checked if access is available.
-- Orthogonal polygons with holes, vertex guards: Urrutia, Zylinski, Hoffmann--Kriegel, and Michael--Pinciu locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked source changing this open-with-partial-results status; continue periodic exact-title and venue scans. Floodlight, half-plane, and other restricted-visibility variants now require source and claim records before theorem-level treatment.
+- Orthogonal polygons with holes, vertex guards: Urrutia, Zylinski, Hoffmann--Kriegel, and Michael--Pinciu locators are recorded. A 2026-05-23 forward/adjacent-model sweep and final OpenAlex/web pass found no tracked source changing this open-with-partial-results status; continue periodic exact-title and venue scans. Floodlight, half-plane, and other restricted-visibility variants require source and claim records before theorem-level treatment.
 - Hole-free polyominoes, point guards, lattice perimeter: Complete unless a later pass adds algorithmic construction details.
-- Polyominoes with holes, point guards, lattice perimeter: Complete for the Massberg conditional route. A 2026-05-23 forward sweep found no tracked independent proof of the ell/6 holes extension; keep area/cell-count and discrete-visibility variants separate from the perimeter claim.
+- Polyominoes with holes, point guards, lattice perimeter: Complete for the Massberg conditional route. A 2026-05-23 OpenAlex forward-citation pass for Massberg2014 found only Pinciu2015 and MassbergHabilitation as citing works; both are already tracked and neither is an independent proof of the ell/6 holes extension. Keep area/cell-count and discrete-visibility variants separate from the perimeter claim.
 - Polyominoes with holes, point guards, cell count: Complete for the main cell-count theorem; a later algorithmic pass can separate the related SoCG 2011 complexity results.
-- Ortho-unit polygons, point guards, perimeter: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap.
+- Ortho-unit polygons, point guards, perimeter: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit.
 - Integral orthogonal polygons, point guards, perimeter: The hole-free overlap is recorded; before stating any standalone broader-domain open problem, specify whether holes, disconnected domains, or a different lattice-domain convention are intended.
 - Orthogonal polyhedra, point guards: Paterson--Yao BSP locators and Viglietta thesis guard-translation locator are recorded; next action is optional full journal-version access if needed.
-- Orthogonal polyhedra, edge and reflex-edge guards: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked result closing the general edge/reflex-edge gaps; face guards, 2-reflex restrictions, and discrete polyform variants are now represented in separate adjacent-model cells.
+- Orthogonal polyhedra, edge and reflex-edge guards: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polyform variants are represented in separate adjacent-model cells.
+- Orthogonal polyhedra, pi/2-edge guards: Use only as adjacent 3D model context unless the review expands to limited-field edge-guard variants.
 - Rectilinear polygons, edge guards: Keep this cell as 2D edge-guard context; do not translate it into point-guard perimeter or 3D edge-guard statements.
 - Orthogonal polygons, sliding cameras and sliding k-transmitters: Extract theorem-level algorithmic statements only if the review expands beyond extremal counting bounds.
 - Orthogonal polygons, floodlights and half-plane guards: Keep as an explicit exclusion unless a specific theorem is promoted into the review; promotion requires source, claim, locator, and translation records first.

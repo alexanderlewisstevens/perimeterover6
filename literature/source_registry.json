@@ -30,6 +30,21 @@
       "verification": ["Primary JACM article checked via Utrecht repository record.", "Theorem 1 on article page 4:2 states the exists-R-completeness result; Theorem 13 on page 4:12 gives membership in exists-R."]
     },
     {
+      "key": "AldanaGalvanEtAl2016",
+      "citation": "I. Aldana-Galvan, J. L. Alvarez-Rebollar, J. C. Catana-Salazar, M. Jimenez-Salinas, E. Solis-Villarreal, and J. Urrutia. Minimizing the solid angle sum of orthogonal polyhedra and guarding them with pi/2-edge guards. CCCG 2016.",
+      "links": ["https://mazayjimenez.org/papers/minimizing_cccg2016.pdf", "https://www.cccg.ca/proceedings/2016/proceedings2016.pdf"],
+      "venue": "Canadian Conference on Computational Geometry",
+      "source_type": "conference_paper",
+      "status": "theorem",
+      "objects": ["orthogonal polyhedra"],
+      "guard_models": ["pi/2-edge guards", "limited-field edge guards"],
+      "parameters": ["polyhedron edges e", "degree-4 vertices k4", "degree-6 vertices k6", "genus g", "holes on faces hm"],
+      "relevant_result": "Theorem 8 proves that an orthogonal polyhedron with e edges, degree-4 vertices k4, degree-6 vertices k6, genus g, and hm holes on its faces is guardable by (11e - k4 - 3k6 - 12g - 24hm + 12)/72 pi/2-edge guards.",
+      "translation_note": "Adjacent 3D limited-field edge-guard model. A pi/2-edge guard is not the same as a standard edge guard or reflex-edge guard, so this result should not be used to close the Urrutia-type standard edge-guard gap.",
+      "open_problem_links": ["orthogonal_polyhedra_edge_guards"],
+      "verification": ["Primary CCCG 2016 PDF checked from an author page.", "The pi/2-edge-guard model is defined on PDF pp. 2 and 5; Theorem 8 on PDF p. 6 states the guard bound in terms of e, k4, k6, g, and hm."]
+    },
+    {
       "key": "BenbernouEtAl2011",
       "citation": "N. M. Benbernou, E. D. Demaine, M. L. Demaine, A. Kurdia, J. O'Rourke, G. T. Toussaint, J. Urrutia, and G. Viglietta. Edge-guarding orthogonal polyhedra. CCCG 2011.",
       "links": ["https://erikdemaine.org/papers/EdgeGuarding_CCCG2011/", "https://www.science.smith.edu/~jorourke/Papers/EdgeGuarding.pdf"],

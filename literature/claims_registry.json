@@ -59,6 +59,60 @@
       }
     },
     {
+      "id": "claim_AldanaGalvanEtAl2016",
+      "source_key": "AldanaGalvanEtAl2016",
+      "claim_type": "theorem",
+      "result_statement": "An orthogonal polyhedron with e edges, degree-4 vertices k4, degree-6 vertices k6, genus g, and hm holes on its faces can be guarded by (11e - k4 - 3k6 - 12g - 24hm + 12)/72 pi/2-edge guards.",
+      "model_scope": {
+        "objects": [
+          "orthogonal polyhedra"
+        ],
+        "variants": [
+          "pi/2-edge guards",
+          "limited-field edge guards"
+        ],
+        "parameters": [
+          "polyhedron edges e",
+          "degree-4 vertices k4",
+          "degree-6 vertices k6",
+          "genus g",
+          "holes on faces hm"
+        ],
+        "assumptions": [
+          "The guard is an edge guard with an angle of vision pi/2 toward the interior.",
+          "Visibility is defined through the closest-point perpendicular segment from the guarded point to the edge."
+        ]
+      },
+      "locator": "Model definition in Section 1, PDF p. 2, and Section 3, PDF p. 5; Theorem 8, PDF p. 6.",
+      "verification_status": "primary_checked",
+      "translation_note": "Adjacent 3D limited-field edge-guard result. The guard model differs from standard full-visibility edge guards and from reflex-edge-only guards, so it does not close the Urrutia-type standard edge/reflex-edge open problems.",
+      "limitations": [
+        "The theorem is for pi/2-edge guards, not ordinary edge guards.",
+        "The parameter includes degree-specific vertex counts and holes on faces."
+      ],
+      "non_implications": [
+        "Does not prove the m/12 + O(1) standard edge-guard conjecture for orthogonal polyhedra.",
+        "Does not imply a general reflex-edge-only guard theorem."
+      ],
+      "open_problem_links": [
+        "orthogonal_polyhedra_edge_guards"
+      ],
+      "coverage_cells": [
+        "orthogonal_polyhedra_pi_over_2_edge_guards"
+      ],
+      "paper_sections": [
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Model Separations and Non-Implications",
+        "Annotated Source Guide"
+      ],
+      "importance": "supporting",
+      "tracking_issue": {
+        "number": 34,
+        "url": "https://github.com/alexanderlewisstevens/perimeterover6/issues/34",
+        "purpose": "Add or verify page/theorem locator for this claim record."
+      }
+    },
+    {
       "id": "claim_BenbernouEtAl2011",
       "source_key": "BenbernouEtAl2011",
       "claim_type": "theorem",

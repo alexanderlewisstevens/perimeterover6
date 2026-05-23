@@ -23,11 +23,11 @@ currently contain; this file says where the review process stands.
 | --- | --- | --- | --- | --- |
 | Scope and model cells | `active` | `coverage_matrix.json`, paper scope sections | The main 2D, polyomino, integral-polygon, 3D orthogonal-polyhedron, cited adjacent-model cells, and current adjacent-model exclusions are represented. | Add a new coverage cell or scope-exclusion cell before adding prose for any newly discovered variant. |
 | Source intake | `active` | `source_registry.json`, bibliography | The bibliography and source registry are aligned. | Mark discovery-only and exclusion sources more explicitly as searches expand. |
-| Search tracking | `active` | `search_log.md`, `search_queries.md` | Major seed searches and the first forward/adjacent-model sweep are recorded. | Repeat forward-citation, venue-scan, author-page, and exclusion entries before publication and whenever a central status claim changes. |
+| Search tracking | `active` | `search_log.md`, `search_queries.md` | Major seed searches, the first forward/adjacent-model sweep, and the final OpenAlex/web status pass are recorded. | Repeat forward-citation, venue-scan, author-page, and exclusion entries after new central sources appear or before a future release. |
 | Claim extraction | `active` | `claims_registry.json` | Every cited source has at least one claim record. | Split any source that supports multiple distinct theorems/open problems into separate claim records when needed. |
 | Locator pass | `active` | `claims_registry.json`, `evidence_report.md` | Central, foundational 2D, holes, 3D baseline, and restricted-visibility locator batches are complete for the current cited-source set. | Keep locator checks recurring as new sources are added or adjacent models are split into separate cells. |
 | Translation audit | `active` | `claims_registry.json`, model-separation section | The main non-implications around holes, lattice scale, guard type, and 3D analogues are recorded. | Recheck translation notes whenever a new result is added to a neighboring model cell. |
-| Coverage update | `active` | `coverage_matrix.json`, status tables | No coverage cells are currently marked unsearched/searching; the first adjacent-model split and first explicit scope-exclusion pass are complete. | Keep `next_action` fields current as searches or locators change. |
+| Coverage update | `active` | `coverage_matrix.json`, status tables | No coverage cells are currently marked unsearched/searching; the adjacent-model split, explicit scope-exclusion pass, and limited-field edge-guard cell are complete. | Keep `next_action` fields current as searches or locators change. |
 | Open-problem update | `active` | `open_problems.json`, open-problem section | Eight open-problem clusters are tracked. | Label any new cluster as source-stated, conditional, or derived before using it in the paper. |
 | Document assembly | `active` | `document_assembly.md`, paper section order, framework templates | The paper now has a front executive synthesis and an explicit map from ledgers to reader-facing sections; the reusable templates now include scope-exclusion cells. | Recheck the assembly map and templates whenever the paper structure or artifact roles change. |
 | Paper synchronization | `active` | `orthogonal_art_gallery_lit_review.tex`, PDF | The paper includes the current synthesis, completeness protocol, and evidence audit trail. | Update prose only after source, claim, coverage, open-problem, progress, and assembly records support the change. |
@@ -35,8 +35,8 @@ currently contain; this file says where the review process stands.
 
 ## High-Priority Work Queue
 
-1. Repeat forward-citation, venue, and author-page scans before publication or
-   after any new central source is added.
+1. Repeat forward-citation, venue, and author-page scans after any new central
+   source is added or before the next public release.
 2. Promote floodlight, half-plane, dispersive, contiguous, mobile, or
    point-boundary variants to source and claim records only if the paper later
    cites a specific theorem-level result from one of those adjacent models.

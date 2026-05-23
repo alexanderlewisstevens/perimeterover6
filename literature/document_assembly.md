@@ -84,10 +84,11 @@ The paper should not be the first place where a new result appears.
 The paper now has the required reader-facing layers: short answer, synthesis
 table, scope definitions, status matrix, coverage chart, model separations,
 proof-technique map, model-by-model survey, open problems, annotated sources,
-and evidence protocol. The first forward/adjacent-model sweep for the central
-open clusters is logged, the currently cited adjacent models have their own
-coverage cells, and the currently excluded adjacent models have explicit
-scope-exclusion cells. The main remaining assembly work is recurring rather
-than structural: repeat forward-citation and venue scans before publication,
-and add either a theorem-level coverage cell or a scope-exclusion cell before
-adding prose about any newly discovered visibility or guard variant.
+and evidence protocol. The first forward/adjacent-model sweep and final
+OpenAlex/web status pass for the central open clusters are logged, the
+currently cited adjacent models have their own coverage cells, and the
+currently excluded adjacent models have explicit scope-exclusion cells. The
+main remaining assembly work is recurring rather than structural: repeat
+forward-citation and venue scans after new central sources appear, and add
+either a theorem-level coverage cell or a scope-exclusion cell before adding
+prose about any newly discovered visibility or guard variant.

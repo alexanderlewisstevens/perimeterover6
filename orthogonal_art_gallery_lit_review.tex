@@ -814,7 +814,10 @@ methods can be sharpened to the lower-bound scale.
   2-reflex orthogonal polyhedra \cite{Viglietta2020}.  Cano, Toth, Urrutia,
   and Viglietta improve the general 3D polyhedron edge-guard bound to
   $(5/6)m$, while noting a substantial remaining gap
-  \cite{CanoTothUrrutiaViglietta2022}.
+  \cite{CanoTothUrrutiaViglietta2022}.  Aldana-Galvan et al. prove a related
+  $\pi/2$-edge-guard theorem for orthogonal polyhedra
+  \cite{AldanaGalvanEtAl2016}; this is adjacent limited-field context, not a
+  standard edge-guard or reflex-edge-guard closure.
 \end{description}
 
 \section{Two-Dimensional Orthogonal Polygons}
@@ -968,6 +971,13 @@ most $(5/6)m$ edge guards \cite{CanoTothUrrutiaViglietta2022}.  This improves
 the general-polyhedron edge-guard bound, but it still leaves a large gap from
 the conjectured $m/6$ style lower/upper behavior for general polyhedra and the
 $m/12+O(1)$ orthogonal-polyhedron conjecture.
+
+Aldana-Galvan, Alvarez-Rebollar, Catana-Salazar, Jimenez-Salinas,
+Solis-Villarreal, and Urrutia prove a theorem for $\pi/2$-edge guards in
+orthogonal polyhedra \cite{AldanaGalvanEtAl2016}.  This source belongs in the
+3D edge-guard neighborhood, but the guard has limited field of view, so it is
+recorded as a separate adjacent model rather than evidence for the standard
+closed-edge or reflex-edge conjectures.
 
 \subsection{Face Guards and Polycube Variants}
 
@@ -1270,6 +1280,11 @@ conjectures. \\
   $(11/72)m-g/6-1$ and $(7/12)r-g+1$.  The $r$ bound is parameterized by
   reflex-edge count; it is not a reflex-edge-only guard theorem.
 
+  \item[Aldana-Galvan et al. \cite{AldanaGalvanEtAl2016}.]
+  Adjacent CCCG source for $\pi/2$-edge guards in orthogonal polyhedra.  It is
+  useful limited-field context, but it should not be read as a standard
+  edge-guard or reflex-edge-guard theorem.
+
   \item[Viglietta 2-reflex paper \cite{Viglietta2020}.]
   Proves optimal-style reflex-edge bounds for 2-reflex orthogonal polyhedra and
   gives an $O(n\log n)$ guard-placement algorithm.
@@ -1393,14 +1408,15 @@ the completed searches that make the gap credible.
 The current framework therefore makes gaps visible instead of hiding them in
 prose.  At the time of this pass, every claim record has a locator at the
 level currently available from primary PDFs, open-problem pages, public
-technical reports, or primary metadata.  The first forward and adjacent-model
-sweep for the central holes, perimeter, and 3D edge/reflex-edge clusters is
-now logged.  It did not add a tracked theorem that changes the main statuses.
-The current coverage matrix now separates the cited adjacent variants that
-already have source records: two-dimensional edge guards, sliding-camera and
-sliding-transmitter visibility, $k$-hop and polyform visibility, 3D face
-guards, and 2-reflex reflex-edge guards.  It also records scope-exclusion
-cells for floodlight, half-plane, dispersive, contiguous, mobile,
+technical reports, or primary metadata.  The forward/adjacent sweep and final
+OpenAlex/web pass for the central holes, perimeter, and 3D edge/reflex-edge
+clusters are now logged.  They did not add a tracked theorem that changes the
+main statuses.  The current coverage matrix now separates the cited adjacent
+variants that already have source records: two-dimensional edge guards,
+sliding-camera and sliding-transmitter visibility, $k$-hop and polyform
+visibility, 3D face guards, $\pi/2$-edge guards, and 2-reflex reflex-edge
+guards.  It also records scope-exclusion cells for floodlight, half-plane,
+dispersive, contiguous, mobile,
 point-boundary, and related variants.  Those cells are not source claims; they
 are checkpoints requiring source intake before any such variant is used as a
 theorem-level result.  The remaining completeness work is recurring
@@ -1426,14 +1442,16 @@ next.  The prose above should be updated only after the corresponding source,
 claim, coverage, open-problem, assembly, and progress records support the
 statement being added.
 
-The May 23, 2026 search-log entry is the current checkpoint for recent-status
-claims.  It records exact-title, forward-citation-style, arXiv/DROPS/topic,
-and adjacent-model queries for the orthogonal-polygons-with-holes,
-polyomino-perimeter-with-holes, and 3D orthogonal-polyhedron clusters.  The
-result was status preservation rather than source expansion: the central open
-and conditional cells remain open or conditional in the tracked evidence, and
-the relevant-looking adjacent hits are recorded either as cited adjacent cells
-or as explicit scope-exclusion cells.
+The May 23, 2026 search-log entries are the current checkpoint for
+recent-status claims.  They record exact-title, OpenAlex forward-citation,
+arXiv/DROPS/topic, venue, and adjacent-model queries for the
+orthogonal-polygons-with-holes, polyomino-perimeter-with-holes, integral
+perimeter, and 3D orthogonal-polyhedron clusters.  The result was mainly
+status preservation: the central open and conditional cells remain open or
+conditional in the tracked evidence.  The one added theorem source is
+Aldana-Galvan et al.'s $\pi/2$-edge-guard result, which is recorded as a
+separate adjacent model rather than as a closure of the standard 3D
+edge/reflex-edge gaps.
 
 \section{Conclusion}
 
@@ -1471,6 +1489,16 @@ M. Abrahamsen, A. Adamaszek, and T. Miltzow.
 \newblock The art gallery problem is $\exists\mathbb{R}$-complete.
 \newblock \emph{Journal of the ACM}, 69(1), Article 4, 2022.
 \newblock \url{https://doi.org/10.1145/3486220}
+
+\bibitem{AldanaGalvanEtAl2016}
+I. Aldana-Galvan, J. L. Alvarez-Rebollar, J. C. Catana-Salazar,
+M. Jimenez-Salinas, E. Solis-Villarreal, and J. Urrutia.
+\newblock Minimizing the solid angle sum of orthogonal polyhedra and guarding
+them with $\pi/2$-edge guards.
+\newblock In \emph{Proceedings of the 28th Canadian Conference on
+Computational Geometry}, 2016.
+\newblock \url{https://mazayjimenez.org/papers/minimizing_cccg2016.pdf}
+\newblock \url{https://www.cccg.ca/proceedings/2016/proceedings2016.pdf}
 
 \bibitem{BenbernouEtAl2011}
 N. M. Benbernou, E. D. Demaine, M. L. Demaine, A. Kurdia,

@@ -14,6 +14,7 @@
     "tight_theorem",
     "tight_theorem_context",
     "tight_theorem_for_restricted_class",
+    "adjacent_limited_field_theorem",
     "conditional",
     "open_with_partial_results",
     "open_or_conditional_beyond_hole_free",
@@ -87,7 +88,7 @@
         "Two-Dimensional Orthogonal Polygons",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Urrutia, Zylinski, Hoffmann--Kriegel, and Michael--Pinciu locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked source changing this open-with-partial-results status; continue periodic exact-title and venue scans. Floodlight, half-plane, and other restricted-visibility variants now require source and claim records before theorem-level treatment."
+      "next_action": "Urrutia, Zylinski, Hoffmann--Kriegel, and Michael--Pinciu locators are recorded. A 2026-05-23 forward/adjacent-model sweep and final OpenAlex/web pass found no tracked source changing this open-with-partial-results status; continue periodic exact-title and venue scans. Floodlight, half-plane, and other restricted-visibility variants require source and claim records before theorem-level treatment."
     },
     {
       "id": "hole_free_polyominoes_point_guards_lattice_perimeter",
@@ -145,7 +146,7 @@
         "Polyomino and Perimeter Results",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Complete for the Massberg conditional route. A 2026-05-23 forward sweep found no tracked independent proof of the ell/6 holes extension; keep area/cell-count and discrete-visibility variants separate from the perimeter claim."
+      "next_action": "Complete for the Massberg conditional route. A 2026-05-23 OpenAlex forward-citation pass for Massberg2014 found only Pinciu2015 and MassbergHabilitation as citing works; both are already tracked and neither is an independent proof of the ell/6 holes extension. Keep area/cell-count and discrete-visibility variants separate from the perimeter claim."
     },
     {
       "id": "polyominoes_with_holes_point_guards_area",
@@ -201,7 +202,7 @@
         "Status Overview",
         "Polyomino and Perimeter Results"
       ],
-      "next_action": "Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap."
+      "next_action": "Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit."
     },
     {
       "id": "integral_orthogonal_polygons_point_guards_perimeter",
@@ -302,7 +303,36 @@
         "Three-Dimensional Orthogonal Polyhedra",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 forward/adjacent-model sweep found no tracked result closing the general edge/reflex-edge gaps; face guards, 2-reflex restrictions, and discrete polyform variants are now represented in separate adjacent-model cells."
+      "next_action": "Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polyform variants are represented in separate adjacent-model cells."
+    },
+    {
+      "id": "orthogonal_polyhedra_pi_over_2_edge_guards",
+      "title": "Orthogonal polyhedra, pi/2-edge guards",
+      "domain_axes": {
+        "dimension": "3D",
+        "object_class": "orthogonal polyhedron",
+        "holes": "genus and holes on faces tracked",
+        "guard_model": "pi/2-edge guards with limited field of view",
+        "parameter": "edges e, degree-4 vertices k4, degree-6 vertices k6, genus g, holes on faces hm"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "adjacent_limited_field_theorem",
+      "summary": "Aldana-Galvan et al. prove a pi/2-edge-guard bound for orthogonal polyhedra; the guard model is adjacent to, but distinct from, standard edge guards.",
+      "supporting_sources": [
+        "AldanaGalvanEtAl2016"
+      ],
+      "supporting_claims": [
+        "claim_AldanaGalvanEtAl2016"
+      ],
+      "open_problem_links": [
+        "orthogonal_polyhedra_edge_guards"
+      ],
+      "paper_sections": [
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Model Separations and Non-Implications",
+        "Annotated Source Guide"
+      ],
+      "next_action": "Use only as adjacent 3D model context unless the review expands to limited-field edge-guard variants."
     },
     {
       "id": "rectilinear_polygons_edge_guards_2d",

@@ -13,7 +13,7 @@
       "title": "Perimeter-over-six for polyominoes with holes",
       "question": "If a polyomino has total lattice perimeter ell, including hole boundaries, do max(1, floor(ell/6)) point guards always suffice?",
       "status": "open_or_conditional",
-      "known": "Massberg proves the hole-free theorem. The hole extension would follow from Conjecture 6.10 in Massberg's habilitation, together with Lemma 6.9. A 2026-05-23 forward sweep found no tracked source closing this gap.",
+      "known": "Massberg proves the hole-free theorem. The hole extension would follow from Conjecture 6.10 in Massberg's habilitation, together with Lemma 6.9. A 2026-05-23 forward-citation pass found only already tracked MassbergHabilitation and Pinciu2015 citing Massberg2014; no tracked source closes this gap.",
       "confirming_sources": ["Massberg2014", "MassbergHabilitation", "BiedlEtAl2012"],
       "non_implications": ["BiedlEtAl2012 is an area/cell-count theorem for connected m-polyominoes and does not imply a perimeter theorem.", "Discrete visibility, k-hop, and optimization variants do not imply the standard point-guard perimeter theorem."],
       "progress_paths": ["Prove the packing conjecture.", "Prove the ell/6 bound by another structural method.", "Construct a counterexample with holes."]
@@ -33,7 +33,7 @@
       "title": "Integral orthogonal polygon perimeter bounds beyond the hole-free case",
       "question": "Under the broader integral-domain reading, does floor(N/6) point guarding hold when holes or other lattice-domain conventions are allowed?",
       "status": "open_or_conditional",
-      "known": "The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. The 2026-05-23 forward sweep did not identify a tracked source that changes the holes/broader-domain status.",
+      "known": "The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. The 2026-05-23 forward-citation and exact-title pass for Diaz-Banez et al. found no tracked source that changes the holes/broader-domain status.",
       "confirming_sources": ["DiazBanezEtAl2025", "Massberg2014", "MassbergHabilitation"],
       "non_implications": ["The Diaz-Banez et al. ortho-unit theorem is stronger but only for unit-edge polygons.", "The hole-free integral reading is not a separate open problem."],
       "progress_paths": ["State the exact integral-domain convention.", "Resolve the holes version or reduce it to the polyomino-with-holes problem."]
@@ -43,7 +43,7 @@
       "title": "Vertex guards for orthogonal polygons with holes",
       "question": "Do the Shermer floor((n+h)/4) and Hoffmann floor(2n/7) style vertex-guard bounds hold for orthogonal polygons with holes?",
       "status": "open_with_partial_results",
-      "known": "Zylinski proves the floor((n+h)/4) bound for h <= 2 and cactus-dual cases; Michael-Pinciu give improved h-independent bounds. A 2026-05-23 forward/adjacent-model sweep found relevant-looking floodlight and half-plane guarding work, now recorded as an explicit adjacent scope exclusion, but no tracked standard vertex-guard resolution.",
+      "known": "Zylinski proves the floor((n+h)/4) bound for h <= 2 and cactus-dual cases; Michael-Pinciu give improved h-independent bounds. A 2026-05-23 forward/adjacent-model sweep and final OpenAlex/web pass found relevant-looking floodlight and half-plane guarding work, now recorded as explicit adjacent scope exclusions, but no tracked standard vertex-guard resolution.",
       "confirming_sources": ["UrrutiaOpenProblems", "Zylinski2006", "HoffmannKriegel1996", "MichaelPinciu2016"],
       "non_implications": ["These are vertex-count/vertex-guard questions, not point-guard perimeter questions.", "Orthogonal floodlight, half-plane, sliding-camera, or transmitter theorems use different visibility or guard models and should not be translated into standard vertex-guard results."],
       "progress_paths": ["Close the gap between conjectured bounds and h-independent upper bounds.", "Classify quadrilateralization or diagonal-graph structures that force the conjectured color class."]
@@ -53,9 +53,9 @@
       "title": "Urrutia-type edge-guard bounds for orthogonal polyhedra",
       "question": "Can genus-zero orthogonal polyhedra with m edges be guarded with m/12 + O(1) closed edge guards?",
       "status": "open_with_partial_results",
-      "known": "Benbernou et al. prove floor((e+r)/12) open edge guards and the derived (11/72)e and (7/12)r parameterized upper bounds, but these do not reach the conjectured m/12 + O(1) closed-edge target; Viglietta's thesis records the point-guard obstruction and edge-guard direction. A 2026-05-23 forward/adjacent-model sweep found no tracked source closing the general gap.",
+      "known": "Benbernou et al. prove floor((e+r)/12) open edge guards and the derived (11/72)e and (7/12)r parameterized upper bounds, but these do not reach the conjectured m/12 + O(1) closed-edge target; Viglietta's thesis records the point-guard obstruction and edge-guard direction. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked source closing the general gap. Aldana-Galvan et al. give an adjacent pi/2-edge-guard theorem, but that is a limited-field model rather than a standard edge-guard closure.",
       "confirming_sources": ["VigliettaThesis", "BenbernouEtAl2011", "CanoTothUrrutiaViglietta2022"],
-      "non_implications": ["3D point-guard bounds are superlinear and are not the right analogue.", "Face-guard, 2-reflex, and discrete polycube/chess-visibility results should stay in separate model cells."],
+      "non_implications": ["3D point-guard bounds are superlinear and are not the right analogue.", "Face-guard, pi/2-edge-guard, 2-reflex, and discrete polycube/chess-visibility results should stay in separate model cells."],
       "progress_paths": ["Improve edge-guard upper bounds for orthogonal polyhedra.", "Find lower-bound constructions requiring a larger correction term."]
     },
     {
@@ -63,7 +63,7 @@
       "title": "Reflex-edge guards in general orthogonal polyhedra",
       "question": "Can the tight 2-reflex reflex-edge-guard behavior be extended to general 3-reflex orthogonal polyhedra?",
       "status": "open_with_partial_results",
-      "known": "Viglietta proves strong results for 2-reflex orthogonal polyhedra; Benbernou et al. give edge-guard bounds parameterized by r and conjectural evidence around open reflex edges, but the general reflex-edge-only case remains open. A 2026-05-23 forward/adjacent-model sweep found no tracked source closing this general reflex-edge-only case.",
+      "known": "Viglietta proves strong results for 2-reflex orthogonal polyhedra; Benbernou et al. give edge-guard bounds parameterized by r and conjectural evidence around open reflex edges, but the general reflex-edge-only case remains open. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked source closing this general reflex-edge-only case.",
       "confirming_sources": ["Viglietta2020", "VigliettaThesis", "BenbernouEtAl2011"],
       "non_implications": ["The 2-reflex restriction is structural and should not be silently dropped.", "A bound parameterized by the number of reflex edges does not imply that the guards are restricted to reflex edges."],
       "progress_paths": ["Extend induction or charging methods beyond two reflex-edge directions.", "Identify a counterexample to the direct generalization."]

@@ -7,6 +7,8 @@ title searches and primary sources before secondary summaries.
 
 - `"Perfect graphs and guarding rectilinear art galleries" polyomino perimeter`
 - `"Massberg" "Perfect graphs and guarding rectilinear art galleries" citations`
+- `https://api.openalex.org/works/https://doi.org/10.1007/s00454-014-9587-4`
+- `https://api.openalex.org/works?filter=cites:W2069841121`
 - `"polyomino" "perimeter" "floor" "guards" "art gallery"`
 - `"Massberg" "Conjecture 6.10" maximal rectangles guarding holes`
 - `"polyominoes with holes" "perimeter" "guards" "ell/6"`
@@ -30,6 +32,8 @@ title searches and primary sources before secondary summaries.
 - `"ortho-unit polygons" "guarded" "floor((n-4)/8)"`
 - `"integral orthogonal polygon" "N/6" guards`
 - `"orthogonal polygon" "perimeter N" "guarded" "N/6"`
+- `https://api.openalex.org/works/https://doi.org/10.1007/s00373-024-02880-8`
+- `https://api.openalex.org/works?filter=cites:W4405867242`
 
 ## 3D Orthogonal Polyhedra
 
@@ -42,6 +46,12 @@ title searches and primary sources before secondary summaries.
 - `"orthogonal polyhedra" "edge guards" "2025"`
 - `"orthogonal polyhedron" "reflex edge guards" "2024"`
 - `"face-guarding polyhedra" orthogonal`
+- `"Minimizing the solid angle sum of orthogonal polyhedra" "pi/2-edge guards"`
+- `https://api.openalex.org/works?search=Edge-guarding%20Orthogonal%20Polyhedra`
+- `https://api.openalex.org/works?filter=cites:W1842505581`
+- `https://api.openalex.org/works?filter=cites:W2747469479`
+- `https://api.openalex.org/works?filter=cites:W203475427`
+- `https://api.openalex.org/works?filter=cites:W2184436935`
 
 ## Algorithms and Complexity
 

@@ -257,3 +257,35 @@ Use one entry per meaningful search.
   prose is updated.
 - Follow-up: repeat source-level searches only when one of these variants is
   promoted beyond exclusion context.
+
+### 2026-05-23 -- final OpenAlex and venue-status pass
+
+- Search target: final status check for the central open or conditional cells
+  before rebuilding the review PDF.
+- Query: OpenAlex DOI lookup for Ma{\ss}berg 2014,
+  `10.1007/s00454-014-9587-4`, followed by `cites:W2069841121`; OpenAlex DOI
+  lookup for Diaz-Banez et al. 2025, `10.1007/s00373-024-02880-8`, followed
+  by `cites:W4405867242`; OpenAlex exact/topic searches for `"Edge-guarding
+  Orthogonal Polyhedra"`, `"Optimally guarding 2-reflex orthogonal polyhedra
+  by reflex edge guards"`, and `"Edge Guards for Polyhedra in Three-space"`;
+  web/topic searches for `"orthogonal polyhedra" "edge guards" "2024"`,
+  `"orthogonal polyhedron" "reflex edge guards" "2025"`, `"perimeter over
+  six" polyomino holes`, and `"integral orthogonal polygon" "N/6" guards`.
+- Hits inspected: OpenAlex work `W2069841121` for Ma{\ss}berg 2014 and its
+  two citing works, `Pinciu2015` and `MassbergHabilitation`; OpenAlex work
+  `W4405867242` for Diaz-Banez et al. 2025 and its empty citing-work set;
+  OpenAlex records and citing works around `BenbernouEtAl2011`,
+  `Viglietta2020`, `VigliettaThesis`, and
+  `CanoTothUrrutiaViglietta2022`; recent web/topic hits around 2024--2025
+  orthogonal-polyhedron edge/reflex-edge guarding.
+- Included: `AldanaGalvanEtAl2016` was added as an adjacent limited-field
+  3D source: it proves a theorem for `pi/2`-edge guards in orthogonal
+  polyhedra, not for standard edge guards or reflex-edge-only guards.
+- Excluded: no citing or topic hit found in this pass changes the status of
+  the perimeter-over-six polyominoes-with-holes question, the broader
+  integral-perimeter question, the standard orthogonal-polygons-with-holes
+  vertex-guard questions, or the general 3D standard edge/reflex-edge guard
+  gaps.  City-guarding, limited-field, face-guarding, 2-reflex, discrete
+  polyform, and other restricted-visibility variants remain separate cells.
+- Follow-up: repeat this exact forward/venue pass after new central papers,
+  proceedings volumes, or author-page updates appear.
