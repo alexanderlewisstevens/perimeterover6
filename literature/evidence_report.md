@@ -8,7 +8,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Claims: 33
 - Coverage cells: 10
 - Open-problem clusters: 8
-- Claims missing page/theorem locators: 32
+- Claims missing page/theorem locators: 31
 - Coverage cells still unsearched/searching: 0
 
 ## Status Counts
@@ -51,9 +51,9 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 - Source: `BenbernouEtAl2011` (Canadian Conference on Computational Geometry)
 - Status: `theorem`
-- Result: Improves asymptotic orthogonal-polyhedron edge-guard upper bounds to (11/72)m edge guards and (7/12)r reflex-edge-style bounds.
-- Translation note: This is a 3D edge-guard result, not a point-guard or perimeter result. It is central evidence for the remaining gap to Urrutia-type m/12 + O(1) targets.
-- Locator: not_recorded
+- Result: Every orthogonal polyhedron with e total edges and r reflex edges is guardable by floor((e+r)/12) open edge guards; using the e/r/genus relation gives open-edge-guard bounds of (11/72)e - g/6 - 1 and (7/12)r - g + 1.
+- Translation note: This is a 3D edge-guard result, not a point-guard or perimeter result. The (7/12)r expression is parameterized by the number of reflex edges; it is not a theorem using only reflex-edge guards.
+- Locator: Theorem 5, PDF pp. 5-6; Corollaries 6-7, PDF p. 6; Theorem 2, PDF pp. 3-4, for the e/r/genus relation; Theorem 4, PDF pp. 4-5, for the open/closed edge-guard comparison.
 
 - Tracking issue: [#2](https://github.com/alexanderlewisstevens/perimeterover6/issues/2)
 
@@ -190,7 +190,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Urrutia-type edge-guard bounds for orthogonal polyhedra
 - Status: `open_with_partial_results`
 - Question: Can genus-zero orthogonal polyhedra with m edges be guarded with m/12 + O(1) closed edge guards?
-- Known: Benbernou et al. improve upper bounds but do not reach the conjectured target; Viglietta's thesis records the point-guard obstruction and edge-guard direction.
+- Known: Benbernou et al. prove floor((e+r)/12) open edge guards and the derived (11/72)e and (7/12)r parameterized upper bounds, but these do not reach the conjectured m/12 + O(1) closed-edge target; Viglietta's thesis records the point-guard obstruction and edge-guard direction.
 - Confirming sources: VigliettaThesis, BenbernouEtAl2011, CanoTothUrrutiaViglietta2022
 - Progress paths: Improve edge-guard upper bounds for orthogonal polyhedra.; Find lower-bound constructions requiring a larger correction term.
 
@@ -199,7 +199,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Reflex-edge guards in general orthogonal polyhedra
 - Status: `open_with_partial_results`
 - Question: Can the tight 2-reflex reflex-edge-guard behavior be extended to general 3-reflex orthogonal polyhedra?
-- Known: Viglietta proves strong results for 2-reflex orthogonal polyhedra; the general case remains open.
+- Known: Viglietta proves strong results for 2-reflex orthogonal polyhedra; Benbernou et al. give edge-guard bounds parameterized by r and conjectural evidence around open reflex edges, but the general reflex-edge-only case remains open.
 - Confirming sources: Viglietta2020, VigliettaThesis, BenbernouEtAl2011
 - Progress paths: Extend induction or charging methods beyond two reflex-edge directions.; Identify a counterexample to the direct generalization.
 
@@ -320,7 +320,6 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 ## Verification Gaps
 
-- `claim_BenbernouEtAl2011` needs page/theorem locator ([#2](https://github.com/alexanderlewisstevens/perimeterover6/issues/2)).
 - `claim_BiedlEtAl2012` needs page/theorem locator ([#3](https://github.com/alexanderlewisstevens/perimeterover6/issues/3)).
 - `claim_BiedlEtAl2019` needs page/theorem locator ([#4](https://github.com/alexanderlewisstevens/perimeterover6/issues/4)).
 - `claim_BjorlingSachs1998` needs page/theorem locator ([#5](https://github.com/alexanderlewisstevens/perimeterover6/issues/5)).

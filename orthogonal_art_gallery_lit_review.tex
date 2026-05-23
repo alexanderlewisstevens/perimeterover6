@@ -631,10 +631,11 @@ require $\Theta(n^{3/2})$ point guards \cite{PatersonYao1992,VigliettaThesis}.
 That fact rules out a direct planar-style point-guard theorem in terms of
 vertices or edges.
 
-The promising 3D analogy therefore uses edges.  Benbernou et al. improve
-orthogonal-polyhedron edge-guard and reflex-edge upper bounds
-\cite{BenbernouEtAl2011}; Viglietta proves tight-style results for
-2-reflex orthogonal polyhedra \cite{Viglietta2020}; and
+The promising 3D analogy therefore uses edges.  Benbernou et al. prove
+open-edge-guard bounds for orthogonal polyhedra, including bounds expressed in
+terms of total edges and reflex-edge count
+\cite[Theorem~5 and Corollaries~6--7]{BenbernouEtAl2011}; Viglietta proves
+tight-style results for 2-reflex orthogonal polyhedra \cite{Viglietta2020}; and
 Cano--Toth--Urrutia--Viglietta improve the general polyhedron edge-guard
 bound \cite{CanoTothUrrutiaViglietta2022}.  The research gap is not whether
 edge guards are relevant, but whether the existing decomposition and charging
@@ -700,9 +701,13 @@ methods can be sharpened to the lower-bound scale.
   \item[Orthogonal polyhedra, edge and reflex-edge guards.]
   The central open direction is an Urrutia-type edge-guard theorem:
   lower-bound examples require roughly $m/12$ edge guards, while known upper
-  bounds are larger.  Benbernou et al. improve the orthogonal upper bound to
-  asymptotic $(11/72)m$ edge guards, or $(7/12)r$ in terms of reflex edges
-  \cite{BenbernouEtAl2011}.  Viglietta proves optimal-style bounds for
+  bounds are larger.  Benbernou et al. prove that $\floor{(m+r)/12}$ open
+  edge guards suffice for an orthogonal polyhedron with $m$ edges and $r$
+  reflex edges; their corollaries give $(11/72)m-g/6-1$ and
+  $(7/12)r-g+1$ open-edge-guard bounds
+  \cite[Theorem~5 and Corollaries~6--7]{BenbernouEtAl2011}.  The latter is a
+  bound parameterized by reflex-edge count, not a reflex-edge-only guard
+  theorem.  Viglietta proves optimal-style bounds for
   2-reflex orthogonal polyhedra \cite{Viglietta2020}.  Cano, Toth, Urrutia,
   and Viglietta improve the general 3D polyhedron edge-guard bound to
   $(5/6)m$, while noting a substantial remaining gap
@@ -836,8 +841,12 @@ suffice, where $r$ is the number of reflex edges and $g$ is the genus.
 
 Benbernou, Demaine, Demaine, Kurdia, O'Rourke, Toussaint, Urrutia, and
 Viglietta improve the known asymptotic upper bounds for orthogonal polyhedra:
-$(11/72)m$ edge guards suffice in terms of total edges, and $(7/12)r$ suffice
-in terms of reflex edges \cite{BenbernouEtAl2011}.  Viglietta later proves
+their main open-edge theorem gives $\floor{(m+r)/12}$ guards, and their
+corollaries yield $(11/72)m-g/6-1$ in terms of total edges and
+$(7/12)r-g+1$ in terms of reflex-edge count
+\cite[Theorem~5 and Corollaries~6--7]{BenbernouEtAl2011}.  This is an
+edge-guard theorem parameterized by $r$, not a reflex-edge-only guard theorem.
+Viglietta later proves
 optimal-style bounds for 2-reflex orthogonal polyhedra, namely orthogonal
 polyhedra whose reflex edges occur in only two directions
 \cite{Viglietta2020}.  These are major partial results, but they do not settle
@@ -1139,7 +1148,9 @@ conjectures. \\
 
   \item[Benbernou et al. \cite{BenbernouEtAl2011}.]
   CCCG source for improved edge-guard bounds in orthogonal polyhedra:
-  asymptotic $(11/72)m$ and $(7/12)r$.
+  $\floor{(m+r)/12}$ open edge guards, with corollaries
+  $(11/72)m-g/6-1$ and $(7/12)r-g+1$.  The $r$ bound is parameterized by
+  reflex-edge count; it is not a reflex-edge-only guard theorem.
 
   \item[Viglietta 2-reflex paper \cite{Viglietta2020}.]
   Proves optimal-style reflex-edge bounds for 2-reflex orthogonal polyhedra and

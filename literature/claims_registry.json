@@ -51,14 +51,13 @@
       "id": "claim_BenbernouEtAl2011",
       "source_key": "BenbernouEtAl2011",
       "claim_type": "theorem",
-      "result_statement": "Improves asymptotic orthogonal-polyhedron edge-guard upper bounds to (11/72)m edge guards and (7/12)r reflex-edge-style bounds.",
+      "result_statement": "Every orthogonal polyhedron with e total edges and r reflex edges is guardable by floor((e+r)/12) open edge guards; using the e/r/genus relation gives open-edge-guard bounds of (11/72)e - g/6 - 1 and (7/12)r - g + 1.",
       "model_scope": {
         "objects": [
           "orthogonal polyhedra"
         ],
         "variants": [
           "edge guards",
-          "reflex edge guards",
           "open edge guards",
           "closed edge guards"
         ],
@@ -68,11 +67,17 @@
         ],
         "assumptions": []
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
-      "translation_note": "This is a 3D edge-guard result, not a point-guard or perimeter result. It is central evidence for the remaining gap to Urrutia-type m/12 + O(1) targets.",
-      "limitations": [],
-      "non_implications": [],
+      "locator": "Theorem 5, PDF pp. 5-6; Corollaries 6-7, PDF p. 6; Theorem 2, PDF pp. 3-4, for the e/r/genus relation; Theorem 4, PDF pp. 4-5, for the open/closed edge-guard comparison.",
+      "verification_status": "primary_checked",
+      "translation_note": "This is a 3D edge-guard result, not a point-guard or perimeter result. The (7/12)r expression is parameterized by the number of reflex edges; it is not a theorem using only reflex-edge guards.",
+      "limitations": [
+        "The formal bound is stated for open edge guards guarding the open polyhedron model.",
+        "The paper relates open and closed edge guards, but the main floor((e+r)/12) and corollary bounds should not be restated as closed-edge-guard theorems without that comparison."
+      ],
+      "non_implications": [
+        "Does not prove the Urrutia m/12 + O(1) closed-edge-guard conjecture.",
+        "Does not settle general reflex-edge-only guard conjectures for orthogonal polyhedra."
+      ],
       "open_problem_links": [
         "orthogonal_polyhedra_edge_guards",
         "orthogonal_polyhedra_reflex_edge_guards"

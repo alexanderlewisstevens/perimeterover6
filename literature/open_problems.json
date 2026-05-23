@@ -47,7 +47,7 @@
       "title": "Urrutia-type edge-guard bounds for orthogonal polyhedra",
       "question": "Can genus-zero orthogonal polyhedra with m edges be guarded with m/12 + O(1) closed edge guards?",
       "status": "open_with_partial_results",
-      "known": "Benbernou et al. improve upper bounds but do not reach the conjectured target; Viglietta's thesis records the point-guard obstruction and edge-guard direction.",
+      "known": "Benbernou et al. prove floor((e+r)/12) open edge guards and the derived (11/72)e and (7/12)r parameterized upper bounds, but these do not reach the conjectured m/12 + O(1) closed-edge target; Viglietta's thesis records the point-guard obstruction and edge-guard direction.",
       "confirming_sources": ["VigliettaThesis", "BenbernouEtAl2011", "CanoTothUrrutiaViglietta2022"],
       "non_implications": ["3D point-guard bounds are superlinear and are not the right analogue."],
       "progress_paths": ["Improve edge-guard upper bounds for orthogonal polyhedra.", "Find lower-bound constructions requiring a larger correction term."]
@@ -57,9 +57,9 @@
       "title": "Reflex-edge guards in general orthogonal polyhedra",
       "question": "Can the tight 2-reflex reflex-edge-guard behavior be extended to general 3-reflex orthogonal polyhedra?",
       "status": "open_with_partial_results",
-      "known": "Viglietta proves strong results for 2-reflex orthogonal polyhedra; the general case remains open.",
+      "known": "Viglietta proves strong results for 2-reflex orthogonal polyhedra; Benbernou et al. give edge-guard bounds parameterized by r and conjectural evidence around open reflex edges, but the general reflex-edge-only case remains open.",
       "confirming_sources": ["Viglietta2020", "VigliettaThesis", "BenbernouEtAl2011"],
-      "non_implications": ["The 2-reflex restriction is structural and should not be silently dropped."],
+      "non_implications": ["The 2-reflex restriction is structural and should not be silently dropped.", "A bound parameterized by the number of reflex edges does not imply that the guards are restricted to reflex edges."],
       "progress_paths": ["Extend induction or charging methods beyond two reflex-edge directions.", "Identify a counterexample to the direct generalization."]
     },
     {
