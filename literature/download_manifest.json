@@ -11,6 +11,13 @@
       "status": "not_downloaded"
     },
     {
+      "source_key": "Massberg2014",
+      "url": "https://link.springer.com/content/pdf/10.1007/s00454-014-9587-4.pdf",
+      "local_path": "papers/downloads/Massberg2014.pdf",
+      "access_note": "Springer open-access article PDF",
+      "status": "downloaded"
+    },
+    {
       "source_key": "MassbergHabilitation",
       "url": "https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.080/Massberg/habilitation_massberg.pdf",
       "local_path": "papers/downloads/Massberg2013_habilitation.pdf",

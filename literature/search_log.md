@@ -20,6 +20,18 @@ Use one entry per meaningful search.
 
 ## Seed Searches Already Reflected in the Registry
 
+### 2026-05-22 -- Massberg 2014 primary-source verification
+
+- Search target: primary DOI/PDF for the hole-free perimeter-over-six theorem.
+- Query: DOI `10.1007/s00454-014-9587-4`, exact title search for
+  `"Perfect graphs and guarding rectilinear art galleries"`.
+- Hits inspected: Springer PDF, Mendeley metadata page, DBLP metadata.
+- Included: `Massberg2014`.
+- Excluded: metadata-only pages were not used for theorem locators.
+- Follow-up: verify `MassbergHabilitation` next, because Massberg 2014
+  Conjecture 9 is related to but not identical with the habilitation's
+  Conjecture 6.10 reference already tracked in the review.
+
 ### 2026-05-22 -- perimeter-over-six and polyomino perimeter
 
 - Search target: DOI pages, author/university PDFs, exact title searches.

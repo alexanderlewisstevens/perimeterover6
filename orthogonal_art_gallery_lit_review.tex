@@ -154,11 +154,12 @@ ortho-unit model.
 \reviewcallout{Main 2D Distinction}{%
 If $Q$ is a hole-free integral orthogonal polygon of lattice perimeter $N$,
 unit-grid subdivision identifies it with a hole-free polyomino of perimeter
-$\ell=N$.  Ma{\ss}berg's theorem then gives $\floor{N/6}$ point guards.
-Thus the hole-free integral-polygon reading of the Diaz-Banez et al.
-$\floor{N/6}$ question is already covered by Ma{\ss}berg; the genuinely
-unresolved reading is the extension to holes or to a broader lattice-domain
-convention.}
+$\ell=N$.  Ma{\ss}berg's theorem then gives
+$\max\{1,\floor{N/6}\}$ point guards, and hence $\floor{N/6}$ guards whenever
+$N\geq 6$.  Thus the nontrivial hole-free integral-polygon reading of the
+Diaz-Banez et al. $\floor{N/6}$ question is already covered by Ma{\ss}berg;
+the genuinely unresolved reading is the extension to holes or to a broader
+lattice-domain convention.}
 
 In three dimensions the direct point-guard analogy breaks for a different
 reason.  Orthogonal polyhedra can require superlinear numbers of point guards
@@ -321,7 +322,7 @@ Michael--Pinciu
 
 Hole-free polyomino & point & lattice perimeter $\ell$ &
 Proven tight for $\ell\geq 6$: $\loversix$ & Ma{\ss}berg
-\cite{Massberg2014} \\
+\cite[Theorem~1]{Massberg2014} \\
 
 Polyomino with holes & point & lattice perimeter $\ell$ &
 Conditional/open: Ma{\ss}berg's extension depends on a rectangle-packing
@@ -337,9 +338,9 @@ model & Diaz-Banez et al. \cite{DiazBanezEtAl2025} \\
 
 Integral orthogonal polygon, hole-free & point & lattice perimeter $N$ &
 Solved by overlap: subdivision gives a hole-free polyomino with $N=\ell$, so
-Ma{\ss}berg proves the Diaz-Banez $\floor{N/6}$ bound in this case &
+Ma{\ss}berg proves the nontrivial Diaz-Banez $\floor{N/6}$ bound in this case &
 Ma{\ss}berg; Diaz-Banez et al.
-\cite{Massberg2014,DiazBanezEtAl2025} \\
+\cite[Theorem~1]{Massberg2014}; \cite{DiazBanezEtAl2025} \\
 
 Integral or polyomino domain with holes & point & lattice perimeter $N$ or
 $\ell$ & Still open/conditional: Ma{\ss}berg's hole extension depends on a
@@ -601,9 +602,9 @@ Ma{\ss}berg's perimeter theorem sits in the rectangle/perfect-graph branch of
 the literature rather than the triangulation/coloring branch.  The proof
 relates guarding to systems of maximal rectangles, uses perfect-graph
 structure to control the relevant packing/covering quantity, and then charges
-that structure to the lattice perimeter \cite{Massberg2014}.  This is why the
-theorem has the form $\floor{\ell/6}$ and why it is genuinely different from
-the $\floor{n/4}$ orthogonal-polygon theorem.
+that structure to the lattice perimeter \cite[Section~4]{Massberg2014}.  This
+is why the theorem has the form $\max\{1,\floor{\ell/6}\}$ and why it is
+genuinely different from the $\floor{n/4}$ orthogonal-polygon theorem.
 
 The same roadmap also explains the open hole case.  In a rectilinear gallery
 with holes, the intersection graph of maximal rectangles need not retain the
@@ -661,8 +662,8 @@ methods can be sharpened to the lower-bound scale.
 
   \item[Hole-free polyominoes, point guards, lattice perimeter $\ell$.]
   Proven tight: for $\ell \geq 6$, Ma{\ss}berg proves that $\loversix$ point
-  guards suffice \cite{Massberg2014}.  Use $\max\{1,\loversix\}$ if the
-  one-square case is included.
+  guards suffice \cite[Theorem~1]{Massberg2014}.  The exact theorem is
+  $\max\{1,\loversix\}$, which includes the one-square case.
 
   \item[Polyominoes with holes, point guards, lattice perimeter $\ell$.]
   Open/conditional.  Ma{\ss}berg's text explicitly states that the extension
@@ -778,11 +779,13 @@ perimeter.
 \subsection{Hole-Free Polyominoes}
 
 Ma{\ss}berg proves the direct perimeter theorem for hole-free polyominoes
-\cite{Massberg2014}.  In the notation of that paper, if a hole-free polyomino
-has perimeter $\ell \geq 6$, then it can be guarded by at most $\loversix$
-point guards.  The proof uses maximal axis-parallel rectangles in a rectilinear
+\cite[Theorem~1]{Massberg2014}.  In the notation of that paper, if a
+hole-free polyomino has lattice perimeter $\ell$, then it can be guarded by at
+most $\max\{1,\loversix\}$ point guards; for $\ell \geq 6$ this is exactly
+$\loversix$.  The proof uses maximal axis-parallel rectangles in a rectilinear
 gallery, relates a rectangle packing number to the guard number, and then
-bounds the packing by the perimeter.  Comb-like examples show tightness.
+bounds the packing by the perimeter.  A comb construction shows tightness
+\cite[Fig.~3 and p.~575]{Massberg2014}.
 
 \subsection{Polyominoes with Holes}
 
@@ -812,9 +815,10 @@ orthogonal polygon of perimeter $N$ should be guardable by $\floor{N/6}$ point
 guards.  If ``integral orthogonal polygon'' is read in the usual simple,
 hole-free sense, this is already covered by Ma{\ss}berg.  Subdividing long
 sides into unit grid edges turns the polygon into a hole-free polyomino with
-the same lattice perimeter, $N=\ell$, and Ma{\ss}berg proves the
-$\floor{\ell/6}$ bound for that class.  Thus the Diaz-Banez question is open
-only under a broader reading, such as integral domains with holes or another
+the same lattice perimeter, $N=\ell$, and Ma{\ss}berg proves
+$\max\{1,\floor{\ell/6}\}$ for that class
+\cite[Theorem~1]{Massberg2014}.  Thus the Diaz-Banez question is open only
+under a broader reading, such as integral domains with holes or another
 lattice-domain convention not reduced to a hole-free polyomino.
 
 \section{Three-Dimensional Orthogonal Polyhedra}
@@ -978,7 +982,7 @@ conjectures. \\
   $\max\{1,\loversix\}$ point guards?  Ma{\ss}berg's habilitation gives a
   conditional route to this theorem through a maximal-rectangle packing
   conjecture \cite{MassbergHabilitation}; the published perimeter theorem is
-  the hole-free case \cite{Massberg2014}.
+  the hole-free case \cite[Theorem~1]{Massberg2014}.
 
   \item \textbf{Ma{\ss}berg's maximal-rectangle packing conjecture.}
   In a rectilinear gallery with holes, does the maximum packing size of
@@ -1110,8 +1114,9 @@ conjectures. \\
 \begin{description}
   \item[Ma{\ss}berg \cite{Massberg2014}.]
   Primary peer-reviewed source for perimeter-over-six in hole-free
-  polyominoes.  This also proves the hole-free integral orthogonal polygon
-  $\floor{N/6}$ statement after unit-grid subdivision.
+  polyominoes: Theorem 1 gives $\max\{1,\floor{\ell/6}\}$ and Fig. 3 gives the
+  tight comb construction.  This also proves the nontrivial hole-free integral
+  orthogonal polygon $\floor{N/6}$ statement after unit-grid subdivision.
 
   \item[Ma{\ss}berg habilitation \cite{MassbergHabilitation}.]
   Source for Conjecture 6.10 and the conditional hole extension.  This is the

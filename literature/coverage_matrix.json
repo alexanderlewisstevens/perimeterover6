@@ -91,7 +91,7 @@
         "Status Overview",
         "Polyomino and Perimeter Results"
       ],
-      "next_action": "Record theorem/page locator and lower-bound construction details."
+      "next_action": "Complete unless a later pass adds algorithmic construction details."
     },
     {
       "id": "polyominoes_with_holes_point_guards_lattice_perimeter",

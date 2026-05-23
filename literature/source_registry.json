@@ -271,17 +271,17 @@
     {
       "key": "Massberg2014",
       "citation": "J. Massberg. Perfect graphs and guarding rectilinear art galleries. Discrete & Computational Geometry 51, 569--577, 2014.",
-      "links": ["https://doi.org/10.1007/s00454-014-9587-4"],
+      "links": ["https://doi.org/10.1007/s00454-014-9587-4", "https://link.springer.com/content/pdf/10.1007/s00454-014-9587-4.pdf"],
       "venue": "Discrete & Computational Geometry",
       "source_type": "journal_article",
       "status": "tight_theorem",
       "objects": ["hole-free polyominoes", "rectilinear art galleries"],
       "guard_models": ["point guards"],
       "parameters": ["lattice perimeter ell", "vertices", "area"],
-      "relevant_result": "A hole-free polyomino with perimeter ell >= 6 can be guarded by at most floor(ell/6) point guards; the bound is tight.",
-      "translation_note": "This is the central perimeter-over-six theorem. It covers hole-free integral orthogonal polygons after unit-grid subdivision. It does not prove the hole case.",
+      "relevant_result": "Theorem 1 proves that a hole-free polyomino with lattice perimeter ell is guardable by at most max(1, floor(ell/6)) point guards; equivalently, floor(ell/6) guards suffice for ell >= 6, and the comb construction shows tightness.",
+      "translation_note": "This is the central perimeter-over-six theorem. The paper's default convention excludes holes unless otherwise stated, so Theorem 1 covers hole-free integral orthogonal polygons after unit-grid subdivision. It does not prove the hole case.",
       "open_problem_links": ["polyomino_perimeter_holes", "integral_perimeter_beyond_hole_free"],
-      "verification": ["DOI recorded.", "Search result summary confirmed the perimeter ell >= 6 statement."]
+      "verification": ["Primary Springer PDF checked.", "Theorem 1 on journal p. 570 states max(1, floor(ell/6)); Section 4 proves the theorem on pp. 572-575; Fig. 3 and the paragraph on p. 575 give the tight comb example and Conjecture 9 records the conditional hole extension."]
     },
     {
       "key": "MassbergHabilitation",

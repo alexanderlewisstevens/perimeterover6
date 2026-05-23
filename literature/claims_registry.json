@@ -683,27 +683,32 @@
       "id": "claim_Massberg2014",
       "source_key": "Massberg2014",
       "claim_type": "tight_theorem",
-      "result_statement": "A hole-free polyomino with perimeter ell >= 6 can be guarded by at most floor(ell/6) point guards; the bound is tight.",
+      "result_statement": "A hole-free polyomino with lattice perimeter ell can be guarded by at most max(1, floor(ell/6)) point guards; equivalently, floor(ell/6) guards suffice for ell >= 6, and the comb construction shows the bound is tight.",
       "model_scope": {
         "objects": [
-          "hole-free polyominoes",
-          "rectilinear art galleries"
+          "hole-free polyominoes"
         ],
         "variants": [
           "point guards"
         ],
         "parameters": [
-          "lattice perimeter ell",
-          "vertices",
-          "area"
+          "lattice perimeter ell"
         ],
-        "assumptions": []
+        "assumptions": [
+          "The paper's default convention is that polyominoes and rectilinear art galleries do not contain holes unless otherwise stated."
+        ]
       },
-      "locator": "not_recorded",
-      "verification_status": "needs_page_or_theorem_locator",
-      "translation_note": "This is the central perimeter-over-six theorem. It covers hole-free integral orthogonal polygons after unit-grid subdivision. It does not prove the hole case.",
-      "limitations": [],
-      "non_implications": [],
+      "locator": "Theorem 1, journal p. 570; proof in Section 4, journal pp. 572-575; tight comb example in Fig. 3 and following paragraph, journal p. 575.",
+      "verification_status": "primary_checked",
+      "translation_note": "This is the central perimeter-over-six theorem. The source's default convention excludes holes unless otherwise stated, so Theorem 1 covers hole-free integral orthogonal polygons after unit-grid subdivision. It does not prove the hole case.",
+      "limitations": [
+        "The exact theorem is max(1, floor(ell/6)); the shorter floor(ell/6) form is valid for ell >= 6.",
+        "Theorem 1 is hole-free under the paper's default convention."
+      ],
+      "non_implications": [
+        "Does not prove perimeter-over-six for polyominoes with holes.",
+        "Does not by itself settle broader integral-domain conventions that allow holes."
+      ],
       "open_problem_links": [
         "polyomino_perimeter_holes",
         "integral_perimeter_beyond_hole_free"

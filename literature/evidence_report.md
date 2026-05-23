@@ -8,7 +8,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Claims: 33
 - Coverage cells: 10
 - Open-problem clusters: 8
-- Claims missing page/theorem locators: 31
+- Claims missing page/theorem locators: 30
 - Coverage cells still unsearched/searching: 0
 
 ## Status Counts
@@ -111,9 +111,9 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 - Source: `Massberg2014` (Discrete & Computational Geometry)
 - Status: `tight_theorem`
-- Result: A hole-free polyomino with perimeter ell >= 6 can be guarded by at most floor(ell/6) point guards; the bound is tight.
-- Translation note: This is the central perimeter-over-six theorem. It covers hole-free integral orthogonal polygons after unit-grid subdivision. It does not prove the hole case.
-- Locator: not_recorded
+- Result: A hole-free polyomino with lattice perimeter ell can be guarded by at most max(1, floor(ell/6)) point guards; equivalently, floor(ell/6) guards suffice for ell >= 6, and the comb construction shows the bound is tight.
+- Translation note: This is the central perimeter-over-six theorem. The source's default convention excludes holes unless otherwise stated, so Theorem 1 covers hole-free integral orthogonal polygons after unit-grid subdivision. It does not prove the hole case.
+- Locator: Theorem 1, journal p. 570; proof in Section 4, journal pp. 572-575; tight comb example in Fig. 3 and following paragraph, journal p. 575.
 
 - Tracking issue: [#18](https://github.com/alexanderlewisstevens/perimeterover6/issues/18)
 
@@ -253,7 +253,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `tight_theorem`
 - Summary: Massberg proves the tight floor(ell/6) perimeter theorem for hole-free polyominoes.
 - Supporting claims: claim_Massberg2014
-- Next action: Record theorem/page locator and lower-bound construction details.
+- Next action: Complete unless a later pass adds algorithmic construction details.
 
 ### `polyominoes_with_holes_point_guards_lattice_perimeter`
 
@@ -335,7 +335,6 @@ Generated from the structured literature ledgers. This report is an audit compan
 - `claim_KahnKlaweKleitman1983` needs page/theorem locator ([#15](https://github.com/alexanderlewisstevens/perimeterover6/issues/15)).
 - `claim_KatzRoisman2008` needs page/theorem locator ([#16](https://github.com/alexanderlewisstevens/perimeterover6/issues/16)).
 - `claim_LeeLin1986` needs page/theorem locator ([#17](https://github.com/alexanderlewisstevens/perimeterover6/issues/17)).
-- `claim_Massberg2014` needs page/theorem locator ([#18](https://github.com/alexanderlewisstevens/perimeterover6/issues/18)).
 - `claim_MassbergHabilitation` needs page/theorem locator ([#19](https://github.com/alexanderlewisstevens/perimeterover6/issues/19)).
 - `claim_MichaelPinciu2016` needs page/theorem locator ([#20](https://github.com/alexanderlewisstevens/perimeterover6/issues/20)).
 - `claim_MotwaniRaghunathanSaran1990` needs page/theorem locator ([#21](https://github.com/alexanderlewisstevens/perimeterover6/issues/21)).
@@ -361,7 +360,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 - Simple orthogonal polygons, point guards, vertex count: Record page/theorem locators from primary sources.
 - Orthogonal polygons with holes, vertex guards: Primary-check exact theorem statements and page locators for the partial bounds.
-- Hole-free polyominoes, point guards, lattice perimeter: Record theorem/page locator and lower-bound construction details.
+- Hole-free polyominoes, point guards, lattice perimeter: Complete unless a later pass adds algorithmic construction details.
 - Polyominoes with holes, point guards, lattice perimeter: Extract the exact Conjecture 6.10 statement and surrounding examples from Massberg's habilitation.
 - Polyominoes with holes, point guards, cell count: Record theorem/page locator and examples showing tightness.
 - Ortho-unit polygons, point guards, perimeter: Record exact theorem locator and clarify hole assumptions from the primary paper.
