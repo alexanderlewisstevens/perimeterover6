@@ -87,7 +87,8 @@ The paper now has the required reader-facing layers: short answer, synthesis
 table, scope definitions, status matrix, coverage chart, model separations,
 proof-technique map, model-by-model survey, open problems, annotated sources,
 and evidence protocol. The first forward/adjacent-model sweep and final
-OpenAlex/web status pass for the central open clusters are logged, the
+OpenAlex/web status pass for the central open clusters are logged and
+summarized in the paper's evidence trail; the
 currently cited adjacent models have their own coverage cells, and the
 currently excluded adjacent models have explicit scope-exclusion cells. The
 main remaining assembly work is recurring rather than structural: repeat

@@ -1386,7 +1386,13 @@ Document assembly map and paper outline. \\
 remains incomplete, and which artifact should be updated next. &
 Progress tracker and current work queue. \\
 
-12 & Is the prose synchronized with the evidence?  Regenerate the evidence
+12 & Has a final status pass been run for central open, conditional, or
+recent-status claims?  Repeat forward-citation, venue, author-page,
+exact-title, and adjacent-model searches before preserving a status. &
+Search-log and search-query entries with dated outcomes for each central
+status cell. \\
+
+13 & Is the prose synchronized with the evidence?  Regenerate the evidence
 report, run registry checks, rebuild the PDF, and inspect the log before
 finalizing. &
 Updated paper, generated evidence report, and clean validation run. \\
@@ -1452,6 +1458,39 @@ conditional in the tracked evidence.  The one added theorem source is
 Aldana-Galvan et al.'s $\pi/2$-edge-guard result, which is recorded as a
 separate adjacent model rather than as a closure of the standard 3D
 edge/reflex-edge gaps.
+
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.25\textwidth}
+  >{\raggedright\arraybackslash}p{0.18\textwidth}
+  Y}
+\toprule
+Cell checked & Outcome & Reader-facing consequence \\
+\midrule
+Polyominoes with holes, point guards, lattice perimeter $\ell$ &
+Status preserved &
+No tracked source proves the $\ell/6$ holes extension; it remains tied to
+Ma{\ss}berg's conditional route. \\
+
+Integral orthogonal polygons, point guards, perimeter $N$ &
+Status preserved &
+The hole-free reading remains covered by Ma{\ss}berg; broader readings with
+holes remain open or conditional in the tracked evidence. \\
+
+Orthogonal polygons with holes, vertex guards &
+Status preserved &
+Floodlight and half-plane hits remain adjacent exclusions; no standard
+vertex-guard resolution was tracked. \\
+
+Orthogonal polyhedra, standard edge/reflex-edge guards &
+Adjacent source added; status preserved &
+Aldana-Galvan et al. add $\pi/2$-edge-guard context, but the standard
+edge/reflex-edge gaps remain open. \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \section{Conclusion}
 

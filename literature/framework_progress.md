@@ -1,6 +1,6 @@
 # Framework Progress Tracker
 
-Last updated: 2026-05-23
+Last updated: 2026-05-26
 
 This file is the live progress board for the literature-review framework. It
 tracks whether each framework stage has been updated for the current review and
@@ -30,7 +30,7 @@ currently contain; this file says where the review process stands.
 | Coverage update | `active` | `coverage_matrix.json`, status tables | No coverage cells are currently marked unsearched/searching; the adjacent-model split, explicit scope-exclusion pass, and limited-field edge-guard cell are complete. | Keep `next_action` fields current as searches or locators change. |
 | Open-problem update | `active` | `open_problems.json`, open-problem section | Eight open-problem clusters are tracked. | Label any new cluster as source-stated, conditional, or derived before using it in the paper. |
 | Document assembly | `active` | `document_assembly.md`, paper section order, framework templates | The paper now has a front executive synthesis and an explicit map from ledgers to reader-facing sections; the reusable templates now include scope-exclusion cells and a final-status-pass template. | Recheck the assembly map and templates whenever the paper structure, artifact roles, or release gate changes. |
-| Paper synchronization | `active` | `orthogonal_art_gallery_lit_review.tex`, PDF | The paper includes the current synthesis, completeness protocol, and evidence audit trail. | Update prose only after source, claim, coverage, open-problem, progress, and assembly records support the change. |
+| Paper synchronization | `active` | `orthogonal_art_gallery_lit_review.tex`, PDF | The paper includes the current synthesis, completeness protocol, final-status-pass outcome table, and evidence audit trail. | Update prose only after source, claim, coverage, open-problem, progress, and assembly records support the change. |
 | Audit and build | `recurring` | `scripts/`, `evidence_report.md`, PDF | Registry checks now validate cross-links, scope-exclusion cells, and declared status vocabularies. | Run checks after every substantive evidence or prose edit. |
 
 ## High-Priority Work Queue
