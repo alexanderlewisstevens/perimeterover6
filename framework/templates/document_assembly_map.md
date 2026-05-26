@@ -60,9 +60,11 @@ When a new source or result is added, update artifacts in this order:
 6. Framework progress tracker.
 7. Final status pass records for central open, conditional, or recently changed
    claims.
-8. Generated evidence report.
-9. Main paper source.
-10. Compiled deliverable.
+8. Reader-facing final-status outcome table or appendix rows when central
+   statuses are preserved, adjacent sources are added, or exclusions matter.
+9. Generated evidence report.
+10. Main paper source.
+11. Compiled deliverable.
 
 ## Status Display Rules
 
@@ -76,3 +78,5 @@ When a new source or result is added, update artifacts in this order:
 - Put remaining evidence gaps in the completeness/evidence sections.
 - Put the most recent final-status-pass date in the completeness/evidence
   section when the paper preserves an open or conditional conclusion.
+- Summarize final-status-pass outcomes in a small table when readers need to
+  see which central cells were rechecked and what consequence follows.

@@ -41,6 +41,8 @@ supporting artifact for auditability, not a replacement for the paper.
 - Coverage cells still unsearched or searching.
 - Central open, conditional, or recently changed cells without a dated final
   status pass.
+- Central preserved statuses without a reader-facing outcome row, paragraph,
+  or appendix entry.
 - Adjacent variants mentioned in prose or search logs but lacking either a
   theorem-level coverage cell or a scope-exclusion cell.
 - Search-log sections that still need entries.

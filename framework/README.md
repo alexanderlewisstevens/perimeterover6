@@ -27,6 +27,8 @@ claim truth, coverage/completeness state, open-problem state, and final prose.
 - `templates/final_status_pass.md`: reusable pre-release pass for checking
   recent forward citations, venue updates, author pages, and adjacent-model
   exclusions before preserving or changing a status claim.
+- `templates/final_status_outcome_table.md`: reusable reader-facing table for
+  summarizing what the final status pass changed, preserved, or excluded.
 - `templates/progress_tracker.md`: reusable dashboard for tracking which
   framework stages are done, active, blocked, or recurring.
 
@@ -64,8 +66,11 @@ claim truth, coverage/completeness state, open-problem state, and final prose.
     reader-facing flow changes.
 12. Run a final status pass before publication or whenever a central status
     claim changes. Record both status-changing hits and relevant exclusions.
-13. Generate the evidence report and run validation checks.
-14. Write or revise the paper only after evidence records support the prose.
+13. Add a reader-facing final-status outcome table when the pass preserves an
+    open or conditional status, adds an adjacent source, or records an
+    important exclusion.
+14. Generate the evidence report and run validation checks.
+15. Write or revise the paper only after evidence records support the prose.
 
 ## Completeness Criteria
 
@@ -85,6 +90,8 @@ shape when:
   exclusions;
 - central open, conditional, or recently changed claims have a dated final
   status pass before the review is published or pushed;
+- central preserved statuses have a concise reader-facing outcome statement,
+  table row, or appendix entry that points back to the final status pass;
 - the progress tracker agrees with the coverage matrix, evidence report, and
   current work queue;
 - the document assembly map explains how the evidence artifacts support the

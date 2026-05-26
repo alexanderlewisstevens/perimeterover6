@@ -73,6 +73,9 @@ that every result and open problem can be audited.
   claim extraction, translation notes, coverage updates, open-problem updates,
   progress tracking, document assembly, locator pass, final status pass, and
   paper synchronization.
+- Include a compact final-status outcome table when the review preserves a
+  central open or conditional status after a recent search pass. The table
+  should name the model cell, outcome, and reader-facing consequence.
 - List the remaining evidence gaps, such as missing locators, unsearched
   coverage cells, outdated forward-citation sweeps, progress-board items, or
   unrecorded exclusions.

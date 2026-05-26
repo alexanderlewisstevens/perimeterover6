@@ -42,8 +42,11 @@ Define the axes that determine whether two results are comparable.
     artifact roles change.
 11. Run a final status pass before publishing or preserving a central open,
     conditional, or recent-status claim.
-12. Add or update prose only after the evidence records support the statement.
-13. Regenerate the evidence report and run validation checks.
+12. Add a final-status outcome table or equivalent reader-facing summary when
+    the pass preserves a central open or conditional claim, adds an adjacent
+    source, or records an important exclusion.
+13. Add or update prose only after the evidence records support the statement.
+14. Regenerate the evidence report and run validation checks.
 
 ## Open-Problem Classification
 
@@ -85,6 +88,7 @@ For each central open, conditional, or recently changed claim, record:
   `adjacent_source_added`, `scope_exclusion_added`, or `blocked_by_access`;
 - which source, claim, coverage, open-problem, search, progress, and paper
   artifacts changed.
+- whether a reader-facing outcome row is needed, and where it appears.
 
 ## Completeness Gate
 
@@ -103,6 +107,8 @@ Before stating that a result is known, missing, conditional, or open, verify:
 - search-log entries support the conclusion;
 - a dated final status pass supports any central open, conditional, or
   recent-status statement being preserved;
+- preserved central statuses have a concise reader-facing outcome row,
+  paragraph, or appendix entry;
 - the progress tracker reflects the current work queue;
 - the document assembly map still describes the paper structure;
 - remaining gaps are visible in the evidence report.

@@ -71,6 +71,23 @@ Use one of these outcomes in the search log and coverage matrix.
 - `blocked_by_access`: a source looks important, but the primary text or
   locator is not available yet.
 
+## Reader-Facing Outcome Summary
+
+After the evidence layer is updated, add a compact outcome summary to the
+paper or generated evidence appendix when the pass affects a central status
+claim. Use `final_status_outcome_table.md` as the table template.
+
+At minimum, record:
+
+- the exact model cell checked;
+- the outcome label;
+- the reader-facing consequence;
+- any adjacent model axis that blocks transfer;
+- the search-log section or pass date that supports the row.
+
+The table should answer the reader's practical question: "After the latest
+search pass, what may this review responsibly say?"
+
 ## Language Rules
 
 - Say "no tracked source found in this pass" rather than "no source exists."
