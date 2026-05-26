@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-05-23",
+  "updated": "2026-05-26",
   "status_values": [
     "open",
     "open_with_partial_results",
@@ -33,7 +33,7 @@
       "title": "Integral orthogonal polygon perimeter bounds beyond the hole-free case",
       "question": "Under the broader integral-domain reading, does floor(N/6) point guarding hold when holes or other lattice-domain conventions are allowed?",
       "status": "open_or_conditional",
-      "known": "The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. The 2026-05-23 forward-citation and exact-title pass for Diaz-Banez et al. found no tracked source that changes the holes/broader-domain status.",
+      "known": "The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. Diaz-Banez et al.'s integral section gives an N/6 lower-bound family, states an N/5 upper bound with proof not included, and records an N/6 conjecture. The 2026-05-23 forward-citation and exact-title pass found no tracked source that changes the holes/broader-domain status; the 2026-05-26 flat-vertex/formula pass found no primary source for an n/8+f/4 variant.",
       "confirming_sources": ["DiazBanezEtAl2025", "Massberg2014", "MassbergHabilitation"],
       "non_implications": ["The Diaz-Banez et al. ortho-unit theorem is stronger but only for unit-edge polygons.", "The hole-free integral reading is not a separate open problem."],
       "progress_paths": ["State the exact integral-domain convention.", "Resolve the holes version or reduce it to the polyomino-with-holes problem."]

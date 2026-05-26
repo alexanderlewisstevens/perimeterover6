@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-05-23",
+  "updated": "2026-05-26",
   "purpose": "Completeness map for the review. Each cell records a model/result area and its evidence status.",
   "coverage_status_values": [
     "unsearched",
@@ -202,7 +202,7 @@
         "Status Overview",
         "Polyomino and Perimeter Results"
       ],
-      "next_action": "Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit."
+      "next_action": "Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit; a 2026-05-26 flat-vertex/formula search found no n/8+f/4 variant in the primary arXiv source or exact web searches."
     },
     {
       "id": "integral_orthogonal_polygons_point_guards_perimeter",
@@ -224,7 +224,9 @@
       ],
       "supporting_claims": [
         "claim_Massberg2014",
-        "claim_DiazBanezEtAl2025",
+        "claim_DiazBanezEtAl2025_integral_lower_bound",
+        "claim_DiazBanezEtAl2025_integral_n5_upper_statement",
+        "claim_DiazBanezEtAl2025_integral_N6_conjecture",
         "claim_MassbergHabilitation"
       ],
       "open_problem_links": [
@@ -236,7 +238,7 @@
         "Status Overview",
         "Polyomino and Perimeter Results"
       ],
-      "next_action": "The hole-free overlap is recorded; before stating any standalone broader-domain open problem, specify whether holes, disconnected domains, or a different lattice-domain convention are intended."
+      "next_action": "The hole-free overlap is recorded. The 2026-05-26 targeted search found no primary source for an n/8+f/4 bound using flat vertices or faces; before stating any standalone broader-domain or flat-vertex parameter problem, specify whether holes, disconnected domains, inserted collinear grid points, or a different lattice-domain convention are intended."
     },
     {
       "id": "orthogonal_polyhedra_point_guards",

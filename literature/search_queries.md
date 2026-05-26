@@ -32,6 +32,18 @@ title searches and primary sources before secondary summaries.
 - `"ortho-unit polygons" "guarded" "floor((n-4)/8)"`
 - `"integral orthogonal polygon" "N/6" guards`
 - `"orthogonal polygon" "perimeter N" "guarded" "N/6"`
+- `"n/8 + f/4" guards orthogonal polygon`
+- `"n/8+f/4" "art gallery"`
+- `"n/8" "f/4" "orthogonal polygon"`
+- `"n/8" "flat vertices" "orthogonal polygon" "guard"`
+- `"flat vertices" "integral orthogonal polygon" guards`
+- `"straight vertices" "orthogonal polygon" "art gallery"`
+- `"collinear vertices" "orthogonal polygon" "guards"`
+- `"faces" "integral orthogonal polygon" "guards"`
+- `"perimeter" "N/5" "integral orthogonal polygons" guards`
+- `https://export.arxiv.org/api/query?search_query=all:%22ortho-unit%22+AND+all:%22guards%22`
+- `https://export.arxiv.org/api/query?search_query=all:%22n/8%22+AND+all:%22guards%22+AND+all:%22orthogonal%22`
+- `https://api.openalex.org/works?search=flat%20vertices%20orthogonal%20polygon%20guards%20art%20gallery`
 - `https://api.openalex.org/works/https://doi.org/10.1007/s00373-024-02880-8`
 - `https://api.openalex.org/works?filter=cites:W4405867242`
 

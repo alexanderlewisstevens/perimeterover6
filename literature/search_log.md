@@ -289,3 +289,43 @@ Use one entry per meaningful search.
   polyform, and other restricted-visibility variants remain separate cells.
 - Follow-up: repeat this exact forward/venue pass after new central papers,
   proceedings volumes, or author-page updates appear.
+
+### 2026-05-26 -- flat-vertex and n/8+f/4 formula pass
+
+- Search target: determine whether a primary source proves, states, or uses a
+  guard bound of the form `n/8+f/4` for integral orthogonal polygons, where
+  `f` might mean flat vertices, inserted collinear grid points, faces, or
+  cells.
+- Query: `"n/8 + f/4" guards orthogonal polygon`; `"n/8+f/4" "art
+  gallery"`; `"n/8" "f/4" "orthogonal polygon"`; `"n/8" "flat vertices"
+  "orthogonal polygon" "guard"`; `"flat vertices" "integral orthogonal
+  polygon" guards`; `"straight vertices" "orthogonal polygon" "art
+  gallery"`; `"collinear vertices" "orthogonal polygon" "guards"`;
+  `"faces" "integral orthogonal polygon" "guards"`; `"perimeter" "N/5"
+  "integral orthogonal polygons" guards`.
+- Query: arXiv API searches for `all:"ortho-unit" AND all:"guards"`,
+  `all:"n/8" AND all:"guards" AND all:"orthogonal"`,
+  `all:"flat vertices" AND all:"orthogonal polygon"`, and
+  `all:"integral orthogonal polygon" AND all:"guard"`; OpenAlex searches for
+  `flat vertices orthogonal polygon guards art gallery` and `"n/8" "f/4"
+  "guards"`.
+- Hits inspected: the arXiv metadata and source package for
+  `DiazBanezEtAl2025`, especially the theorem statement and the `Guarding
+  integral polygons` section; exact web searches around `n/8+f/4`, flat
+  vertices, straight vertices, collinear vertices, faces, and integral
+  orthogonal polygons; OpenAlex broad matches, which were mostly robotics,
+  terrain guarding, or unrelated non-art-gallery records.
+- Included: no new source was added.  The existing Diaz-Banez et al. source
+  was split into separate integral subclaims: an `N/6` lower-bound family, a
+  stated `N/5` upper bound whose proof is not included in the paper, and the
+  source-stated `N/6` integral-perimeter conjecture.
+- Excluded: no primary or exact-topic hit found a formula of the form
+  `n/8+f/4` for integral orthogonal point guarding.  The closest theorem
+  remains the ortho-unit `floor((n-4)/8)` bound.  If `f` denotes flat grid
+  points inserted by subdividing long integral edges, the immediate unit-edge
+  parameter is total boundary length `N`, not an independently verified
+  `n/8+f/4` expression.
+- Follow-up: if a proposer has a source or notation in mind for `f`, add a
+  dedicated coverage cell before using the formula in the paper; record
+  whether `f` counts flat boundary vertices, unit cells/faces, holes, or a
+  3D face parameter.

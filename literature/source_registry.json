@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-05-23",
+  "updated": "2026-05-26",
   "purpose": "Structured evidence ledger for the orthogonal art-gallery literature review.",
   "status_values": [
     "theorem",
@@ -144,10 +144,10 @@
       "objects": ["ortho-unit polygons", "integral orthogonal polygons"],
       "guard_models": ["point guards"],
       "parameters": ["vertices n", "perimeter P", "integral perimeter N"],
-      "relevant_result": "Every ortho-unit polygon with n >= 12 vertices can be guarded by floor((n-4)/8) guards, tightly. The paper also frames an integral-perimeter N/6 direction.",
-      "translation_note": "The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. The hole-free integral N/6 reading is covered by Massberg after subdivision; only holes or broader lattice-domain readings remain open.",
+      "relevant_result": "Every ortho-unit polygon with n >= 12 vertices can be guarded by floor((n-4)/8) guards, tightly. The integral section gives an N/6 lower-bound family, states an N/5 upper bound with proof not included, and records an N/6 conjecture for integral perimeter.",
+      "translation_note": "The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. The hole-free integral N/6 reading is covered by Massberg after subdivision; only holes or broader lattice-domain readings remain open. A 2026-05-26 flat-vertex/formula search found no source for an n/8+f/4 integral-polygon guard bound; if f denotes inserted flat grid points, that is a parameter translation that must be recorded separately.",
       "open_problem_links": ["integral_perimeter_beyond_hole_free"],
-      "verification": ["DOI and arXiv recorded.", "arXiv PDF primary-checked for Theorem 1, Figure 11, and the integral-perimeter N/6 conjecture."]
+      "verification": ["DOI and arXiv recorded.", "arXiv PDF primary-checked for Theorem 1, Figure 11, and the integral-perimeter N/6 conjecture.", "arXiv TeX source checked on 2026-05-26 for the integral section; no occurrence of n/8+f/4, flat-vertex, straight-vertex, or collinear-vertex formula was found."]
     },
     {
       "key": "DurocherEtAl2017",

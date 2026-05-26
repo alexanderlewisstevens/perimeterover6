@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-05-23",
+  "updated": "2026-05-26",
   "purpose": "One extracted result or contextual claim per record. Claims are the auditable bridge from source records to review prose.",
   "claim_type_values": [
     "theorem",
@@ -369,38 +369,36 @@
       "id": "claim_DiazBanezEtAl2025",
       "source_key": "DiazBanezEtAl2025",
       "claim_type": "tight_theorem",
-      "result_statement": "Every ortho-unit polygon with n >= 12 vertices can be guarded by floor((n-4)/8) guards, tightly. The paper also frames an integral-perimeter N/6 direction.",
+      "result_statement": "Every ortho-unit polygon with n >= 12 vertices can be guarded by floor((n-4)/8) guards, tightly.",
       "model_scope": {
         "objects": [
-          "ortho-unit polygons",
-          "integral orthogonal polygons"
+          "ortho-unit polygons"
         ],
         "variants": [
           "point guards"
         ],
         "parameters": [
           "vertices n",
-          "perimeter P",
-          "integral perimeter N"
+          "perimeter P"
         ],
         "assumptions": []
       },
-      "locator": "Theorem 1, arXiv PDF p. 5; proof conclusion, arXiv PDF pp. 10-13; integral-perimeter lower-bound Figure 11 and N/6 conjecture, arXiv PDF p. 14.",
+      "locator": "Theorem 1, arXiv PDF p. 5; proof conclusion, arXiv PDF pp. 10-13.",
       "verification_status": "primary_checked",
-      "translation_note": "The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. The hole-free integral N/6 reading is covered by Massberg after subdivision; only holes or broader lattice-domain readings remain open.",
+      "translation_note": "The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. It does not by itself prove a theorem for integral orthogonal polygons with arbitrary edge lengths or holes.",
       "limitations": [],
-      "non_implications": [],
+      "non_implications": [
+        "Do not translate the ortho-unit vertex count into an n/8+f/4 formula for integral polygons without specifying how n and f change under unit-edge subdivision."
+      ],
       "open_problem_links": [
         "integral_perimeter_beyond_hole_free"
       ],
       "coverage_cells": [
-        "ortho_unit_polygons_point_guards_perimeter",
-        "integral_orthogonal_polygons_point_guards_perimeter"
+        "ortho_unit_polygons_point_guards_perimeter"
       ],
       "paper_sections": [
         "Status Overview",
-        "Polyomino and Perimeter Results",
-        "Introduction and Scope"
+        "Polyomino and Perimeter Results"
       ],
       "importance": "central",
       "tracking_issue": {
@@ -408,6 +406,128 @@
         "url": "https://github.com/alexanderlewisstevens/perimeterover6/issues/8",
         "purpose": "Add or verify page/theorem locator for this claim record."
       }
+    },
+    {
+      "id": "claim_DiazBanezEtAl2025_integral_lower_bound",
+      "source_key": "DiazBanezEtAl2025",
+      "claim_type": "lower_bound",
+      "result_statement": "The integral section gives a minimum-perimeter integral version of the orthogonal comb with perimeter N that requires floor(N/6) guards.",
+      "model_scope": {
+        "objects": [
+          "integral orthogonal polygons"
+        ],
+        "variants": [
+          "point guards"
+        ],
+        "parameters": [
+          "integral perimeter N"
+        ],
+        "assumptions": [
+          "source polygon model is a single-boundary simple polygon"
+        ]
+      },
+      "locator": "Guarding integral polygons section, arXiv source lines 832-880; Figure 11 and caption, arXiv PDF p. 14.",
+      "verification_status": "primary_checked",
+      "translation_note": "This is a lower-bound construction, not a sufficiency theorem. It uses integral perimeter N, not a separate flat-vertex parameter f.",
+      "limitations": [
+        "The claim supplies necessity for a family; it does not prove the N/6 upper bound."
+      ],
+      "non_implications": [
+        "No n/8+f/4 lower-bound formula was found in this source."
+      ],
+      "open_problem_links": [
+        "integral_perimeter_beyond_hole_free"
+      ],
+      "coverage_cells": [
+        "integral_orthogonal_polygons_point_guards_perimeter"
+      ],
+      "paper_sections": [
+        "Polyomino and Perimeter Results",
+        "Open Problems and Research Directions"
+      ],
+      "importance": "central"
+    },
+    {
+      "id": "claim_DiazBanezEtAl2025_integral_n5_upper_statement",
+      "source_key": "DiazBanezEtAl2025",
+      "claim_type": "theorem",
+      "result_statement": "The paper states that integral orthogonal polygons of perimeter N can be guarded using at most floor(N/5) guards, but says the proof by cases is not included.",
+      "model_scope": {
+        "objects": [
+          "integral orthogonal polygons"
+        ],
+        "variants": [
+          "point guards"
+        ],
+        "parameters": [
+          "integral perimeter N"
+        ],
+        "assumptions": [
+          "source polygon model is a single-boundary simple polygon",
+          "proof omitted in the paper"
+        ]
+      },
+      "locator": "Guarding integral polygons section, arXiv source line 883; arXiv PDF p. 14.",
+      "verification_status": "primary_statement_checked_proof_not_included",
+      "translation_note": "Treat this as a source-stated upper-bound context, not as an independently verified proof in the review. It is weaker than the N/6 theorem obtained for the hole-free integral reading via Massberg's polyomino theorem.",
+      "limitations": [
+        "The source explicitly says the proof is not included."
+      ],
+      "non_implications": [
+        "This does not establish the conjectured floor(N/6) bound."
+      ],
+      "open_problem_links": [
+        "integral_perimeter_beyond_hole_free"
+      ],
+      "coverage_cells": [
+        "integral_orthogonal_polygons_point_guards_perimeter"
+      ],
+      "paper_sections": [
+        "Polyomino and Perimeter Results",
+        "Open Problems and Research Directions"
+      ],
+      "importance": "supporting"
+    },
+    {
+      "id": "claim_DiazBanezEtAl2025_integral_N6_conjecture",
+      "source_key": "DiazBanezEtAl2025",
+      "claim_type": "conjecture",
+      "result_statement": "The paper conjectures that every integral orthogonal polygon of perimeter N can be guarded with at most floor(N/6) guards.",
+      "model_scope": {
+        "objects": [
+          "integral orthogonal polygons"
+        ],
+        "variants": [
+          "point guards"
+        ],
+        "parameters": [
+          "integral perimeter N"
+        ],
+        "assumptions": [
+          "source polygon model is a single-boundary simple polygon unless holes or broader domains are stated separately"
+        ]
+      },
+      "locator": "Guarding integral polygons section, arXiv source lines 883-889; arXiv PDF p. 14.",
+      "verification_status": "primary_checked",
+      "translation_note": "Under the review's hole-free simple-integral reading, Massberg's hole-free polyomino theorem implies the N/6 upper bound after unit-grid subdivision. The unresolved content is only in hole-allowing or broader lattice-domain readings. A 2026-05-26 search found no primary source for an n/8+f/4 flat-vertex variant.",
+      "limitations": [
+        "The conjecture must not be quoted as open without first stating the exact model convention."
+      ],
+      "non_implications": [
+        "The ortho-unit floor((n-4)/8) theorem translates through the unit-edge perimeter parameter, not through an unverified n/8+f/4 expression."
+      ],
+      "open_problem_links": [
+        "integral_perimeter_beyond_hole_free"
+      ],
+      "coverage_cells": [
+        "integral_orthogonal_polygons_point_guards_perimeter"
+      ],
+      "paper_sections": [
+        "Introduction and Scope",
+        "Polyomino and Perimeter Results",
+        "Open Problems and Research Directions"
+      ],
+      "importance": "central"
     },
     {
       "id": "claim_DurocherEtAl2017",

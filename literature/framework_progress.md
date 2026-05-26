@@ -23,7 +23,7 @@ currently contain; this file says where the review process stands.
 | --- | --- | --- | --- | --- |
 | Scope and model cells | `active` | `coverage_matrix.json`, paper scope sections | The main 2D, polyomino, integral-polygon, 3D orthogonal-polyhedron, cited adjacent-model cells, and current adjacent-model exclusions are represented. | Add a new coverage cell or scope-exclusion cell before adding prose for any newly discovered variant. |
 | Source intake | `active` | `source_registry.json`, bibliography | The bibliography and source registry are aligned. | Mark discovery-only and exclusion sources more explicitly as searches expand. |
-| Search tracking | `active` | `search_log.md`, `search_queries.md` | Major seed searches, the first forward/adjacent-model sweep, and the final OpenAlex/web status pass are recorded. | Repeat forward-citation, venue-scan, author-page, and exclusion entries after new central sources appear or before a future release. |
+| Search tracking | `active` | `search_log.md`, `search_queries.md` | Major seed searches, the first forward/adjacent-model sweep, the final OpenAlex/web status pass, and the 2026-05-26 flat-vertex `n/8+f/4` formula pass are recorded. | Repeat forward-citation, venue-scan, author-page, and exclusion entries after new central sources appear or before a future release; add a dedicated coverage cell if a source is found for a flat-vertex or face-count parameter. |
 | Claim extraction | `active` | `claims_registry.json` | Every cited source has at least one claim record. | Split any source that supports multiple distinct theorems/open problems into separate claim records when needed. |
 | Locator pass | `active` | `claims_registry.json`, `evidence_report.md` | Central, foundational 2D, holes, 3D baseline, and restricted-visibility locator batches are complete for the current cited-source set. | Keep locator checks recurring as new sources are added or adjacent models are split into separate cells. |
 | Translation audit | `active` | `claims_registry.json`, model-separation section | The main non-implications around holes, lattice scale, guard type, and 3D analogues are recorded. | Recheck translation notes whenever a new result is added to a neighboring model cell. |
@@ -51,6 +51,10 @@ currently contain; this file says where the review process stands.
    appropriate declared vocabulary before using them in records.
 7. Regenerate `evidence_report.md` and rebuild the PDF after each batch of
    source or claim updates.
+8. If a source is found for an `n/8+f/4`-style formula, first identify whether
+   `f` means flat boundary vertices, unit cells/faces, holes, or a 3D face
+   parameter; then create or update the matching coverage cell before adding
+   prose.
 
 ## Update Transaction Checklist
 

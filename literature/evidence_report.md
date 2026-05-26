@@ -5,7 +5,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 ## Summary
 
 - Sources: 34
-- Claims: 34
+- Claims: 37
 - Coverage cells: 18
 - Scope-exclusion cells: 2
 - Open-problem clusters: 8
@@ -28,10 +28,12 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 - `approximation`: 1
 - `conditional`: 1
+- `conjecture`: 1
 - `hardness`: 5
+- `lower_bound`: 1
 - `open_problem`: 1
 - `survey`: 4
-- `theorem`: 15
+- `theorem`: 16
 - `tight_theorem`: 7
 
 ### Coverage Statuses
@@ -141,9 +143,9 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 - Source: `DiazBanezEtAl2025` (Graphs and Combinatorics)
 - Status: `tight_theorem`
-- Result: Every ortho-unit polygon with n >= 12 vertices can be guarded by floor((n-4)/8) guards, tightly. The paper also frames an integral-perimeter N/6 direction.
-- Translation note: The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. The hole-free integral N/6 reading is covered by Massberg after subdivision; only holes or broader lattice-domain readings remain open.
-- Locator: Theorem 1, arXiv PDF p. 5; proof conclusion, arXiv PDF pp. 10-13; integral-perimeter lower-bound Figure 11 and N/6 conjecture, arXiv PDF p. 14.
+- Result: Every ortho-unit polygon with n >= 12 vertices can be guarded by floor((n-4)/8) guards, tightly.
+- Translation note: The ortho-unit theorem is stronger than perimeter/6 in that narrow unit-edge model. It does not by itself prove a theorem for integral orthogonal polygons with arbitrary edge lengths or holes.
+- Locator: Theorem 1, arXiv PDF p. 5; proof conclusion, arXiv PDF pp. 10-13.
 
 - Tracking issue: [#8](https://github.com/alexanderlewisstevens/perimeterover6/issues/8)
 
@@ -232,7 +234,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Integral orthogonal polygon perimeter bounds beyond the hole-free case
 - Status: `open_or_conditional`
 - Question: Under the broader integral-domain reading, does floor(N/6) point guarding hold when holes or other lattice-domain conventions are allowed?
-- Known: The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. The 2026-05-23 forward-citation and exact-title pass for Diaz-Banez et al. found no tracked source that changes the holes/broader-domain status.
+- Known: The hole-free reading reduces to Massberg's hole-free polyomino theorem by unit-grid subdivision. Diaz-Banez et al.'s integral section gives an N/6 lower-bound family, states an N/5 upper bound with proof not included, and records an N/6 conjecture. The 2026-05-23 forward-citation and exact-title pass found no tracked source that changes the holes/broader-domain status; the 2026-05-26 flat-vertex/formula pass found no primary source for an n/8+f/4 variant.
 - Confirming sources: DiazBanezEtAl2025, Massberg2014, MassbergHabilitation
 - Progress paths: State the exact integral-domain convention.; Resolve the holes version or reduce it to the polyomino-with-holes problem.
 
@@ -283,6 +285,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 ## Conditional or Open Claim Records
 
+- `claim_DiazBanezEtAl2025_integral_N6_conjecture` (`conjecture`): The paper conjectures that every integral orthogonal polygon of perimeter N can be guarded with at most floor(N/6) guards.
 - `claim_MassbergHabilitation` (`conditional`): Conjecture 6.10 states that, in any rectilinear gallery that may contain holes, the maximum size of a packing of maximal rectangles is an upper bound on the number of guards required; if true, Lemma 6.9 would extend the perimeter-over-six theorem to polyominoes with holes.
 - `claim_UrrutiaOpenProblems` (`open_problem`): Records Shermer's floor((n+h)/4) vertex-guard conjecture and Hoffmann's floor(2n/7) vertex-guard conjecture for orthogonal polygons with holes.
 
@@ -340,7 +343,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `tight_theorem`
 - Summary: Diaz-Banez et al. prove the tight floor((n-4)/8) theorem for ortho-unit polygons.
 - Supporting claims: claim_DiazBanezEtAl2025
-- Next action: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit.
+- Next action: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit; a 2026-05-26 flat-vertex/formula search found no n/8+f/4 variant in the primary arXiv source or exact web searches.
 
 ### `integral_orthogonal_polygons_point_guards_perimeter`
 
@@ -348,8 +351,8 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Coverage status: `synthesized`
 - Result status: `open_or_conditional_beyond_hole_free`
 - Summary: Hole-free integral polygons reduce to hole-free polyominoes; broader versions with holes remain open or conditional.
-- Supporting claims: claim_Massberg2014, claim_DiazBanezEtAl2025, claim_MassbergHabilitation
-- Next action: The hole-free overlap is recorded; before stating any standalone broader-domain open problem, specify whether holes, disconnected domains, or a different lattice-domain convention are intended.
+- Supporting claims: claim_Massberg2014, claim_DiazBanezEtAl2025_integral_lower_bound, claim_DiazBanezEtAl2025_integral_n5_upper_statement, claim_DiazBanezEtAl2025_integral_N6_conjecture, claim_MassbergHabilitation
+- Next action: The hole-free overlap is recorded. The 2026-05-26 targeted search found no primary source for an n/8+f/4 bound using flat vertices or faces; before stating any standalone broader-domain or flat-vertex parameter problem, specify whether holes, disconnected domains, inserted collinear grid points, or a different lattice-domain convention are intended.
 
 ### `orthogonal_polyhedra_point_guards`
 
@@ -471,8 +474,8 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Hole-free polyominoes, point guards, lattice perimeter: Complete unless a later pass adds algorithmic construction details.
 - Polyominoes with holes, point guards, lattice perimeter: Complete for the Massberg conditional route. A 2026-05-23 OpenAlex forward-citation pass for Massberg2014 found only Pinciu2015 and MassbergHabilitation as citing works; both are already tracked and neither is an independent proof of the ell/6 holes extension. Keep area/cell-count and discrete-visibility variants separate from the perimeter claim.
 - Polyominoes with holes, point guards, cell count: Complete for the main cell-count theorem; a later algorithmic pass can separate the related SoCG 2011 complexity results.
-- Ortho-unit polygons, point guards, perimeter: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit.
-- Integral orthogonal polygons, point guards, perimeter: The hole-free overlap is recorded; before stating any standalone broader-domain open problem, specify whether holes, disconnected domains, or a different lattice-domain convention are intended.
+- Ortho-unit polygons, point guards, perimeter: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit; a 2026-05-26 flat-vertex/formula search found no n/8+f/4 variant in the primary arXiv source or exact web searches.
+- Integral orthogonal polygons, point guards, perimeter: The hole-free overlap is recorded. The 2026-05-26 targeted search found no primary source for an n/8+f/4 bound using flat vertices or faces; before stating any standalone broader-domain or flat-vertex parameter problem, specify whether holes, disconnected domains, inserted collinear grid points, or a different lattice-domain convention are intended.
 - Orthogonal polyhedra, point guards: Paterson--Yao BSP locators and Viglietta thesis guard-translation locator are recorded; next action is optional full journal-version access if needed.
 - Orthogonal polyhedra, edge and reflex-edge guards: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polyform variants are represented in separate adjacent-model cells.
 - Orthogonal polyhedra, pi/2-edge guards: Use only as adjacent 3D model context unless the review expands to limited-field edge-guard variants.
