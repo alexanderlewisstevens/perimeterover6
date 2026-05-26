@@ -1142,8 +1142,54 @@
     {
       "id": "claim_Pinciu2015",
       "source_key": "Pinciu2015",
-      "claim_type": "theorem",
-      "result_statement": "Studies guarding in discrete polyform families including polyominoes, polycubes, and polyhypercubes.",
+      "claim_type": "tight_theorem",
+      "result_statement": "For every m-polyhypercube P_m with m >= 2 in every dimension d >= 2, floor((m+1)/3) point guards are sufficient and sometimes necessary to cover P_m.",
+      "model_scope": {
+        "objects": [
+          "polycubes",
+          "polyhypercubes"
+        ],
+        "variants": [
+          "point guards",
+          "straight-line visibility inside the polyhypercube"
+        ],
+        "parameters": [
+          "cells m",
+          "dimension d"
+        ],
+        "assumptions": [
+          "m >= 2",
+          "d >= 2",
+          "P_m is a connected union of m unit hypercubes"
+        ]
+      },
+      "locator": "FWCG 2015 open PDF, Section 2, Theorem 1, pp. 1--2; journal version in Electronic Notes in Discrete Mathematics 49, pp. 159--166.",
+      "verification_status": "primary_checked",
+      "translation_note": "This is the direct 3D-and-higher cell-count analogue of the polyomino floor((m+1)/3) point-guard theorem; in dimension 3 the model is an m-polycube. It should not be translated into a vertex-, edge-, reflex-edge-, or perimeter-bound theorem for arbitrary orthogonal polyhedra.",
+      "limitations": [
+        "The volume parameter is unit-cell count m, not Euclidean volume under arbitrary scaling.",
+        "The object is a polycube/polyhypercube cell complex, not an arbitrary continuous orthogonal polyhedron."
+      ],
+      "non_implications": [
+        "Does not imply linear point-guard bounds for n-vertex orthogonal polyhedra.",
+        "Does not imply Urrutia-type edge-guard or reflex-edge-guard bounds."
+      ],
+      "open_problem_links": [],
+      "coverage_cells": [
+        "polyhypercubes_point_guards_cell_volume"
+      ],
+      "paper_sections": [
+        "Status Overview",
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Annotated Source Guide"
+      ],
+      "importance": "central"
+    },
+    {
+      "id": "claim_Pinciu2015_pixel_voxel_conjecture",
+      "source_key": "Pinciu2015",
+      "claim_type": "conjecture",
+      "result_statement": "Pinciu gives dependent-on-d lower bounds and dimension-independent upper bounds for pixel/voxel guards in polyhypercubes, and conjectures that the dependent-on-d lower-bound formula is sharp.",
       "model_scope": {
         "objects": [
           "polyominoes",
@@ -1151,35 +1197,41 @@
           "polyhypercubes"
         ],
         "variants": [
-          "discrete polyform visibility"
+          "pixel/voxel guards",
+          "cell guards"
         ],
         "parameters": [
-          "polyform-specific parameters"
+          "cells m",
+          "dimension d"
         ],
-        "assumptions": []
+        "assumptions": [
+          "m >= 2",
+          "d >= 2"
+        ]
       },
-      "locator": "ScienceDirect DOI page abstract and article metadata, Electronic Notes in Discrete Mathematics 49, pp. 159--166.",
-      "verification_status": "primary_metadata_checked",
-      "translation_note": "Useful for discrete 3D analogues. It is not the continuous orthogonal-polyhedron point-guard model.",
-      "limitations": [],
-      "non_implications": [],
+      "locator": "FWCG 2015 open PDF, Sections 3--4, Theorems 2--4 and Conjecture 1, p. 2.",
+      "verification_status": "primary_checked",
+      "translation_note": "This is a cell-guard problem for polyhypercubes. It is adjacent to, but different from, point-guard cell-volume bounds and from continuous orthogonal-polyhedron edge/face guarding.",
+      "limitations": [
+        "The sharp conjecture concerns pixel/voxel guards, not point guards.",
+        "The result is stated for polyhypercubes as unit-cell complexes."
+      ],
+      "non_implications": [
+        "Does not change the proven floor((m+1)/3) point-guard theorem.",
+        "Does not resolve standard edge-guard or face-guard bounds for continuous orthogonal polyhedra."
+      ],
       "open_problem_links": [
-        "algorithmic_restricted_cases"
+        "polyhypercube_pixel_voxel_guard_bounds"
       ],
       "coverage_cells": [
-        "polyomino_discrete_k_hop_and_polyform_visibility",
-        "algorithmic_and_restricted_visibility_context"
+        "polyhypercubes_pixel_voxel_guard_bounds"
       ],
       "paper_sections": [
-        "Algorithmic and Optimization Context",
-        "Open Problems and Research Directions"
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Open Problems and Research Directions",
+        "Annotated Source Guide"
       ],
-      "importance": "supporting",
-      "tracking_issue": {
-        "number": 24,
-        "url": "https://github.com/alexanderlewisstevens/perimeterover6/issues/24",
-        "purpose": "Add or verify page/theorem locator for this claim record."
-      }
+      "importance": "supporting"
     },
     {
       "id": "claim_SchuchardtHecker1995",

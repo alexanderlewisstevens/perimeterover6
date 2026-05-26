@@ -305,7 +305,7 @@
         "Three-Dimensional Orthogonal Polyhedra",
         "Open Problems and Research Directions"
       ],
-      "next_action": "Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polyform variants are represented in separate adjacent-model cells."
+      "next_action": "Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polycube/polyhypercube variants are represented in separate adjacent-model cells."
     },
     {
       "id": "orthogonal_polyhedra_pi_over_2_edge_guards",
@@ -443,25 +443,79 @@
       "next_action": "Record exact source and claim data only if the paper later discusses one of these variants beyond an exclusion note."
     },
     {
-      "id": "polyomino_discrete_k_hop_and_polyform_visibility",
-      "title": "Polyominoes and polyforms, discrete visibility variants",
+      "id": "polyhypercubes_point_guards_cell_volume",
+      "title": "Polycubes and polyhypercubes, point guards, cell volume",
       "domain_axes": {
-        "dimension": "2D and higher-dimensional discrete analogues",
-        "object_class": "polyomino, polycube, and polyhypercube",
-        "holes": "varies by source",
-        "guard_model": "k-hop visibility and discrete polyform visibility",
-        "parameter": "k, cells, and polyform-specific parameters"
+        "dimension": "3D and higher-dimensional cell complexes",
+        "object_class": "polycube and polyhypercube",
+        "holes": "allowed or unspecified as in source",
+        "guard_model": "point guards",
+        "parameter": "cells m / cell volume"
       },
       "coverage_status": "synthesized",
-      "result_status": "discrete_visibility_context",
-      "summary": "k-hop and polyform visibility results are discrete analogues and algorithmic context, not straight-line point-guard perimeter results.",
+      "result_status": "tight_theorem",
+      "summary": "Pinciu proves the tight floor((m+1)/3) point-guard theorem for m-polyhypercubes in every dimension d >= 2; this includes 3D polycubes.",
       "supporting_sources": [
-        "FiltserEtAl2025",
         "Pinciu2015"
       ],
       "supporting_claims": [
-        "claim_FiltserEtAl2025",
         "claim_Pinciu2015"
+      ],
+      "open_problem_links": [],
+      "paper_sections": [
+        "Status Overview",
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Annotated Source Guide"
+      ],
+      "next_action": "Keep this cell-count theorem separate from continuous orthogonal-polyhedron point-guard, edge-guard, and perimeter models."
+    },
+    {
+      "id": "polyhypercubes_pixel_voxel_guard_bounds",
+      "title": "Polycubes and polyhypercubes, pixel/voxel guards, cell volume",
+      "domain_axes": {
+        "dimension": "3D and higher-dimensional cell complexes",
+        "object_class": "polycube and polyhypercube",
+        "holes": "allowed or unspecified as in source",
+        "guard_model": "pixel/voxel guards",
+        "parameter": "cells m and dimension d"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "open_with_partial_results",
+      "summary": "Pinciu gives partial lower and upper bounds for pixel/voxel guards in polyhypercubes and conjectures a sharp dependent-on-d formula; this is distinct from the settled point-guard floor((m+1)/3) theorem.",
+      "supporting_sources": [
+        "Pinciu2015"
+      ],
+      "supporting_claims": [
+        "claim_Pinciu2015_pixel_voxel_conjecture"
+      ],
+      "open_problem_links": [
+        "polyhypercube_pixel_voxel_guard_bounds"
+      ],
+      "paper_sections": [
+        "Three-Dimensional Orthogonal Polyhedra",
+        "Open Problems and Research Directions",
+        "Annotated Source Guide"
+      ],
+      "next_action": "If the review expands its discrete 3D cell-guard discussion, add theorem-level source checks for later work citing or resolving Pinciu's pixel/voxel conjecture."
+    },
+    {
+      "id": "polyomino_discrete_k_hop_and_polyform_visibility",
+      "title": "Polyominoes, k-hop visibility variants",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "polyomino",
+        "holes": "varies by source",
+        "guard_model": "k-hop unit-square visibility",
+        "parameter": "k and cells"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "discrete_visibility_context",
+      "summary": "k-hop visibility results are discrete visibility and algorithmic context, not straight-line point-guard perimeter results.",
+      "supporting_sources": [
+        "FiltserEtAl2025"
+      ],
+      "supporting_claims": [
+        "claim_FiltserEtAl2025"
       ],
       "open_problem_links": [
         "algorithmic_restricted_cases"

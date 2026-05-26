@@ -122,11 +122,13 @@ bound for hole-free polyominoes, and that theorem also covers hole-free
 integral orthogonal polygons after unit-grid subdivision.  The unresolved
 perimeter-over-six direction is therefore the version with holes, or a
 broader lattice-domain formulation not reducible to the hole-free polyomino
-case.  In three dimensions, point guards do not provide a direct analogue:
-orthogonal polyhedra may require $\Theta(n^{3/2})$ point guards.  The 3D
-literature consequently turns to edge guards, reflex-edge guards, face guards,
-and discrete polycube models, where several Urrutia-type conjectures and
-gap-closing problems remain open.
+case.  In discrete 3D and higher dimensions, the cell-volume analogue is known:
+Pinciu proves the tight $\floor{(m+1)/3}$ point-guard theorem for
+$m$-polyhypercubes.  For arbitrary continuous orthogonal polyhedra, however,
+point guards do not give a linear planar analogue: some examples require
+$\Theta(n^{3/2})$ guards.  The continuous 3D literature consequently turns to
+edge guards, reflex-edge guards, and face guards, while discrete voxel/cell
+guard variants form a separate line of open problems.
 \end{abstract}
 
 \tableofcontents
@@ -141,9 +143,11 @@ map of comparable models.  The sharp perimeter-over-six theorem is known for
 hole-free polyominoes, and the same theorem settles the hole-free integral
 orthogonal-polygon reading by subdivision.  The remaining two-dimensional
 frontier is the holes version, together with any broader lattice-domain
-formulation that does not reduce to a hole-free polyomino.  In three
-dimensions, the direct point-guard analogy fails; edge, reflex-edge, face, and
-polycube guard models carry the relevant open questions.
+formulation that does not reduce to a hole-free polyomino.  In discrete 3D and
+higher dimensions, Pinciu gives the direct point-guard cell-volume theorem for
+polyhypercubes.  In continuous orthogonal polyhedra, the direct point-guard
+analogy fails, and edge, reflex-edge, face, and cell-guard variants carry the
+relevant open questions.
 
 \begin{table}[htbp]
 \small
@@ -185,9 +189,15 @@ they do not settle point-guard perimeter bounds. & Urrutia; Zylinski;
 Michael--Pinciu
 \cite{UrrutiaOpenProblems,Zylinski2006,MichaelPinciu2016} \\
 
-Orthogonal polyhedra in 3D & No direct point-guard analogue; edge and
-reflex-edge variants remain active. & The 3D branch must be read through guard
-model changes rather than by copying the planar perimeter theorem. &
+Polycubes and polyhypercubes & Tight $\floor{(m+1)/3}$ point-guard
+cell-volume theorem. & This is the genuine 3D-and-higher analogue of the
+polyomino cell-count theorem, but only for unit-cell complexes. & Pinciu
+\cite{Pinciu2015} \\
+
+Continuous orthogonal polyhedra in 3D & No direct point-guard analogue; edge
+and reflex-edge variants remain active. & The continuous 3D branch must be
+read through guard model changes rather than by copying the planar perimeter
+theorem. &
 Paterson--Yao; Viglietta; Benbernou et al.; Cano et al.
 \cite{PatersonYao1992,VigliettaThesis,BenbernouEtAl2011,CanoTothUrrutiaViglietta2022} \\
 \bottomrule
@@ -284,7 +294,8 @@ are axis-aligned, equivalently whose face normals are coordinate directions.
 In higher dimensions, the corresponding term is \emph{orthogonal polytope}.
 The word \emph{orthonormal} describes vectors or bases, not galleries.
 Polycubes are the voxel analogue of polyominoes and form a discrete subclass
-of orthogonal polyhedra.
+of orthogonal polyhedra.  A polyhypercube is the corresponding finite
+face-connected union of unit hypercubes in dimension $d$.
 
 \paragraph{Guard models.}
 Unless a section says otherwise, a 2D guard is a standard point guard with
@@ -409,6 +420,15 @@ conjecture & Ma{\ss}berg habilitation
 Polyomino with holes & point & cells $m$ &
 Proven tight for $m\geq 2$: $\floor{(m+1)/3}$; $m=1$ is trivial; does not
 imply perimeter-over-six & Biedl et al. \cite[Cor.~1]{BiedlEtAl2012} \\
+
+Polyhypercube & point & cells $m$ &
+Proven tight for $m\geq 2$ and $d\geq 2$: $\floor{(m+1)/3}$; this is the
+cell-volume analogue, not a continuous polyhedron theorem & Pinciu
+\cite{Pinciu2015} \\
+
+Polyhypercube & voxel/cell & cells $m$, dimension $d$ &
+Open with partial bounds: Pinciu gives lower and upper bounds and conjectures
+a sharp dependent-on-$d$ formula & Pinciu \cite{Pinciu2015} \\
 
 Ortho-unit polygon & point & perimeter $P=n$ &
 Proven tight for $n\geq 12$: $\floor{(n-4)/8}$, stronger than $P/6$ in this
@@ -557,8 +577,9 @@ most apparent overlaps in this part of the literature.
   with it.  They can supply techniques and open problems, but each requires a
   separate model cell before its theorems can be used in this review.  The
   current evidence matrix has separate cells for the currently cited
-  sliding-camera, sliding-transmitter, $k$-hop, polyform, face-guard, and
-  2-reflex variants.  It also has explicit scope-exclusion cells for
+  sliding-camera, sliding-transmitter, $k$-hop, polyhypercube point-guard,
+  polyhypercube pixel/voxel-guard, face-guard, and 2-reflex variants.  It
+  also has explicit scope-exclusion cells for
   floodlight, half-plane, dispersive, contiguous, mobile, point-boundary, and
   related variants that have not been promoted into theorem-level discussion.
 
@@ -791,10 +812,12 @@ methods can be sharpened to the lower-bound scale.
   hole-free case, notably holes.
 
   \item[Polycubes and polyhypercubes.]
-  Pinciu studies discrete polyform variants, including polycubes and
-  polyhypercubes \cite{Pinciu2015}.  These are relevant for 3D lattice
-  analogues, but they use a discrete polyform/visibility-graph framework rather
-  than the continuous point-guard model for orthogonal polyhedra.
+  Pinciu proves the higher-dimensional cell-count analogue: every
+  $m$-polyhypercube in dimension $d\geq 2$ is guardable by
+  $\floor{(m+1)/3}$ point guards, and some examples require that many
+  \cite{Pinciu2015}.  For $d=3$ this is the polycube version of the
+  polyomino area theorem.  It is still a unit-cell theorem, not a theorem for
+  arbitrary continuous orthogonal polyhedra.
 
   \item[Orthogonal polyhedra, point guards.]
   No planar-style linear theorem exists in terms of vertices.  The Paterson--Yao
@@ -987,10 +1010,12 @@ classes of polyhedra, including orthogonal polyhedra, 4-oriented polyhedra, and
 mapping the 3D model space, but they are not a direct continuation of the
 point-guard perimeter-over-six question.
 
-For lattice 3D objects, Pinciu's work on polycubes and polyhypercubes gives a
-discrete polyform line of results \cite{Pinciu2015}.  This is the natural
-place to look when the 3D model is voxel/discrete rather than
-continuous orthogonal-polyhedron visibility.
+For lattice 3D objects, Pinciu's theorem gives the direct point-guard
+cell-volume analogue: $\floor{(m+1)/3}$ point guards are tight for
+$m$-polyhypercubes in every dimension $d\geq 2$ \cite{Pinciu2015}.  Pinciu's
+separate pixel/voxel-guard bounds remain a discrete cell-guard line with an
+explicit sharpness conjecture, so the paper keeps point guards and cell guards
+in separate model cells.
 
 \section{Algorithmic and Optimization Context}
 
@@ -1078,6 +1103,12 @@ Viglietta \cite{Viglietta2020} &
 3-reflex orthogonal polyhedra. &
 Extend the induction/charging methods beyond the 2-reflex restriction. \\
 
+Polycube/polyhypercube voxel guards &
+Pinciu \cite{Pinciu2015} &
+Point-guard cell-volume bounds are tight, but pixel/voxel guard bounds have
+only partial formulas and a sharpness conjecture. &
+Prove or refute the dependent-on-$d$ pixel/voxel-guard conjecture. \\
+
 Algorithmic restricted cases &
 Lee--Lin; Schuchardt--Hecker; Ghosh
 \cite{LeeLin1986,SchuchardtHecker1995,Ghosh2010} &
@@ -1149,6 +1180,14 @@ conjectures. \\
   lower and upper bounds as an open problem
   \cite{CanoTothUrrutiaViglietta2022}.  Orthogonal polyhedra form the more
   structured subclass where sharper Urrutia-type conjectures are expected.
+
+  \item \textbf{Pixel/voxel guards for polyhypercubes.}
+  Pinciu settles the point-guard cell-volume question for every dimension
+  $d\geq 2$, but the corresponding pixel/voxel-guard model is different.  In
+  that model Pinciu gives lower bounds, dimension-independent upper bounds, and
+  a conjectured sharp dependent-on-$d$ formula \cite{Pinciu2015}.  This is an
+  open problem for discrete cell guards, not a gap in the point-guard
+  $\floor{(m+1)/3}$ theorem.
 
   \item \textbf{Algorithmic complexity and approximation in restricted models.}
   Extremal guard bounds and optimization algorithms remain separate questions.
@@ -1255,8 +1294,10 @@ conjectures. \\
   overlaps with Ma{\ss}berg rather than creating a separate open problem.
 
   \item[Pinciu \cite{Pinciu2015}.]
-  Polyform extension including polyominoes, polycubes, and polyhypercubes.
-  Relevant for discrete 3D analogues.
+  Point-guard cell-count theorem: for every $d\geq 2$,
+  $\floor{(m+1)/3}$ guards are tight for $m$-poly\-hypercubes.  The same
+  source also records separate pixel/voxel-guard bounds
+  and a sharpness conjecture.
 
   \item[Filtser--Krohn--Nilsson--Rieck--Schmidt \cite{FiltserEtAl2025}.]
   Current work on $k$-hop visibility in polyominoes, including open
@@ -1419,9 +1460,10 @@ OpenAlex/web pass for the central holes, perimeter, and 3D edge/reflex-edge
 clusters are now logged.  They did not add a tracked theorem that changes the
 main statuses.  The current coverage matrix now separates the cited adjacent
 variants that already have source records: two-dimensional edge guards,
-sliding-camera and sliding-transmitter visibility, $k$-hop and polyform
-visibility, 3D face guards, $\pi/2$-edge guards, and 2-reflex reflex-edge
-guards.  It also records scope-exclusion cells for floodlight, half-plane,
+sliding-camera and sliding-transmitter visibility, $k$-hop visibility,
+polyhypercube point guards, polyhypercube pixel/voxel guards, 3D face guards,
+$\pi/2$-edge guards, and 2-reflex reflex-edge guards.  It also records
+scope-exclusion cells for floodlight, half-plane,
 dispersive, contiguous, mobile,
 point-boundary, and related variants.  Those cells are not source claims; they
 are checkpoints requiring source intake before any such variant is used as a
@@ -1684,6 +1726,8 @@ V. Pinciu.
 \newblock Guarding polyominoes, polycubes and polyhypercubes.
 \newblock \emph{Electronic Notes in Discrete Mathematics}, 49, 159--166, 2015.
 \newblock \url{https://doi.org/10.1016/j.endm.2015.06.024}
+\newblock Open FWCG version:
+\url{https://cse.buffalo.edu/fwcg2015/assets/pdf/FWCG_2015_paper_14.pdf}
 
 \bibitem{SchuchardtHecker1995}
 D. Schuchardt and H.-D. Hecker.

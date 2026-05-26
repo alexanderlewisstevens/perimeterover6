@@ -329,3 +329,31 @@ Use one entry per meaningful search.
   dedicated coverage cell before using the formula in the paper; record
   whether `f` counts flat boundary vertices, unit cells/faces, holes, or a
   3D face parameter.
+
+### 2026-05-26 -- polyhypercube volume-over-three pass
+
+- Search target: determine whether the connected-polyomino cell-count theorem
+  `floor((m+1)/3)` has a 3D or higher-dimensional version when `m` is
+  interpreted as voxel/cell volume.
+- Query: `"floor((m+1)/3)" "polyhypercube"`;
+  `"floor((m + 1)/3)" "polyhypercube"`; `"Point Guards in
+  PolyHypercubes"`; `"Guarding polyominoes, polycubes and polyhypercubes"
+  "floor"`; `"Rook and Queen Vision" polycubes polyhypercubes`.
+- Hits inspected: Pinciu's ScienceDirect DOI record for `Guarding
+  Polyominoes, Polycubes and Polyhypercubes`; the open FWCG 2015 PDF `Art
+  Gallery Theorems for Polyhypercubes`; Algorithmica 2025 related-work
+  discussion; and the adjacent Alpert--Roldan rook/queen-vision paper.
+- Included: `Pinciu2015` was upgraded from a generic polyform-context record
+  to a theorem-level source.  The claim ledger now records the tight
+  point-guard theorem: every `m`-polyhypercube in dimension `d >= 2`, `m >= 2`,
+  is guardable by `floor((m+1)/3)` point guards and sometimes requires that
+  many.  New coverage cells separate this theorem from pixel/voxel-guard
+  bounds and continuous orthogonal-polyhedron models.
+- Excluded or separated: Alpert--Roldan's rook/queen results are discrete
+  chess-vision theorems, not standard point-guard visibility.  Pinciu's
+  pixel/voxel-guard lower bounds, upper bounds, and sharpness conjecture were
+  recorded as a separate open cell because they do not change the point-guard
+  theorem.
+- Follow-up: if the review expands the discrete 3D section, add a separate
+  source/claim record for Alpert--Roldan and run forward searches for work
+  resolving Pinciu's pixel/voxel-guard conjecture.

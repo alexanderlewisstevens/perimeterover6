@@ -55,6 +55,11 @@ title searches and primary sources before secondary summaries.
 - `"reflex edge guards" "orthogonal polyhedra" "2-reflex"`
 - `"Optimally Guarding 2-Reflex Orthogonal Polyhedra" citations`
 - `"orthogonal polyhedra" "Theta(n^{3/2})" point guards`
+- `"floor((m+1)/3)" "polyhypercube"`
+- `"floor((m + 1)/3)" "polyhypercube"`
+- `"Point Guards in PolyHypercubes"`
+- `"Guarding polyominoes, polycubes and polyhypercubes" "floor"`
+- `"Rook and Queen Vision" polycubes polyhypercubes`
 - `"orthogonal polyhedra" "edge guards" "2025"`
 - `"orthogonal polyhedron" "reflex edge guards" "2024"`
 - `"face-guarding polyhedra" orthogonal`

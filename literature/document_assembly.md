@@ -1,6 +1,6 @@
 # Document Assembly Map
 
-Last updated: 2026-05-23
+Last updated: 2026-05-26
 
 This map explains how the review artifacts combine into the reader-facing
 paper. The goal is to keep the final document readable while preserving an
@@ -91,8 +91,12 @@ OpenAlex/web status pass for the central open clusters are logged and
 summarized in the paper's evidence trail; the
 currently cited adjacent models have their own coverage cells, and the
 currently excluded adjacent models have explicit scope-exclusion cells. The
-main remaining assembly work is recurring rather than structural: repeat
-forward-citation and venue scans after new central sources appear, add
-final-status outcome rows when central statuses are preserved or changed, and
-add either a theorem-level coverage cell or a scope-exclusion cell before adding
-prose about any newly discovered visibility or guard variant.
+Pinciu polyhypercube material is now separated into a settled point-guard
+cell-volume theorem and an open pixel/voxel-guard cell, so the 3D discussion
+can answer the volume-over-three question without blending it into continuous
+orthogonal-polyhedron bounds. The main remaining assembly work is recurring
+rather than structural: repeat forward-citation and venue scans after new
+central sources appear, add final-status outcome rows when central statuses are
+preserved or changed, and add either a theorem-level coverage cell or a
+scope-exclusion cell before adding prose about any newly discovered visibility
+or guard variant.

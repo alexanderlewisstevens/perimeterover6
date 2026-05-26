@@ -377,17 +377,17 @@
     {
       "key": "Pinciu2015",
       "citation": "V. Pinciu. Guarding polyominoes, polycubes and polyhypercubes. Electronic Notes in Discrete Mathematics 49, 159--166, 2015.",
-      "links": ["https://doi.org/10.1016/j.endm.2015.06.024"],
+      "links": ["https://doi.org/10.1016/j.endm.2015.06.024", "https://cse.buffalo.edu/fwcg2015/assets/pdf/FWCG_2015_paper_14.pdf"],
       "venue": "Electronic Notes in Discrete Mathematics",
       "source_type": "conference_proceedings_article",
-      "status": "theorem",
+      "status": "tight_theorem",
       "objects": ["polyominoes", "polycubes", "polyhypercubes"],
-      "guard_models": ["discrete polyform visibility"],
-      "parameters": ["polyform-specific parameters"],
-      "relevant_result": "Studies guarding in discrete polyform families including polyominoes, polycubes, and polyhypercubes.",
-      "translation_note": "Useful for discrete 3D analogues. It is not the continuous orthogonal-polyhedron point-guard model.",
-      "open_problem_links": ["algorithmic_restricted_cases"],
-      "verification": ["ScienceDirect DOI metadata checked for title, venue, and page range; primary details should be checked before stating exact bounds."]
+      "guard_models": ["point guards", "pixel/voxel guards"],
+      "parameters": ["cells m", "dimension d"],
+      "relevant_result": "Proves the tight floor((m+1)/3) point-guard theorem for m-polyhypercubes in every dimension d >= 2, and records related pixel/voxel guard bounds and conjectures.",
+      "translation_note": "This is the higher-dimensional cell-count analogue of the m-polyomino point-guard theorem. It applies to polycubes/polyhypercubes as unit-cell complexes, not to arbitrary continuous orthogonal polyhedra, edge-guard models, or Euclidean volume under scaling.",
+      "open_problem_links": ["polyhypercube_pixel_voxel_guard_bounds"],
+      "verification": ["ScienceDirect DOI metadata checked for title, venue, and page range.", "FWCG 2015 open PDF checked for the model definitions and Theorem 1: floor((m+1)/3) point guards are sufficient and sometimes necessary for every m-polyhypercube with m >= 2 in dimension d >= 2.", "FWCG 2015 open PDF checked for pixel/voxel guard lower bounds, dimension-independent upper bound, and sharpness conjecture."]
     },
     {
       "key": "SchuchardtHecker1995",

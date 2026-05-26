@@ -5,10 +5,10 @@ Generated from the structured literature ledgers. This report is an audit compan
 ## Summary
 
 - Sources: 34
-- Claims: 37
-- Coverage cells: 18
+- Claims: 38
+- Coverage cells: 20
 - Scope-exclusion cells: 2
-- Open-problem clusters: 8
+- Open-problem clusters: 9
 - Claims missing page/theorem locators: 0
 - Coverage cells still unsearched/searching: 0
 
@@ -21,33 +21,33 @@ Generated from the structured literature ledgers. This report is an audit compan
 - `hardness`: 5
 - `open_problem`: 1
 - `survey`: 4
-- `theorem`: 15
-- `tight_theorem`: 7
+- `theorem`: 14
+- `tight_theorem`: 8
 
 ### Claim Types
 
 - `approximation`: 1
 - `conditional`: 1
-- `conjecture`: 1
+- `conjecture`: 2
 - `hardness`: 5
 - `lower_bound`: 1
 - `open_problem`: 1
 - `survey`: 4
-- `theorem`: 16
-- `tight_theorem`: 7
+- `theorem`: 15
+- `tight_theorem`: 8
 
 ### Coverage Statuses
 
 - `open_gap`: 1
 - `scope_excluded_adjacent`: 2
-- `synthesized`: 15
+- `synthesized`: 17
 
 ### Open-Problem Statuses
 
 - `active_research_direction`: 1
 - `open`: 1
 - `open_or_conditional`: 2
-- `open_with_partial_results`: 4
+- `open_with_partial_results`: 5
 
 ## Declared Status Vocabularies
 
@@ -199,6 +199,14 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 - Tracking issue: [#23](https://github.com/alexanderlewisstevens/perimeterover6/issues/23)
 
+### `claim_Pinciu2015`
+
+- Source: `Pinciu2015` (Electronic Notes in Discrete Mathematics)
+- Status: `tight_theorem`
+- Result: For every m-polyhypercube P_m with m >= 2 in every dimension d >= 2, floor((m+1)/3) point guards are sufficient and sometimes necessary to cover P_m.
+- Translation note: This is the direct 3D-and-higher cell-count analogue of the polyomino floor((m+1)/3) point-guard theorem; in dimension 3 the model is an m-polycube. It should not be translated into a vertex-, edge-, reflex-edge-, or perimeter-bound theorem for arbitrary orthogonal polyhedra.
+- Locator: FWCG 2015 open PDF, Section 2, Theorem 1, pp. 1--2; journal version in Electronic Notes in Discrete Mathematics 49, pp. 159--166.
+
 ### `claim_Zylinski2006`
 
 - Source: `Zylinski2006` (Electronic Journal of Combinatorics)
@@ -274,12 +282,21 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Confirming sources: CanoTothUrrutiaViglietta2022
 - Progress paths: Improve the general upper bound.; Separate the arbitrary-polyhedron and orthogonal-polyhedron gaps with sharper examples.
 
+### `polyhypercube_pixel_voxel_guard_bounds`
+
+- Title: Sharp pixel/voxel guard bounds for polyhypercubes
+- Status: `open_with_partial_results`
+- Question: What is the exact worst-case number of pixel/voxel guards needed to cover every m-polyhypercube in dimension d >= 3?
+- Known: Pinciu proves the floor((m+1)/3) theorem for point guards in every dimension d >= 2, but separately gives lower bounds, dimension-independent upper bounds, and a sharpness conjecture for pixel/voxel guards. The point-guard theorem therefore settles the cell-volume question only for point guards, not for cell guards.
+- Confirming sources: Pinciu2015
+- Progress paths: Prove Pinciu's dependent-on-d sharpness conjecture for pixel/voxel guards.; Find counterexamples separating the conjectured formula from the true cell-guard optimum.
+
 ### `algorithmic_restricted_cases`
 
 - Title: Algorithmic restricted cases aligned with extremal bounds
 - Status: `active_research_direction`
 - Question: Which restricted orthogonal, polyomino, or polyhedral models admit exact polynomial algorithms or useful approximation guarantees for minimum guarding?
-- Known: General and many orthogonal variants are hard; several restricted visibility models have approximation or hardness results. The currently cited sliding-camera, sliding-transmitter, k-hop, polyform, face-guard, and 2-reflex variants have separate coverage cells; floodlight, half-plane, dispersive, contiguous, mobile, point-boundary, and related variants have explicit scope-exclusion cells unless promoted with source and claim records.
+- Known: General and many orthogonal variants are hard; several restricted visibility models have approximation or hardness results. The currently cited sliding-camera, sliding-transmitter, k-hop, polyhypercube point-guard, polyhypercube pixel/voxel-guard, face-guard, and 2-reflex variants have separate coverage cells; floodlight, half-plane, dispersive, contiguous, mobile, point-boundary, and related variants have explicit scope-exclusion cells unless promoted with source and claim records.
 - Confirming sources: LeeLin1986, SchuchardtHecker1995, KatzRoisman2008, DurocherEtAl2017, BiedlEtAl2019, FiltserEtAl2025, Ghosh2010
 - Progress paths: Find exact algorithms for natural subclasses.; Connect approximation algorithms to the structural decompositions used in extremal proofs.
 
@@ -287,6 +304,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 
 - `claim_DiazBanezEtAl2025_integral_N6_conjecture` (`conjecture`): The paper conjectures that every integral orthogonal polygon of perimeter N can be guarded with at most floor(N/6) guards.
 - `claim_MassbergHabilitation` (`conditional`): Conjecture 6.10 states that, in any rectilinear gallery that may contain holes, the maximum size of a packing of maximal rectangles is an upper bound on the number of guards required; if true, Lemma 6.9 would extend the perimeter-over-six theorem to polyominoes with holes.
+- `claim_Pinciu2015_pixel_voxel_conjecture` (`conjecture`): Pinciu gives dependent-on-d lower bounds and dimension-independent upper bounds for pixel/voxel guards in polyhypercubes, and conjectures that the dependent-on-d lower-bound formula is sharp.
 - `claim_UrrutiaOpenProblems` (`open_problem`): Records Shermer's floor((n+h)/4) vertex-guard conjecture and Hoffmann's floor(2n/7) vertex-guard conjecture for orthogonal polygons with holes.
 
 ## Coverage Matrix
@@ -370,7 +388,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Result status: `open_with_partial_results`
 - Summary: Known edge/reflex-edge upper bounds do not yet reach Urrutia-type lower-bound targets; 2-reflex cases are much better understood.
 - Supporting claims: claim_BenbernouEtAl2011, claim_VigliettaThesis, claim_Viglietta2020, claim_CanoTothUrrutiaViglietta2022
-- Next action: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polyform variants are represented in separate adjacent-model cells.
+- Next action: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polycube/polyhypercube variants are represented in separate adjacent-model cells.
 
 ### `orthogonal_polyhedra_pi_over_2_edge_guards`
 
@@ -419,13 +437,31 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Supporting theorem claims: None recorded; this is expected for a scope-exclusion cell.
 - Next action: Record exact source and claim data only if the paper later discusses one of these variants beyond an exclusion note.
 
+### `polyhypercubes_point_guards_cell_volume`
+
+- Title: Polycubes and polyhypercubes, point guards, cell volume
+- Coverage status: `synthesized`
+- Result status: `tight_theorem`
+- Summary: Pinciu proves the tight floor((m+1)/3) point-guard theorem for m-polyhypercubes in every dimension d >= 2; this includes 3D polycubes.
+- Supporting claims: claim_Pinciu2015
+- Next action: Keep this cell-count theorem separate from continuous orthogonal-polyhedron point-guard, edge-guard, and perimeter models.
+
+### `polyhypercubes_pixel_voxel_guard_bounds`
+
+- Title: Polycubes and polyhypercubes, pixel/voxel guards, cell volume
+- Coverage status: `synthesized`
+- Result status: `open_with_partial_results`
+- Summary: Pinciu gives partial lower and upper bounds for pixel/voxel guards in polyhypercubes and conjectures a sharp dependent-on-d formula; this is distinct from the settled point-guard floor((m+1)/3) theorem.
+- Supporting claims: claim_Pinciu2015_pixel_voxel_conjecture
+- Next action: If the review expands its discrete 3D cell-guard discussion, add theorem-level source checks for later work citing or resolving Pinciu's pixel/voxel conjecture.
+
 ### `polyomino_discrete_k_hop_and_polyform_visibility`
 
-- Title: Polyominoes and polyforms, discrete visibility variants
+- Title: Polyominoes, k-hop visibility variants
 - Coverage status: `synthesized`
 - Result status: `discrete_visibility_context`
-- Summary: k-hop and polyform visibility results are discrete analogues and algorithmic context, not straight-line point-guard perimeter results.
-- Supporting claims: claim_FiltserEtAl2025, claim_Pinciu2015
+- Summary: k-hop visibility results are discrete visibility and algorithmic context, not straight-line point-guard perimeter results.
+- Supporting claims: claim_FiltserEtAl2025
 - Next action: Keep discrete visibility and continuous orthogonal-polyhedron visibility separate unless a future source explicitly bridges them.
 
 ### `orthogonal_polyhedra_face_guards`
@@ -477,13 +513,15 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Ortho-unit polygons, point guards, perimeter: Clarify any remaining source-specific hole conventions from the primary text; keep the integral-perimeter conjecture separate from the ortho-unit theorem and from the Massberg overlap. A 2026-05-23 OpenAlex pass found no citing works for DiazBanezEtAl2025 and no status-changing exact-title or topic hit; a 2026-05-26 flat-vertex/formula search found no n/8+f/4 variant in the primary arXiv source or exact web searches.
 - Integral orthogonal polygons, point guards, perimeter: The hole-free overlap is recorded. The 2026-05-26 targeted search found no primary source for an n/8+f/4 bound using flat vertices or faces; before stating any standalone broader-domain or flat-vertex parameter problem, specify whether holes, disconnected domains, inserted collinear grid points, or a different lattice-domain convention are intended.
 - Orthogonal polyhedra, point guards: Paterson--Yao BSP locators and Viglietta thesis guard-translation locator are recorded; next action is optional full journal-version access if needed.
-- Orthogonal polyhedra, edge and reflex-edge guards: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polyform variants are represented in separate adjacent-model cells.
+- Orthogonal polyhedra, edge and reflex-edge guards: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polycube/polyhypercube variants are represented in separate adjacent-model cells.
 - Orthogonal polyhedra, pi/2-edge guards: Use only as adjacent 3D model context unless the review expands to limited-field edge-guard variants.
 - Rectilinear polygons, edge guards: Keep this cell as 2D edge-guard context; do not translate it into point-guard perimeter or 3D edge-guard statements.
 - Orthogonal polygons, sliding cameras and sliding k-transmitters: Extract theorem-level algorithmic statements only if the review expands beyond extremal counting bounds.
 - Orthogonal polygons, floodlights and half-plane guards: Keep as an explicit exclusion unless a specific theorem is promoted into the review; promotion requires source, claim, locator, and translation records first.
 - Dispersive, contiguous, mobile, point-boundary, and related guarding variants: Record exact source and claim data only if the paper later discusses one of these variants beyond an exclusion note.
-- Polyominoes and polyforms, discrete visibility variants: Keep discrete visibility and continuous orthogonal-polyhedron visibility separate unless a future source explicitly bridges them.
+- Polycubes and polyhypercubes, point guards, cell volume: Keep this cell-count theorem separate from continuous orthogonal-polyhedron point-guard, edge-guard, and perimeter models.
+- Polycubes and polyhypercubes, pixel/voxel guards, cell volume: If the review expands its discrete 3D cell-guard discussion, add theorem-level source checks for later work citing or resolving Pinciu's pixel/voxel conjecture.
+- Polyominoes, k-hop visibility variants: Keep discrete visibility and continuous orthogonal-polyhedron visibility separate unless a future source explicitly bridges them.
 - Orthogonal polyhedra and related classes, face guards: If face guards become more than context, add theorem-level subclaims by polyhedron class.
 - 2-reflex orthogonal polyhedra, reflex-edge guards: Use as the restricted-class positive result when explaining why the general reflex-edge problem remains open.
 - Algorithmic and restricted-visibility context: Core restricted-visibility, hardness, and approximation locators are recorded. The currently cited adjacent variants now have separate cells, and the currently excluded adjacent variants now have explicit scope-exclusion cells; newly discovered variants should receive a scope decision before theorem-level use.

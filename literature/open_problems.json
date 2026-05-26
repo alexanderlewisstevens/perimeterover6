@@ -79,11 +79,21 @@
       "progress_paths": ["Improve the general upper bound.", "Separate the arbitrary-polyhedron and orthogonal-polyhedron gaps with sharper examples."]
     },
     {
+      "id": "polyhypercube_pixel_voxel_guard_bounds",
+      "title": "Sharp pixel/voxel guard bounds for polyhypercubes",
+      "question": "What is the exact worst-case number of pixel/voxel guards needed to cover every m-polyhypercube in dimension d >= 3?",
+      "status": "open_with_partial_results",
+      "known": "Pinciu proves the floor((m+1)/3) theorem for point guards in every dimension d >= 2, but separately gives lower bounds, dimension-independent upper bounds, and a sharpness conjecture for pixel/voxel guards. The point-guard theorem therefore settles the cell-volume question only for point guards, not for cell guards.",
+      "confirming_sources": ["Pinciu2015"],
+      "non_implications": ["The point-guard floor((m+1)/3) theorem does not imply sharp pixel/voxel guard bounds.", "Pixel/voxel guard bounds are discrete cell-complex bounds and do not imply face-, edge-, or reflex-edge-guard bounds for continuous orthogonal polyhedra."],
+      "progress_paths": ["Prove Pinciu's dependent-on-d sharpness conjecture for pixel/voxel guards.", "Find counterexamples separating the conjectured formula from the true cell-guard optimum."]
+    },
+    {
       "id": "algorithmic_restricted_cases",
       "title": "Algorithmic restricted cases aligned with extremal bounds",
       "question": "Which restricted orthogonal, polyomino, or polyhedral models admit exact polynomial algorithms or useful approximation guarantees for minimum guarding?",
       "status": "active_research_direction",
-      "known": "General and many orthogonal variants are hard; several restricted visibility models have approximation or hardness results. The currently cited sliding-camera, sliding-transmitter, k-hop, polyform, face-guard, and 2-reflex variants have separate coverage cells; floodlight, half-plane, dispersive, contiguous, mobile, point-boundary, and related variants have explicit scope-exclusion cells unless promoted with source and claim records.",
+      "known": "General and many orthogonal variants are hard; several restricted visibility models have approximation or hardness results. The currently cited sliding-camera, sliding-transmitter, k-hop, polyhypercube point-guard, polyhypercube pixel/voxel-guard, face-guard, and 2-reflex variants have separate coverage cells; floodlight, half-plane, dispersive, contiguous, mobile, point-boundary, and related variants have explicit scope-exclusion cells unless promoted with source and claim records.",
       "confirming_sources": ["LeeLin1986", "SchuchardtHecker1995", "KatzRoisman2008", "DurocherEtAl2017", "BiedlEtAl2019", "FiltserEtAl2025", "Ghosh2010"],
       "non_implications": ["Hardness of optimization does not rule out universal upper-bound theorems."],
       "progress_paths": ["Find exact algorithms for natural subclasses.", "Connect approximation algorithms to the structural decompositions used in extremal proofs."]
