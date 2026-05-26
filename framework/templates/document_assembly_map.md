@@ -28,6 +28,7 @@ The paper should answer these questions in order:
 | `coverage_matrix.json` | Result-status and scope-exclusion map by model cell. | Prevents model changes and exclusion decisions from being hidden in prose. |
 | `open_problems.json` | Open-problem ledger. | Separates source-stated, conditional, and derived open directions. |
 | `search_log.md` | Search audit trail. | Records searches, inclusions, exclusions, and follow-up paths. |
+| `search_queries.md` | Reusable search strings and index URLs. | Makes final status passes repeatable. |
 | `framework_progress.md` | Workflow progress board. | Tracks which framework stage needs attention next. |
 | `evidence_report.md` | Generated audit companion. | Summarizes counts, gaps, coverage cells, and next actions. |
 
@@ -57,9 +58,11 @@ When a new source or result is added, update artifacts in this order:
 4. Claims registry.
 5. Open-problem ledger when relevant.
 6. Framework progress tracker.
-7. Generated evidence report.
-8. Main paper source.
-9. Compiled deliverable.
+7. Final status pass records for central open, conditional, or recently changed
+   claims.
+8. Generated evidence report.
+9. Main paper source.
+10. Compiled deliverable.
 
 ## Status Display Rules
 
@@ -71,3 +74,5 @@ When a new source or result is added, update artifacts in this order:
   common misreading.
 - Put open problems in three groups: source-stated, conditional, and derived.
 - Put remaining evidence gaps in the completeness/evidence sections.
+- Put the most recent final-status-pass date in the completeness/evidence
+  section when the paper preserves an open or conditional conclusion.

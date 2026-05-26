@@ -71,8 +71,8 @@ that every result and open problem can be audited.
   missed.
 - Describe the review workflow: scope cells, source intake, layered searches,
   claim extraction, translation notes, coverage updates, open-problem updates,
-  progress tracking, document assembly, locator pass, and paper
-  synchronization.
+  progress tracking, document assembly, locator pass, final status pass, and
+  paper synchronization.
 - List the remaining evidence gaps, such as missing locators, unsearched
   coverage cells, outdated forward-citation sweeps, progress-board items, or
   unrecorded exclusions.

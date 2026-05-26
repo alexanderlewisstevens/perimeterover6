@@ -28,6 +28,7 @@ artifacts have been updated, and which stage should be handled next.
 | Translation audit | `active` | claim records, model-separation prose |  |  |
 | Coverage update | `active` | `coverage_matrix.json`, status tables |  |  |
 | Open-problem update | `active` | `open_problems.json`, open-problem section |  |  |
+| Final status pass | `recurring` | `search_log.md`, `search_queries.md`, coverage next actions |  | Repeat before release or after central status changes. |
 | Document assembly | `active` | `document_assembly.md`, paper outline |  |  |
 | Paper synchronization | `active` | review source, compiled paper |  |  |
 | Audit and build | `recurring` | scripts, generated reports, build logs |  |  |
@@ -57,6 +58,8 @@ editing an open problem.
 - Update this progress tracker if the stage status or next action changed.
 - Update the document assembly map if the paper structure or artifact roles
   changed.
+- Run the final status pass for central open, conditional, or recent-status
+  claims before publishing or pushing.
 - Regenerate the evidence report.
 - Update the paper prose and rebuild the deliverable.
 - Run validation checks before publishing or pushing.

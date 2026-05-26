@@ -29,7 +29,7 @@ currently contain; this file says where the review process stands.
 | Translation audit | `active` | `claims_registry.json`, model-separation section | The main non-implications around holes, lattice scale, guard type, and 3D analogues are recorded. | Recheck translation notes whenever a new result is added to a neighboring model cell. |
 | Coverage update | `active` | `coverage_matrix.json`, status tables | No coverage cells are currently marked unsearched/searching; the adjacent-model split, explicit scope-exclusion pass, and limited-field edge-guard cell are complete. | Keep `next_action` fields current as searches or locators change. |
 | Open-problem update | `active` | `open_problems.json`, open-problem section | Eight open-problem clusters are tracked. | Label any new cluster as source-stated, conditional, or derived before using it in the paper. |
-| Document assembly | `active` | `document_assembly.md`, paper section order, framework templates | The paper now has a front executive synthesis and an explicit map from ledgers to reader-facing sections; the reusable templates now include scope-exclusion cells. | Recheck the assembly map and templates whenever the paper structure or artifact roles change. |
+| Document assembly | `active` | `document_assembly.md`, paper section order, framework templates | The paper now has a front executive synthesis and an explicit map from ledgers to reader-facing sections; the reusable templates now include scope-exclusion cells and a final-status-pass template. | Recheck the assembly map and templates whenever the paper structure, artifact roles, or release gate changes. |
 | Paper synchronization | `active` | `orthogonal_art_gallery_lit_review.tex`, PDF | The paper includes the current synthesis, completeness protocol, and evidence audit trail. | Update prose only after source, claim, coverage, open-problem, progress, and assembly records support the change. |
 | Audit and build | `recurring` | `scripts/`, `evidence_report.md`, PDF | Registry checks now validate cross-links, scope-exclusion cells, and declared status vocabularies. | Run checks after every substantive evidence or prose edit. |
 
@@ -69,6 +69,8 @@ editing an open problem.
 - Update this progress tracker if the stage status or next action changed.
 - Update the document assembly map if the paper structure or artifact roles
   changed.
+- Run or update the final status pass for central open, conditional, or
+  recent-status claims before publishing or pushing.
 - Regenerate the evidence report.
 - Update the paper prose and rebuild the PDF.
 - Run validation checks before publishing or pushing.

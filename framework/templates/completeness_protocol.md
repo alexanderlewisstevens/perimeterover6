@@ -40,8 +40,10 @@ Define the axes that determine whether two results are comparable.
    queue item changes.
 10. Check the document assembly map when the reader-facing structure or
     artifact roles change.
-11. Add or update prose only after the evidence records support the statement.
-12. Regenerate the evidence report and run validation checks.
+11. Run a final status pass before publishing or preserving a central open,
+    conditional, or recent-status claim.
+12. Add or update prose only after the evidence records support the statement.
+13. Regenerate the evidence report and run validation checks.
 
 ## Open-Problem Classification
 
@@ -67,6 +69,22 @@ Define the axes that determine whether two results are comparable.
 7. Terminology expansion through synonyms, older names, adjacent models, and
    benchmark terminology.
 8. Exclusion pass for plausible but out-of-scope sources.
+9. Final status pass for central claims: repeat forward-citation, venue,
+   author-page, exact-title, and adjacent-model searches after the main
+   evidence layer is otherwise current.
+
+## Final Status Pass
+
+For each central open, conditional, or recently changed claim, record:
+
+- the source set searched;
+- the exact forward-citation identifiers or query URLs used;
+- venue and author-page date ranges inspected;
+- relevant-looking adjacent hits and why they do or do not transfer;
+- whether the outcome is `status_changed`, `status_preserved`,
+  `adjacent_source_added`, `scope_exclusion_added`, or `blocked_by_access`;
+- which source, claim, coverage, open-problem, search, progress, and paper
+  artifacts changed.
 
 ## Completeness Gate
 
@@ -83,6 +101,8 @@ Before stating that a result is known, missing, conditional, or open, verify:
   exclusion before they are cited as non-implications;
 - affected open-problem records are classified correctly;
 - search-log entries support the conclusion;
+- a dated final status pass supports any central open, conditional, or
+  recent-status statement being preserved;
 - the progress tracker reflects the current work queue;
 - the document assembly map still describes the paper structure;
 - remaining gaps are visible in the evidence report.

@@ -24,6 +24,9 @@ claim truth, coverage/completeness state, open-problem state, and final prose.
 - `templates/completeness_protocol.md`: reusable checklist for
   deciding when a review can responsibly say a result is known, missing,
   conditional, or open.
+- `templates/final_status_pass.md`: reusable pre-release pass for checking
+  recent forward citations, venue updates, author pages, and adjacent-model
+  exclusions before preserving or changing a status claim.
 - `templates/progress_tracker.md`: reusable dashboard for tracking which
   framework stages are done, active, blocked, or recurring.
 
@@ -59,8 +62,10 @@ claim truth, coverage/completeness state, open-problem state, and final prose.
     still incomplete, and which artifact should be updated next.
 11. Check the document assembly map when the structure, artifact roles, or
     reader-facing flow changes.
-12. Generate the evidence report and run validation checks.
-13. Write or revise the paper only after evidence records support the prose.
+12. Run a final status pass before publication or whenever a central status
+    claim changes. Record both status-changing hits and relevant exclusions.
+13. Generate the evidence report and run validation checks.
+14. Write or revise the paper only after evidence records support the prose.
 
 ## Completeness Criteria
 
@@ -78,6 +83,8 @@ shape when:
   rationale before it is used as negative evidence;
 - every important search path has a search-log entry, including plausible
   exclusions;
+- central open, conditional, or recently changed claims have a dated final
+  status pass before the review is published or pushed;
 - the progress tracker agrees with the coverage matrix, evidence report, and
   current work queue;
 - the document assembly map explains how the evidence artifacts support the
@@ -105,6 +112,9 @@ model boundaries rather than at obvious title matches.
    benchmark names.
 7. Exclusion pass: record sources that look relevant but are not in scope, with
    the reason.
+8. Final status pass: repeat forward-citation, venue, author-page, and
+   adjacent-model searches for central claims before preserving a status in a
+   public artifact.
 
 The templates in `framework/templates/` define the paper architecture and the
 record shapes for results, open problems, and evidence reports.

@@ -64,9 +64,11 @@ When a new source or result is added, update artifacts in this order:
 4. `claims_registry.json`.
 5. `open_problems.json` if the result is open, conditional, or gap-forming.
 6. `framework_progress.md`.
-7. `evidence_report.md` by running the generator.
-8. `orthogonal_art_gallery_lit_review.tex`.
-9. `orthogonal_art_gallery_lit_review.pdf`.
+7. Final status pass records in `search_log.md` and `search_queries.md` for
+   central open, conditional, or recent-status claims.
+8. `evidence_report.md` by running the generator.
+9. `orthogonal_art_gallery_lit_review.tex`.
+10. `orthogonal_art_gallery_lit_review.pdf`.
 
 The paper should not be the first place where a new result appears.
 
