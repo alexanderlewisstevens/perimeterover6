@@ -30,6 +30,7 @@ proof techniques, and evidence audit then justify that short answer.
 | `claims_registry.json` | Extracted theorem/problem ledger. | One claim per theorem, conjecture, hardness result, survey claim, or open-problem statement. |
 | `coverage_matrix.json` | Result-status map by model cell. | Prevents model changes from being hidden in prose. |
 | `open_problems.json` | Open-problem ledger. | Separates source-stated, conditional, and derived open directions. |
+| `galen_notes.md` | Short working note for Galen. | Keeps Paul/Galen prompts separate from literature-confirmed open problems. |
 | `search_log.md` | Search audit trail. | Records searches, inclusions, exclusions, and follow-up paths. |
 | `framework_progress.md` | Workflow progress board. | Tracks which framework stage needs attention next. |
 | `evidence_report.md` | Generated audit companion. | Summarizes counts, gaps, coverage cells, and next actions. |
@@ -78,6 +79,8 @@ The paper should not be the first place where a new result appears.
 - Put exact model distinctions in the status matrix or coverage chart.
 - Put limitations and non-implications before the detailed model survey.
 - Put open problems in three groups: source-stated, conditional, and derived.
+- Put internal working prompts in a visibly separate category until the model
+  statement or source status is confirmed.
 - Put remaining evidence gaps in the completeness/evidence sections rather
   than smoothing them into the prose.
 
@@ -94,9 +97,13 @@ currently excluded adjacent models have explicit scope-exclusion cells. The
 Pinciu polyhypercube material is now separated into a settled point-guard
 cell-volume theorem and an open pixel/voxel-guard cell, so the 3D discussion
 can answer the volume-over-three question without blending it into continuous
-orthogonal-polyhedron bounds. The main remaining assembly work is recurring
-rather than structural: repeat forward-citation and venue scans after new
-central sources appear, add final-status outcome rows when central statuses are
-preserved or changed, and add either a theorem-level coverage cell or a
-scope-exclusion cell before adding prose about any newly discovered visibility
-or guard variant.
+orthogonal-polyhedron bounds. Two Paul/Galen prompts are now represented as
+proposed working questions: the `n/8+f/4 < P/6` flat-vertex hybrid prompt and
+the 3D surface-area-over-eight prompt. They should remain visibly separate
+from literature-confirmed open problems until their exact model statements or
+sources are available. The main remaining assembly work is recurring rather
+than structural: repeat forward-citation and venue scans after new central
+sources appear, add final-status outcome rows when central statuses are
+preserved or changed, and add either a theorem-level coverage cell, a proposed
+working-question cell, or a scope-exclusion cell before adding prose about any
+newly discovered visibility or guard variant.

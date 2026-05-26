@@ -5,7 +5,8 @@
     "open",
     "open_with_partial_results",
     "open_or_conditional",
-    "active_research_direction"
+    "active_research_direction",
+    "proposed_working_question"
   ],
   "open_problems": [
     {
@@ -37,6 +38,16 @@
       "confirming_sources": ["DiazBanezEtAl2025", "Massberg2014", "MassbergHabilitation"],
       "non_implications": ["The Diaz-Banez et al. ortho-unit theorem is stronger but only for unit-edge polygons.", "The hole-free integral reading is not a separate open problem."],
       "progress_paths": ["State the exact integral-domain convention.", "Resolve the holes version or reduce it to the polyomino-with-holes problem."]
+    },
+    {
+      "id": "paul_flat_vertex_hybrid_bound",
+      "title": "Paul's flat-vertex hybrid bound question",
+      "question": "For an integral orthogonal polygon subdivided into unit boundary steps, with P the total lattice perimeter, n the number of turn vertices, and f the number of flat subdivision vertices, is there a meaningful guard theorem or construction governed by a hybrid expression n/8+f/4, especially in the regime n/8+f/4 < P/6?",
+      "status": "proposed_working_question",
+      "known": "This is an internal working question from Paul recorded for Galen, not a literature-confirmed open problem. Under the convention P=n+f, the strict inequality n/8+f/4 < P/6 is algebraically equivalent to f<n/2. The 2026-05-26 flat-vertex/formula pass found no primary source for an n/8+f/4 art-gallery theorem or open problem, so the mathematical task is to define f precisely and determine whether the hybrid expression supports a true upper bound, lower-bound family, or useful separation from P/6.",
+      "confirming_sources": [],
+      "non_implications": ["The ortho-unit floor((n-4)/8) theorem does not imply an n/8+f/4 theorem for integral polygons.", "Massberg's hole-free P/6 theorem does not imply that a mixed turn/flat-vertex parameter is sharp or useful.", "The inequality alone is not a guarding theorem; the guard model and the definition of f must be fixed first."],
+      "progress_paths": ["Fix the model convention: holes allowed or forbidden, point guards, P as total unit boundary length, n as turn vertices, and f as inserted flat boundary vertices.", "Decide whether the target is an upper bound, a lower-bound construction, or a class where the hybrid count improves on P/6.", "If the intended convention is P=n+f, focus on examples with f<n/2 or explain why a different definition of f is intended."]
     },
     {
       "id": "orthogonal_holes_vertex_guards",
@@ -77,6 +88,16 @@
       "confirming_sources": ["CanoTothUrrutiaViglietta2022"],
       "non_implications": ["This is broader than the orthogonal-polyhedron m/12 + O(1) target, so it should not be cited as an orthogonal-specific theorem."],
       "progress_paths": ["Improve the general upper bound.", "Separate the arbitrary-polyhedron and orthogonal-polyhedron gaps with sharper examples."]
+    },
+    {
+      "id": "surface_area_over_eight_3d_working_conjecture",
+      "title": "Surface-area-over-eight working conjecture in 3D",
+      "question": "For a lattice-normalized 3D orthogonal object, can one prove a guard bound on the order of surface area divided by 8?",
+      "status": "proposed_working_question",
+      "known": "This is recorded as a proposed 3D working conjecture, not as a literature-confirmed theorem. Surface area must be lattice-normalized, for example by counting unit square boundary faces of a polycube or grid-refined orthogonal polyhedron; ordinary Euclidean surface area is scale-dependent. Nearby literature uses different parameters and guard models: Viglietta proves tight face-guard bounds in terms of the number of faces for orthogonal polyhedra, while point guards for arbitrary orthogonal polyhedra have Theta(n^(3/2)) vertex-count behavior.",
+      "confirming_sources": [],
+      "non_implications": ["The point-guard floor((m+1)/3) theorem for m-polyhypercubes is a volume/cell-count theorem, not a surface-area theorem.", "Viglietta's face-guard results use face count and face guards, not unit surface area and not point guards.", "A Euclidean surface-area bound is not meaningful without a lattice unit or other normalization."],
+      "progress_paths": ["Choose the object class: polycubes, grid-refined orthogonal polyhedra, or general orthogonal polyhedra with a normalized surface mesh.", "Choose the guard model: point guards, vertex guards, edge guards, face guards, or unit-face/cell guards.", "Search for or construct lower-bound examples near one guard per eight unit surface squares, then test whether a matching upper-bound decomposition is plausible."]
     },
     {
       "id": "polyhypercube_pixel_voxel_guard_bounds",

@@ -357,3 +357,33 @@ Use one entry per meaningful search.
 - Follow-up: if the review expands the discrete 3D section, add a separate
   source/claim record for Alpert--Roldan and run forward searches for work
   resolving Pinciu's pixel/voxel-guard conjecture.
+
+### 2026-05-26 -- Galen/Paul working-question pass
+
+- Search target: record two internal prompts without promoting them to
+  literature-confirmed open problems: Paul's `n/8+f/4 < P/6` flat-vertex
+  hybrid question and a 3D surface-area-over-eight working conjecture.
+- Query: existing flat-vertex pass queries around `n/8+f/4`, plus
+  `"n/8+f/4" "P/6" guards`, `"flat vertices" "P/6" "guards"`,
+  `"surface area/8" "orthogonal polyhedra" "guards"`, `"surface area"
+  "orthogonal polyhedra" guards "8"`, `"surface area" "polycube" guards
+  "art gallery"`, and `"polycube" "surface area" "guard"`.
+- Hits inspected: existing Diaz-Banez et al. integral-polygon source checks,
+  existing Ma{\ss}berg and Pinciu model cells, existing Viglietta face-guard
+  and orthogonal-polyhedron cells, and quick exact/topic web searches for
+  surface-area-over-eight wording.
+- Included: two `proposed_working_question` records were added to the open
+  problem ledger and coverage matrix, and `literature/galen_notes.md` records
+  the working prompts in a form meant for Galen.
+- Excluded: no primary source was found for a theorem or source-stated open
+  problem using `n/8+f/4`, `n/8+f/4 < P/6`, or a surface-area-over-eight
+  guard bound for 3D orthogonal objects. Viglietta's face-guard paper is kept
+  separate because it uses face guards and face-count-style parameters, and
+  Pinciu's polyhypercube theorem is kept separate because it is a point-guard
+  volume/cell-count theorem.
+- Follow-up: ask Paul/Galen to confirm whether `f` means flat boundary
+  subdivision vertices and whether the hybrid expression is intended as an
+  upper bound, lower-bound family, or improvement regime. For the 3D prompt,
+  first choose the object class, guard model, and lattice normalization of
+  surface area before comparing it with face-count, edge-count, or
+  volume-count results.

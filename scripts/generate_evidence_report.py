@@ -145,7 +145,10 @@ def main() -> int:
         lines.append(f"- Status: `{problem['status']}`\n")
         lines.append(f"- Question: {problem['question']}\n")
         lines.append(f"- Known: {problem['known']}\n")
-        lines.append(f"- Confirming sources: {', '.join(problem['confirming_sources'])}\n")
+        confirming_sources = ", ".join(problem["confirming_sources"]) or (
+            "None recorded; this entry is not currently literature-confirmed."
+        )
+        lines.append(f"- Confirming sources: {confirming_sources}\n")
         lines.append(f"- Progress paths: {'; '.join(problem['progress_paths'])}\n\n")
 
     if conditional_or_open_claims:
@@ -170,6 +173,16 @@ def main() -> int:
                 "None recorded; this is expected for a scope-exclusion cell."
             )
             lines.append(f"- Supporting theorem claims: {supporting_claims}\n")
+        elif cell["result_status"] == "proposed_working_question":
+            lines.append(
+                "- Evidence role: Proposed working-question cell; this records "
+                "a project prompt, not a theorem-level literature claim.\n"
+            )
+            supporting_claims = ", ".join(cell["supporting_claims"]) or (
+                "None recorded; this is expected until a source or written "
+                "problem statement is available."
+            )
+            lines.append(f"- Supporting claims: {supporting_claims}\n")
         else:
             supporting_claims = ", ".join(cell["supporting_claims"]) or "None recorded."
             lines.append(f"- Supporting claims: {supporting_claims}\n")

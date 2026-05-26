@@ -33,9 +33,11 @@ title searches and primary sources before secondary summaries.
 - `"integral orthogonal polygon" "N/6" guards`
 - `"orthogonal polygon" "perimeter N" "guarded" "N/6"`
 - `"n/8 + f/4" guards orthogonal polygon`
+- `"n/8+f/4" "P/6" guards`
 - `"n/8+f/4" "art gallery"`
 - `"n/8" "f/4" "orthogonal polygon"`
 - `"n/8" "flat vertices" "orthogonal polygon" "guard"`
+- `"flat vertices" "P/6" "guards"`
 - `"flat vertices" "integral orthogonal polygon" guards`
 - `"straight vertices" "orthogonal polygon" "art gallery"`
 - `"collinear vertices" "orthogonal polygon" "guards"`
@@ -63,6 +65,10 @@ title searches and primary sources before secondary summaries.
 - `"orthogonal polyhedra" "edge guards" "2025"`
 - `"orthogonal polyhedron" "reflex edge guards" "2024"`
 - `"face-guarding polyhedra" orthogonal`
+- `"surface area/8" "orthogonal polyhedra" "guards"`
+- `"surface area" "orthogonal polyhedra" guards "8"`
+- `"surface area" "polycube" guards "art gallery"`
+- `"polycube" "surface area" "guard"`
 - `"Minimizing the solid angle sum of orthogonal polyhedra" "pi/2-edge guards"`
 - `https://api.openalex.org/works?search=Edge-guarding%20Orthogonal%20Polyhedra`
 - `https://api.openalex.org/works?filter=cites:W1842505581`

@@ -23,13 +23,13 @@ currently contain; this file says where the review process stands.
 | --- | --- | --- | --- | --- |
 | Scope and model cells | `active` | `coverage_matrix.json`, paper scope sections | The main 2D, polyomino, integral-polygon, 3D orthogonal-polyhedron, cited adjacent-model cells, and current adjacent-model exclusions are represented. | Add a new coverage cell or scope-exclusion cell before adding prose for any newly discovered variant. |
 | Source intake | `active` | `source_registry.json`, bibliography | The bibliography and source registry are aligned. | Mark discovery-only and exclusion sources more explicitly as searches expand. |
-| Search tracking | `active` | `search_log.md`, `search_queries.md` | Major seed searches, the first forward/adjacent-model sweep, the final OpenAlex/web status pass, the 2026-05-26 flat-vertex `n/8+f/4` formula pass, and the 2026-05-26 polyhypercube volume-over-three pass are recorded. | Repeat forward-citation, venue-scan, author-page, and exclusion entries after new central sources appear or before a future release; add a dedicated coverage cell if a source is found for a flat-vertex or face-count parameter. |
+| Search tracking | `active` | `search_log.md`, `search_queries.md` | Major seed searches, the first forward/adjacent-model sweep, the final OpenAlex/web status pass, the 2026-05-26 flat-vertex `n/8+f/4` formula pass, the 2026-05-26 polyhypercube volume-over-three pass, and the Galen/Paul working-question pass are recorded. | Repeat forward-citation, venue-scan, author-page, and exclusion entries after new central sources appear or before a future release; convert a working question to a literature-status claim only after a citable source or written model statement is available. |
 | Claim extraction | `active` | `claims_registry.json` | Every cited source has at least one claim record, and Pinciu2015 is split into point-guard and pixel/voxel-guard claims. | Split any source that supports multiple distinct theorems/open problems into separate claim records when needed. |
 | Locator pass | `active` | `claims_registry.json`, `evidence_report.md` | Central, foundational 2D, holes, 3D baseline, and restricted-visibility locator batches are complete for the current cited-source set. | Keep locator checks recurring as new sources are added or adjacent models are split into separate cells. |
 | Translation audit | `active` | `claims_registry.json`, model-separation section | The main non-implications around holes, lattice scale, guard type, and 3D analogues are recorded. | Recheck translation notes whenever a new result is added to a neighboring model cell. |
-| Coverage update | `active` | `coverage_matrix.json`, status tables | No coverage cells are currently marked unsearched/searching; the adjacent-model split, explicit scope-exclusion pass, limited-field edge-guard cell, and polyhypercube point/cell-guard separation are complete. | Keep `next_action` fields current as searches or locators change. |
-| Open-problem update | `active` | `open_problems.json`, open-problem section | Nine open-problem clusters are tracked, including the newly separated pixel/voxel-guard question for polyhypercubes. | Label any new cluster as source-stated, conditional, or derived before using it in the paper. |
-| Document assembly | `active` | `document_assembly.md`, paper section order, framework templates | The paper now has a front executive synthesis and an explicit map from ledgers to reader-facing sections; the reusable templates now include scope-exclusion cells, a final-status-pass template, and a final-status outcome table template. | Recheck the assembly map and templates whenever the paper structure, artifact roles, or release gate changes. |
+| Coverage update | `active` | `coverage_matrix.json`, status tables | No coverage cells are currently marked unsearched/searching; the adjacent-model split, explicit scope-exclusion pass, limited-field edge-guard cell, polyhypercube point/cell-guard separation, and two proposed working-question cells are complete. | Keep `next_action` fields current as searches, locators, or Paul/Galen model decisions change. |
+| Open-problem update | `active` | `open_problems.json`, open-problem section | Eleven open-problem clusters are tracked, including the separated pixel/voxel-guard question and two proposed working questions for Galen/Paul. | Label any new cluster as source-stated, conditional, derived, or proposed before using it in the paper. |
+| Document assembly | `active` | `document_assembly.md`, paper section order, framework templates | The paper now has a front executive synthesis and an explicit map from ledgers to reader-facing sections; the reusable templates now include scope-exclusion cells, a final-status-pass template, and a final-status outcome table template. A short Galen note records internal working prompts separately from literature-status claims. | Recheck the assembly map and templates whenever the paper structure, artifact roles, or release gate changes. |
 | Paper synchronization | `active` | `orthogonal_art_gallery_lit_review.tex`, PDF | The paper includes the current synthesis, completeness protocol, final-status-pass outcome table, and evidence audit trail. | Update prose only after source, claim, coverage, open-problem, progress, and assembly records support the change. |
 | Audit and build | `recurring` | `scripts/`, `evidence_report.md`, PDF | Registry checks now validate cross-links, scope-exclusion cells, and declared status vocabularies. | Run checks after every substantive evidence or prose edit. |
 
@@ -52,12 +52,13 @@ currently contain; this file says where the review process stands.
    appropriate declared vocabulary before using them in records.
 7. Regenerate `evidence_report.md` and rebuild the PDF after each batch of
    source or claim updates.
-8. If a source is found for an `n/8+f/4`-style formula, first identify whether
-   `f` means flat boundary vertices, unit cells/faces, holes, or a 3D face
-   parameter; then create or update the matching coverage cell before adding
-   prose.
+8. Ask Paul/Galen to confirm whether `f` in the `n/8+f/4 < P/6` prompt means
+   flat boundary subdivision vertices and whether the target is an upper
+   bound, lower-bound family, or improvement regime.
 9. If the discrete 3D section is expanded, check whether later sources resolve
    Pinciu's pixel/voxel-guard conjecture before describing that cell as open.
+10. For the surface-area-over-eight prompt, fix object class, guard model, and
+    lattice normalization before adding any theorem-style language.
 
 ## Update Transaction Checklist
 

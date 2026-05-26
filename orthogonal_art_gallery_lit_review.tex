@@ -1058,6 +1058,12 @@ When a question is only a consequence of comparing known results, the text
 says so explicitly; otherwise the cited source records the conjecture or the
 conditional dependency.
 
+Two entries below are different in kind.  They are recorded as working prompts
+for Galen from the current project, not as literature-confirmed open problems:
+Paul's flat-vertex hybrid expression and a possible 3D surface-area-over-eight
+analogue.  They are included because they are useful research directions, but
+the table and prose mark the missing model choices explicitly.
+
 \begin{table}[!t]
 \small
 \setlength{\tabcolsep}{3pt}
@@ -1083,6 +1089,13 @@ Hole-free integral polygons reduce to hole-free polyominoes. &
 State and resolve the exact holes/broader-domain version, including how
 perimeter is counted. \\
 
+Paul/Galen flat-vertex hybrid &
+Project working question, not source-stated &
+If $P=n+f$, then $n/8+f/4<P/6$ is equivalent to $f<n/2$; no source was found
+for a guard theorem using this hybrid parameter. &
+Fix $f$, holes, and guard model; decide whether the target is an upper bound,
+lower-bound family, or improvement regime. \\
+
 Orthogonal polygons with holes, vertex guards &
 Urrutia; Zylinski; Michael--Pinciu
 \cite{UrrutiaOpenProblems,Zylinski2006,MichaelPinciu2016} &
@@ -1102,6 +1115,13 @@ Viglietta \cite{Viglietta2020} &
 2-reflex orthogonal polyhedra are understood much better than general
 3-reflex orthogonal polyhedra. &
 Extend the induction/charging methods beyond the 2-reflex restriction. \\
+
+3D surface-area-over-eight &
+Project working conjecture, not source-stated &
+The question needs lattice-normalized surface area; face-count and
+volume-count theorems are separate model cells. &
+Choose object class and guard model, then test lower- and upper-bound
+constructions. \\
 
 Polycube/polyhypercube voxel guards &
 Pinciu \cite{Pinciu2015} &
@@ -1149,6 +1169,20 @@ conjectures. \\
   broader lattice-domain conventions are allowed
   \cite{Massberg2014,DiazBanezEtAl2025}.
 
+  \item \textbf{Paul/Galen flat-vertex hybrid question.}
+  This is a project working prompt rather than a source-stated open problem.
+  Suppose an integral orthogonal polygon has been subdivided into unit boundary
+  steps, with total lattice perimeter $P$, $n$ turn vertices, and $f$ flat
+  subdivision vertices.  Under the convention $P=n+f$,
+  \[
+    n/8+f/4<P/6 \quad\Longleftrightarrow\quad f<n/2.
+  \]
+  Thus the inequality is not itself the mathematical content.  The real
+  question is whether the hybrid expression $n/8+f/4$ controls a guard
+  theorem, lower-bound family, or useful improvement regime once $f$, holes,
+  and guard model are fixed.  The current evidence pass found no primary
+  source for an $n/8+f/4$ art-gallery theorem or source-stated open problem.
+
   \item \textbf{Vertex guards for orthogonal polygons with holes.}
   Shermer's conjecture asks whether every $n$-vertex orthogonal polygon with
   $h$ holes is guardable by $\floor{(n+h)/4}$ vertex guards.  Hoffmann's
@@ -1180,6 +1214,18 @@ conjectures. \\
   lower and upper bounds as an open problem
   \cite{CanoTothUrrutiaViglietta2022}.  Orthogonal polyhedra form the more
   structured subclass where sharper Urrutia-type conjectures are expected.
+
+  \item \textbf{Surface-area-over-eight in 3D.}
+  This is also a project working conjecture rather than a literature-confirmed
+  theorem.  A meaningful statement must first choose a lattice-normalized
+  surface area $S$, such as the number of exposed unit square faces of a
+  polycube or grid-refined orthogonal polyhedron, and must specify whether the
+  guards are points, vertices, edges, faces, or unit-face/cell guards.  Nearby
+  sources do not settle this: Viglietta's face-guard paper uses a different
+  guard model \cite{VigliettaFace2014}, Pinciu's polyhypercube theorem is a
+  volume/cell-count point-guard result \cite{Pinciu2015}, and continuous 3D
+  point guarding has different vertex-count behavior
+  \cite{PatersonYao1992,VigliettaThesis}.
 
   \item \textbf{Pixel/voxel guards for polyhypercubes.}
   Pinciu settles the point-guard cell-volume question for every dimension
@@ -1458,17 +1504,21 @@ level currently available from primary PDFs, open-problem pages, public
 technical reports, or primary metadata.  The forward/adjacent sweep and final
 OpenAlex/web pass for the central holes, perimeter, and 3D edge/reflex-edge
 clusters are now logged.  They did not add a tracked theorem that changes the
-main statuses.  The current coverage matrix now separates the cited adjacent
-variants that already have source records: two-dimensional edge guards,
-sliding-camera and sliding-transmitter visibility, $k$-hop visibility,
-polyhypercube point guards, polyhypercube pixel/voxel guards, 3D face guards,
-$\pi/2$-edge guards, and 2-reflex reflex-edge guards.  It also records
-scope-exclusion cells for floodlight, half-plane,
+main statuses.  It also records two project working questions without
+promoting them to literature-confirmed open problems: Paul's
+$n/8+f/4<P/6$ flat-vertex prompt and a 3D surface-area-over-eight prompt.
+The current coverage matrix now separates the cited adjacent variants that
+already have source records: two-dimensional edge guards, sliding-camera and
+sliding-transmitter visibility, $k$-hop visibility, polyhypercube point
+guards, polyhypercube pixel/voxel guards, 3D face guards, $\pi/2$-edge
+guards, and 2-reflex reflex-edge guards.  It also records scope-exclusion
+cells for floodlight, half-plane,
 dispersive, contiguous, mobile,
 point-boundary, and related variants.  Those cells are not source claims; they
 are checkpoints requiring source intake before any such variant is used as a
 theorem-level result.  The remaining completeness work is recurring
-search-frontier work rather than a missing-locator problem.
+search-frontier work and model-confirmation work rather than a missing-locator
+problem.
 
 \section{Evidence Audit Trail}
 
@@ -1501,6 +1551,14 @@ Aldana-Galvan et al.'s $\pi/2$-edge-guard result, which is recorded as a
 separate adjacent model rather than as a closure of the standard 3D
 edge/reflex-edge gaps.
 
+The May 26, 2026 Galen/Paul working-question pass records two proposed
+questions separately from source-stated open problems.  No source was found for
+an $n/8+f/4$ guard theorem, an $n/8+f/4<P/6$ open problem, or a
+surface-area-over-eight theorem for 3D orthogonal objects.  The evidence layer
+therefore treats both prompts as model-definition tasks first: fix the
+flat-vertex parameter and intended guard statement in 2D, and fix the surface
+normalization, object class, and guard model in 3D.
+
 \begin{center}
 \footnotesize
 \renewcommand{\arraystretch}{1.08}
@@ -1530,6 +1588,12 @@ Orthogonal polyhedra, standard edge/reflex-edge guards &
 Adjacent source added; status preserved &
 Aldana-Galvan et al. add $\pi/2$-edge-guard context, but the standard
 edge/reflex-edge gaps remain open. \\
+
+Paul/Galen flat-vertex and surface-area prompts &
+Working questions recorded; no source-status change &
+The prompts are useful research directions, but the PDF treats them as
+model-definition tasks until the missing conventions or sources are supplied.
+\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -1561,6 +1625,11 @@ edge/reflex-edge gaps remain open. \\
   perimeter bound, Ma{\ss}berg's rectangle-packing conjecture, the
   holes/broader-domain $\floor{N/6}$ extension, and the Urrutia-type
   $m/12+O(1)$ and reflex-edge conjectures for general orthogonal polyhedra.
+
+  \item Paul's $n/8+f/4<P/6$ prompt and the 3D surface-area-over-eight prompt
+  are now recorded as proposed working questions for Galen.  They should not be
+  cited as literature-confirmed open problems until their model conventions or
+  source status are fixed.
 \end{enumerate}
 
 \begin{thebibliography}{99}

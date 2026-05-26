@@ -23,6 +23,7 @@
     "optimization_or_motion_variant_out_of_scope",
     "discrete_visibility_context",
     "face_guard_context",
+    "proposed_working_question",
     "hardness_and_approximation_context"
   ],
   "coverage_cells": [
@@ -241,6 +242,30 @@
       "next_action": "The hole-free overlap is recorded. The 2026-05-26 targeted search found no primary source for an n/8+f/4 bound using flat vertices or faces; before stating any standalone broader-domain or flat-vertex parameter problem, specify whether holes, disconnected domains, inserted collinear grid points, or a different lattice-domain convention are intended."
     },
     {
+      "id": "integral_flat_vertex_hybrid_working_question",
+      "title": "Integral orthogonal polygons, flat-vertex hybrid parameter",
+      "domain_axes": {
+        "dimension": "2D",
+        "object_class": "integral orthogonal polygon after unit-boundary subdivision",
+        "holes": "to be specified",
+        "guard_model": "point guards, unless Paul intends another model",
+        "parameter": "P total lattice perimeter, n turn vertices, f flat subdivision vertices"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "proposed_working_question",
+      "summary": "Paul's working question asks whether an n/8+f/4 hybrid expression can define a useful guard bound or construction, especially when it is below P/6; under P=n+f this inequality is exactly f<n/2.",
+      "supporting_sources": [],
+      "supporting_claims": [],
+      "open_problem_links": [
+        "paul_flat_vertex_hybrid_bound"
+      ],
+      "paper_sections": [
+        "Open Problems and Research Directions",
+        "Completeness Protocol and Evidence Trail"
+      ],
+      "next_action": "Ask Paul/Galen to confirm the intended definition of f and whether the target is an upper bound, a lower-bound family, or an improvement regime; do not cite this as literature-stated until a source or written problem statement is available."
+    },
+    {
       "id": "orthogonal_polyhedra_point_guards",
       "title": "Orthogonal polyhedra, point guards",
       "domain_axes": {
@@ -269,6 +294,30 @@
         "Three-Dimensional Orthogonal Polyhedra"
       ],
       "next_action": "Paterson--Yao BSP locators and Viglietta thesis guard-translation locator are recorded; next action is optional full journal-version access if needed."
+    },
+    {
+      "id": "orthogonal_3d_surface_area_over_eight_working_question",
+      "title": "3D orthogonal objects, surface-area-over-eight working conjecture",
+      "domain_axes": {
+        "dimension": "3D",
+        "object_class": "polycube or lattice-normalized orthogonal polyhedron, to be specified",
+        "holes": "to be specified",
+        "guard_model": "to be specified: point, edge, face, or unit-face guards",
+        "parameter": "lattice-normalized surface area S"
+      },
+      "coverage_status": "synthesized",
+      "result_status": "proposed_working_question",
+      "summary": "The project working conjecture asks whether a surface-area-over-eight guard bound is possible in a carefully fixed 3D lattice model; no tracked source currently states this theorem or conjecture.",
+      "supporting_sources": [],
+      "supporting_claims": [],
+      "open_problem_links": [
+        "surface_area_over_eight_3d_working_conjecture"
+      ],
+      "paper_sections": [
+        "Open Problems and Research Directions",
+        "Completeness Protocol and Evidence Trail"
+      ],
+      "next_action": "Fix the object class, guard model, and normalization of surface area before comparing the question to face-count, edge-count, or volume/cell-count results."
     },
     {
       "id": "orthogonal_polyhedra_edge_and_reflex_edge_guards",
