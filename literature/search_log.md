@@ -387,3 +387,22 @@ Use one entry per meaningful search.
   first choose the object class, guard model, and lattice normalization of
   surface area before comparing it with face-count, edge-count, or
   volume-count results.
+
+### 2026-05-26 -- 1D-skeleton parameter clarification
+
+- Search target: no new literature source was sought; this was a model
+  clarification requested for the existing Paul/Galen working prompts.
+- Query: not applicable.
+- Hits inspected: existing proposed working-question cells and the Galen note.
+- Included: the review now records that the 2D flat-vertex prompt can be read
+  as a weighted statement about the unit-subdivided boundary 1-skeleton, where
+  `P` is both the number of unit boundary edges and the number of boundary
+  vertices. It also records that a 3D unit-square boundary mesh with `S` faces
+  has boundary 1-skeleton edge count `E_boundary=2S`, so `S/8` is numerically
+  `E_boundary/16` in that refined model.
+- Excluded: the unrefined edge count of a continuous orthogonal polyhedron is
+  not interchangeable with unit-refined boundary skeleton size.
+- Follow-up: if this becomes a theorem-style conjecture, state whether the
+  skeleton parameter is edge count, vertex count, or graph size
+  `|V|+|E|`, and whether it is measured on the original polyhedron or a
+  unit-refined boundary mesh.

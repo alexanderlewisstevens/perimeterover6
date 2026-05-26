@@ -1092,7 +1092,7 @@ perimeter is counted. \\
 Paul/Galen flat-vertex hybrid &
 Project working question, not source-stated &
 If $P=n+f$, then $n/8+f/4<P/6$ is equivalent to $f<n/2$; no source was found
-for a guard theorem using this hybrid parameter. &
+for a guard theorem using this weighted boundary 1-skeleton parameter. &
 Fix $f$, holes, and guard model; decide whether the target is an upper bound,
 lower-bound family, or improvement regime. \\
 
@@ -1118,8 +1118,8 @@ Extend the induction/charging methods beyond the 2-reflex restriction. \\
 
 3D surface-area-over-eight &
 Project working conjecture, not source-stated &
-The question needs lattice-normalized surface area; face-count and
-volume-count theorems are separate model cells. &
+The question needs lattice-normalized surface area; in a unit boundary mesh
+$S/8=E_{\partial}/16$, but unrefined edge count is a different parameter. &
 Choose object class and guard model, then test lower- and upper-bound
 constructions. \\
 
@@ -1180,8 +1180,13 @@ conjectures. \\
   Thus the inequality is not itself the mathematical content.  The real
   question is whether the hybrid expression $n/8+f/4$ controls a guard
   theorem, lower-bound family, or useful improvement regime once $f$, holes,
-  and guard model are fixed.  The current evidence pass found no primary
-  source for an $n/8+f/4$ art-gallery theorem or source-stated open problem.
+  and guard model are fixed.  In 1-skeleton language, the unit-subdivided
+  boundary cycle has $P$ unit edges and $P$ boundary vertices; the vertices
+  are partitioned into $n$ turn vertices and $f$ flat subdivision vertices.
+  So this prompt asks whether weighting a single boundary skeleton differently
+  at turn and straight-through vertices has guard-theoretic content.  The
+  current evidence pass found no primary source for an $n/8+f/4$ art-gallery
+  theorem or source-stated open problem.
 
   \item \textbf{Vertex guards for orthogonal polygons with holes.}
   Shermer's conjecture asks whether every $n$-vertex orthogonal polygon with
@@ -1226,6 +1231,19 @@ conjectures. \\
   volume/cell-count point-guard result \cite{Pinciu2015}, and continuous 3D
   point guarding has different vertex-count behavior
   \cite{PatersonYao1992,VigliettaThesis}.
+
+  The same prompt can be phrased through the unit-refined boundary
+  1-skeleton.  Let $E_{\partial}$ be the number of unit edges in the boundary
+  surface mesh.  For a closed unit-square boundary surface, each square
+  contributes four edge incidences and each boundary edge is incident to two
+  squares, so $E_{\partial}=2S$.  In that refined model the target $S/8$ is
+  exactly $E_{\partial}/16$.  This is not the unrefined edge count $m$ used in
+  continuous edge-guard results: scaling an orthogonal box changes Euclidean
+  surface area while leaving the unrefined polyhedron graph unchanged.  If
+  ``size of the 1D skeleton'' means $V_{\partial}+E_{\partial}$ instead of
+  edge count alone, the connected orientable case also carries the Euler term
+  $V_{\partial}+E_{\partial}=3S+2-2g$, so the convention should be stated
+  before this becomes a theorem-style conjecture.
 
   \item \textbf{Pixel/voxel guards for polyhypercubes.}
   Pinciu settles the point-guard cell-volume question for every dimension
@@ -1557,7 +1575,7 @@ an $n/8+f/4$ guard theorem, an $n/8+f/4<P/6$ open problem, or a
 surface-area-over-eight theorem for 3D orthogonal objects.  The evidence layer
 therefore treats both prompts as model-definition tasks first: fix the
 flat-vertex parameter and intended guard statement in 2D, and fix the surface
-normalization, object class, and guard model in 3D.
+normalization, object class, guard model, and 1D-skeleton convention in 3D.
 
 \begin{center}
 \footnotesize
@@ -1592,7 +1610,9 @@ edge/reflex-edge gaps remain open. \\
 Paul/Galen flat-vertex and surface-area prompts &
 Working questions recorded; no source-status change &
 The prompts are useful research directions, but the PDF treats them as
-model-definition tasks until the missing conventions or sources are supplied.
+model-definition tasks until the missing conventions or sources are supplied;
+the skeleton notes distinguish unit-refined boundary graphs from unrefined
+polyhedron edge counts.
 \\
 \bottomrule
 \end{tabularx}
@@ -1629,7 +1649,10 @@ model-definition tasks until the missing conventions or sources are supplied.
   \item Paul's $n/8+f/4<P/6$ prompt and the 3D surface-area-over-eight prompt
   are now recorded as proposed working questions for Galen.  They should not be
   cited as literature-confirmed open problems until their model conventions or
-  source status are fixed.
+  source status are fixed.  The skeleton formulation is included as a useful
+  normalization: in a unit-square 3D boundary mesh, $S/8$ is the same target as
+  $E_{\partial}/16$, but that refined skeleton count is not the unrefined edge
+  count used in standard 3D edge-guard results.
 \end{enumerate}
 
 \begin{thebibliography}{99}

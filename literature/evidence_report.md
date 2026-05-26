@@ -254,7 +254,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Paul's flat-vertex hybrid bound question
 - Status: `proposed_working_question`
 - Question: For an integral orthogonal polygon subdivided into unit boundary steps, with P the total lattice perimeter, n the number of turn vertices, and f the number of flat subdivision vertices, is there a meaningful guard theorem or construction governed by a hybrid expression n/8+f/4, especially in the regime n/8+f/4 < P/6?
-- Known: This is an internal working question from Paul recorded for Galen, not a literature-confirmed open problem. Under the convention P=n+f, the strict inequality n/8+f/4 < P/6 is algebraically equivalent to f<n/2. The 2026-05-26 flat-vertex/formula pass found no primary source for an n/8+f/4 art-gallery theorem or open problem, so the mathematical task is to define f precisely and determine whether the hybrid expression supports a true upper bound, lower-bound family, or useful separation from P/6.
+- Known: This is an internal working question from Paul recorded for Galen, not a literature-confirmed open problem. Under the convention P=n+f, the strict inequality n/8+f/4 < P/6 is algebraically equivalent to f<n/2. In boundary-skeleton language, the unit-subdivided polygon boundary has P unit edges and P boundary vertices, partitioned into n turn vertices and f flat subdivision vertices; the hybrid expression weights the same 1D boundary skeleton differently at turns and straight-through vertices. The 2026-05-26 flat-vertex/formula pass found no primary source for an n/8+f/4 art-gallery theorem or open problem, so the mathematical task is to define f precisely and determine whether the hybrid expression supports a true upper bound, lower-bound family, or useful separation from P/6.
 - Confirming sources: None recorded; this entry is not currently literature-confirmed.
 - Progress paths: Fix the model convention: holes allowed or forbidden, point guards, P as total unit boundary length, n as turn vertices, and f as inserted flat boundary vertices.; Decide whether the target is an upper bound, a lower-bound construction, or a class where the hybrid count improves on P/6.; If the intended convention is P=n+f, focus on examples with f<n/2 or explain why a different definition of f is intended.
 
@@ -299,9 +299,9 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Surface-area-over-eight working conjecture in 3D
 - Status: `proposed_working_question`
 - Question: For a lattice-normalized 3D orthogonal object, can one prove a guard bound on the order of surface area divided by 8?
-- Known: This is recorded as a proposed 3D working conjecture, not as a literature-confirmed theorem. Surface area must be lattice-normalized, for example by counting unit square boundary faces of a polycube or grid-refined orthogonal polyhedron; ordinary Euclidean surface area is scale-dependent. Nearby literature uses different parameters and guard models: Viglietta proves tight face-guard bounds in terms of the number of faces for orthogonal polyhedra, while point guards for arbitrary orthogonal polyhedra have Theta(n^(3/2)) vertex-count behavior.
+- Known: This is recorded as a proposed 3D working conjecture, not as a literature-confirmed theorem. Surface area must be lattice-normalized, for example by counting unit square boundary faces of a polycube or grid-refined orthogonal polyhedron; ordinary Euclidean surface area is scale-dependent. If S counts unit square boundary faces and E_boundary counts unit edges in the unit-refined boundary 1-skeleton of a closed polycube surface, then E_boundary=2S, so an S/8 target is equivalently E_boundary/16 in that refined model. This is not the same as the unrefined edge count of a continuous orthogonal polyhedron. Nearby literature uses different parameters and guard models: Viglietta proves tight face-guard bounds in terms of the number of faces for orthogonal polyhedra, while point guards for arbitrary orthogonal polyhedra have Theta(n^(3/2)) vertex-count behavior.
 - Confirming sources: None recorded; this entry is not currently literature-confirmed.
-- Progress paths: Choose the object class: polycubes, grid-refined orthogonal polyhedra, or general orthogonal polyhedra with a normalized surface mesh.; Choose the guard model: point guards, vertex guards, edge guards, face guards, or unit-face/cell guards.; Search for or construct lower-bound examples near one guard per eight unit surface squares, then test whether a matching upper-bound decomposition is plausible.
+- Progress paths: Choose the object class: polycubes, grid-refined orthogonal polyhedra, or general orthogonal polyhedra with a normalized surface mesh.; Choose the guard model: point guards, vertex guards, edge guards, face guards, or unit-face/cell guards.; Specify whether the skeleton parameter is the unrefined polyhedron graph or the unit-refined boundary 1-skeleton.; Search for or construct lower-bound examples near one guard per eight unit surface squares, then test whether a matching upper-bound decomposition is plausible.
 
 ### `polyhypercube_pixel_voxel_guard_bounds`
 
@@ -398,7 +398,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: Integral orthogonal polygons, flat-vertex hybrid parameter
 - Coverage status: `synthesized`
 - Result status: `proposed_working_question`
-- Summary: Paul's working question asks whether an n/8+f/4 hybrid expression can define a useful guard bound or construction, especially when it is below P/6; under P=n+f this inequality is exactly f<n/2.
+- Summary: Paul's working question asks whether an n/8+f/4 hybrid expression can define a useful guard bound or construction, especially when it is below P/6; under P=n+f this inequality is exactly f<n/2, and the expression weights the unit boundary 1-skeleton differently at turn and flat vertices.
 - Evidence role: Proposed working-question cell; this records a project prompt, not a theorem-level literature claim.
 - Supporting claims: None recorded; this is expected until a source or written problem statement is available.
 - Next action: Ask Paul/Galen to confirm the intended definition of f and whether the target is an upper bound, a lower-bound family, or an improvement regime; do not cite this as literature-stated until a source or written problem statement is available.
@@ -417,10 +417,10 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Title: 3D orthogonal objects, surface-area-over-eight working conjecture
 - Coverage status: `synthesized`
 - Result status: `proposed_working_question`
-- Summary: The project working conjecture asks whether a surface-area-over-eight guard bound is possible in a carefully fixed 3D lattice model; no tracked source currently states this theorem or conjecture.
+- Summary: The project working conjecture asks whether a surface-area-over-eight guard bound is possible in a carefully fixed 3D lattice model; in a unit-square boundary mesh this can be rewritten as E_boundary/16, but no tracked source currently states this theorem or conjecture.
 - Evidence role: Proposed working-question cell; this records a project prompt, not a theorem-level literature claim.
 - Supporting claims: None recorded; this is expected until a source or written problem statement is available.
-- Next action: Fix the object class, guard model, and normalization of surface area before comparing the question to face-count, edge-count, or volume/cell-count results.
+- Next action: Fix the object class, guard model, normalization of surface area, and whether the skeleton parameter is refined or unrefined before comparing the question to face-count, edge-count, or volume/cell-count results.
 
 ### `orthogonal_polyhedra_edge_and_reflex_edge_guards`
 
@@ -555,7 +555,7 @@ Generated from the structured literature ledgers. This report is an audit compan
 - Integral orthogonal polygons, point guards, perimeter: The hole-free overlap is recorded. The 2026-05-26 targeted search found no primary source for an n/8+f/4 bound using flat vertices or faces; before stating any standalone broader-domain or flat-vertex parameter problem, specify whether holes, disconnected domains, inserted collinear grid points, or a different lattice-domain convention are intended.
 - Integral orthogonal polygons, flat-vertex hybrid parameter: Ask Paul/Galen to confirm the intended definition of f and whether the target is an upper bound, a lower-bound family, or an improvement regime; do not cite this as literature-stated until a source or written problem statement is available.
 - Orthogonal polyhedra, point guards: Paterson--Yao BSP locators and Viglietta thesis guard-translation locator are recorded; next action is optional full journal-version access if needed.
-- 3D orthogonal objects, surface-area-over-eight working conjecture: Fix the object class, guard model, and normalization of surface area before comparing the question to face-count, edge-count, or volume/cell-count results.
+- 3D orthogonal objects, surface-area-over-eight working conjecture: Fix the object class, guard model, normalization of surface area, and whether the skeleton parameter is refined or unrefined before comparing the question to face-count, edge-count, or volume/cell-count results.
 - Orthogonal polyhedra, edge and reflex-edge guards: Cano--Toth--Urrutia--Viglietta, Viglietta thesis, Benbernou, and Viglietta 2020 locators are recorded. A 2026-05-23 OpenAlex/web forward and venue pass found no tracked result closing the general edge/reflex-edge gaps; face guards, pi/2-edge guards, 2-reflex restrictions, and discrete polycube/polyhypercube variants are represented in separate adjacent-model cells.
 - Orthogonal polyhedra, pi/2-edge guards: Use only as adjacent 3D model context unless the review expands to limited-field edge-guard variants.
 - Rectilinear polygons, edge guards: Keep this cell as 2D edge-guard context; do not translate it into point-guard perimeter or 3D edge-guard statements.

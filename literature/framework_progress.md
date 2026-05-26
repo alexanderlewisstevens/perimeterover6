@@ -57,8 +57,10 @@ currently contain; this file says where the review process stands.
    bound, lower-bound family, or improvement regime.
 9. If the discrete 3D section is expanded, check whether later sources resolve
    Pinciu's pixel/voxel-guard conjecture before describing that cell as open.
-10. For the surface-area-over-eight prompt, fix object class, guard model, and
-    lattice normalization before adding any theorem-style language.
+10. For the surface-area-over-eight prompt, fix object class, guard model,
+    lattice normalization, and whether the skeleton parameter is the unrefined
+    polyhedron graph or the unit-refined boundary 1-skeleton before adding any
+    theorem-style language.
 
 ## Update Transaction Checklist
 

@@ -99,11 +99,13 @@ cell-volume theorem and an open pixel/voxel-guard cell, so the 3D discussion
 can answer the volume-over-three question without blending it into continuous
 orthogonal-polyhedron bounds. Two Paul/Galen prompts are now represented as
 proposed working questions: the `n/8+f/4 < P/6` flat-vertex hybrid prompt and
-the 3D surface-area-over-eight prompt. They should remain visibly separate
-from literature-confirmed open problems until their exact model statements or
-sources are available. The main remaining assembly work is recurring rather
-than structural: repeat forward-citation and venue scans after new central
-sources appear, add final-status outcome rows when central statuses are
-preserved or changed, and add either a theorem-level coverage cell, a proposed
-working-question cell, or a scope-exclusion cell before adding prose about any
-newly discovered visibility or guard variant.
+the 3D surface-area-over-eight prompt, now with explicit boundary 1-skeleton
+readings. They should remain visibly separate from literature-confirmed open
+problems until their exact model statements or sources are available, and the
+paper should continue to distinguish unit-refined skeleton size from
+unrefined polyhedron edge count. The main remaining assembly work is
+recurring rather than structural: repeat forward-citation and venue scans
+after new central sources appear, add final-status outcome rows when central
+statuses are preserved or changed, and add either a theorem-level coverage
+cell, a proposed working-question cell, or a scope-exclusion cell before
+adding prose about any newly discovered visibility or guard variant.

@@ -41,6 +41,7 @@ title searches and primary sources before secondary summaries.
 - `"flat vertices" "integral orthogonal polygon" guards`
 - `"straight vertices" "orthogonal polygon" "art gallery"`
 - `"collinear vertices" "orthogonal polygon" "guards"`
+- `"boundary 1-skeleton" "orthogonal polygon" guards`
 - `"faces" "integral orthogonal polygon" "guards"`
 - `"perimeter" "N/5" "integral orthogonal polygons" guards`
 - `https://export.arxiv.org/api/query?search_query=all:%22ortho-unit%22+AND+all:%22guards%22`
@@ -69,6 +70,9 @@ title searches and primary sources before secondary summaries.
 - `"surface area" "orthogonal polyhedra" guards "8"`
 - `"surface area" "polycube" guards "art gallery"`
 - `"polycube" "surface area" "guard"`
+- `"1-skeleton" "orthogonal polyhedra" guards`
+- `"boundary skeleton" "polycube" guards`
+- `"surface area" "1-skeleton" "orthogonal polyhedron"`
 - `"Minimizing the solid angle sum of orthogonal polyhedra" "pi/2-edge guards"`
 - `https://api.openalex.org/works?search=Edge-guarding%20Orthogonal%20Polyhedra`
 - `https://api.openalex.org/works?filter=cites:W1842505581`

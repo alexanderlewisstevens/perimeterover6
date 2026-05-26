@@ -20,6 +20,12 @@ problem is whether a true guard theorem, lower-bound construction, or useful
 class is controlled by `n/8 + f/4`, and whether `f` really means flat boundary
 vertices rather than faces, cells, holes, or another parameter.
 
+There is also a boundary 1-skeleton reading. In the unit-subdivided boundary
+cycle, the number of unit edges is `P`, and the number of boundary vertices is
+also `P`; the vertices are partitioned into turn vertices `n` and flat
+subdivision vertices `f`. Under this reading the hybrid expression weights the
+same boundary 1-skeleton differently at turns and straight-through vertices.
+
 ## 3D Surface-Area Question
 
 Working prompt: can we get a guard bound like `S/8`, where `S` is surface area?
@@ -28,6 +34,19 @@ This only makes sense after choosing a lattice normalization and a guard model.
 Candidate version: for polycubes or grid-refined orthogonal polyhedra, let `S`
 be the number of exposed unit square faces. Ask whether the object can be
 guarded by at most `S/8` guards under a specified guard model.
+
+This can also be written in terms of the unit-refined boundary 1-skeleton. If
+`E_boundary` counts unit edges in the boundary surface mesh of a closed
+polycube boundary, then each unit square contributes four incidences and each
+boundary edge is incident to two unit squares, so `E_boundary = 2S`. In that
+mesh-normalized model, `S/8` is the same numerical target as
+`E_boundary/16`.
+
+This is not the same as the unrefined edge count of a continuous orthogonal
+polyhedron. Scaling a box changes Euclidean surface area while leaving the
+unrefined skeleton combinatorics unchanged, so any skeleton version must say
+whether it uses the original polyhedron graph or the unit-refined boundary
+graph.
 
 Caveat: continuous Euclidean surface area is scale-dependent. Viglietta's
 face-guard results use face count and face guards, and Pinciu's polyhypercube
